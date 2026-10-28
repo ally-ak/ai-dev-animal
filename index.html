@@ -1963,7 +1963,15 @@ const SHARE_URL = "https://ally-ak.github.io/ai-dev-animal/";
 async function shareResult(text, key) {
   const url = `${SHARE_URL}r/${key}${lang === "en" ? "-en" : ""}.html`;
   if (navigator.share) {
-    try { await navigator.share({ text, url }); return; }
+    try {
+      // スマホでは画像を添付してシェアする。Xは添付画像があるとリンクのカード（見出しの黒帯つき）を出さない
+      if (navigator.canShare) {
+        const blob = await (await fetch(`og/${key}-${lang}.png`)).blob();
+        const file = new File([blob], `${key}.png`, { type: "image/png" });
+        if (navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], text: `${text}\n${url}` }); return; }
+      }
+      await navigator.share({ text, url }); return;
+    }
     catch (e) { if (e && e.name === "AbortError") return; }
   }
   try { await navigator.clipboard.writeText(`${text}\n${url}`); toast(U().shareCopied); }
