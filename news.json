@@ -1,0 +1,185 @@
+{
+ "date": "2026-10-28",
+ "items": {
+  "fire-pioneer": {
+   "url": "https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/",
+   "source": "GitHub Changelog",
+   "published": "2026-10-13",
+   "ja": {
+    "title": "GitHub Copilot で Gemini 4 Argon が使えるように",
+    "summary": "Google の新しい最上位モデル Gemini 4 Argon が Copilot のモデル選択に加わった。複雑なコーディングやエージェント作業向けで、特に Copilot CLI での伸びが大きいとしている。順次提供。",
+    "why": "出たばかりの最上位モデル。今日のうちに手元のタスクで試せます。"
+   },
+   "en": {
+    "title": "Gemini 4 Argon arrives in GitHub Copilot",
+    "summary": "Google's new frontier model joins Copilot's model picker. It's aimed at complex coding and agentic work, with the biggest gains reported in Copilot CLI. Rolling out gradually.",
+    "why": "A brand-new frontier model—you can try it on real work today."
+   }
+  },
+  "fire-steady": {
+   "url": "https://code.claude.com/docs/en/changelog",
+   "source": "Claude Code changelog",
+   "published": "2026-10-14",
+   "ja": {
+    "title": "Claude Code、放置した長い会話を自動で圧縮するように",
+    "summary": "20万トークンを超える会話が約54分止まっていると、プロンプトキャッシュが切れる前に自動で圧縮する（v2.1.299）。しきい値は環境変数で変えられ、設定で止めることもできる。",
+    "why": "しきい値も止め方も設定で変えられる。自分の環境に組み込みがいのある変更です。"
+   },
+   "en": {
+    "title": "Claude Code now compacts long idle sessions automatically",
+    "summary": "A conversation over 200K tokens that sits idle for about 54 minutes is compacted before its prompt cache expires (v2.1.299). The threshold is configurable by environment variable, and a setting turns it off.",
+    "why": "Thresholds and an off switch live in settings—worth wiring into your setup."
+   }
+  },
+  "fire-flex": {
+   "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/",
+   "source": "GitHub Changelog",
+   "published": "2026-10-26",
+   "ja": {
+    "title": "GitHub Copilot で GPT-6.1 Terra が使えるように",
+    "summary": "OpenAI の新モデル GPT-6.1 Terra が、日々のエージェント作業やターミナル作業向けに Copilot で一般提供された。GPT-6.1 Sol より安く、先行テストでは前世代よりターミナルとC#の課題を多く解いたという。順次提供。",
+    "why": "「速くて安いモデル」の候補がひとつ増えました。並列で回す作業の振り分けに。"
+   },
+   "en": {
+    "title": "GPT-6.1 Terra is now available in GitHub Copilot",
+    "summary": "OpenAI's newest model is generally available in Copilot for everyday agentic coding and terminal work, at a lower cost than GPT-6.1 Sol. In early testing it solved noticeably more terminal and C# tasks than the previous Terra. Rolling out gradually.",
+    "why": "One more fast, cheaper option for the parallel work you hand out."
+   }
+  },
+  "earth-pioneer": {
+   "url": "https://www.anthropic.com/news/anthropic-cyber-mission",
+   "source": "Anthropic",
+   "published": "2026-10-08",
+   "ja": {
+    "title": "Anthropic、オープンソース向けの無料脆弱性スキャン「OSS Scanner」を開始",
+    "summary": "登録したOSSプロジェクトを Anthropic の最上位モデルが定期的に無料でスキャンし、悪用例・説明・修正案つきのレポートを送る。レポートは人の確認を通さずに届くため誤りもありうるとしたうえで、正しい指摘は9割超を見込む。",
+    "why": "AIが見つけたバグを悪用例つきで渡す仕組み。「本当にバグか」を確かめたいあなた向け。"
+   },
+   "en": {
+    "title": "Anthropic launches OSS Scanner, free vulnerability scans for open source",
+    "summary": "Enrolled projects get periodic scans from Anthropic's most capable models at no cost, with a proof of concept, explanation and suggested fix for each finding. Reports skip human review, so some may be wrong; Anthropic expects a true-positive rate above 90%.",
+    "why": "AI-found bugs delivered with a proof of concept—made for someone who wants to check if it's real."
+   }
+  },
+  "earth-steady": {
+   "url": "https://claude.com/resources/articles/code-review-is-now-generally-available",
+   "source": "Claude",
+   "published": "2026-10-15",
+   "ja": {
+    "title": "Claude の Code Review が正式提供に",
+    "summary": "GitHub のプルリクエストを自動でレビューし、人が見る前にバグを指摘する機能が、Team と Enterprise 向けに正式提供された。プレビューより約3倍速くなり、多くのレビューが6〜10分で終わるという。",
+    "why": "人が見る前にAIがPRを見る。あなたの二重チェックに一段足せます。"
+   },
+   "en": {
+    "title": "Claude Code Review is now generally available",
+    "summary": "Automatic reviews of GitHub pull requests that flag bugs before a human looks are now GA for Team and Enterprise. Most reviews are about 3x faster than in preview, finishing in 6–10 minutes.",
+    "why": "AI reviews the PR before a human does—one more layer for your double-check."
+   }
+  },
+  "earth-flex": {
+   "url": "https://claude.com/resources/articles/code-review-is-now-generally-available",
+   "source": "Claude",
+   "published": "2026-10-15",
+   "ja": {
+    "title": "Claude の Code Review が正式提供に",
+    "summary": "GitHub のプルリクエストを自動でレビューし、人が見る前にバグを指摘する機能が、Team と Enterprise 向けに正式提供された。プレビューより約3倍速くなり、多くのレビューが6〜10分で終わるという。",
+    "why": "書くAIとは別に、見るAIを置く。まさにあなたのやり方が製品になりました。"
+   },
+   "en": {
+    "title": "Claude Code Review is now generally available",
+    "summary": "Automatic reviews of GitHub pull requests that flag bugs before a human looks are now GA for Team and Enterprise. Most reviews are about 3x faster than in preview, finishing in 6–10 minutes.",
+    "why": "A separate AI that reviews what another wrote—your workflow, now a product."
+   }
+  },
+  "air-pioneer": {
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4",
+   "source": "Google",
+   "published": "2026-10-27",
+   "ja": {
+    "title": "Google DeepMind、リアルタイムで操作できる世界モデル「Genie 4」を発表",
+    "summary": "言葉で指示すると、カメラの向きや天気、登場人物を変えながら、映像と音声つきのシミュレーションをその場で生成する。いまは一部のテスターのみで、Google AI Ultra の契約者や Gemini API の早期アクセス先へ順次広げる予定。",
+    "why": "言葉だけで動く世界を作れる。次の試作のアイデアが湧きそうです。"
+   },
+   "en": {
+    "title": "Google DeepMind unveils Genie 4, a real-time interactive world model",
+    "summary": "Describe a change—camera angle, weather, characters—and it generates a simulation with visuals and audio on the fly. It's limited to trusted testers for now, with Google AI Ultra subscribers and Gemini API early-access partners next.",
+    "why": "Build an interactive world from words—fuel for your next prototype idea."
+   }
+  },
+  "air-steady": {
+   "url": "https://code.claude.com/docs/en/changelog",
+   "source": "Claude Code changelog",
+   "published": "2026-10-14",
+   "ja": {
+    "title": "Claude Code、放置した長い会話を自動で圧縮するように",
+    "summary": "20万トークンを超える会話が約54分止まっていると、プロンプトキャッシュが切れる前に自動で圧縮する（v2.1.299）。しきい値は環境変数で変えられ、設定で止めることもできる。",
+    "why": "長い設計の相談を寝かせても、続きから安く再開しやすくなります。"
+   },
+   "en": {
+    "title": "Claude Code now compacts long idle sessions automatically",
+    "summary": "A conversation over 200K tokens that sits idle for about 54 minutes is compacted before its prompt cache expires (v2.1.299). The threshold is configurable by environment variable, and a setting turns it off.",
+    "why": "Long design conversations can rest and resume more cheaply."
+   }
+  },
+  "air-flex": {
+   "url": "https://www.anthropic.com/news/anthropic-cyber-mission",
+   "source": "Anthropic",
+   "published": "2026-10-08",
+   "ja": {
+    "title": "Anthropic、オープンソース向けの無料脆弱性スキャン「OSS Scanner」を開始",
+    "summary": "登録したOSSプロジェクトを Anthropic の最上位モデルが定期的に無料でスキャンし、悪用例・説明・修正案つきのレポートを送る。レポートは人の確認を通さずに届くため誤りもありうるとしたうえで、正しい指摘は9割超を見込む。",
+    "why": "指摘ごとに根拠と修正案が付き、正しい指摘の割合の見込みまで公開されています。"
+   },
+   "en": {
+    "title": "Anthropic launches OSS Scanner, free vulnerability scans for open source",
+    "summary": "Enrolled projects get periodic scans from Anthropic's most capable models at no cost, with a proof of concept, explanation and suggested fix for each finding. Reports skip human review, so some may be wrong; Anthropic expects a true-positive rate above 90%.",
+    "why": "Every finding comes with evidence and a fix, and they publish an expected accuracy rate."
+   }
+  },
+  "water-pioneer": {
+   "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/",
+   "source": "GitHub Changelog",
+   "published": "2026-10-26",
+   "ja": {
+    "title": "GitHub Copilot で GPT-6.1 Terra が使えるように",
+    "summary": "OpenAI の新モデル GPT-6.1 Terra が、日々のエージェント作業やターミナル作業向けに Copilot で一般提供された。GPT-6.1 Sol より安く、先行テストでは前世代よりターミナルとC#の課題を多く解いたという。順次提供。",
+    "why": "新しいモデルの「人柄」を味わうチャンス。今日の相棒候補にどうぞ。"
+   },
+   "en": {
+    "title": "GPT-6.1 Terra is now available in GitHub Copilot",
+    "summary": "OpenAI's newest model is generally available in Copilot for everyday agentic coding and terminal work, at a lower cost than GPT-6.1 Sol. In early testing it solved noticeably more terminal and C# tasks than the previous Terra. Rolling out gradually.",
+    "why": "A new model personality to get to know—a candidate partner for today."
+   }
+  },
+  "water-steady": {
+   "url": "https://code.claude.com/docs/en/changelog",
+   "source": "Claude Code changelog",
+   "published": "2026-10-14",
+   "ja": {
+    "title": "Claude Code、放置した長い会話を自動で圧縮するように",
+    "summary": "20万トークンを超える会話が約54分止まっていると、プロンプトキャッシュが切れる前に自動で圧縮する（v2.1.299）。しきい値は環境変数で変えられ、設定で止めることもできる。",
+    "why": "同じ相棒との長い会話を、途中で放っておいても続けやすくなります。"
+   },
+   "en": {
+    "title": "Claude Code now compacts long idle sessions automatically",
+    "summary": "A conversation over 200K tokens that sits idle for about 54 minutes is compacted before its prompt cache expires (v2.1.299). The threshold is configurable by environment variable, and a setting turns it off.",
+    "why": "Long sessions with the same partner are easier to pick back up."
+   }
+  },
+  "water-flex": {
+   "url": "https://claude.com/resources/articles/code-review-is-now-generally-available",
+   "source": "Claude",
+   "published": "2026-10-15",
+   "ja": {
+    "title": "Claude の Code Review が正式提供に",
+    "summary": "GitHub のプルリクエストを自動でレビューし、人が見る前にバグを指摘する機能が、Team と Enterprise 向けに正式提供された。プレビューより約3倍速くなり、多くのレビューが6〜10分で終わるという。",
+    "why": "レビューを任せられる相手がひとり増えました。疲れた日の味方に。"
+   },
+   "en": {
+    "title": "Claude Code Review is now generally available",
+    "summary": "Automatic reviews of GitHub pull requests that flag bugs before a human looks are now GA for Team and Enterprise. Most reviews are about 3x faster than in preview, finishing in 6–10 minutes.",
+    "why": "One more teammate you can hand reviews to—handy on tired days."
+   }
+  }
+ }
+}

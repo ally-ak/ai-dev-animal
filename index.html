@@ -1,0 +1,1994 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="12の質問で、AIとの付き合い方が12匹のどうぶつのどれかにわかる。毎日、あなたのタイプに効くプロンプトとAIニュースも。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI開発どうぶつ診断">
+<meta property="og:description" content="12の質問で、AIとの付き合い方が12匹のどうぶつのどれかにわかる。毎日、あなたのタイプに効くプロンプトとAIニュースも。">
+<meta property="og:image" content="https://ally-ak.github.io/ai-dev-animal/og/cover-ja.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://ally-ak.github.io/ai-dev-animal/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI開発どうぶつ診断">
+<meta name="twitter:description" content="12の質問で、AIとの付き合い方が12匹のどうぶつのどれかにわかる。毎日、あなたのタイプに効くプロンプトとAIニュースも。">
+<meta name="twitter:image" content="https://ally-ak.github.io/ai-dev-animal/og/cover-ja.png">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}</style>
+</head>
+<body>
+<title>AI開発どうぶつ診断</title>
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@700&family=Zen+Old+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --ink: #2f2a2a;
+  --muted: #8c8585;
+  --line: #ece7e2;
+  --soft: #faf8f6;
+  --fire: #e88a6b;   --fire-tint: #fdeee8;
+  --earth: #5f9f74;  --earth-tint: #e8f3eb;
+  --air: #6b8fc6;    --air-tint: #e9f0fa;
+  --water: #9479c2;  --water-tint: #f1ebf8;
+  --mincho: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+  --gothic: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+  --serif-en: "Cormorant Garamond", Georgia, serif;
+}
+html { background: var(--bg); }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--gothic); font-weight: 400;
+  line-height: 1.9; letter-spacing: .02em; -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 560px; margin: 0 auto;
+  padding: 20px max(16px, env(safe-area-inset-right)) 80px max(16px, env(safe-area-inset-left));
+}
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+.topbar { display: flex; justify-content: flex-end; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; font-size: 12px; letter-spacing: .08em; }
+.lang button { padding: 3px 12px; border-radius: 999px; color: var(--muted); }
+.lang button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+
+.kicker { display: block; font-family: var(--serif-en); font-style: italic; font-weight: 500; font-size: 15px; letter-spacing: .14em; color: var(--muted); }
+.title { font-family: var(--mincho); font-weight: 700; letter-spacing: .06em; line-height: 1.45; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+
+/* 表紙 */
+.cover { text-align: center; padding-top: 28px; }
+.cover h1 { font-size: clamp(30px, 8.4vw, 42px); margin: 6px 0 18px; }
+.cover .lead { text-align: left; font-size: 15px; margin: 0 auto 36px; max-width: 30em; }
+.from { display: flex; align-items: center; gap: 14px; text-align: left; background: var(--soft); border-radius: 16px; padding: 12px 16px; margin: 0 0 24px; }
+.from .disc { width: 64px; flex: none; }
+.from p { margin: 0; font-family: var(--mincho); font-size: 15px; line-height: 1.7; }
+.cast-title { font-family: var(--mincho); font-weight: 500; font-size: 15px; letter-spacing: .2em; margin-bottom: 18px; display: flex; align-items: center; gap: 14px; }
+.cast-title::before, .cast-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.cast { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px 10px; margin-bottom: 40px; }
+@media (min-width: 520px) { .cast { grid-template-columns: repeat(4, 1fr); } }
+.cast-item { display: grid; justify-items: center; gap: 6px; text-align: center; }
+.cast-item .disc { width: 84%; }
+.cast-item b { font-family: var(--mincho); font-weight: 700; font-size: 12.5px; line-height: 1.35; letter-spacing: 0; white-space: nowrap; }
+.cast-item .seg { font-style: normal; display: inline-block; }
+.cast-item span { font-size: 11.5px; color: #6f6767; line-height: 1.45; padding: 0 2px; }
+
+.cast-item { padding: 6px 0 4px; border-radius: 14px; transition: background .2s; }
+.cast { margin-bottom: 12px !important; }
+.cast-hint { font-size: 12px; color: var(--muted); margin: 0; letter-spacing: .06em; }
+.crumb { margin: 10px 0 0; }
+.back-link { font-size: 13px; color: var(--muted); padding: 6px 0; }
+.mine { display: inline-block; font-size: 11.5px; letter-spacing: .12em; color: #fff; background: var(--ink); border-radius: 999px; padding: 2px 12px; margin-bottom: 10px; }
+.match { width: 100%; text-align: left; border-radius: 14px; padding: 6px; transition: background .2s; }
+.match:hover { background: var(--soft); }
+.facets dd b { font-family: var(--mincho); }
+.prompt-list { list-style: none; counter-reset: pr; padding: 0; margin: 0; display: grid; gap: 12px; }
+.prompt-list li { counter-increment: pr; display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; align-items: start; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; }
+.prompt-list li::before { content: counter(pr, decimal-leading-zero); font-family: var(--serif-en); font-style: italic; font-size: 17px; color: var(--muted); line-height: 1.6; }
+.prompt-list summary { cursor: pointer; font-family: var(--mincho); font-weight: 700; font-size: 15px; line-height: 1.6; list-style: none; }
+.prompt-list summary::-webkit-details-marker { display: none; }
+.prompt-list summary::after { content: "＋"; float: right; color: var(--muted); font-weight: 400; }
+.prompt-list details[open] summary::after { content: "−"; }
+.prompt-list .text { font-size: 13.5px; line-height: 1.85; white-space: pre-wrap; margin: 10px 0 12px; color: #3f3939; }
+.prompt-list .row { display: flex; justify-content: flex-end; }
+.friend[aria-current="true"] { background: var(--soft); }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 40px; font-family: var(--mincho); font-size: 14px; }
+.pager button { padding: 8px 0; text-align: left; }
+.pager button:last-child { text-align: right; }
+.disc { aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; }
+.disc .chara { width: 92%; height: 92%; }
+.t-fire { background: var(--fire-tint); } .t-earth { background: var(--earth-tint); }
+.t-air { background: var(--air-tint); }   .t-water { background: var(--water-tint); }
+
+.btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+  box-sizing: border-box; min-height: 54px; padding: 12px 20px; border: 1px solid var(--ink); border-radius: 999px; background: var(--ink); color: #fff; line-height: 1.6;
+  font-weight: 500; font-size: 15px; letter-spacing: .12em; text-decoration: none; transition: opacity .2s;
+}
+.btn:hover { opacity: .85; }
+.btn.ghost { background: transparent; color: var(--ink); }
+.btn.small { width: auto; min-height: 38px; padding: 6px 18px; font-size: 13px; letter-spacing: .08em; }
+.btn-note { margin-top: 10px; font-size: 12px; color: var(--muted); letter-spacing: .08em; }
+
+/* 設問 */
+.quiz { padding-top: 24px; }
+.progress { height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; margin-bottom: 22px; }
+.progress i { display: block; height: 100%; background: var(--ink); transition: width .35s ease; }
+.q-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 26px; font-size: 13px; }
+.q-top .back { color: var(--muted); padding: 6px 0; }
+.q-top .back:disabled { visibility: hidden; }
+.q-count { font-family: var(--serif-en); font-style: italic; font-size: 17px; letter-spacing: .1em; }
+.q-watch { width: 92px; margin: 0 auto 18px; }
+.q-title { font-size: clamp(19px, 5.4vw, 23px); text-align: center; margin: 0 0 30px; }
+.options { display: grid; gap: 12px; }
+.option {
+  width: 100%; text-align: left; padding: 16px 20px; border: 1px solid var(--line); border-radius: 14px;
+  font-size: 15px; line-height: 1.6; background: #fff; transition: border-color .2s, background .2s;
+}
+.option:hover { border-color: #cfc8c1; background: var(--soft); }
+.option.picked { border-color: var(--ink); background: var(--soft); }
+
+/* 読み込み */
+.loading { text-align: center; padding-top: 90px; }
+.loading .disc { width: 170px; margin: 0 auto 28px; background: var(--soft); }
+.loading .chara { opacity: .35; filter: grayscale(1); }
+.loading p { font-family: var(--mincho); font-size: 19px; letter-spacing: .14em; margin: 0; }
+
+/* 結果 */
+.hero { text-align: center; padding-top: 22px; }
+.hero .disc { width: min(220px, 62vw); margin: 18px auto 20px; }
+.hero h2 { font-size: clamp(30px, 8.6vw, 40px); margin: 0; letter-spacing: .08em; }
+.hero .animal { font-size: 13px; color: var(--muted); letter-spacing: .14em; margin-top: 2px; }
+.hero .pun { display: inline-block; margin-top: 10px; font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 4px 14px; }
+.chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+.chip { font-size: 12px; letter-spacing: .1em; padding: 4px 14px; border-radius: 999px; border: 1px solid var(--line); }
+.hero .catch { font-family: var(--mincho); font-size: 17px; line-height: 1.8; margin: 22px auto 6px; max-width: 22em; }
+.hero .phrase { font-size: 13px; color: var(--muted); }
+
+.sec { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+.sec h3 { font-size: 21px; margin: 4px 0 22px; }
+.sec p { margin: 0 0 14px; font-size: 15px; }
+
+.axis { margin-bottom: 26px; }
+.axis-name { font-size: 13px; color: var(--muted); margin-bottom: 10px; letter-spacing: .06em; }
+.bar { display: grid; grid-template-columns: 7.2em 1fr 2.6em; align-items: center; gap: 12px; font-size: 13.5px; margin-bottom: 8px; }
+.bar .track { height: 6px; border-radius: 6px; background: var(--soft); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.bar .track i { display: block; height: 100%; border-radius: 6px; background: #d8d2cc; }
+.bar.win { font-weight: 700; }
+.bar .n { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+.bar.win .n { color: var(--ink); }
+.summary { font-family: var(--mincho); font-size: 16px !important; line-height: 1.9; background: var(--soft); border-radius: 14px; padding: 18px 20px; }
+.keys { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 10px; }
+.keys li { font-size: 14px; line-height: 1.7; padding-left: 14px; border-left: 2px solid var(--line); }
+.keys li small { display: block; color: var(--muted); font-size: 12px; }
+.keys-title { font-size: 13px; color: var(--muted); margin: 22px 0 4px; letter-spacing: .06em; }
+
+.today { border-radius: 20px; padding: 26px 22px; }
+.today-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 12.5px; color: var(--muted); letter-spacing: .08em; margin-bottom: 14px; }
+.today .message { font-family: var(--mincho); font-size: 18px; line-height: 1.9; margin: 0 0 22px; }
+.today .waiting { text-align: center; }
+.today .waiting p { font-family: var(--mincho); font-size: 16px; margin: 4px 0 20px; }
+.prompt { background: #fff; border-radius: 14px; padding: 18px 18px 14px; }
+.prompt .label { font-size: 12px; color: var(--muted); letter-spacing: .1em; }
+.prompt .ptitle { display: block; font-family: var(--mincho); font-size: 17px; margin: 4px 0 8px; }
+.prompt .text { display: block; font-size: 14px; line-height: 1.85; margin: 0 0 14px; white-space: pre-wrap; color: #3f3939; }
+.prompt .row { display: flex; justify-content: flex-end; }
+.slack { margin-top: 18px; padding-top: 18px; border-top: 1px dashed var(--line); }
+.news { background: #fff; border-radius: 14px; padding: 18px; margin-top: 14px; }
+.news .label, .cheer .label { font-size: 12px; color: var(--muted); letter-spacing: .1em; }
+.news-title { display: block; font-family: var(--mincho); font-weight: 700; font-size: 16px; line-height: 1.6; color: var(--ink); margin: 6px 0 2px; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+.news-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.news p { font-size: 14px !important; line-height: 1.85; margin: 0 0 8px !important; color: #3f3939; }
+.news-why { background: var(--soft); border-radius: 10px; padding: 10px 12px; }
+.news-why b { font-weight: 700; margin-right: 6px; }
+.cheer { margin-top: 18px; text-align: center; }
+.cheer p { font-family: var(--mincho); font-size: 16px !important; line-height: 1.9; margin: 6px 0 0 !important; }
+.note { font-size: 12.5px; color: var(--muted); margin: 14px 0 0 !important; }
+
+.aruaru { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; }
+.aruaru li { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: baseline; font-size: 14.5px; line-height: 1.7; }
+.aruaru li::before { content: attr(data-tag); font-size: 11px; letter-spacing: .08em; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 9px; white-space: nowrap; }
+.facets { margin: 26px 0 0; display: grid; gap: 20px; }
+.facets dt { font-family: var(--mincho); font-weight: 700; font-size: 15px; letter-spacing: .08em; margin-bottom: 4px; display: flex; align-items: center; gap: 10px; }
+.facets dt::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.facets dd { margin: 0; font-size: 15px; }
+.care { font-family: var(--mincho); font-size: 16.5px !important; line-height: 1.95; }
+
+.match { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: center; }
+.match b { font-family: var(--mincho); font-size: 19px; display: block; }
+.match span { font-size: 14px; color: var(--muted); }
+
+.friends { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 8px; }
+@media (max-width: 400px) { .friends { grid-template-columns: repeat(3, 1fr); } }
+.friend { display: grid; justify-items: center; gap: 4px; padding: 4px 0; border-radius: 12px; }
+.friend .disc { width: 80%; }
+.friend b { font-family: var(--mincho); font-size: 11.5px; line-height: 1.35; letter-spacing: 0; white-space: nowrap; }
+.friend.me b::after { content: " ●"; color: var(--fire); font-size: 8px; vertical-align: middle; }
+.friend[aria-pressed="true"] { background: var(--soft); }
+.friend-detail { margin-top: 18px; background: var(--soft); border-radius: 14px; padding: 16px 18px; font-size: 14px; line-height: 1.8; }
+.friend-detail b { font-family: var(--mincho); font-size: 16px; }
+
+.actions { display: grid; gap: 12px; margin-top: 56px; }
+
+.text-link { justify-self: center; font-size: 13px; color: var(--muted); padding: 10px 0; letter-spacing: .06em; }
+.toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); width: max-content; max-width: calc(100vw - 32px); box-sizing: border-box; text-align: center; line-height: 1.6; background: var(--ink); color: #fff; font-size: 13px; padding: 10px 20px; border-radius: 999px; letter-spacing: .06em; z-index: 10; }
+
+/* 入場 */
+.fade { animation: fade .5s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* キャラの動き：ゆっくり、小さく */
+.chara { width: 100%; height: 100%; overflow: visible; display: block; }
+.chara .body { transform-origin: 50px 92px; }
+.chara .blink { transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .chara .blink { animation: blink 4.6s infinite; }
+  .anim-hop .body { animation: hop 1.8s ease-in-out infinite; }
+  .anim-sway .body { animation: sway 3s ease-in-out infinite; }
+  .anim-bob .body { animation: bob 2.6s ease-in-out infinite; }
+  .anim-tilt .body { animation: tilt 3.4s ease-in-out infinite; }
+  .anim-nod .body { animation: nod 2.4s ease-in-out infinite; }
+  .anim-breathe .body { animation: breathe 3.2s ease-in-out infinite; }
+  .chara .fx { animation: fx 2.4s ease-in-out infinite; }
+  .fade { animation: fade .5s ease both; }
+}
+@media (prefers-reduced-motion: reduce) { .fade { animation: none; } }
+.chara.still *, .still .chara * { animation: none !important; }
+@keyframes blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(.12); } }
+@keyframes hop { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-4px); } }
+@keyframes sway { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes tilt { 0%, 55%, 100% { transform: rotate(0); } 70%, 85% { transform: rotate(-6deg); } }
+@keyframes nod { 0%, 100% { transform: rotate(0); } 40% { transform: rotate(3deg) translateY(1px); } }
+@keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03, .98); } }
+@keyframes fx { 0%, 100% { opacity: .9; transform: translateY(0); } 50% { opacity: .4; transform: translateY(-2px); } }
+</style>
+
+<div class="wrap">
+  <div class="topbar"><div class="lang" role="group" aria-label="Language">
+    <button data-lang="ja">日本語</button><button data-lang="en">English</button>
+  </div></div>
+  <main id="app"></main>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* ---------- 軸 ---------- */
+const ELEMENTS = {
+  fire:  { ja: "速さ派",   en: "Speed",  long: { ja: "とにかく速く出したい", en: "ship it fast" } },
+  earth: { ja: "確かめ派", en: "Verify", long: { ja: "ちゃんと確かめたい",   en: "make sure it's right" } },
+  air:   { ja: "設計派",   en: "Design", long: { ja: "設計から考えたい",     en: "think it through first" } },
+  water: { ja: "相棒派",   en: "Buddy",  long: { ja: "相棒と一緒に進めたい", en: "work it out together" } },
+};
+const STYLES = {
+  pioneer: { ja: "新しもの好き", en: "Early adopter", long: { ja: "新しいモデルやツールをすぐ試す", en: "try new models and tools right away" } },
+  steady:  { ja: "育てる人",     en: "Cultivator",    long: { ja: "自分の環境をじっくり育てる",     en: "grow a personal setup over time" } },
+  flex:    { ja: "使い分け上手", en: "Orchestrator",  long: { ja: "AIを役割ごとに使い分ける",       en: "assign different AIs to different jobs" } },
+};
+
+/* ---------- 12匹 ---------- */
+const TYPES = {
+  "fire-pioneer": {
+    trait: { ja: "新モデルは|発表当日に触る", en: "Tries every model on launch day" },
+    name: { ja: "トリアエズ", en: "Chick It Out" }, animal: { ja: "ヒヨコ", en: "Chick" },
+    pun: { ja: "「とりあえず」＋トリ", en: "“check it out” + chick — tries everything the day it ships" },
+    phrase: { ja: "READMEはあとで読む", en: "I'll read the README later" },
+    catch: { ja: "新しいモデルは、出たその日に本番タスクで試す", en: "Tries every new model on real work the day it ships" },
+    body: {
+      ja: "「とりあえず動かしてみる」ができる人です。新しいモデルやエージェントが出たら、READMEを読み終わる前に手元のタスクを投げている。まわりが様子見しているあいだに、あなたはもう「これは使える／使えない」を言えるところにいるんですよね。",
+      en: "You're the one who can just try it. When a new model or agent drops, you've thrown a real task at it before finishing the README. While everyone else waits and sees, you can already say whether it's any good.",
+    },
+    aruaru: {
+      ja: ["権限確認を全部スキップして走らせたことがある", "試したまま放置したAIツールのアカウントが10個ある", "リリースノートより先に、SNSで新機能を知る"],
+      en: ["You've run an agent with every permission check skipped", "You have ten AI tool accounts you tried once and forgot", "You hear about new features on social media before the release notes"],
+    },
+    care: {
+      ja: "速さが武器だからこそ、AIの「完了しました」を受け取ったまま次へ行きがち。マージ前の5分だけ、差分を自分の目で見てあげてください。",
+      en: "Because speed is your edge, you tend to take “Done!” at face value and move on. Give the diff five minutes of your own eyes before you merge.",
+    },
+    push: { ja: "あなたが先に転んでくれるから、チームは安心して後に続けます。今日も好きに跳んでいってください。", en: "You fall first so the team can follow safely. Go ahead and leap today too." },
+    prompts: {
+      ja: ["完了と言う前に、実際に動かして確かめたことと、まだ確かめていないことを分けて書いて。", "実装に入る前に、この変更で壊れそうな既存の挙動を3つ挙げて。それぞれどう確かめるかも書いて。", "いま書いたコードで、あとで一番困りそうな箇所を1つ選んで、理由と直し方を教えて。", "このタスクを「最短で終わらせる手順」と「安全に終わらせる手順」で並べて。違いはどこ？", "この変更を、レビュアーが5分で読めるように「何を・なぜ・どう確かめたか」の3点でまとめて。", "このライブラリを上げたときに変わる挙動のうち、このリポジトリのコードに影響するものだけを、該当箇所つきで挙げて。"],
+      en: ["Before you say it's done, list separately what you actually ran and verified, and what you haven't checked yet.", "Before implementing, name three existing behaviors this change could break, and how you'd check each one.", "Pick the one spot in the code you just wrote that's most likely to hurt us later. Tell me why and how to fix it.", "Lay out the fastest way to finish this task and the safest way, side by side. Where do they differ?", "Summarize this change so a reviewer can read it in five minutes: what, why, and how it was verified.", "If we upgrade this library, list only the behavior changes that affect code in this repo, with file locations."],
+    },
+    match: ["earth-steady", { ja: "あなたが飛ばしたところを、そっと拾ってくれる", en: "Quietly picks up whatever you skipped" }],
+  },
+  "fire-steady": {
+    trait: { ja: "3回やったら|コマンド化", en: "3 repeats = a new command" },
+    name: { ja: "ゴリゴリラ", en: "Ape-tomation" }, animal: { ja: "ゴリラ", en: "Gorilla" },
+    pun: { ja: "「ゴリゴリ進める」＋ゴリラ", en: "“automation” + ape — three repeats and it's a command" },
+    phrase: { ja: "3回やったらコマンド", en: "Do it three times, make it a command" },
+    catch: { ja: "自分の型で、毎日ゴリゴリ片づける", en: "Grinds through the day with a setup built by hand" },
+    body: {
+      ja: "毎日の「めんどう」を片っ端から仕組みにしてきた人です。よく使う指示はコマンドに、守ってほしいことは設定ファイルに。派手さはないけれど、その型があるから毎日ゴリゴリ速い。地味だけど、それがいちばん強いんです。",
+      en: "You turn every daily chore into a system. Frequent instructions become commands, house rules go into config files. Not flashy, but that setup is why you plow through work every day. Boring is strong.",
+    },
+    aruaru: {
+      ja: ["CLAUDE.md（や rules ファイル）がリポジトリで一番更新されている", "「いつものやつ」で通じる設定を育てている", "新しいツールより、自分のコマンドを磨きたい"],
+      en: ["Your CLAUDE.md (or rules file) is the most-edited file in the repo", "Your setup understands “the usual”", "You'd rather polish your own commands than try a new tool"],
+    },
+    care: {
+      ja: "自分の型が速いぶん、モデルが賢くなって前提が変わっても気づきにくいかも。月に一回、設定ファイルの棚卸しをすると、思わぬ近道が見つかります。",
+      en: "Your setup is so fast that you might miss it when smarter models change the rules. Audit your config once a month—you'll find shortcuts.",
+    },
+    push: { ja: "今日もちゃんと片づいたタスク一覧は、あなたが積み上げてきた仕組みのおかげです。", en: "Today's cleared task list is thanks to the systems you've been stacking up." },
+    prompts: {
+      ja: ["このセッションで私が繰り返した指示や訂正を洗い出して、CLAUDE.md に足すべきルールとして書いて。", "今日の作業を振り返って、次回からコマンド化できる手順を1つ提案して。中身もそのまま使える形で。", "この設定ファイルの中で、古い・ほかと矛盾している・実際には効いていない記述を指摘して。", "私の頼み方で、毎回あなたが推測で補っている部分はどこ？ 書き足すべき一文を教えて。", "この手作業を自動化するなら、どこから手をつける？ 手間と効果の順に並べて。", "このスクリプトを他の人が初見で動かせるように、前提条件と、失敗したときの直し方を書き足して。"],
+      en: ["Find the instructions and corrections I repeated this session, and write them up as rules to add to CLAUDE.md.", "Look back at today's work and propose one procedure I could turn into a command, written so I can use it as-is.", "Point out anything in this config file that's stale, contradicts something else, or isn't actually doing anything.", "Where do you fill in gaps by guessing every time I ask? Tell me the one sentence I should add.", "If we automated this manual task, where would you start? Rank the options by effort and payoff.", "Add prerequisites and recovery steps so someone new can run this script on the first try."],
+    },
+    match: ["air-pioneer", { ja: "思ってもみなかった使い方を運んできてくれる", en: "Brings uses you'd never have thought of" }],
+  },
+  "fire-flex": {
+    trait: { ja: "タブ8枚で|同時進行", en: "8 tabs, all running at once" },
+    name: { ja: "デキタコ", en: "Octotasker" }, animal: { ja: "タコ", en: "Octopus" },
+    pun: { ja: "「できたっ」＋タコ", en: "“multitasker” + octopus — eight arms, eight agents" },
+    phrase: { ja: "タブは8個から", en: "Eight tabs minimum" },
+    catch: { ja: "8本の腕で、エージェントを同時に走らせる", en: "Runs agents in parallel with all eight arms" },
+    body: {
+      ja: "道具の「得意」を見抜くのがうまい人です。調べものは速いモデル、設計は賢いモデル、実装は並列で。ひとつに決めないで、いちばん速く「できたっ」に着く組み合わせを選べる。器用に見えるけど、ちゃんと試して覚えてきた結果なんですよね。",
+      en: "You know what each tool is good at. Fast model for research, smart model for design, parallel agents for implementation. You pick whatever combo gets to “done!” fastest. It looks effortless, but you learned it by trying.",
+    },
+    aruaru: {
+      ja: ["ターミナルのタブが、常に6個以上開いている", "worktree を本気で使い始めた", "「このタスクはあっちのモデルで」が口ぐせ"],
+      en: ["You always have six or more terminal tabs open", "You've started using worktrees for real", "“That task goes to the other model” is your catchphrase"],
+    },
+    care: {
+      ja: "並列で走らせると、つなぎ目で仕様がずれていきます。最後にひとつにまとめるのは、あなた。統合して確かめる時間も予定に入れてください。",
+      en: "Run things in parallel and the specs drift at the seams. You're the one who stitches it together, so schedule time to merge and verify.",
+    },
+    push: { ja: "あなたの身軽さは、変わり続けるAIの世界でいちばんの武器です。", en: "Your agility is the best weapon in an AI world that never stops changing." },
+    prompts: {
+      ja: ["このタスクを、互いに同じファイルを触らない独立した作業に分けて。各作業の入力・出力・完了条件も書いて。", "別のエージェントに引き継ぐ前提で、決まったこと・決まっていないこと・触ったファイルをまとめて。", "この作業のうち、速いモデルで十分な部分と、賢いモデルに任せるべき部分に分けて。理由も。", "並列で作ったこの2つの変更が、マージでぶつかりそうな箇所を先に洗い出して。", "いまのタスクで、私の判断待ちで止まっているものはどれ？ 先に決めるべき順に並べて。", "要点だけを出典つきで調べて。確かめていない推測は、推測と書いて。"],
+      en: ["Split this task into independent pieces that never touch the same files. Give each one inputs, outputs, and a done condition.", "Assuming another agent takes over, summarize what's decided, what isn't, and which files were touched.", "Split this work into parts a fast model can handle and parts that need a smarter one. Explain why.", "Before we merge these two parallel changes, find where they're likely to collide.", "Which tasks are blocked waiting on my decision? Order them by what I should decide first.", "Research just the key points, with sources. Label anything unverified as a guess."],
+    },
+    match: ["air-steady", { ja: "ひとつのことを深く考える時間をくれる", en: "Gives you time to think one thing through" }],
+  },
+  "earth-pioneer": {
+    trait: { ja: "AIの「完了」を|信じない", en: "Never trusts “Done!”" },
+    name: { ja: "バグカモ", en: "Ducktective" }, animal: { ja: "カモ", en: "Duck" },
+    pun: { ja: "「バグかも」＋カモ", en: "“detective” + duck — sniffs out bugs, rubber-duck style" },
+    phrase: { ja: "その「完了」、ほんと？", en: "“Done”? Are you sure?" },
+    catch: { ja: "新しいモデルは、まず自分の意地悪問題で試す", en: "Tests every new model with a personal set of trick questions" },
+    body: {
+      ja: "「本当かな？」を楽しめる人です。新しいモデルが出たら、答えを知っているちょっと意地悪な問題を投げてみる。合っているかを確かめてから信じる。疑っているんじゃなくて、ちゃんと知りたいだけ。あなたの「これ、バグかも」が、チームを何度も救っています。",
+      en: "You enjoy asking “is that really true?” When a new model ships, you throw it a tricky question you already know the answer to, and trust it only after it passes. It's not suspicion—you just want to know. Your “hmm, might be a bug” has saved the team more than once.",
+    },
+    aruaru: {
+      ja: ["自分だけのベンチマーク問題を持っている", "AIの「できました」を、まず疑う", "それっぽい嘘を見つけると、ちょっとうれしい"],
+      en: ["You keep your own private benchmark questions", "Your first reaction to “Done!” is doubt", "Catching a convincing hallucination makes you a little happy"],
+    },
+    care: {
+      ja: "確かめるのが上手なぶん、試すことそのものが楽しくなって本題が遅れる日も。8割わかったら、使い始めてOKです。",
+      en: "Testing can get so fun that the real work slips. Once you're 80% sure, it's fine to start using it.",
+    },
+    push: { ja: "あなたの「本当かな？」は、チームを守っている大事な鼻です。", en: "Your “is that true?” is the nose that keeps the team safe." },
+    prompts: {
+      ja: ["この回答の各文に「確かめた事実／ドキュメントに書いてある／推測」のラベルを付けて。", "このコードが壊れる入力を5つ考えて、それぞれをテストケースにして。", "このタスクで、あなたが間違えやすいポイントを先に宣言してから始めて。", "このAPIの使い方は、公式ドキュメントのどこに書いてある？ 見つからないなら、見つからないと言って。", "この差分をレビューして。問題を重大度の順に、再現手順つきで。問題がなければ「ない」と言っていい。", "前提を変えて3回答えて。答えがぶれたところを、不確かなところとして教えて。"],
+      en: ["Label every sentence in this answer as verified fact, stated in the docs, or a guess.", "Come up with five inputs that break this code, and turn each into a test case.", "Before you start, tell me where you're most likely to make mistakes on this task.", "Where in the official docs is this API usage described? If you can't find it, say so.", "Review this diff. List issues by severity with repro steps. If there are none, it's fine to say so.", "Answer three times with different assumptions. Tell me where the answers diverge—that's what's uncertain."],
+    },
+    match: ["water-pioneer", { ja: "正しさだけじゃない「ここちよさ」を思い出させてくれる", en: "Reminds you that feeling right matters too, not just being right" }],
+  },
+  "earth-steady": {
+    trait: { ja: "通ったテストも|再実行", en: "Reruns tests that already passed" },
+    name: { ja: "ダブルチェックマ", en: "Testy Bear" }, animal: { ja: "クマ", en: "Bear" },
+    pun: { ja: "「ダブルチェック」＋クマ", en: "“teddy bear” + tests — gets testy without them" },
+    phrase: { ja: "テストが先、話はそれから", en: "Tests first, talk later" },
+    catch: { ja: "AIに書かせるほど、テストを厚くする", en: "The more AI writes, the thicker the tests get" },
+    body: {
+      ja: "細かいところをちゃんと見ている人です。AIに書かせるほど、テストも型も lint も CI も厚くしてきた。手順を固めて、二重に確かめる。「だいたい動いてる」で終わらせない誠実さがあるから、あなたのコードはみんなから信頼されています。",
+      en: "You notice the details. The more AI writes, the more you've thickened tests, types, lint, and CI. You fix the process and check twice. You never settle for “mostly works,” which is why everyone trusts your code.",
+    },
+    aruaru: {
+      ja: ["実装より先に、AIにテストを書かせる", "pre-commit フックがやたら充実している", "「テスト通りました」の報告を、自分でもう一回走らせる"],
+      en: ["You have AI write the tests before the implementation", "Your pre-commit hooks are suspiciously thorough", "When AI says “tests pass,” you run them again yourself"],
+    },
+    care: {
+      ja: "守りが固いぶん、全部を自分で確かめたくなりがち。機械で確かめられることは機械に任せて、あなたは判断だけに時間を使ってください。",
+      en: "Your defense is so strong you want to check everything yourself. Let machines check what machines can, and spend your time on judgment calls.",
+    },
+    push: { ja: "あなたが確かめてくれたから、今日も誰かが安心してマージできました。", en: "Because you checked, someone merged with confidence today." },
+    prompts: {
+      ja: ["実装の前に、この仕様の受け入れ条件をテストとして書いて。実装はまだしないで。", "このテスト、実装が壊れていても通ってしまうケースはある？ あれば、ちゃんと落ちるように直して。", "この変更で、テストで確かめられることと、人が画面で見ないと確かめられないことを分けて。", "この関数の境界値と異常系を全部挙げて、まだテストがないものに印を付けて。", "コードは変えずに、今あるテストが何を保証していて、何を保証していないかを説明して。", "CI で遅い・よく落ちるジョブを、効果と手間の順に並べて改善案を出して。"],
+      en: ["Before implementing, write this spec's acceptance criteria as tests. Don't implement yet.", "Could these tests pass even if the implementation were broken? If so, make them fail properly.", "Split what this change can verify with tests from what a human has to check on screen.", "List every boundary value and error case for this function, and mark the ones without tests.", "Without changing code, explain what the current tests guarantee and what they don't.", "Rank the slow or flaky CI jobs by payoff and effort, and suggest fixes."],
+    },
+    match: ["fire-pioneer", { ja: "「まずやってみよう」の背中を押してくれる", en: "Nudges you to just try it" }],
+  },
+  "earth-flex": {
+    trait: { ja: "AIにAIを|見張らせる", en: "Has an AI watch the AI" },
+    name: { ja: "タシカニ", en: "Claws-Check" }, animal: { ja: "カニ", en: "Crab" },
+    pun: { ja: "「たしかに」＋カニ", en: "“cross-check” + claws — one AI writes, the other claw reviews" },
+    phrase: { ja: "セカンドオピニオン必須", en: "Second opinion required" },
+    catch: { ja: "書くAIと、見るAIを分ける", en: "One AI writes, another AI reviews" },
+    body: {
+      ja: "ひとつの答えに飛びつかない人です。書かせたAIとは別のAIにレビューさせて、両方のハサミで挟んで、意見が重なったところで「たしかに」と言う。かたよらない見方ができるから、技術選定で迷っている人の相談相手にもなりやすいはず。",
+      en: "You never jump at the first answer. You have a different AI review what one AI wrote, pinch it from both claws, and only say “good point” where they agree. That balanced view makes you the person people ask when they're stuck choosing tech.",
+    },
+    aruaru: {
+      ja: ["書いたAIとは別のAIにレビューさせる", "モデル同士の意見が割れると、むしろワクワクする", "「セカンドオピニオンも聞いた？」が口ぐせ"],
+      en: ["You have a different AI review what one AI wrote", "When models disagree, you get excited", "“Did you get a second opinion?” is your catchphrase"],
+    },
+    care: {
+      ja: "比べるのが上手なぶん、最後の「決める」を後回しにしがち。決め手に欠けるときは、自分の直感に一票を入れてあげてください。",
+      en: "You're so good at comparing that deciding gets postponed. When nothing stands out, give your gut the deciding vote.",
+    },
+    push: { ja: "いろんな見方を持てるあなたは、それだけでチームの視野を広げています。", en: "Just by seeing many angles, you widen the whole team's view." },
+    prompts: {
+      ja: ["あなたは別の人が書いたこのコードの、きびしいレビュアーです。マージを止める理由を探して。", "2つの案を「性能・保守しやすさ・リスク・やり直しやすさ」の表で比べて。最後に1つ選んで、理由も。", "この設計に反対する立場で、いちばん強い反論を書いて。", "この結論が間違っているとしたら、どの前提が崩れたとき？", "このPRで、レビュアーが見落としやすい箇所を3つ挙げて、そこだけ重点的に見て。", "ここまでの議論を「決まったこと・決まっていないこと・誰かが決めないといけないこと」に分けて。"],
+      en: ["You're a strict reviewer of code someone else wrote. Find reasons to block this merge.", "Compare the two options in a table: performance, maintainability, risk, reversibility. Then pick one and say why.", "Argue against this design. Give me the strongest objection.", "If this conclusion is wrong, which assumption broke?", "Name three places in this PR reviewers tend to miss, and review just those closely.", "Sort this discussion into: decided, undecided, and needs someone to decide."],
+    },
+    match: ["water-steady", { ja: "比べ疲れたときに、ほっとさせてくれる", en: "Lets you breathe when comparing wears you out" }],
+  },
+  "air-pioneer": {
+    trait: { ja: "作りかけが|10個ある", en: "Ten half-built projects" },
+    name: { ja: "ツクルダゾウ", en: "Elephantasy" }, animal: { ja: "ゾウ", en: "Elephant" },
+    pun: { ja: "「作るんだぞう」＋ゾウ", en: "“fantasy” + elephant — dreams it up, then builds it" },
+    phrase: { ja: "作りかけ、10個あります", en: "I have ten half-built projects" },
+    catch: { ja: "思いついたら、その場でプロトタイプ", en: "Has an idea, builds a prototype on the spot" },
+    body: {
+      ja: "アイデアが湧いてくる人です。「これAIで作れるんじゃない？」と思ったら、もう手が動いている。新しいモデルが出るたびに「これなら作れるぞう」と次が浮かんで、気づいたら最初と全然ちがうものを作っている。それを楽しめるのは才能です。",
+      en: "Ideas just keep coming. The moment you think “could AI build this?”, your hands are already moving. Every new model sparks “now I can build that!”, and soon you're making something completely different. Enjoying that is a gift.",
+    },
+    aruaru: {
+      ja: ["週末ごとに、作りかけのリポジトリが増える", "「これAIで作れるんじゃない？」が口ぐせ", "作るより、思いつくほうが速い"],
+      en: ["Every weekend adds another half-built repo", "“Couldn't AI build this?” is your catchphrase", "You come up with ideas faster than you build them"],
+    },
+    care: {
+      ja: "広げるのが楽しいぶん、完成しない箱が増えていきがち。どれかひとつだけ、人に使ってもらうところまで持っていってみてください。",
+      en: "Expanding is so fun that unfinished boxes pile up. Take just one of them all the way to someone actually using it.",
+    },
+    push: { ja: "あなたのひらめきは、誰かの明日をちょっと楽しくしています。", en: "Your ideas make someone's tomorrow a little more fun." },
+    prompts: {
+      ja: ["このアイデアを1日で作るなら、いちばん小さい形はなに？ 削るものから先に挙げて。", "作る前に、これを使う人が困っている場面を3つ、具体的に書いて。", "このプロトタイプを人に触ってもらうとき、何が起きたら「当たり」と言える？", "似たものがすでにあるか調べて。あるなら、何が違えば作る意味がある？", "アイデアは増やさないで。いま一番深くすべき1点を選んで、そこだけ詰めて。", "作りかけのこのリポジトリを、READMEだけ読んだ人が動かせる状態にするには、何が足りない？"],
+      en: ["If I built this idea in one day, what's the smallest version? List what to cut first.", "Before building, describe three concrete moments where the user of this is stuck.", "When someone tries this prototype, what would have to happen for it to count as a hit?", "Check if something similar already exists. If it does, what would make ours worth building?", "Don't add ideas. Pick the one point that needs depth most and dig into only that.", "What's missing for someone who reads only the README to run this half-built repo?"],
+    },
+    match: ["fire-steady", { ja: "ふくらんだアイデアを、ちゃんと形にしてくれる", en: "Turns your big ideas into real things" }],
+  },
+  "air-steady": {
+    trait: { ja: "1行も書かずに|終わる日がある", en: "Some days, zero lines of code" },
+    name: { ja: "ソレイルカ", en: "Dolphinitely Not" }, animal: { ja: "イルカ", en: "Dolphin" },
+    pun: { ja: "「それ要るか？」＋イルカ", en: "“definitely not” + dolphin — do we really need that?" },
+    phrase: { ja: "まずプランを出して", en: "Show me the plan first" },
+    catch: { ja: "コードを書く前に、AIと設計を詰める", en: "Nails down the design with AI before any code" },
+    body: {
+      ja: "考えることを大事にしている人です。いきなり実装させないで、AIと何往復もして設計を詰める。そのたびに「それ、要るか？」と削っていく。ゆっくりに見えるけど、手戻りが少ないぶん、結局いちばん速く着く人です。",
+      en: "You value thinking. Instead of jumping into code, you go back and forth with AI to nail down the design, asking “do we even need that?” at every step. It looks slow, but with so little rework you usually arrive first.",
+    },
+    aruaru: {
+      ja: ["1行もコードを書かずに終わるセッションがある", "「先にプランを出して」が口ぐせ", "設計メモを読み返して「いいこと書いてる」と思う"],
+      en: ["Some sessions end without a single line of code", "“Show me the plan first” is your catchphrase", "Rereading your design notes, you think “this is good stuff”"],
+    },
+    care: {
+      ja: "考える時間が気持ちよくて、動かすタイミングを逃すことも。7割見えたら一度動かしてみると、設計の穴が早く見つかります。",
+      en: "Thinking feels so good you can miss the moment to run something. Once you see 70%, try it—holes in the design show up faster.",
+    },
+    push: { ja: "あなたが丁寧に詰めた設計は、チームの迷子を減らしています。", en: "Your careful designs keep the team from getting lost." },
+    prompts: {
+      ja: ["コードを書く前にプランを出して。触るファイル、変更の順番、確かめ方、私に決めてほしいことを分けて。", "この設計で、半年後にいちばん後悔しそうな決定はどれ？", "この機能のうち、なくても困らないものはどれ？ 削った場合に失うものも書いて。", "この仕様で、まだ決まっていないのに、実装のときに勝手に決めてしまいそうな点を挙げて。", "この設計を初めて読む人に3分で説明して。説明しにくいところがあれば、そこが弱点として教えて。", "ここまでの議論を「決定・背景・検討した他の案・結果」の形の設計記録にまとめて。"],
+      en: ["Show me a plan before writing code: files to touch, order of changes, how to verify, and what you need me to decide.", "Which decision in this design are we most likely to regret in six months?", "Which parts of this feature could we drop without anyone missing them? Say what we'd lose.", "List what this spec hasn't decided yet that you'd end up deciding silently during implementation.", "Explain this design to a newcomer in three minutes. Anything hard to explain is a weak spot—tell me.", "Write this discussion up as a design record: decision, context, alternatives considered, consequences."],
+    },
+    match: ["fire-flex", { ja: "考えたことを、軽やかに動かすきっかけをくれる", en: "Gives your thinking a light push into motion" }],
+  },
+  "air-flex": {
+    trait: { ja: "「で、出典は？」|が口ぐせ", en: "“Source?” is a reflex" },
+    name: { ja: "ネホリハホリス", en: "Squirrel Away" }, animal: { ja: "リス", en: "Squirrel" },
+    pun: { ja: "「根掘り葉掘り」＋リス", en: "“squirrel away” — stashes every source for later" },
+    phrase: { ja: "で、出典は？", en: "So, what's the source?" },
+    catch: { ja: "調べものはエージェントに、つなぐのは自分で", en: "Agents do the digging, you connect the dots" },
+    body: {
+      ja: "いろんなところからヒントを拾ってこられる人です。調べものは調査用のエージェントに、比較は別のモデルに、実例は Issue や他人のリポジトリから。根掘り葉掘り集めたものを、ちゃんとつなげてひとつの設計にできるんですよね。",
+      en: "You find clues everywhere. Research goes to a research agent, comparisons to another model, real examples from issues and other people's repos. You dig into every detail, then connect it all into one design.",
+    },
+    aruaru: {
+      ja: ["調べものを、複数のエージェントに並列で投げる", "エラー画面のスクショを、別のAIに貼って相談する", "メモアプリが、AIの出力の切れ端で埋まっている"],
+      en: ["You send research to several agents in parallel", "You paste error screenshots into a different AI for a second take", "Your notes app is full of AI output scraps"],
+    },
+    care: {
+      ja: "集めるのが上手なぶん、自分の意見がどれだったか分からなくなる日も。集めたあとに一回、「で、私はどうしたい？」を自分に聞いてあげてください。",
+      en: "You collect so well that your own opinion gets lost. After gathering, ask yourself once: “So what do I want to do?”",
+    },
+    push: { ja: "あなたが拾ってつないだものは、ちゃんと新しい何かになっています。", en: "What you gather and connect really does become something new." },
+    prompts: {
+      ja: ["この技術選定について、公式ドキュメント・Issue・実際の採用例から、出典つきで賛否をまとめて。", "集めた情報の中で、互いに食い違っているところだけを抜き出して。", "この情報はいつ時点のもの？ 古くなっていそうなものに印を付けて。", "調べた結果のうち、このプロジェクトに関係ある話だけを3つに絞って。", "全部まとめると、結局どうするのがいい？ 結論を1行、根拠を1行で。", "この分野に詳しい人なら、どこから調べる？ その順番で調べて。"],
+      en: ["Summarize the case for and against this tech choice from official docs, issues, and real adopters, with sources.", "From everything gathered, pull out only the points that contradict each other.", "How current is this information? Mark anything likely outdated.", "Narrow the findings to the three that actually matter for this project.", "Putting it all together, what should we do? One line of conclusion, one line of reasoning.", "Where would an expert in this area start looking? Research in that order."],
+    },
+    match: ["earth-pioneer", { ja: "拾ってきたものの「本当」を一緒に見てくれる", en: "Helps you check if what you found is true" }],
+  },
+  "water-pioneer": {
+    trait: { ja: "推しモデルがいる", en: "Has a favorite model" },
+    name: { ja: "モデルカエル", en: "Leapfrog" }, animal: { ja: "カエル", en: "Frog" },
+    pun: { ja: "「モデル変える」＋カエル", en: "“leapfrog” — hops from model to model" },
+    phrase: { ja: "モデルは人柄で選ぶ", en: "I pick models by personality" },
+    catch: { ja: "モデルごとの「人柄」を味わって、乗り換える", en: "Savors each model's personality, then hops to the next" },
+    body: {
+      ja: "モデルごとの「話し方」のちがいに気づける人です。こっちは慎重、こっちはちょっと強気。新しいモデルが出たら、まずは話しかけて人柄をたしかめ、その日の仕事に合う相棒にぴょんと乗り換える。小さな変化にも気づけるのが、あなたの魅力です。",
+      en: "You notice how each model talks. This one's careful, that one's a bit bold. When a new model ships, you chat with it first to get a feel, then hop over to whichever partner suits the day's work. Catching small changes is your charm.",
+    },
+    aruaru: {
+      ja: ["モデルによって、話しかける口調が変わる", "新しいモデルの第一印象を、すぐ人に話したくなる", "返事がそっけないと、ちょっとさみしい"],
+      en: ["Your tone changes depending on the model", "You can't wait to tell people your first impression of a new model", "A curt reply makes you a little sad"],
+    },
+    care: {
+      ja: "話しやすいモデルは、こちらに同意しがちです。大事な判断のときは、いちばんきびしいモードで聞いてみてください。",
+      en: "Friendly models tend to agree with you. For big decisions, ask in the strictest mode you can.",
+    },
+    push: { ja: "あなたのやわらかい感覚は、AIとの付き合い方をもっと楽しくしてくれます。", en: "Your gentle sense makes working with AI more fun for everyone." },
+    prompts: {
+      ja: ["遠慮なしで。この方針のいちばんまずいところを、言いにくいことから先に教えて。", "あなたが私のテックリードなら、このPRをどう差し戻す？", "私の説明であいまいなところを質問して。質問が全部終わるまで、実装しないで。", "私に同意しないといけないとしたら、どこがいちばん苦しい？", "1年後の私が読むと思って、意図が伝わらないところを直して。", "やさしさ抜きで、事実と根拠だけで答えて。"],
+      en: ["No holding back. Tell me the worst part of this approach, starting with what's hardest to say.", "If you were my tech lead, how would you send this PR back?", "Ask me about anything vague in my explanation. Don't implement until you're out of questions.", "If you had to agree with me, which part would be hardest to swallow?", "Imagine me reading this a year from now. Fix anything whose intent wouldn't come across.", "Skip the kindness. Answer with facts and evidence only."],
+    },
+    match: ["earth-flex", { ja: "気分で選んだ答えを、そっと比べてくれる", en: "Gently double-checks the answers you chose by feel" }],
+  },
+  "water-steady": {
+    trait: { ja: "AIに毎回|お礼を言う", en: "Thanks the AI every time" },
+    name: { ja: "アリガトウ", en: "Grantitude" }, animal: { ja: "アリ", en: "Ant" },
+    pun: { ja: "「ありがとう」＋アリ", en: "“gratitude” + ant — says thank you every time" },
+    phrase: { ja: "ありがとうは毎回言う", en: "I say thank you every time" },
+    catch: { ja: "いつものAIと、しゃべりながらペアプロ", en: "Pair-programs with the same AI, chatting all the way" },
+    body: {
+      ja: "AIと「話す」のがほんとうに上手な人です。いきなり「実装して」と言わずに、いま何に困っていてどうしたいのかから話し始める。同じ相棒と毎日コツコツ、最後は「ありがとう」。それでちゃんと意図どおりのコードを引き出せているんですよね。",
+      en: "You're genuinely good at talking with AI. Instead of “implement this,” you start with what's bothering you and what you want. Same partner, day after day, ending with “thank you.” And it works—you get exactly the code you meant.",
+    },
+    aruaru: {
+      ja: ["AIに「ありがとう」を毎回言う", "実装を頼む前に、状況を長々と説明する", "AIに褒められると、ふつうにうれしい"],
+      en: ["You thank the AI every single time", "You explain the whole situation before asking for code", "Getting praised by AI honestly makes you happy"],
+    },
+    care: {
+      ja: "居心地がいいぶん、AIの「いいですね！」に乗りたくなる日も。大事な判断の前だけは、一回「それ、ほんと？」と聞いてみてください。",
+      en: "It's so comfortable that you may ride along with the AI's “Great idea!” Before a big decision, ask once: “Is that really true?”",
+    },
+    push: { ja: "最近、ちゃんと休めていますか。あなたが楽しく書いたコードは、ちゃんと誰かの役に立っています。", en: "Have you been resting lately? Code you enjoyed writing is helping someone." },
+    prompts: {
+      ja: ["私が見落としてそうなこと、1つだけ教えて。", "進める前に、あなたが分かっていないことと、私に確認したいことを全部聞いて。", "このコードを私の説明なしで読んだら、どう理解する？ 私の意図とずれていたら教えて。", "ここまでで決めたことを、次のセッションの自分に渡すメモにして。", "それ、ほんと？ 根拠になるコードの場所か、ドキュメントを示して。", "今日の作業で、うまくいった頼み方と、うまくいかなかった頼み方を1つずつ教えて。"],
+      en: ["Tell me just one thing I'm probably overlooking.", "Before moving on, ask me everything you don't understand or want to confirm.", "If you read this code without my explanation, how would you understand it? Tell me where that differs from what I meant.", "Write what we've decided so far as a note to hand to myself in the next session.", "Is that really true? Show me the code location or doc that backs it up.", "From today's work, give me one way of asking that worked and one that didn't."],
+    },
+    match: ["earth-flex", { ja: "「それ、ほんと？」を代わりに言ってくれる", en: "Says “is that really true?” for you" }],
+  },
+  "water-flex": {
+    trait: { ja: "疲れた日は|一行プロンプト", en: "One-line prompts when tired" },
+    name: { ja: "オマカセミ", en: "Seize-ada" }, animal: { ja: "セミ", en: "Cicada" },
+    pun: { ja: "「おまかせ」＋セミ", en: "“seize the day” + cicada — picks a partner by today's mood" },
+    phrase: { ja: "今日は一行プロンプト", en: "One-line prompts today" },
+    catch: { ja: "その日の調子で、相棒を選んでおまかせ", en: "Picks a partner by today's mood and leaves it to them" },
+    body: {
+      ja: "自分の調子に正直な人です。乗っている日はテンポのいいモデル、疲れている日は丁寧に説明してくれるモデル。相手を見て、任せられるところはおまかせする。自分を労わりながら進める方法を知っているのは、思っているよりずっと大事な力です。",
+      en: "You're honest about your own energy. Snappy model on good days, patient explainer on tired ones. You read your partner and hand off what you can. Knowing how to move forward while taking care of yourself matters more than you think.",
+    },
+    aruaru: {
+      ja: ["疲れている日は、プロンプトが一行になる", "詰まったら、モデルを変えて気分転換する", "AIに説明しているうちに、自分でバグに気づいたことがある"],
+      en: ["On tired days, your prompts shrink to one line", "When stuck, you switch models to reset your mood", "You've found a bug yourself while explaining it to AI"],
+    },
+    care: {
+      ja: "しんどい日ほど、つい「全部やって」と投げたくなります。そういう日こそ、小さく区切って任せてあげてください。",
+      en: "On rough days it's tempting to say “just do all of it.” Those are exactly the days to hand things off in small pieces.",
+    },
+    push: { ja: "自分の機嫌を自分で取れるあなたは、それだけでチームにもやさしくなれる人です。", en: "Because you look after your own mood, you're kinder to your team too." },
+    prompts: {
+      ja: ["いま詰まっている状況を、「分かっていること・試したこと・まだ試していないこと」に整理して。", "このタスクを、今日の残り時間で終わる大きさに切って。最初の一歩だけやって。", "私が説明するのを聞いていて。途中でおかしいところがあったら、そこで止めて。", "いまの作業を安全に中断するなら、どこで区切って、何をメモしておけばいい？", "私が本当に困っているのは、どこだと思う？ 症状じゃなくて原因で。", "疲れている前提で。今日やらなくていいことを先に挙げて。"],
+      en: ["Organize where I'm stuck into: what we know, what I've tried, what I haven't tried yet.", "Cut this task down to what fits in the rest of today. Do only the first step.", "Just listen while I explain. Stop me the moment something sounds off.", "If I pause this safely now, where should I cut, and what should I note down?", "What do you think I'm actually stuck on? The cause, not the symptom.", "Assume I'm tired. Start by listing what doesn't need to happen today."],
+    },
+    match: ["air-steady", { ja: "考えを言葉にして整理する手伝いをしてくれる", en: "Helps you put your thoughts into words" }],
+  },
+};
+
+/* ---------- 日替わりのひとこと（属性ごと7つ） ---------- */
+const DAILY = {
+  fire: [
+    { ja: "今日は、小さく出すほどうまくいく日。", en: "Today, the smaller you ship, the better it goes." },
+    { ja: "思いついたら即試す、が今日はちゃんと当たる日です。", en: "Trying things the moment you think of them pays off today." },
+    { ja: "書いた量より、消せたコードの量を数えてみて。", en: "Count the code you deleted, not the code you wrote." },
+    { ja: "マージ前の5分が、今日のラッキータイム。", en: "The five minutes before merging are your lucky time today." },
+    { ja: "小さな近道がひとつ見つかりそう。見つけたら、チームにも分けてあげて。", en: "You'll likely find a small shortcut. Share it with the team." },
+    { ja: "急いでいるときほど、エラーメッセージを最後まで読むといい日。", en: "The more rushed you are, the more it pays to read the whole error message." },
+    { ja: "今日は「終わらせる」より「区切る」がうまくいく日です。", en: "Today, stopping at a clean break beats pushing to the finish." },
+  ],
+  earth: [
+    { ja: "今日は、書いたテストがちゃんと報われる日です。", en: "Today, the tests you wrote finally pay off." },
+    { ja: "完璧じゃなくても、出してみたら喜ばれる日。", en: "Even if it's not perfect, people will be glad you shipped it." },
+    { ja: "差分に感じた小さな違和感、今日は当たりです。", en: "That small itch you felt in the diff? It's right today." },
+    { ja: "ひとつだけ「まあいいか」を許すと、肩が軽くなりそう。", en: "Let one “eh, good enough” slide and your shoulders will thank you." },
+    { ja: "誰かの「それ本当？」に、あなたが答えてあげられる日。", en: "You'll be the one who answers someone's “is that true?” today." },
+    { ja: "機械で確かめられることを、ひとつ機械に渡すといい日。", en: "Hand one thing a machine can check over to a machine today." },
+    { ja: "今日の違和感はメモしておいて。明日のあなたが助かります。", en: "Jot down today's hunches. Tomorrow-you will be grateful." },
+  ],
+  air: [
+    { ja: "今日は、寄り道からいちばんいい設計が出る日です。", en: "Today, your best design comes from a detour." },
+    { ja: "ひとつに絞る勇気が、今日のラッキーアクション。", en: "The courage to pick just one is today's lucky move." },
+    { ja: "雑談の中に、大事なヒントが隠れていそう。", en: "An important hint is hiding in small talk today." },
+    { ja: "考えた設計を誰かに3分で話すと、穴が見つかる日。", en: "Explain your design to someone in three minutes and the holes will show." },
+    { ja: "昔の作りかけのリポジトリを開くと、いいことが起きそう。", en: "Open an old half-built repo—something good might happen." },
+    { ja: "今日のアイデアは、紙に一行で書けたら本物です。", en: "If today's idea fits in one line on paper, it's real." },
+    { ja: "迷ったら、いちばん消しやすい案を選ぶといい日。", en: "When in doubt today, pick the option that's easiest to undo." },
+  ],
+  water: [
+    { ja: "最近、ちゃんと休めていますか。今日は早めにターミナルを閉じてもいい日です。", en: "Have you been resting? It's fine to close the terminal early today." },
+    { ja: "今日は、あなたの説明の丁寧さがちゃんと伝わる日。", en: "Today, the care you put into explaining really comes across." },
+    { ja: "声に出して説明するだけで、半分は解決する日です。", en: "Just explaining it out loud solves half the problem today." },
+    { ja: "誰かの詰まりを聞いてあげると、自分のバグも解けそう。", en: "Listen to someone else's blocker and your own bug may untangle." },
+    { ja: "気分が乗らない日は、乗らないなりの小さなタスクを。", en: "Not feeling it? Pick a small task that fits the mood." },
+    { ja: "今日は、いつもの相棒に新しい頼み方をしてみるといい日。", en: "Try asking your usual partner in a new way today." },
+    { ja: "ひとりで抱えていることを、ひとつだけ誰かに話してみて。", en: "Share just one thing you've been carrying alone." },
+  ],
+};
+
+/* ---------- 設問：e は何をAIに求めるか（4択）、s は付き合い方（3択）。交互に並べる ---------- */
+const QUESTIONS = [
+  { kind: "e", q: { ja: "AIが書いたコードがテストで落ちた。まずどうする？", en: "AI-written code fails the tests. What do you do first?" }, o: [
+    [{ ja: "ログを貼って「直して」と投げる", en: "Paste the log and say “fix it”" }, "fire"],
+    [{ ja: "自分で差分を読んで原因を探す", en: "Read the diff yourself to find the cause" }, "earth"],
+    [{ ja: "そもそも設計がまずかったか考え直す", en: "Rethink whether the design was wrong" }, "air"],
+    [{ ja: "「何が起きてると思う？」と一緒に追う", en: "Ask “what do you think is happening?” and dig in together" }, "water"]] },
+  { kind: "s", q: { ja: "新しいモデルが出た。どうする？", en: "A new model just dropped. What do you do?" }, o: [
+    [{ ja: "その日のうちに手元のタスクで試す", en: "Try it on real work the same day" }, "pioneer"],
+    [{ ja: "いまの設定がなじんでいるので様子見", en: "Wait and see—your current setup fits well" }, "steady"],
+    [{ ja: "得意なことを見て、役割を振り分ける", en: "See what it's good at and assign it a role" }, "flex"]] },
+  { kind: "e", q: { ja: "AIにいちばん任せていることは？", en: "What do you rely on AI for most?" }, o: [
+    [{ ja: "ペアプロの相手", en: "A pair-programming partner" }, "water"],
+    [{ ja: "実装まるごと", en: "Entire implementations" }, "fire"],
+    [{ ja: "設計の壁打ちと調査", en: "Design sparring and research" }, "air"],
+    [{ ja: "テストとレビュー", en: "Tests and reviews" }, "earth"]] },
+  { kind: "s", q: { ja: "CLAUDE.md や rules ファイル、どうしてる？", en: "How do you handle CLAUDE.md or rules files?" }, o: [
+    [{ ja: "毎日育てている。うちの子", en: "Tend it daily. It's my baby" }, "steady"],
+    [{ ja: "プロジェクトやツールごとに書き分けている", en: "Write different ones per project or tool" }, "flex"],
+    [{ ja: "書くけど、すぐ次のツールに移る", en: "Write one, then move on to the next tool" }, "pioneer"]] },
+  { kind: "e", q: { ja: "AIの出力で、いちばんうれしいのは？", en: "What AI output makes you happiest?" }, o: [
+    [{ ja: "テストまで書いてきたとき", en: "When it writes the tests too" }, "earth"],
+    [{ ja: "思いつかなかった設計案が出たとき", en: "When it suggests a design I hadn't thought of" }, "air"],
+    [{ ja: "一発で動いたとき", en: "When it works on the first try" }, "fire"],
+    [{ ja: "こっちの意図を汲んでくれたとき", en: "When it gets what I meant" }, "water"]] },
+  { kind: "s", q: { ja: "同時に動かしているエージェントやセッションの数は？", en: "How many agents or sessions do you run at once?" }, o: [
+    [{ ja: "2〜5個を並列で", en: "Two to five, in parallel" }, "flex"],
+    [{ ja: "新しいのを試していて、数えられない", en: "Too many new ones to count" }, "pioneer"],
+    [{ ja: "1つに集中", en: "Just one, focused" }, "steady"]] },
+  { kind: "e", q: { ja: "AIへの最初の一言は？", en: "Your first words to the AI?" }, o: [
+    [{ ja: "「どう設計するのがいいと思う？」", en: "“How would you design this?”" }, "air"],
+    [{ ja: "「ちょっと相談なんだけど」", en: "“Can I run something by you?”" }, "water"],
+    [{ ja: "「これ実装して」", en: "“Implement this.”" }, "fire"],
+    [{ ja: "「このコードの問題点は？」", en: "“What's wrong with this code?”" }, "earth"]] },
+  { kind: "s", q: { ja: "よく使うプロンプト、どうしてる？", en: "What about prompts you use often?" }, o: [
+    [{ ja: "コマンドやテンプレートにしてある", en: "Saved as commands or templates" }, "steady"],
+    [{ ja: "毎回いろいろ書き方を試す", en: "Try new phrasings every time" }, "pioneer"],
+    [{ ja: "モデルに合わせて書き分ける", en: "Tailor them to each model" }, "flex"]] },
+  { kind: "e", q: { ja: "AIが「完了しました」と言ったら？", en: "The AI says “Done!” Then what?" }, o: [
+    [{ ja: "次のタスクを投げる", en: "Hand it the next task" }, "fire"],
+    [{ ja: "「ありがとう！」と返す", en: "Reply “Thank you!”" }, "water"],
+    [{ ja: "テストと差分を自分で見るまで信じない", en: "Don't believe it until I've checked tests and diff" }, "earth"],
+    [{ ja: "全体の作りとして正しいか見直す", en: "Review whether the overall structure is right" }, "air"]] },
+  { kind: "s", q: { ja: "同僚に「どのAIツールがいい？」と聞かれたら？", en: "A coworker asks which AI tool is best. You say…" }, o: [
+    [{ ja: "「何を作るの？」と聞き返す", en: "“What are you building?”" }, "flex"],
+    [{ ja: "自分の設定ごと共有する", en: "Share my whole setup" }, "steady"],
+    [{ ja: "先週出たやつを熱く語る", en: "Rave about the one that came out last week" }, "pioneer"]] },
+  { kind: "e", q: { ja: "夜中にAIを開くとしたら？", en: "If you open AI in the middle of the night, it's to…" }, o: [
+    [{ ja: "おしゃべりしながら、だらだらリファクタ", en: "Chat and lazily refactor" }, "water"],
+    [{ ja: "気になっていたバグを追う", en: "Chase that bug that's been bugging me" }, "earth"],
+    [{ ja: "明日のタスクを前倒しで片づける", en: "Knock out tomorrow's tasks early" }, "fire"],
+    [{ ja: "思いついたアプリやツールを作りはじめる", en: "Start building an app or tool I just thought of" }, "air"]] },
+  { kind: "s", q: { ja: "AIとの付き合い方、自分でいうと？", en: "How would you describe your relationship with AI?" }, o: [
+    [{ ja: "新しいやり方を見つけるのが好き", en: "I love finding new ways" }, "pioneer"],
+    [{ ja: "道具を組み合わせるのが好き", en: "I love combining tools" }, "flex"],
+    [{ ja: "自分の環境を磨くのが好き", en: "I love polishing my setup" }, "steady"]] },
+];
+
+/* ---------- 画面の文言 ---------- */
+const UI = {
+  ja: {
+    title: "AI開発どうぶつ診断", kicker: "AI DEV ANIMAL QUIZ",
+    lead: "12の質問で、あなたのAIとの付き合い方が12匹のどうぶつのどれかにわかります。診断のあとは、毎日ひらくたびに、あなたのタイプに効くひとことと、明日の開発でそのまま使えるプロンプトが入れ替わります。Slackで毎朝受け取ることもできます。",
+    castTitle: "登場する12匹", fromFriend: (n) => `シェアしてくれた人は「${n}」でした。あなたはどの子？`, start: "診断する", minutes: "12問・約2分",
+    back: "もどる", qLabel: "質問",
+    loading: "診断しています", loadingSub: "12匹のなかから、あなたを探しています",
+    youAre: "あなたは", welcome: "おかえりなさい。あなたは",
+    phrase: "口ぐせ", quote: (s) => `「${s}」`,
+    whyTitle: "この結果になった理由", whyKicker: "WHY THIS RESULT",
+    whyAxisE: "AIに何を求めているか", whyAxisS: "AIとどう付き合っているか",
+    whySummary: (n1, e, n2, s, name) => `6問中${n1}問で「${e}」、6問中${n2}問で「${s}」寄りの答えを選びました。この組み合わせが「${name}」です。`,
+    tie: "同点だったので、あとから選んだ答えのほうを優先しています。",
+    keyAnswers: "決め手になった答え",
+    runnerUp: (name, e) => `次に近いのは「${name}」。「${e}」寄りの答えも多めでした。`,
+    noAnswers: "前回の答えが残っていないので、理由は表示できません。もう一度診断すると表示されます。",
+    todayKicker: "TODAY'S MESSAGE", todayTitle: "今日のあなたへ",
+    openToday: "今日のひとことをひらく", todayWaiting: (name) => `${name}のあなたに、今日のひとことが届いています`,
+    streak: (n) => `${n}日連続`, luckyPrompt: "今日のラッキープロンプト", copy: "コピーする", copied: "コピーしました", selected: "選択しました。そのままコピーしてください",
+    slackButton: "Slackで毎朝受け取る",
+    slackNote: "押すとリマインダーの一文がコピーされます。Slackのどこかに貼って送信すると、平日の朝9時にこのページのリンクが届きます。",
+    slackCommand: (url) => `/remind me "今日のAI開発どうぶつ診断：ひとこととプロンプトが入れ替わりました ${url}" every weekday at 9am`,
+    slackCopied: "コピーしました。Slackに貼って送信してください",
+    newsLabel: "今日のAIニュース", newsWhy: "あなたが好きそうな理由：", cheerLabel: "今日のエール",
+    tomorrow: "ひとこととプロンプトは毎日かわります。ブックマークしておくと、明日もすぐ見られます。",
+    aboutKicker: "ABOUT YOU", aboutTitle: (name) => `${name}は、こんな人`, strength: "得意なこと", style: "AIとの付き合い方", team: "チームでのあなた", aruaru: "あるある",
+    careKicker: "A LITTLE ADVICE", careTitle: "ちょっとだけ、気をつけたいこと",
+    matchKicker: "GOOD MATCH", matchTitle: "相性のいいどうぶつ",
+    profileKicker: "FILE", backCover: "表紙にもどる", seeMine: "自分の結果を見る", backResult: "自分の結果にもどる", mine: "あなたのタイプ",
+    castHint: "診断すると、12匹それぞれの詳しい紹介が見られます",
+    axesKicker: "TWO AXES", axesTitle: "この子の、ふたつの軸", axisE: "AIに求めること", axisS: "AIとの付き合い方",
+    axisELine: (s) => `AIには、まず「${s}」を求めるタイプ。`, axisSLine: (s) => `「${s}」付き合い方をするタイプ。`,
+    promptsTitle: (name) => `${name}に効くプロンプト`, promptsNote: "毎日のラッキープロンプトは、この6つから日替わりで届きます。",
+    friendsKicker: "ALL 12", friendsTitle: "12匹のなかま", friendsNote: "タップすると、詳しい説明ページが開きます。チームの人のタイプも聞いてみて。",
+    share: "シェアする", shareCopied: "シェア用の文をコピーしました。好きなところに貼ってください", shareFailed: "この画面ではシェアできませんでした", retry: "もう一度診断する",
+    shareText: (t, p) => `わたしは「${t.name.ja}」（${t.animal.ja}）でした\n口ぐせ「${t.phrase.ja}」\n\n今日のラッキープロンプト\n「${p}」\n\n#AI開発どうぶつ診断`,
+    dow: "日月火水木金土",
+  },
+  en: {
+    title: "AI Dev Animal Quiz", kicker: "AI開発どうぶつ診断",
+    lead: "Twelve questions reveal which of twelve animals matches the way you build with AI. Afterward, every time you come back you'll find a fresh message for your type and a prompt you can drop straight into tomorrow's work. You can also get it on Slack every morning.",
+    castTitle: "Meet the twelve", fromFriend: (n) => `Your friend is ${n}. Which one are you?`, start: "Take the quiz", minutes: "12 questions · about 2 min",
+    back: "Back", qLabel: "Question",
+    loading: "Reading your answers", loadingSub: "Finding you among the twelve",
+    youAre: "You are", welcome: "Welcome back. You are",
+    phrase: "Catchphrase:", quote: (s) => `“${s}”`,
+    whyTitle: "Why you got this result", whyKicker: "WHY THIS RESULT",
+    whyAxisE: "What you want from AI", whyAxisS: "How you work with AI",
+    whySummary: (n1, e, n2, s, name) => `You leaned “${e}” in ${n1} of 6 questions and “${s}” in ${n2} of 6. That combination is ${name}.`,
+    tie: "There was a tie, so your later answer took priority.",
+    keyAnswers: "Answers that decided it",
+    runnerUp: (name, e) => `Your runner-up is ${name}—you also picked quite a few “${e}” answers.`,
+    noAnswers: "Your previous answers weren't saved, so we can't show the reasons. Take the quiz again to see them.",
+    todayKicker: "TODAY'S MESSAGE", todayTitle: "For you, today",
+    openToday: "Open today's message", todayWaiting: (name) => `A message for ${name} has arrived`,
+    streak: (n) => `${n}-day streak`, luckyPrompt: "Today's lucky prompt", copy: "Copy", copied: "Copied", selected: "Selected—copy it from here",
+    slackButton: "Get it on Slack every morning",
+    slackNote: "Copies a reminder command. Paste it into any Slack message box and send—you'll get this page's link every weekday at 9am.",
+    slackCommand: (url) => `/remind me "Today's AI Dev Animal Quiz: a fresh message and prompt are waiting ${url}" every weekday at 9am`,
+    slackCopied: "Copied—paste it into Slack and send",
+    newsLabel: "Today's AI news", newsWhy: "Why you'll like it:", cheerLabel: "Today's cheer",
+    tomorrow: "The message and prompt change every day. Bookmark this page to come back tomorrow.",
+    aboutKicker: "ABOUT YOU", aboutTitle: (name) => `What ${name} is like`, strength: "Your strength", style: "How you work with AI", team: "On a team", aruaru: "So true",
+    careKicker: "A LITTLE ADVICE", careTitle: "One thing to watch for",
+    matchKicker: "GOOD MATCH", matchTitle: "Your best match",
+    profileKicker: "FILE", backCover: "Back to cover", seeMine: "See my result", backResult: "Back to my result", mine: "Your type",
+    castHint: "Take the quiz to unlock each animal's full profile",
+    axesKicker: "TWO AXES", axesTitle: "The two axes", axisE: "What it wants from AI", axisS: "How it works with AI",
+    axisELine: (s) => `Above all, wants AI to help ${s}.`, axisSLine: (s) => `Tends to ${s}.`,
+    promptsTitle: (name) => `Prompts that work for ${name}`, promptsNote: "Your daily lucky prompt rotates through these six.",
+    friendsKicker: "ALL 12", friendsTitle: "The whole crew", friendsNote: "Tap any animal to open its full profile. Ask your teammates which one they are.",
+    share: "Share", shareCopied: "Share text copied—paste it anywhere", shareFailed: "Sharing isn't available here", retry: "Take it again",
+    shareText: (t, p) => `I'm ${t.name.en} (the ${t.animal.en.toLowerCase()})!\nCatchphrase: “${t.phrase.en}”\n\nToday's lucky prompt:\n“${p}”\n\n#AIDevAnimalQuiz`,
+    dow: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  },
+};
+
+/* ---------- タイプの説明（得意なこと・AIとの付き合い方・チームでのあなた） ---------- */
+const EXTRA = {
+  "fire-pioneer": {
+    strength: { ja: "判断の速さです。新しい道具を「とりあえず」触って、半日で向き不向きを見切れる。考えるより先に手が動くので、机上の議論が長引いているときほど、あなたの「やってみたら、こうでした」が場を前に進めます。", en: "Speed of judgment. You poke at a new tool “just to see” and know within half a day whether it fits. Your hands move before the debate ends, so when a discussion drags, your “I tried it, here's what happened” moves everyone forward." },
+    style: { ja: "AIには「まず動くもの」を求めています。細かい指示より、雑でもいいから一回出してもらって、そこから直す。モデルの更新情報にも敏感で、いま一番速く着くやり方を常に探しています。", en: "You want AI to give you something that runs, first. Rough is fine—get a version out, then fix it. You track model updates closely and are always hunting for the fastest way to get there." },
+    team: { ja: "チームの「斥候」です。新しいモデルやツールを最初に試して、使えるかどうかを持ち帰ってくる。あなたの試した記録が、ほかの人の時間を何日ぶんも浮かせています。", en: "You're the team's scout. You try new models and tools first and report back whether they're worth it. Your experiments save everyone else days of time." },
+  },
+  "fire-steady": {
+    strength: { ja: "積み上げる力です。一回うまくいったやり方を、次から誰でも再現できる形にして残す。毎日の小さな改善が複利で効いて、気づけば誰よりも速く片づけられる環境ができあがっています。", en: "The power to compound. When something works once, you turn it into something anyone can repeat. Small daily improvements stack up, until your setup clears work faster than anyone's." },
+    style: { ja: "AIには「いつもの仕事を、いつもの品質で」を求めています。新しいモデルに飛びつくより、手元のコマンドや設定ファイルを育てて、AIがあなたのやり方を覚えている状態をつくる。だから毎日ブレずに速い。", en: "You want AI to do the usual work at the usual quality. Rather than chasing new models, you grow your commands and config files until the AI knows your way of working. That's why you're fast, every day, without wobble." },
+    team: { ja: "チームの「型をつくる人」です。あなたのコマンドや設定をまねするだけで、新しく入った人も同じ速さで走れる。目立たないけれど、チーム全体の底を上げています。", en: "You're the one who builds the team's patterns. Newcomers can copy your commands and configs and run at your speed. It's not flashy, but you raise everyone's floor." },
+  },
+  "fire-flex": {
+    strength: { ja: "段取りの力です。大きな仕事を、同時に進められるかたまりに切り分けて、それぞれに合う道具を当てられる。ひとりでチームを回しているような進み方ができるのは、あなたならではです。", en: "Orchestration. You cut big work into chunks that can run in parallel and match each one with the right tool. Moving like you're a whole team on your own is your specialty." },
+    style: { ja: "AIには「それぞれの得意を、同時に」を求めています。調べもの、設計、実装、レビューを別々のエージェントやモデルに振って、あなたは全体の流れを見ている。手を動かすより、指揮をとるのが楽しいタイプです。", en: "You want each AI doing what it's best at, all at once. Research, design, implementation, and review go to separate agents or models while you watch the flow. You'd rather conduct than play every instrument." },
+    team: { ja: "チームの「段取り役」です。誰が何をいつやれば速く着くかが見えているので、詰まったプロジェクトほどあなたの出番。並べ方を変えるだけで、チームの速度が一段上がります。", en: "You're the team's planner. You can see who should do what, and when, to get there fastest—so stuck projects are where you shine. Just rearranging the order speeds the whole team up." },
+  },
+  "earth-pioneer": {
+    strength: { ja: "見抜く力です。それっぽい答えの中にある、小さな嘘や抜けにすぐ気づける。新しいものに好奇心を持ちながら、鵜呑みにはしない。その両方を持っている人は、意外と少ないんです。", en: "Seeing through things. You quickly spot the small lies and gaps hiding in plausible answers. You're curious about new things without swallowing them whole—a rare combination." },
+    style: { ja: "AIには「本当に合っているか」を求めています。新しいモデルが出たら、自分の意地悪問題でまず腕前を確かめる。どこまで信じていいかを自分の手で測ってから、仕事を任せていきます。", en: "You want to know whether the AI is actually right. When a new model ships, you test its skill with your own trick questions first. You measure how far you can trust it before handing over real work." },
+    team: { ja: "チームの「品質の鼻」です。みんなが新しいモデルに浮き足立っているときに、「ここは苦手みたい」と冷静に言える。あなたの一言で、本番の事故がいくつも防がれています。", en: "You're the team's nose for quality. While everyone gets excited about a new model, you can calmly say “it seems weak here.” Your one comment has prevented more than a few production incidents." },
+  },
+  "earth-steady": {
+    strength: { ja: "守る力です。壊れてはいけないものを見きわめて、テストや仕組みで先に囲っておける。その準備があるから、AIにたくさん書かせても、あなたのリポジトリは崩れません。", en: "Protection. You know what must never break and fence it in with tests and systems ahead of time. Because of that prep, your repo holds steady no matter how much AI writes." },
+    style: { ja: "AIには「決めた基準を必ず通ること」を求めています。先にテストを書かせ、通るまで直させる。AIの言葉ではなく、テストとCIの結果で判断するので、毎日安心して任せられています。", en: "You want AI to pass the bar you set, every time. Tests come first, and it fixes things until they pass. You judge by test and CI results, not by the AI's words—so you can trust it day after day." },
+    team: { ja: "チームの「最後の砦」です。あなたが整えたテストとCIがあるから、ほかの人は思い切って速く動ける。速さを支えているのは、実はあなたの丁寧さです。", en: "You're the team's last line of defense. Thanks to the tests and CI you maintain, everyone else can move fast with confidence. The team's speed actually rests on your care." },
+  },
+  "earth-flex": {
+    strength: { ja: "比べる力です。ひとつの答えだけで決めずに、複数の見方を並べて、重なるところと割れるところを見つけられる。その冷静さが、大事な判断の失敗を減らしています。", en: "Comparison. Instead of deciding on one answer, you line up several views and find where they agree and where they split. That calm keeps big decisions from going wrong." },
+    style: { ja: "AIには「別の目」を求めています。書くAIとは別のAIにレビューさせたり、同じ問いを複数のモデルに投げたり。AI同士を突き合わせて、両方が「たしかに」と言えるところだけを採ります。", en: "You want a second pair of eyes from AI. One AI writes, a different one reviews; the same question goes to several models. You pit them against each other and keep only what both agree on." },
+    team: { ja: "チームの「セカンドオピニオン」です。技術選定や設計で迷ったとき、みんながあなたに意見を聞きにくる。偏らない見方ができる人がいると、チームの決定に納得感が生まれます。", en: "You're the team's second opinion. When people are stuck on a tech choice or design, they come to you. Having someone with a balanced view makes the team's decisions feel right to everyone." },
+  },
+  "air-pioneer": {
+    strength: { ja: "ゼロからイチを生む力です。「こんなのあったらいいな」を、その日のうちに触れる形にできる。思いつきを放っておかないから、あなたのまわりには、いつも新しい種がたくさん転がっています。", en: "Turning zero into one. You take “wouldn't it be nice if…” and make something touchable the same day. You never let an idea sit, so there are always new seeds lying around you." },
+    style: { ja: "AIには「アイデアを形にする相棒」を求めています。新しいモデルが出るたびに「これなら、あれが作れる」とひらめいて、すぐに試作に入る。AIの進化そのものが、あなたの創作意欲の燃料です。", en: "You want AI as a partner that turns ideas into things. Every new model sparks “now I can build that,” and you start prototyping right away. AI's progress itself is fuel for your creativity." },
+    team: { ja: "チームの「アイデアの泉」です。あなたの試作がきっかけで、新しい機能やプロダクトが生まれることも。形があるから、ほかの人も「それいいね」と乗りやすいんです。", en: "You're the team's fountain of ideas. Your prototypes sometimes become new features or products. Because there's something real to look at, it's easy for others to say “that's great” and jump in." },
+  },
+  "air-steady": {
+    strength: { ja: "削る力です。何を作るかより先に、何を作らないかを決められる。設計の段階で迷いを潰しておくので、実装に入ってからの手戻りがほとんどありません。", en: "Cutting. Before deciding what to build, you decide what not to build. You settle the open questions during design, so there's almost no rework once implementation starts." },
+    style: { ja: "AIには「考える相手」を求めています。いきなりコードを書かせず、プランを出させ、問い返し、「それ要るか？」と削っていく。じっくり育ててきたやり方があるので、AIとの往復にもブレがありません。", en: "You want AI as a thinking partner. No code at first: it drafts a plan, you push back, and you trim with “do we need that?” You've grown a steady way of working, so the back-and-forth stays on track." },
+    team: { ja: "チームの「設計の番人」です。あなたが詰めた設計や記録があるから、半年後の誰かが迷わずに済む。急いでいる人ほど、あなたの「ちょっと待って」に助けられています。", en: "You're the guardian of the team's design. Your plans and records keep someone six months from now from getting lost. The people in the biggest hurry are the ones your “wait a moment” helps most." },
+  },
+  "air-flex": {
+    strength: { ja: "つなぐ力です。ばらばらの情報を集めて、関係あるものだけを選び、ひとつの判断にまとめられる。調べるだけで終わらず、「だからこうする」まで持っていけるのがあなたです。", en: "Connecting. You gather scattered information, keep only what's relevant, and pull it into one decision. You don't stop at research—you take it all the way to “so here's what we do.”" },
+    style: { ja: "AIには「手分けして調べる仲間」を求めています。調査用のエージェントを何本も走らせ、別のモデルで比べ、出典を確かめる。根掘り葉掘り集めたものを、最後は自分の頭でつなぎます。", en: "You want AI as a research crew. You run several research agents, compare with other models, and check sources. Everything you dig up, you connect in your own head at the end." },
+    team: { ja: "チームの「調査担当」です。「それって、どこに書いてあった？」に答えられるのはあなた。根拠のある話ができる人がいると、チームの議論がぐっと地に足のついたものになります。", en: "You're the team's researcher. You're the one who can answer “where did we read that?” Having someone who argues from evidence keeps the team's discussions grounded." },
+  },
+  "water-pioneer": {
+    strength: { ja: "感じとる力です。モデルの口調や考え方のクセ、更新でのちょっとした変化に、誰よりも早く気づける。数字には出ない「使い心地」を言葉にできるのは、あなたの大きな武器です。", en: "Sensing. You notice a model's tone, its habits of thought, and small changes after an update before anyone else. Putting “how it feels to use” into words—something no benchmark shows—is a real strength." },
+    style: { ja: "AIには「気の合う相棒」を求めています。新しいモデルが出たら、まず話しかけて人柄をたしかめ、その日の仕事に合う相手に乗り換える。相手を選ぶこと自体が、あなたの仕事の質を上げています。", en: "You want AI to be a partner you click with. When a new model ships, you chat with it first to feel out its personality, then hop to whichever fits today's work. Choosing your partner well is how you raise the quality of your work." },
+    team: { ja: "チームの「目利き」です。「この作業ならこのモデルが話しやすいよ」と教えられるのはあなた。あなたの一言で、AIが苦手だった人も使い始めやすくなります。", en: "You're the team's connoisseur. You can say “for this kind of task, this model is easiest to talk to.” Your tips help people who struggled with AI finally get started." },
+  },
+  "water-steady": {
+    strength: { ja: "伝える力です。何に困っていて、何を大事にしたいのかを、相手に分かる言葉で渡せる。その丁寧さがあるから、AIからも人からも、意図どおりの答えが返ってきます。", en: "Communication. You can hand over what's bothering you and what matters, in words the other side understands. Because you're that careful, both AI and people give you exactly what you meant." },
+    style: { ja: "AIには「長く付き合える相棒」を求めています。同じAIと毎日しゃべりながら進め、背景を共有し、終わったら「ありがとう」。積み重ねた会話があるから、少ない言葉でも通じ合えるようになっています。", en: "You want AI as a long-term partner. You talk with the same AI every day, share context, and say “thank you” at the end. All that shared history means you understand each other with fewer words." },
+    team: { ja: "チームの「通訳」です。エンジニアと非エンジニアのあいだ、人とAIのあいだを、あなたがやわらかくつないでいる。あなたがいると、チームの空気がちょっとあたたかくなります。", en: "You're the team's interpreter. You gently connect engineers and non-engineers, people and AI. When you're around, the whole team feels a little warmer." },
+  },
+  "water-flex": {
+    strength: { ja: "任せる力です。全部を自分で抱えずに、相手を見て、渡せるところを渡せる。自分の調子を正直に扱えるから、長く無理なく走り続けられます。", en: "Delegation. You don't carry everything yourself—you read your partner and hand off what you can. Because you're honest about your energy, you can keep going for the long haul without burning out." },
+    style: { ja: "AIには「その日の自分に合う相棒」を求めています。元気な日はテンポのいいモデル、疲れた日は丁寧なモデル。相手を使い分けて、「ここはおまかせ」と気持ちよく渡すのが上手です。", en: "You want whichever AI fits the you of today. Snappy model on good days, patient one on tired days. You switch partners and hand things off with a comfortable “I'll leave this to you.”" },
+    team: { ja: "チームの「ペース係」です。無理をしない進め方を自分で実践しているから、まわりも息がしやすくなる。あなたの「今日はここまで」が、チームを長持ちさせています。", en: "You're the team's pacekeeper. You practice a sustainable way of working, which lets everyone around you breathe. Your “that's enough for today” keeps the team going long-term." },
+  },
+};
+for (const k in EXTRA) Object.assign(TYPES[k], EXTRA[k]);
+
+/* ---------- 毎日のプロンプト（見出し＋本文） ---------- */
+const PROMPTS = {
+ "fire-pioneer": {
+  "ja": [
+   {
+    "title": "「完了」の中身を仕分ける",
+    "body": "いま「完了」と言おうとしている作業を、報告の前に自分で検証して。\n1. 実際に実行したコマンド・テスト・画面操作を、結果つきで列挙する\n2. コードを読んだだけで「動くはず」と判断した部分を、別に列挙する\n3. 一度も通していない経路（エラー時、空データ、権限なし、既存データとの互換）を挙げる\n4. 3のうち5分で確かめられるものは、いま実行して1に移す\n\n出力：「確かめた／読んだだけ／未確認」の3見出し。各項目に file:line か実行したコマンドを添える。\n制約：コードは変更しない。該当が無い見出しは「なし」と書く。「たぶん大丈夫」は使わない。"
+   },
+   {
+    "title": "着手前に壊れる場所を3つ",
+    "body": "{変更の目的} の実装に入る前に、壊れそうな既存の挙動を洗い出して。\n1. 変更対象の関数・クラスの呼び出し元を実際に検索し、file:line で一覧にする\n2. その中から、今回の変更で挙動が変わりうるものを3つ選ぶ（APIの返り値、DBのカラム、画面表示、バッチ処理など）\n3. それぞれ既存のテストで守られているかを確認する。守られていなければ、足すべきテストを1行で書く\n\n出力：表（壊れそうな挙動／根拠の file:line／既存テストの有無／確かめ方）。\n制約：まだコードを書かない。検索せずに推測で表を埋めない。3つ見つからなければ、見つかった数だけ書く。"
+   },
+   {
+    "title": "あとで一番困る1か所",
+    "body": "いま書いた差分を、半年後にこのコードを触る人の目で読み直して。一番困りそうな箇所を1つだけ選んで。\n観点：\n- ハードコードした値や暗黙の前提（タイムゾーン、件数の上限、並び順）\n- 例外を握りつぶしている、またはログが残らない箇所\n- 同じロジックが2か所に書かれている箇所\n- テストが無いまま分岐が増えた箇所\n\n出力：選んだ箇所の file:line、困る場面の具体例（いつ・誰が・何をすると）、直し方の案、直すのに要る時間の目安。\n制約：コードはまだ直さない。複数挙げず1つに絞る。本当に問題が無ければ「なし」と書いて理由を添える。"
+   },
+   {
+    "title": "最短ルートと安全ルート",
+    "body": "このタスクの進め方を2通り並べて、私が選べるようにして。\nA. 最短：今日中にマージできる最小の手順\nB. 安全：本番データや既存ユーザーに影響が出ない手順（フラグ、段階リリース、マイグレーションの分割、ロールバック手段など）\n\nそれぞれについて：\n1. 番号つきの手順と、かかる時間の目安\n2. Aを選んだときに起きうる最悪のケースと、その起こりやすさの見立て\n3. Aで進めて後からBに寄せられる部分と、寄せられない部分\n\n出力：A/Bの比較表と、あなたの推奨1行。\n制約：まだ実装しない。推奨はしても決めるのは私。取り返しのつかない操作（マイグレーション、データ削除、外部送信）があれば明記する。"
+   },
+   {
+    "title": "レビュアーが5分で読める説明",
+    "body": "この差分のPR説明を、レビュアーが5分で判断できる形で書いて。\n1. 何を：変わる挙動を、使う人の目線で2〜3行\n2. なぜ：この変更が要る理由。チケットや会話から分かる範囲で\n3. どう確かめたか：実行したテスト・コマンドと結果、手で確かめた手順\n4. 見てほしい場所：特に読んでほしい file:line を最大3つと、その理由\n5. 見なくていい場所：機械的な変更（リネーム、フォーマット、生成物）\n\n出力：上の5見出しのMarkdown。\n制約：実行していない確認は「どう確かめたか」に書かず、「未確認」として別に書く。理由が分からない変更は推測で埋めず、私に聞いて。"
+   },
+   {
+    "title": "依存アップデートの影響だけ",
+    "body": "{パッケージ名} を最新に上げたときの、このリポジトリへの影響を調べて。\n1. lockファイルから現在のバージョンを確認する\n2. その間のリリースノート・CHANGELOGから、破壊的変更・非推奨・挙動の変更を拾う\n3. それぞれについて、該当するAPIを使っている箇所をこのリポジトリで検索する\n4. 推移的依存で一緒に上がるパッケージがあれば挙げる\n\n出力：表（変更内容／このリポジトリの該当 file:line／対応の要否／出典）。該当箇所が無い変更は表から外し、件数だけ書く。\n制約：まだアップデートしない。出典で確かめられなかった変更は「未確認」と書く。「検索で見つからない」を「影響なし」と言い換えない。"
+   }
+  ],
+  "en": [
+   {
+    "title": "Split 'done' into verified vs. assumed",
+    "body": "Before you report this task as done, audit your own claim.\n1. List every command, test, or manual check you actually ran, with its result.\n2. Separately list the parts you only judged correct by reading the code.\n3. Name the paths never exercised: error cases, empty data, missing permissions, existing records.\n4. Anything from step 3 you can check in under five minutes, run it now and move it to step 1.\n\nOutput three sections: Verified / Read only / Unchecked. Each item gets a file:line or the exact command.\nDon't modify code. If a section is empty, write \"none\". Don't use the word \"probably\"."
+   },
+   {
+    "title": "Three things this change could break",
+    "body": "Before implementing {goal of the change}, map what it could break.\n1. Search for every caller of the functions or classes you'll touch and list them as file:line.\n2. Pick the three whose behavior could change: return values, DB columns, rendered output, background jobs.\n3. For each, check whether an existing test covers it. If not, describe the missing test in one line.\n\nOutput a table: behavior at risk / evidence (file:line) / covered by a test? / how to verify.\nDon't write code yet. Every row must come from an actual search, not memory. If you find fewer than three, list only what you found."
+   },
+   {
+    "title": "The one spot that will hurt later",
+    "body": "Reread the diff you just wrote as the person who has to change it six months from now. Pick exactly one spot most likely to cause trouble.\nLook for: hardcoded values or hidden assumptions (timezone, size limits, ordering), swallowed exceptions or missing logs, logic duplicated in two places, branches added without tests.\n\nOutput: file:line, a concrete failure scenario (when, who, doing what), a proposed fix, and a rough estimate of how long the fix takes.\nDon't change code yet. One spot only, not a list. If nothing qualifies, say \"none\" and explain why."
+   },
+   {
+    "title": "Fastest path vs. safest path",
+    "body": "Lay out two ways to do this task so I can choose.\nA. Fastest: the minimum steps to merge today.\nB. Safest: no impact on production data or existing users (feature flag, staged rollout, split migration, rollback plan).\n\nFor each: numbered steps and a time estimate. For A, the worst realistic outcome and how likely you think it is. Then say which parts of A can be hardened toward B later, and which can't.\n\nOutput a comparison table plus a one-line recommendation.\nDon't implement yet. Recommend, but I decide. Flag anything irreversible: migrations, deletes, outbound messages."
+   },
+   {
+    "title": "A PR description readable in 5 min",
+    "body": "Write the PR description for this diff so a reviewer can decide in five minutes.\n1. What: the behavior change, from the user's side, in 2-3 lines.\n2. Why: the reason, based only on the ticket or our conversation.\n3. How verified: tests and commands you ran, with results; any manual steps.\n4. Look here: up to three file:line spots that deserve careful reading, and why.\n5. Skip this: mechanical changes (renames, formatting, generated files).\n\nOutput Markdown with those five headings.\nNever list a check you didn't run under \"How verified\"; add an \"Unverified\" section instead. If you don't know why something changed, ask me rather than guessing."
+   },
+   {
+    "title": "Upgrade impact on this repo only",
+    "body": "Assess what upgrading {package} to the latest version would change in this repo.\n1. Read the current version from the lockfile.\n2. From the release notes and changelog in between, collect breaking changes, deprecations, and behavior changes.\n3. For each one, search this repo for usages of the affected API.\n4. List transitive dependencies that would move along with it.\n\nOutput a table: change / affected file:line here / action needed? / source. Drop changes with no usages and just give their count.\nDon't upgrade yet. Mark anything you couldn't confirm from a source as unverified. \"Not found by search\" is not \"no impact\"; say which one it is."
+   }
+  ]
+ },
+ "fire-steady": {
+  "ja": [
+   {
+    "title": "繰り返した訂正をルールにする",
+    "body": "このセッションを振り返って、私が2回以上言った指示や訂正を拾い、CLAUDE.md に足すルール案にして。\n1. 繰り返した指示・訂正を、会話のどこで出たかの要約つきで列挙する\n2. いまの CLAUDE.md と突き合わせて、「書いてあるのに守られなかった」と「書かれていない」に分ける\n3. 書かれていないものは、1ルール1〜2行の命令形で書き、なぜそうするかを短く添える\n\n出力：「追加するルール」と「既にあるのに守られなかったルール（守られなかった理由の見立てつき）」の2つ。\n制約：CLAUDE.md はまだ編集しない。1回しか出ていない好みはルールにしない。このセッション限りの事情は外す。"
+   },
+   {
+    "title": "今日の手順をコマンドにする",
+    "body": "今日のセッションの作業から、次回もほぼ同じ手順で繰り返しそうなものを1つ選び、カスタムコマンドとして書いて。\n1. 候補を最大3つ挙げ、繰り返す頻度と1回あたりの手間を書く\n2. 一番効果が大きいものを1つ選ぶ\n3. そのコマンドの本文を、そのまま保存できる形で書く。引数、前提条件、手順、完了の確かめ方、途中で止まる条件を含める\n\n出力：候補の比較と、コマンドの全文（ファイル名の案つき）。\n制約：ファイルはまだ作らない。今日に固有の値（ブランチ名、チケット番号など）は引数にする。破壊的な操作を含むなら、実行前に確認を求める一文を入れる。"
+   },
+   {
+    "title": "設定ファイルの棚卸し",
+    "body": "CLAUDE.md、rules ファイル、カスタムコマンドを読んで、棚卸しして。各記述を次の4つに分類する。\n- 古い：存在しないファイル・コマンド・ディレクトリを指している（実在を確認すること）\n- 矛盾：ほかの記述と食い違っている（両方の場所を示す）\n- 重複：同じことを2か所以上で言っている\n- 効いていない：いまのモデルなら書かなくても守る、またはフックやlintで強制した方が確実\n\n出力：分類ごとの表（記述の file:line／理由／削除・統合・書き換え・フック化のどれか）。最後に、全体で何行減らせるか。\n制約：まだ編集しない。「効いていない」は判断を含むので、根拠の強さを高・中・低で添える。該当が無い分類は「なし」。"
+   },
+   {
+    "title": "毎回推測で補っている所",
+    "body": "私がふだん出す指示のうち、あなたが毎回推測で補っている部分を教えて。\n1. このセッションと、CLAUDE.md・コマンドの内容から、私の指示で抜けがちな情報を挙げる（対象範囲、テストの要否、命名、コミットの単位、完了の基準など）\n2. それぞれ、実際にどう補ったかと、その補い方が外れたら何が起きるかを書く\n3. 外れたときの影響が大きい順に並べる\n\n出力：上位3つについて、CLAUDE.md かコマンドに足す一文を、そのまま使える形で。\n制約：私の書き方に気を遣わず率直に。十分に書けている部分は挙げなくていい。会話に根拠の無い例は「推測」と明記する。"
+   },
+   {
+    "title": "自動化する順番を決める",
+    "body": "{手作業の内容} を自動化したい。どこから手をつけるか決める材料を出して。\n1. 手作業をステップに分解し、各ステップの所要時間と、人の判断が要るかを書く\n2. 自動化の手段を候補で挙げる（シェルスクリプト、カスタムコマンド、フック、CIのジョブ、既存ツールの設定）\n3. ステップごとに、作る手間・節約できる時間・壊れたときの影響を見積もる\n4. 判断が要るステップは自動化せず、人が確認する箇所として残す\n\n出力：手間と効果の表、最初の1つの推奨、週あたりの節約時間の見立て。\n制約：まだ何も作らない。見積もりは幅で書き、根拠を添える。作るのに半日以上かかるものは理由を書いて後回しにする。"
+   },
+   {
+    "title": "初見でも動くスクリプトにする",
+    "body": "このスクリプトを、初めて触る人が一発で動かせるようにして。\n1. 実行に必要な前提を洗い出す：ツールとバージョン、環境変数、認証、作業ディレクトリ、ネットワーク\n2. 前提が欠けたとき、どこでどんなエラーになるかを確かめる。できるものは実際に欠けた状態で実行する\n3. 先頭に前提チェックを足し、欠けていたら直し方つきのメッセージで止める\n4. 途中で失敗したとき何が残るかと、やり直し方を、コメントかREADMEに書く\n\n出力：差分と、確かめた前提／確かめていない前提の一覧。\n制約：スクリプト本来の処理は変えない。秘密情報の値はメッセージやログに出さない。破壊的な処理のやり直しには確認を挟む。"
+   }
+  ],
+  "en": [
+   {
+    "title": "Turn repeated corrections into rules",
+    "body": "Review this session and find the instructions or corrections I gave more than once. Turn them into proposed CLAUDE.md rules.\n1. List each repeated instruction with a short note on where it came up.\n2. Compare against the current CLAUDE.md and split them into \"written but not followed\" and \"not written\".\n3. For the unwritten ones, draft each rule in 1-2 imperative lines with a brief reason.\n\nOutput two sections: new rules, and existing rules that were ignored (with your guess at why).\nDon't edit CLAUDE.md yet. Skip one-off preferences and anything that only applies to this session."
+   },
+   {
+    "title": "Today's workflow as a reusable command",
+    "body": "From today's session, pick one workflow I'm likely to repeat almost exactly, and write it as a custom command.\n1. List up to three candidates with how often they recur and how much effort each takes.\n2. Pick the one with the biggest payoff.\n3. Write the full command body, ready to save: arguments, prerequisites, steps, how to confirm success, and when to stop.\n\nOutput the comparison and the complete command text with a suggested filename.\nDon't create the file yet. Turn anything specific to today (branch names, ticket IDs) into arguments. If a step is destructive, include a line that asks for confirmation before running it."
+   },
+   {
+    "title": "Audit your agent config files",
+    "body": "Audit CLAUDE.md, any rules files, and custom commands. Classify each instruction as:\n- Stale: references a file, command, or directory that no longer exists (actually check).\n- Conflicting: contradicts another instruction (cite both).\n- Duplicate: says the same thing in more than one place.\n- Dead weight: current models follow it anyway, or it would be more reliable as a hook or lint rule.\n\nOutput one table per category: file:line / reason / delete, merge, rewrite, or convert to a hook. End with how many lines could go.\nDon't edit anything yet. \"Dead weight\" is a judgment call, so rate your confidence high/medium/low. Empty categories get \"none\"."
+   },
+   {
+    "title": "Where you guess every time I ask",
+    "body": "Tell me where you fill in gaps by guessing when I give you instructions.\n1. From this session plus my CLAUDE.md and commands, list what I tend to leave out: scope, whether tests are needed, naming, commit size, definition of done.\n2. For each, say how you actually filled it in, and what goes wrong if that guess is off.\n3. Rank them by the cost of guessing wrong.\n\nOutput: for the top three, the exact sentence I should add to CLAUDE.md or a command.\nBe blunt; don't soften it. Skip anything I already specify well. If an example isn't grounded in this conversation, label it a guess."
+   },
+   {
+    "title": "Decide what to automate first",
+    "body": "I want to automate {manual task}. Give me what I need to decide where to start.\n1. Break the task into steps, with time per step and whether each needs human judgment.\n2. List candidate mechanisms: shell script, custom command, hook, CI job, config in an existing tool.\n3. For each step, estimate build effort, time saved, and blast radius if it breaks.\n4. Keep steps that need judgment manual and mark them as human checkpoints.\n\nOutput an effort-vs-payoff table, your pick for the first one, and estimated hours saved per week.\nDon't build anything yet. Give estimates as ranges with reasoning. Anything over half a day to build goes last, with a note on why."
+   },
+   {
+    "title": "Make the script work on first run",
+    "body": "Make this script runnable by someone seeing it for the first time.\n1. List the prerequisites: tools and versions, env vars, credentials, working directory, network access.\n2. Find out what error each missing prerequisite produces; actually run it without them where you can.\n3. Add a preflight check at the top that stops with a how-to-fix message when something is missing.\n4. Document what a mid-run failure leaves behind and how to recover, in comments or the README.\n\nOutput the diff plus a list of prerequisites you verified vs. ones you didn't.\nDon't change what the script actually does. Never print secret values. Require confirmation before re-running anything destructive."
+   }
+  ]
+ },
+ "fire-flex": {
+  "ja": [
+   {
+    "title": "ぶつからない並列タスク分割",
+    "body": "このタスクを、複数のエージェントが別々の worktree で同時に進められる単位に分けて。\n1. 変更が必要なファイルを実際にコードを見て一覧にする\n2. 同じファイルを2つの作業が触らないように分ける。共有ファイル（型定義、ルーティング、設定、マイグレーション）は1つの作業に寄せるか、先行作業にする\n3. 各作業に、入力（前提の情報・先行作業）、出力（変わるファイル）、完了条件（通すべきテスト）を書く\n4. 依存関係から、すぐ始められるものと順番待ちのものを分ける\n\n出力：作業ごとのカードと、実行順の図（テキストで）。\n制約：まだ実装しない。きれいに割れない部分は無理に割らず、理由を書く。"
+   },
+   {
+    "title": "次のエージェントへの引き継ぎ書",
+    "body": "この作業を別のエージェントが続きから引き継ぐ前提で、引き継ぎメモを書いて。相手はこの会話を読めない。\n1. 目的と、完了の定義\n2. 決まったこと：決定と理由、誰が決めたか（私か、あなたの判断か）\n3. 決まっていないこと：未決の論点と選択肢\n4. 触ったファイル：ファイルごとに何を変えたか、未コミットの変更があるか\n5. 確かめたこと／確かめていないこと：実行したテストと結果\n6. 次の一手：最初にやるべき作業を1つ\n\n出力：上の6見出しのMarkdown。\n制約：会話に無いことを補わない。あなたの判断で決めたものは、私の決定と区別して書く。引き継ぎに要らない経緯は省く。"
+   },
+   {
+    "title": "速いモデル／賢いモデル振り分け",
+    "body": "この作業をステップに分けて、それぞれをどの強さのモデルに任せるかを振り分けて。\n1. 作業をステップに分解する（調査、設計、実装、テスト作成、レビュー、ドキュメントなど）\n2. 各ステップを「速いモデルで十分」「賢いモデルが要る」「人が判断する」に分ける\n3. 振り分けの理由を書く。判断材料は、正解を機械で確かめられるか、間違えたときの影響、必要な文脈の量\n4. 速いモデルに任せるステップには、出力の確かめ方を添える\n\n出力：表（ステップ／振り分け／理由／確かめ方）。\n制約：製品名ではなく、速さと賢さの相対で書く。迷うステップは賢い側に寄せ、迷った理由を残す。"
+   },
+   {
+    "title": "マージ前の衝突予報",
+    "body": "並列で作った {ブランチA} と {ブランチB} を、マージする前に突き合わせて。\n1. 両方の差分を取り、同じファイル・同じ関数を触っている箇所を挙げる\n2. テキストでは衝突しないが意味で衝突するものを探す：同じ型やスキーマへの別々の変更、同名の関数の追加、片方が消したものを片方が使っている、マイグレーションの順序\n3. 両方を取り込んだ状態で落ちそうなテストを予想する\n4. 解消の順番と、どちらに合わせるかの案を出す\n\n出力：衝突ごとの表（場所 file:line／種類：テキスト・意味／解消案）。\n制約：まだマージしない。どちらに合わせるかに仕様の判断が要るものは、案を並べて私に聞く。"
+   },
+   {
+    "title": "私の判断待ちを並べる",
+    "body": "進めているタスクのうち、私の判断待ちで止まっているもの、または判断が無いまま仮で進めているものを洗い出して。\n1. 各タスクについて、何の判断が要るかを1文で書く\n2. 選択肢を最大3つと、それぞれを選んだときの影響を書く\n3. 判断が遅れると止まる作業と、仮の判断が外れたときのやり直しの大きさを書く\n4. 先に決めるべき順に並べる\n\n出力：判断ごとのカード（問い／選択肢／あなたの推奨と理由／決めないと止まるもの）。\n制約：あなたが私に聞かずに決めて進めたものも、必ず含める。判断が要らないものは載せない。推奨はしても、決まったことにはしない。"
+   },
+   {
+    "title": "出典つきで要点だけ調べる",
+    "body": "{調べたいこと} について、実装の判断に必要な要点だけを調べて。\n1. 判断に効く問いを3つ以内に絞り、最初に書く\n2. 各問いについて、公式ドキュメント、ソースコード、リリースノートなど一次情報を優先して当たる\n3. 答えごとに出典（URL か file:line）と、当てはまるバージョンか日付を添える\n4. 情報が食い違うときは両方を並べ、どちらが新しいかを書く\n\n出力：問いごとに「答え／出典／確度：確認済み・推測」。最後に、実装判断への含意を2行で。\n制約：出典を開いて確かめていないものは「推測」と書く。問いに関係しない周辺情報は省く。分からなければ分からないと書く。"
+   }
+  ],
+  "en": [
+   {
+    "title": "Split into conflict-free parallel work",
+    "body": "Split this task into units that multiple agents can run at the same time in separate worktrees.\n1. Actually inspect the code and list every file that needs to change.\n2. Split so no two units touch the same file. Shared files (types, routes, config, migrations) go to one unit or become a prerequisite step.\n3. For each unit: inputs (context, prior units), outputs (files changed), done condition (which tests must pass).\n4. From the dependencies, separate what can start now from what has to wait.\n\nOutput one card per unit and a text diagram of execution order.\nDon't implement yet. If something can't be split cleanly, don't force it; explain why."
+   },
+   {
+    "title": "Handoff note for the next agent",
+    "body": "Write a handoff note so another agent can pick up this work. It cannot read this conversation.\n1. Goal and definition of done.\n2. Decided: each decision, why, and who made it (me, or you on your own judgment).\n3. Open: unresolved questions and the options.\n4. Files touched: what changed in each, and whether anything is uncommitted.\n5. Verified / not verified: tests run and their results.\n6. Next step: the single first thing to do.\n\nOutput Markdown with those six headings.\nDon't add anything that isn't in the conversation. Keep your own judgment calls separate from my decisions. Skip history the next agent doesn't need."
+   },
+   {
+    "title": "Route steps to fast vs. smart models",
+    "body": "Break this work into steps and decide which tier of model each one should go to.\n1. Decompose the work: research, design, implementation, writing tests, review, docs.\n2. Assign each step: a fast model is enough / needs a stronger model / needs a human decision.\n3. Justify each call: can the result be checked mechanically, what does a mistake cost, how much context does it need.\n4. For every fast-model step, say how its output will be checked.\n\nOutput a table: step / assignment / reason / how to verify.\nDescribe tiers by relative speed and capability, not product names. When unsure, route to the stronger tier and note why."
+   },
+   {
+    "title": "Collision forecast before merging",
+    "body": "Before merging {branch A} and {branch B}, which were built in parallel, cross-check them.\n1. Diff both and list places where they touch the same file or function.\n2. Look for semantic conflicts git won't flag: separate edits to the same type or schema, two new functions with the same name, one branch using something the other removed, migration ordering.\n3. Predict which tests are likely to fail once both are combined.\n4. Propose a resolution order and which side each conflict should follow.\n\nOutput a table: location (file:line) / textual or semantic / proposed fix.\nDon't merge yet. If resolving a conflict needs a product decision, lay out the options and ask me."
+   },
+   {
+    "title": "Decisions waiting on me, in order",
+    "body": "List every task that's blocked on my decision, or that you've moved forward on with a provisional assumption.\n1. For each, state the decision needed in one sentence.\n2. Give up to three options and the consequences of each.\n3. Note what stalls if I don't decide, and how much rework a wrong provisional call would cause.\n4. Order them by what I should decide first.\n\nOutput one card per decision: question / options / your recommendation and why / what's blocked.\nInclude anything you decided on your own without asking me. Leave out items that don't need me. Recommend, but don't treat anything as decided."
+   },
+   {
+    "title": "Key facts only, with sources",
+    "body": "Research {topic}, but only what I need to make an implementation decision.\n1. Narrow it to at most three questions that actually affect the decision, and state them first.\n2. Answer each from primary sources where possible: official docs, source code, release notes.\n3. Give every answer a source (URL or file:line) and the version or date it applies to.\n4. If sources disagree, show both and say which is newer.\n\nOutput per question: answer / source / confidence (verified or guess). Close with two lines on what this means for the implementation.\nAnything you didn't open and confirm is a guess; label it. Leave out background that doesn't answer a question. If you can't find it, say so."
+   }
+  ]
+ },
+ "earth-pioneer": {
+  "ja": [
+   {
+    "title": "「確かめた／推測」仕分け",
+    "body": "直前のあなたの回答を、根拠の強さで仕分けして。新しい情報は足さないで。\n\n1. 回答を1文ずつに分ける\n2. 各文に次のどれか1つのラベルを付ける\n　［確認済］このセッションでコードを読んだ・実行した結果に基づく（file:line か実行したコマンドを添える）\n　［文書］公式ドキュメントに書いてある（ページ名と節を添える）\n　［推測］上のどちらでもない\n3. ［推測］の文には、確かめる方法を1行ずつ書く\n\n出力：表（文／ラベル／根拠／確かめる方法）\n制約：迷ったら［推測］に寄せる。ラベルを上げるために言い換えない。コードはまだ変えない。"
+   },
+   {
+    "title": "壊れる入力5つをテスト化",
+    "body": "このコードを壊しにいくテスト担当として動いて。対象：{対象の関数・ファイル}\n\n1. コードを読み、入力・前提・外部依存を列挙する\n2. 壊れそうな入力を5つ選ぶ。境界値、空・null、型や文字コードのずれ、巨大な入力、順序や並行性から偏りなく\n3. 各入力について「起きるべきこと」と「今のコードで起きること」を file:line つきで書く\n4. それぞれをテストケースとして書き、実行する\n\n出力：表（入力／期待／現状／テスト名／通った・落ちた）\n制約：本体のコードは直さない。落ちたテストは消さずに残して報告する。実行できなかったものは「未実行」と書く。"
+   },
+   {
+    "title": "間違えやすい所を先に宣言",
+    "body": "作業を始める前に、このタスクであなたがいちばん間違えやすいところを宣言して。タスク：{タスク}\n\n1. 間違えやすいポイントを最大5つ。「このライブラリの版による違い」「このリポジトリ固有の書き方」のように具体的に\n2. それぞれ、間違えたときに何で気づけるか（テスト・型・ログ・目視）を書く\n3. 気づく手段がないものには、先に足すべき確認を1つ提案する\n\n宣言したら、私の返事を待たずに作業を始めていい。宣言したポイントに当たったときだけ、どう判断したかを書き残して進めて。\n出力の最後に、ポイントごとに「当たった／当たらなかった」を付けて。"
+   },
+   {
+    "title": "公式ドキュメントで裏取り",
+    "body": "このコードで使っているAPIの使い方を、公式ドキュメントで裏取りして。対象：{APIやライブラリ名}\n\n1. lock ファイルなどから、実際に入っている版を確かめる\n2. その版の公式ドキュメントで、該当する記述を探す\n3. 見つかったら、ページ名・節・要点を書き、コードの使い方と合っているかを判定する\n4. 非推奨、版による挙動の違い、既定値の差があれば挙げる\n\n出力：使い方ごとに［一致／不一致／見つからない］と根拠\n制約：見つからないときは「見つからない」と書く。記憶や非公式の記事で埋めない。版を確かめられないときは、それを最初に書く。コードはまだ変えない。"
+   },
+   {
+    "title": "重大度順の差分レビュー",
+    "body": "この差分を、マージ前のレビューとして見て。対象：今のブランチと {ベースブランチ} の差分\n\n1. 差分を読み、変更の意図を1〜2行でまとめる\n2. 問題を探す：振る舞いの誤り、エラー時の挙動、既存の呼び出し元への影響、テストの抜け、セキュリティ\n3. 見つけたものを重大度（マージを止める／直したほうがいい／好み）で並べる\n4. 各指摘に file:line、再現手順か失敗する入力、直し方の方向を添える\n\n出力：重大度ごとの箇条書き\n制約：再現手順を書けないものは「未確認」と明記する。好みの指摘は3つまで。問題がなければ「マージを止める問題はない」と書いていい。コードは変えない。"
+   },
+   {
+    "title": "前提を変えて3回答える",
+    "body": "この問いに、前提を変えて3回答えて。問い：{問い}\n\n1. 答えを左右しそうな前提を3つ選ぶ（規模、実行環境、版、使われ方など）。選んだ理由も1行\n2. 前提ごとに独立して答える。前の答えに引きずられないこと\n3. 3つを並べ、一致したところと割れたところを分ける\n4. 割れたところは、どの前提で割れたか、何を確かめれば決着するかを書く\n\n出力：一致点／割れた点（原因の前提・確かめ方）／私の状況で採るべき答え\n制約：一致した部分は十分確かとして扱い、追加の検証はしない。最後は必ず1つに決めて答える。"
+   }
+  ],
+  "en": [
+   {
+    "title": "Sort your answer: verified vs. guessed",
+    "body": "Go back through your last answer and sort it by how well it's supported. Don't add new information.\n\n1. Split the answer into individual sentences.\n2. Tag each one with exactly one label:\n   [Verified] based on code you read or commands you ran in this session (cite file:line or the command)\n   [Docs] stated in the official docs (cite page and section)\n   [Guess] neither of the above\n3. For every [Guess], add one line on how I could check it.\n\nOutput: a table (sentence / label / evidence / how to check).\nRules: when in doubt, label it [Guess]. Don't reword a sentence to earn a stronger label. Don't change any code yet."
+   },
+   {
+    "title": "Five inputs that break it, as tests",
+    "body": "Act as a tester whose job is to break this code. Target: {function or file}\n\n1. Read the code and list its inputs, assumptions, and external dependencies.\n2. Pick five inputs likely to break it, spread across boundaries, empty/null, type or encoding mismatches, huge inputs, and ordering or concurrency.\n3. For each, write what should happen and what the current code actually does, with file:line.\n4. Turn each into a test case and run it.\n\nOutput: a table (input / expected / actual / test name / pass or fail).\nRules: don't fix the implementation. Keep failing tests and report them as-is. If you couldn't run a test, mark it \"not run\"."
+   },
+   {
+    "title": "Call out your weak spots before starting",
+    "body": "Before you start, tell me where you're most likely to get this task wrong. Task: {task}\n\n1. List up to five concrete risk points, e.g. version-specific behavior of a library, or conventions unique to this repo.\n2. For each, say how a mistake would surface: a test, the type checker, logs, or only by eye.\n3. If nothing would catch it, propose one check to add first.\n\nThen go ahead and start without waiting for me. When you hit one of the risk points, note the call you made and keep going.\nAt the end, mark each risk point as \"hit\" or \"not hit\"."
+   },
+   {
+    "title": "Back up API usage with official docs",
+    "body": "Verify how this code uses an API against the official documentation. Target: {API or library}\n\n1. Find the installed version from the lockfile or equivalent.\n2. Search that version's official docs for the relevant description.\n3. If found, give the page, section, and the key point, and judge whether the code matches it.\n4. Flag deprecations, version-specific behavior, or differing defaults.\n\nOutput: for each usage, [match / mismatch / not found] with the source.\nRules: if you can't find it, say \"not found\". Don't fill gaps from memory or unofficial posts. If you can't confirm the version, say so up front. Don't change code yet."
+   },
+   {
+    "title": "Pre-merge review, ranked by severity",
+    "body": "Review this diff as if it's about to merge. Scope: the current branch against {base branch}.\n\n1. Summarize the intent of the change in one or two lines.\n2. Look for problems: wrong behavior, error handling, impact on existing callers, missing tests, security.\n3. Rank findings as blocker / should fix / nit.\n4. For each, give file:line, repro steps or a failing input, and a direction for the fix.\n\nOutput: a bulleted list grouped by severity.\nRules: anything you can't give repro steps for gets marked \"unverified\". Three nits max. If there are no blockers, say \"no blockers\" plainly. Don't modify code."
+   },
+   {
+    "title": "Answer three ways, find what's shaky",
+    "body": "Answer this question three times under different assumptions. Question: {question}\n\n1. Pick three assumptions most likely to change the answer (scale, runtime, versions, usage patterns), with one line on why.\n2. Answer under each one independently. Don't let earlier answers bleed into later ones.\n3. Line them up and separate where they agree from where they split.\n4. For each split, name the assumption that caused it and what would settle it.\n\nOutput: agreements / splits (cause and how to check) / the answer I should go with for my situation.\nRules: treat agreements as settled and don't verify them further. End with one answer, not a menu."
+   }
+  ]
+ },
+ "earth-steady": {
+  "ja": [
+   {
+    "title": "受け入れ条件を先にテストに",
+    "body": "この仕様の受け入れ条件を、実装より先にテストとして書いて。実装はまだしないで。仕様：{仕様や Issue}\n\n1. 仕様から受け入れ条件を箇条書きで抜き出す。曖昧な条件は、解釈を2案並べて私に聞く\n2. 条件ごとに、正常系・境界・失敗系のテストを書く。既存テストの書き方と命名に合わせる\n3. テストを実行し、すべて「実装がまだ無いから」落ちることを確かめる\n4. ほかの理由で落ちているものがあれば報告する\n\n出力：表（条件／テスト名／落ちた理由）\n制約：本体のコードには触らない。仕様に書かれていない条件を足したら、それと分かるように分けて書く。"
+   },
+   {
+    "title": "壊れた実装でも通るテスト探し",
+    "body": "このテストが、実装が壊れていても通ってしまわないかを確かめて。対象：{テストファイル}\n\n1. テストが検証している実装の箇所を特定する\n2. 実装にわざと小さな故障を入れる（比較演算子の反転、境界の±1、戻り値の固定、例外の握りつぶし など）。1回に1つだけ\n3. 故障ごとにテストを流し、落ちたか通ったかを記録する。終わるたびに必ず元に戻す\n4. 通ってしまった故障について、落ちるようにテストを直す\n\n出力：表（入れた故障／結果／直したテスト）\n制約：故障を入れた状態でコミットしない。最後に git diff で本体コードが元どおりなことを示す。テストを弱めて通すのは禁止。"
+   },
+   {
+    "title": "機械で見る所と人が見る所",
+    "body": "この変更で確かめるべきことを、機械に任せるものと人が見るものに分けて。\n\n1. 差分から、壊れうる振る舞いを列挙する\n2. それぞれを次に振り分ける\n　A 既存のテスト・型・lint・CI で確かめられている（どれで確かめているか）\n　B テストを足せば機械で確かめられる（足すテストの案）\n　C 人が画面や実データで見ないと分からない（見る手順を1行で）\n3. B は書く手間の小さい順に並べる\n\n出力：A／B／C の3つのリスト\n制約：C は本当に機械にできないものだけに絞る。迷ったら B に入れる。コードはまだ変えない。"
+   },
+   {
+    "title": "境界値と異常系の棚卸し",
+    "body": "この関数の境界値と異常系を洗い出して、テストの有無と照らし合わせて。対象：{関数名}\n\n1. 引数と、読んでいる外部の状態（DB、現在時刻、設定、環境変数）を列挙する\n2. それぞれの境界（0、1、最大、空、null、桁あふれ、タイムゾーン、日付の切り替わり）と異常（例外、タイムアウト、不正な形式）を挙げる\n3. 既存テストと照らし、あるものはテスト名を、ないものは「未」と書く\n4. 「未」のうち、壊れたときの影響が大きい上位5つを選ぶ\n\n出力：表（ケース／期待する挙動／テスト）＋上位5つ\n制約：期待する挙動がコードから決められないものは、仕様として私に聞く。テストはまだ書かない。"
+   },
+   {
+    "title": "テストが守っている範囲を説明",
+    "body": "コードは変えずに、今あるテストが何を保証していて、何を保証していないかを説明して。対象：{モジュールやディレクトリ}\n\n1. テストを読み、守っている振る舞いを1行ずつまとめる\n2. 守られていない振る舞いを挙げる。とくに、モックで置き換えている所と、assert が弱い所（例外が出ないことだけ、件数だけを見ている）\n3. 「テストはあるが、実質なにも保証していない」ものがあれば指摘する\n\n出力：保証している／保証していない／形だけ の3区分。各項目に file:line\n制約：推測で補ったところには［推測］と付ける。テストの追加や修正は提案にとどめ、手は入れない。"
+   },
+   {
+    "title": "CIの遅い・落ちるジョブ整理",
+    "body": "CI の遅いジョブとよく落ちるジョブを整理して、直す順番を決めて。\n\n1. 読める範囲の CI 設定と直近の実行記録から、ジョブごとの所要時間と失敗の頻度を拾う。読めないものは「記録なし」とする\n2. 失敗を「本当の不具合／不安定なテスト／インフラ由来」に分ける\n3. ジョブごとに改善案を1〜2個。キャッシュ、並列化、不安定なテストの隔離、変更に応じた実行対象の絞り込みなど\n4. 効果（短縮できる時間・減らせる再実行）と手間で並べる\n\n出力：表（ジョブ／時間／失敗率／原因／案／効果／手間）\n制約：記録から取った数字と見積もりを分けて書く。設定はまだ変えない。"
+   }
+  ],
+  "en": [
+   {
+    "title": "Acceptance criteria as tests, first",
+    "body": "Write this spec's acceptance criteria as tests before any implementation. Don't implement yet. Spec: {spec or issue}\n\n1. Extract the acceptance criteria as a list. If one is ambiguous, show me two interpretations and ask.\n2. For each criterion, write happy-path, boundary, and failure tests, following the naming and style of existing tests.\n3. Run them and confirm every one fails because the implementation doesn't exist yet.\n4. Report anything that fails for a different reason.\n\nOutput: a table (criterion / test name / why it fails).\nRules: don't touch production code. If you add a criterion the spec doesn't state, list it separately."
+   },
+   {
+    "title": "Catch tests that pass on broken code",
+    "body": "Check whether these tests would still pass if the implementation were broken. Target: {test file}\n\n1. Identify the code paths the tests actually exercise.\n2. Inject one small fault at a time: flip a comparison, shift a boundary by one, hardcode a return value, swallow an exception.\n3. Run the tests after each fault, record pass or fail, then revert before the next one.\n4. For every fault the tests missed, strengthen the tests until they catch it.\n\nOutput: a table (fault / result / test changed).\nRules: never commit with a fault in place. Finish by showing git diff to prove production code is back to its original state. Weakening a test to make it pass is off limits."
+   },
+   {
+    "title": "Split machine checks from human checks",
+    "body": "Split what needs verifying in this change into what machines can check and what a person has to look at.\n\n1. From the diff, list every behavior that could break.\n2. Put each into one bucket:\n   A: already covered by existing tests, types, lint, or CI (say which)\n   B: could be covered by adding a test (sketch the test)\n   C: only a human can confirm, on screen or with real data (one-line procedure)\n3. Order B by how cheap each test is to write.\n\nOutput: three lists, A, B, and C.\nRules: keep C to things machines truly can't check; when unsure, put it in B. Don't change code yet."
+   },
+   {
+    "title": "Inventory boundaries and failure cases",
+    "body": "Map out every boundary and failure case for this function and check which ones are tested. Target: {function}\n\n1. List its arguments and any external state it reads (database, current time, config, env vars).\n2. For each, list boundaries (0, 1, max, empty, null, overflow, time zones, date rollovers) and failures (exceptions, timeouts, malformed input).\n3. Match against existing tests: give the test name, or mark \"missing\".\n4. From the missing ones, pick the top five by impact if they broke.\n\nOutput: a table (case / expected behavior / test) plus the top five.\nRules: if the code doesn't determine the expected behavior, ask me rather than guessing. Don't write tests yet."
+   },
+   {
+    "title": "What your tests actually guarantee",
+    "body": "Without changing any code, explain what the existing tests guarantee and what they don't. Target: {module or directory}\n\n1. Read the tests and summarize each protected behavior in one line.\n2. List behaviors that aren't protected, especially anything replaced by mocks or checked with weak assertions (only \"no exception\", only a count).\n3. Call out tests that exist but effectively guarantee nothing.\n\nOutput: three groups, guaranteed / not guaranteed / in name only, each with file:line.\nRules: tag anything you inferred rather than read as [Guess]. Suggest test changes, but don't make them."
+   },
+   {
+    "title": "Rank slow and flaky CI jobs to fix",
+    "body": "Sort out the slow and flaky jobs in our CI and decide what to fix first.\n\n1. From the CI config and recent run history you can access, pull each job's duration and failure rate. If there's no data, say \"no record\".\n2. Classify failures as real bugs, flaky tests, or infrastructure.\n3. Suggest one or two fixes per job: caching, parallelism, quarantining flaky tests, running only what the change affects.\n4. Rank by payoff (minutes saved, reruns avoided) against effort.\n\nOutput: a table (job / duration / failure rate / cause / fix / payoff / effort).\nRules: keep measured numbers separate from estimates. Don't change any config yet."
+   }
+  ]
+ },
+ "earth-flex": {
+  "ja": [
+   {
+    "title": "マージを止める厳しめレビュー",
+    "body": "あなたは、このコードを書いた人とは別のレビュアーです。書いた経緯は知らない前提で、マージを止める理由を探して。\n\n1. 差分だけを読み、何をしようとしている変更かを自分の言葉で書く\n2. 止める理由になるものを探す：誤った振る舞い、既存の呼び出し元を壊す、データを失う・漏らす、元に戻せない変更、テストで守られていない重要な分岐\n3. 理由ごとに file:line と、それが起きる具体的な入力や手順を書く\n\n出力：判定（止める／直してから／問題なし）と、理由の一覧\n制約：書いた側への遠慮はいらない。ただし根拠を示せない指摘は出さない。止める理由が見つからなければ「止める理由はない」と言い切って。"
+   },
+   {
+    "title": "2案を比べて1つに決める",
+    "body": "2つの案を比べて、最後に1つに決めて。案A：{案A}／案B：{案B}\n\n1. 比べる前提をそろえる（規模、期間、チームの経験）。そろわないものは書き出す\n2. 表で比べる：性能、保守しやすさ、リスク、やり直しやすさ、導入の手間\n3. 各セルに［確認済］か［推測］かを付ける\n4. どちらを選んでも後で困る点を1つずつ挙げる\n\n出力：比較表 → 推奨（1つ）と決め手 → 推奨が覆る条件\n制約：「状況による」で終わらせない。差が小さいときは、やり直しやすいほうを選ぶ。決めるのに足りない情報があっても、私に聞くのは1つだけにして。"
+   },
+   {
+    "title": "設計への最強の反論",
+    "body": "この設計に反対する立場で、いちばん強い反論を書いて。対象：{設計のドキュメントやファイル}\n\n1. 設計の主張を3行以内でまとめる（私の意図とずれていないか確かめられるように）\n2. 反対の立場から反論を3つ出す。この設計で実際に困りそうな人（運用する人、次に触る開発者、使う人）の目線で\n3. いちばん強いものを1つ選び、それが現実になる具体的なシナリオを書く\n4. その反論に対する、設計側の最善の返しも書く\n\n出力：要約 → 反論3つ → 最強の反論とシナリオ → 設計側の返し\n制約：言葉尻をとらえる指摘や一般論は除く。反論が弱いと思ったら、弱いとはっきり書く。"
+   },
+   {
+    "title": "結論が崩れる前提を探す",
+    "body": "この結論が間違っているとしたら、どの前提が崩れたときかを洗い出して。結論：{結論}\n\n1. 結論を支えている前提を全部書き出す。明示されていないもの（版、データ量、利用者数、外部サービスの挙動）も含めて\n2. 前提ごとに、崩れる可能性（高・中・低）と、崩れたときの影響を書く\n3. 可能性が高く影響も大きいものについて、いますぐ確かめる方法（コマンド、ログ、ドキュメント）を挙げる\n\n出力：前提の表 → 先に確かめる上位3つ\n制約：確かめた前提と、確かめていない前提を分けて書く。ひっくり返すのが目的ではないので、全部堅ければ「堅い」と書いていい。"
+   },
+   {
+    "title": "見落としやすい3か所を精査",
+    "body": "このPRで、レビュアーが見落としやすい箇所を3つ選んで、そこだけ重点的に見て。\n\n1. 差分全体をざっと読み、見落とされやすい箇所を3つ選ぶ。たとえば、差分に出てこない呼び出し元、設定や migration、エラー時の分岐、並行実行、消されたコード\n2. 選んだ理由を1行ずつ書く\n3. 3か所を深く読み、問題があれば file:line と起きる条件を書く。必要なら差分の外のファイルも読む\n\n出力：表（箇所／選んだ理由／所見：問題あり・なし）\n制約：3か所以外の気づきは最後に1行ずつ、3つまで。問題がなければ「なし」と書く。コードは変えない。"
+   },
+   {
+    "title": "議論を「決める」に仕分け",
+    "body": "ここまでの議論を、次に動ける形に仕分けして。\n\n1. 議論に出てきた論点を全部拾う\n2. 次の3つに分ける\n　決まったこと：どの発言で決まったか\n　決まっていないこと：何が分かれば決まるか\n　誰かが決めないといけないこと：選択肢と、決める人の候補\n3. 3つ目の各項目に、あなたの推奨と、決めないまま進めたときに起きることを1行ずつ添える\n\n出力：3つの見出しの箇条書き → 今日決めるべき1つ\n制約：議論にない決定を作らない。どこに入るか曖昧なものは「決まっていないこと」に入れる。"
+   }
+  ],
+  "en": [
+   {
+    "title": "A strict reviewer hunting for blockers",
+    "body": "You're a reviewer who didn't write this code and doesn't know the backstory. Look for reasons to block the merge.\n\n1. Read only the diff and describe in your own words what the change is trying to do.\n2. Hunt for blockers: incorrect behavior, breaking existing callers, losing or leaking data, irreversible changes, important branches with no test coverage.\n3. For each, give file:line and the concrete input or steps that trigger it.\n\nOutput: a verdict (block / fix first / approve) and the list of reasons.\nRules: don't go easy on the author, but drop any point you can't back with evidence. If you find no blockers, say \"no reason to block\" and mean it."
+   },
+   {
+    "title": "Compare two options, then pick one",
+    "body": "Compare these two options and end by choosing one. Option A: {option A} / Option B: {option B}\n\n1. Align the assumptions (scale, timeline, team experience). List any that don't line up.\n2. Compare in a table: performance, maintainability, risk, reversibility, cost to adopt.\n3. Tag each cell [Verified] or [Guess].\n4. Name one thing that will hurt later whichever option is chosen.\n\nOutput: comparison table, then one recommendation with the deciding factor, then what would flip it.\nRules: no \"it depends\". If the gap is small, pick the more reversible option. If information is missing, ask me at most one question."
+   },
+   {
+    "title": "The strongest case against this design",
+    "body": "Take the opposing side and write the strongest objection to this design. Target: {design doc or file}\n\n1. Summarize the design's claim in three lines or fewer, so I can check you understood it.\n2. Raise three objections from the viewpoint of people who'd actually suffer: whoever operates it, the next developer to touch it, the end user.\n3. Pick the strongest and write a concrete scenario where it comes true.\n4. Give the design's best rebuttal to it.\n\nOutput: summary, three objections, strongest objection with scenario, rebuttal.\nRules: no nitpicking wording, no generic advice. If the objections are weak, say so plainly."
+   },
+   {
+    "title": "Which assumption would break this?",
+    "body": "If this conclusion turned out wrong, which assumption would have broken? Conclusion: {conclusion}\n\n1. List every assumption the conclusion rests on, including unstated ones: versions, data volume, user count, how external services behave.\n2. Rate each by likelihood of breaking (high / medium / low) and impact if it does.\n3. For high-likelihood, high-impact ones, give a way to check right now: a command, a log, a doc.\n\nOutput: a table of assumptions, then the top three to check first.\nRules: separate assumptions you've verified from ones you haven't. The goal isn't to overturn the conclusion; if everything holds, say it holds."
+   },
+   {
+    "title": "Deep-check three spots reviewers miss",
+    "body": "Pick three places in this PR that reviewers tend to miss, and review only those in depth.\n\n1. Skim the whole diff and choose three easy-to-miss spots: callers that don't appear in the diff, config or migrations, error paths, concurrency, deleted code.\n2. Give one line on why you chose each.\n3. Read those three closely. Report any problem with file:line and the condition that triggers it. Read files outside the diff if needed.\n\nOutput: a table (spot / why chosen / finding: issue or none).\nRules: anything outside the three goes at the end, one line each, three max. If there's nothing, say \"none\". Don't modify code."
+   },
+   {
+    "title": "Turn the discussion into decisions",
+    "body": "Sort this discussion into something we can act on.\n\n1. Pull out every point that came up.\n2. Put each into one of three groups:\n   Decided: which message settled it\n   Open: what we'd need to know to settle it\n   Needs a decision: the options and who should make the call\n3. For each item in the third group, add your recommendation and one line on what happens if we proceed without deciding.\n\nOutput: bullets under the three headings, then the one decision to make today.\nRules: don't invent decisions that weren't made. If an item's group is unclear, call it Open."
+   }
+  ]
+ },
+ "air-pioneer": {
+  "ja": [
+   {
+    "title": "1日で作れる最小の形",
+    "body": "{アイデア}を、1日で人に触ってもらえる最小の形に削りたい。まだコードは書かないで。\n1. このアイデアの核を1文で書く（誰の、どんな困りごとを、どう減らすか）\n2. 思いつく機能を全部並べ、「核に要る／なくても試せる／後回し」に分ける\n3. 「なくても試せる」と「後回し」を、削る順に並べる。削ると何を失うかも1行ずつ\n4. 残った機能だけで作る画面・データ・処理を、箇条書きで最小限に\n出力：核の1文／削るものリスト／残す機能と作り方の概略／1日で終わらない恐れがある箇所\n制約：ログイン・設定画面・管理画面は、核に必要だと説明できない限り削る側に入れる。"
+   },
+   {
+    "title": "使う人が詰まる3場面",
+    "body": "作る前に、{アイデア}を使う人が実際に困っている場面を具体的にしたい。\n1. 使う人を1人に絞り、仕事・状況・いま使っている代わりの手段を書く\n2. 困っている場面を3つ。それぞれ「いつ・何をしようとして・何に詰まり・いまどう凌いでいるか」で書く\n3. 各場面で、これがないために失っている時間や手間を見積もる（見積もりと分かるように）\n4. 3つのうち、最初のプロトタイプで解くべき1場面を選び、理由を書く\n制約：「便利になる」「効率化」のような抽象語は使わない。想像で補ったところには【推測】と付ける。コードはまだ書かない。"
+   },
+   {
+    "title": "試作の当たり判定を先に",
+    "body": "このプロトタイプを人に触ってもらう前に、何が起きたら「当たり」かを決めておきたい。\n1. 触ってもらう人・人数・時間と、最初に渡す説明の文面を決める\n2. 観察する行動を3つ挙げる（例：説明なしで最初の操作までたどり着けたか、翌日に自分から開いたか）\n3. それぞれに「当たり／外れ」の線を数字で置く\n4. 外れだったときに次に変えるもの（相手・課題・作り）を先に決めておく\n出力：表（観察すること／当たりの線／外れたら変えること）\n制約：「いいね」と言われたかは基準にしない。言葉ではなく行動で判定する。線を決めるのに私の判断が要るところは、止めて聞いて。"
+   },
+   {
+    "title": "作る前に先行例を調べる",
+    "body": "{アイデア}を作る前に、似たものがすでにあるか調べて。\n1. 同じ課題を解いている既存のサービス・OSS・ライブラリを最大5つ挙げる。それぞれURLと、確認できた公開日・最終更新日を添えて\n2. それぞれ、どこまで解けていて、何が解けていないかを1〜2行で\n3. 「既存のものを使う／組み合わせる／作る」の3択で、どれが妥当か判断する\n4. 作るなら、既存と比べて「ここが違えば作る意味がある」点を1つに絞る\n制約：実際にページを開いて確認できたものだけを書く。名前を知っているだけのものは【未確認】として分ける。見つからなければ「なし」と書く。"
+   },
+   {
+    "title": "広げずに1点だけ深掘る",
+    "body": "アイデアはもう増やさないで。このリポジトリで、いま一番深くすべき1点を選んで、そこだけ詰めたい。\n1. コードとメモを読み、未解決の論点を全部挙げる\n2. 「これが解けないと他が意味を持たない」順に並べ、1つ選んで理由を書く\n3. その1点について、具体的な仕様を書く（入力・出力・失敗したときの振る舞い・確かめ方）\n4. それ以外の論点は「保留」リストに移し、手を付けない\n制約：新機能や別のやり方の提案はしない。思いついても保留リストに1行書くだけにする。選んだ1点が私の想定と違いそうなら、詰める前に一度確認して。"
+   },
+   {
+    "title": "READMEだけで動く状態に",
+    "body": "作りかけのこのリポジトリを、READMEだけ読んだ人が手元で動かせる状態にしたい。\n1. clone直後の状態を想定し、READMEの手順を上から順に実際に試す\n2. 詰まった箇所を全部記録する：足りない環境変数、書かれていない前提バージョン、手で作るファイル、外部サービスのキー\n3. 各箇所を「READMEに書けば済む／設定の見本ファイルが要る／コードを直す必要がある」に分ける\n4. READMEの改訂案を出す：何をするものか1段落、動作要件、セットアップ、動作確認の1コマンド、未完成の部分\n制約：実際に試して確かめた手順と、読んだだけで推測した手順を分けて書く。秘密の値はREADMEに書かない。"
+   }
+  ],
+  "en": [
+   {
+    "title": "The smallest thing to build in one day",
+    "body": "I want to cut {idea} down to the smallest version someone could try after one day of building. Don't write code yet.\n1. State the core in one sentence: whose problem, which problem, and how this reduces it.\n2. List every feature that comes to mind and sort each into \"core\", \"testable without it\", or \"later\".\n3. Order the non-core items by what to cut first, with one line each on what we lose.\n4. For what remains, sketch the screens, data, and logic as a minimal bullet list.\nOutput: the core sentence, the cut list, the remaining features with a build sketch, and anything that could blow past one day.\nConstraint: auth, settings, and admin screens go on the cut list unless you can explain why the core needs them."
+   },
+   {
+    "title": "Three moments where the user gets stuck",
+    "body": "Before building {idea}, I want concrete pictures of the people who'd use it.\n1. Pick one specific user. Describe their job, situation, and what they use today instead.\n2. Write three moments where they get stuck, each as: when, what they were trying to do, where it broke, and how they work around it now.\n3. Estimate the time or effort each moment costs them, clearly marked as an estimate.\n4. Choose the one moment the first prototype should solve, and say why.\nConstraints: no vague words like \"more convenient\" or \"streamlined\". Tag anything you filled in from imagination as [GUESS]. No code yet."
+   },
+   {
+    "title": "Define a hit before anyone tries it",
+    "body": "Before I put this prototype in front of people, I want to decide what counts as a hit.\n1. Decide who tries it, how many people, for how long, and the exact intro text they get.\n2. Pick three behaviors to observe (e.g. reached the first action with no help, reopened it unprompted the next day).\n3. Set a numeric hit/miss line for each.\n4. Decide now what we change if it misses: the audience, the problem, or the build.\nOutput: a table of behavior, hit line, and what changes on a miss.\nConstraints: \"they said they liked it\" is not a criterion; judge by behavior, not words. If a line needs my judgment, stop and ask."
+   },
+   {
+    "title": "Check for prior art before building",
+    "body": "Before I build {idea}, research whether something similar already exists.\n1. List up to five existing products, open-source projects, or libraries solving the same problem, each with a URL and the publish or last-updated date you actually saw.\n2. For each, one or two lines on what it solves and what it leaves unsolved.\n3. Judge which is most sensible: use it, combine existing pieces, or build our own.\n4. If we build, name the single difference that would make ours worth building.\nConstraints: only include things you actually opened and checked. Put anything you only know by name under [UNVERIFIED]. If nothing turns up, say \"none\"."
+   },
+   {
+    "title": "Go deep on one point, not wide",
+    "body": "No new ideas. I want to pick the one point in this repo that most needs depth and work only on that.\n1. Read the code and notes and list every open question.\n2. Rank them by \"nothing else matters until this is solved\", pick one, and explain why.\n3. Write a concrete spec for that one point: inputs, outputs, failure behavior, and how we'll verify it.\n4. Move every other question to a \"parked\" list and leave it alone.\nConstraints: don't propose new features or alternative approaches. If one occurs to you, add a single line to the parked list. If your pick seems different from what I'd expect, check with me before digging in."
+   },
+   {
+    "title": "Make it runnable from the README alone",
+    "body": "I want anyone who reads only the README to be able to run this half-built repo.\n1. Assume a fresh clone and actually follow the README top to bottom.\n2. Record every place you got stuck: missing env vars, unstated version assumptions, files you had to create by hand, external service keys.\n3. Classify each as \"fix in the README\", \"needs an example config file\", or \"needs a code change\".\n4. Propose a revised README: one paragraph on what it does, requirements, setup, one command to confirm it works, and what's still unfinished.\nConstraints: separate steps you actually ran from steps you only inferred by reading. Never put secret values in the README."
+   }
+  ]
+ },
+ "air-steady": {
+  "ja": [
+   {
+    "title": "コードの前に実装プラン",
+    "body": "コードを書く前に、この変更のプランを出して。私が承認するまで実装しないで。\n1. 変更の目的を1文で\n2. 触るファイルの一覧と、それぞれ何を変えるかを1行ずつ\n3. 変更の順番。各段階に、どう確かめるか（流すテスト・手で見る画面）を添える\n4. 既存の動きを壊しうる箇所と、その確かめ方\n5. 私に決めてほしいこと。選択肢と、あなたのおすすめと理由つきで\n出力：上の5つを見出しで分けて\n制約：コードを読んで確かめたことと、推測で書いたことを分ける。触らないと決めた範囲も書く。プランに無い作業を、実装中に勝手に足さない。"
+   },
+   {
+    "title": "半年後に後悔する決定",
+    "body": "この設計で、半年後にいちばん後悔しそうな決定を洗い出したい。\n1. 設計に含まれる決定を列挙する（データの持ち方、モジュールの境界、依存する外部サービス、命名など）\n2. それぞれを「あとから変えるのが安い／高い」に分ける\n3. 高いものについて、件数が10倍になったとき・要件が1つ増えたとき・担当が替わったときに何が起きるかを書く\n4. いちばん危ない1つを選び、「今やる／保険だけかける／受け入れる」のどれにするか提案する\n制約：一般論ではなく、この設計の具体的な箇所を指して書く。コードや資料に根拠がないものは推測と明記する。"
+   },
+   {
+    "title": "削っても困らない機能",
+    "body": "この機能のうち、なくても困らないものを見つけて削りたい。\n1. 機能を構成する要素（画面・入力項目・設定・分岐・通知など）を全部並べる\n2. 各要素について「誰が・どの場面で使うか」を書く。答えられないものに印を付ける\n3. 印の付いたものと、使う場面がまれなものを、削る候補にする\n4. 候補ごとに、削った場合に失うもの・困る人・あとから足すコストを書く\n出力：表（要素／使う人と場面／削ると失うもの／あとから足すコスト／判定）\n制約：判定は「削る・残す・私に聞く」の3つ。迷うものは勝手に決めず「私に聞く」に入れる。"
+   },
+   {
+    "title": "仕様の決まっていない所",
+    "body": "この仕様で、まだ決まっていないのに、実装のときにあなたが黙って決めてしまいそうな点を挙げて。\n1. 仕様を読み、正常な流れを一度書き出す\n2. 次の観点で抜けを探す：空・0件・上限、重複や同時操作、権限の違う人、途中で失敗したとき、取り消し、既存データとの関係、文言とエラー表示\n3. 抜けごとに、実装するならこうするつもりという既定案を書く\n出力：表（抜けている点／起きる場面／既定案／決める人）\n制約：仕様に書いてあることは挙げない。仕様のどの文から推したかを添える。コードはまだ書かない。抜けがなければ「なし」と書く。"
+   },
+   {
+    "title": "初見の人に3分で説明",
+    "body": "この設計を、初めて読むエンジニアに3分で説明して。\n1. 何を解決するのかを1文で\n2. 主な部品と、データがどう流れるかを5行以内で\n3. いちばん大事な決定を1つと、その理由\n4. 説明していて言いよどんだところ、前置きが長くなったところ、「ここは例外で」と言い訳が要ったところを、別に書き出す\n出力：説明の本文（3分で読める長さ）と、言いよどんだ箇所のリスト\n制約：説明しにくい箇所は、設計の弱点の候補として扱う。きれいに言い換えて隠さない。なければ「なし」と書く。"
+   },
+   {
+    "title": "議論を設計記録に残す",
+    "body": "ここまでの議論を、半年後の誰かが読める設計記録（ADR）にまとめて。\n形式：\n- タイトル（決めたことを1行で）\n- 日付・状態（提案中／決定）\n- 背景：何が問題で、どんな制約があったか\n- 決定：何をすると決めたか\n- 検討した他の案：それぞれの長所と、採らなかった理由\n- 結果：これで楽になること・引き受けた代償・見直す条件\n制約：この会話で実際に出た内容だけを使う。決まっていない点は「未決」と書き、補って埋めない。理由が会話に出ていない箇所は空欄にして、私に聞いて。"
+   }
+  ],
+  "en": [
+   {
+    "title": "A plan before any code",
+    "body": "Before writing any code, give me a plan for this change. Don't implement anything until I approve it.\n1. The goal of the change in one sentence.\n2. Every file you'll touch, with one line on what changes in each.\n3. The order of changes, with how you'll verify each step (which tests to run, which screen to check by hand).\n4. Where existing behavior could break, and how we'd catch it.\n5. Decisions you need from me, with options, your recommendation, and why.\nOutput: those five sections under headings.\nConstraints: separate what you confirmed by reading the code from what you're assuming. State what's out of scope. Don't add work during implementation that isn't in the plan."
+   },
+   {
+    "title": "The decision we'll regret in six months",
+    "body": "I want to find the decision in this design we're most likely to regret six months from now.\n1. List the decisions baked into the design: data shape, module boundaries, external dependencies, naming.\n2. Mark each as cheap or expensive to change later.\n3. For the expensive ones, describe what happens when volume grows 10x, when one new requirement lands, and when ownership changes hands.\n4. Pick the riskiest one and recommend: fix it now, add a hedge, or accept it.\nConstraints: point at specific parts of this design, not general principles. Mark anything without support in the code or docs as a guess."
+   },
+   {
+    "title": "What we can cut without anyone noticing",
+    "body": "I want to find the parts of this feature nobody would miss, and cut them.\n1. List every element: screens, fields, settings, branches, notifications.\n2. For each, write who uses it and in what situation. Flag any you can't answer.\n3. Flagged items and rarely used ones become cut candidates.\n4. For each candidate, note what we lose, who's affected, and the cost of adding it back later.\nOutput: a table of element, user and situation, loss if cut, cost to re-add, verdict.\nConstraints: the verdict is one of \"cut\", \"keep\", or \"ask me\". Don't decide the uncertain ones yourself; mark them \"ask me\"."
+   },
+   {
+    "title": "Gaps the spec leaves to chance",
+    "body": "List everything this spec leaves undecided that you'd end up deciding silently during implementation.\n1. Read the spec and write out the happy path once.\n2. Hunt for gaps: empty, zero, and limits; duplicates and concurrent edits; users with different permissions; failure midway; undo; existing data; copy and error messages.\n3. For each gap, write the default you'd pick if no one told you.\nOutput: a table of gap, when it happens, your default, who should decide.\nConstraints: skip anything the spec already covers. Cite the line of the spec that led you to each gap. No code yet. If there are no gaps, say \"none\"."
+   },
+   {
+    "title": "Explain it to a newcomer in 3 minutes",
+    "body": "Explain this design to an engineer seeing it for the first time, in three minutes.\n1. What it solves, in one sentence.\n2. The main components and how data flows between them, in five lines or fewer.\n3. The single most important decision and why we made it.\n4. Separately, list every spot where you hesitated, needed a long preamble, or had to say \"except in this case\".\nOutput: the explanation (readable in three minutes) and the list of awkward spots.\nConstraints: treat anything hard to explain as a candidate weakness in the design. Don't smooth it over with nicer wording. If there are none, say \"none\"."
+   },
+   {
+    "title": "Turn the discussion into a design record",
+    "body": "Write up this discussion as a design record (ADR) that someone can read six months from now.\nFormat:\n- Title: the decision in one line\n- Date and status (proposed / accepted)\n- Context: the problem and the constraints\n- Decision: what we chose to do\n- Alternatives considered: the upside of each and why we didn't pick it\n- Consequences: what gets easier, what cost we accepted, and when to revisit\nConstraints: use only what was actually said in this conversation. Mark anything undecided as \"open\" instead of filling it in. Where the reasoning never came up, leave it blank and ask me."
+   }
+  ]
+ },
+ "air-flex": {
+  "ja": [
+   {
+    "title": "技術選定の賛否を出典つきで",
+    "body": "{候補}を採用するかどうかの判断材料を集めて。\n1. 公式ドキュメント、Issueとディスカッション、実際の採用例・移行事例、の3種類から当たる\n2. 賛成材料と反対材料を、それぞれ出典URLと公開日（または最終更新日）つきで並べる\n3. 反対材料は、いまも未解決か、すでに解決済みかを確認する\n4. このプロジェクトの条件（規模・チームの経験・運用体制）に照らして、効いてくる論点を3つに絞る\n出力：表（論点／賛・否／根拠の要約／出典／日付）と、最後に要点3行\n制約：出典を開いて確認したものだけを書く。記憶だけのものは【未確認】として分ける。"
+   },
+   {
+    "title": "情報の食い違いだけ抜き出す",
+    "body": "集めた情報の中で、互いに食い違っているところだけを抜き出して。\n1. 同じ事柄について、出典ごとに主張が違う箇所を探す（数値・推奨設定・対応バージョン・挙動の説明など）\n2. 食い違いごとに、それぞれの主張・出典・日付を並べる\n3. 食い違う理由を推定する：時期の違い、前提とする環境の違い、単なる誤り、など\n4. どちらを信じるか決めるための確認手段を書く（実際に動かす、一次情報を読む、など）\n制約：一致している情報は出さない。理由の推定は推定と明記する。食い違いがなければ「なし」と書く。"
+   },
+   {
+    "title": "古くなった情報に印を付ける",
+    "body": "この調査結果の中で、古くなっていそうな情報に印を付けて。\n1. 各情報の出典の公開日・最終更新日を確認する。分からないものは「日付不明」とする\n2. その情報が前提にしているバージョンを特定し、現行の最新と比べる\n3. 次のどれかに当てはまるものに印を付ける：2年以上前、旧メジャーバージョン前提、その後の変更履歴や非推奨の告知と矛盾する\n4. 印を付けたものについて、現行でも同じことが言えるかを確かめる方法を書く\n出力：表（情報／出典と日付／対象バージョン／判定：現行・要確認・古い）\n制約：確かめた日付と、推測した日付を分けて書く。"
+   },
+   {
+    "title": "関係ある話だけ3つに絞る",
+    "body": "調べた結果のうち、このプロジェクトに関係ある話だけを3つに絞って。\n1. まずプロジェクトの前提を、リポジトリと資料から書き出す（言語・規模・運用体制・制約）。読み取れないものは私に聞く\n2. 調査結果の各項目を、その前提に照らして「効く／効かない／条件次第」に分ける\n3. 「効く」の中から、判断を左右する順に3つ選ぶ\n4. 3つそれぞれに、なぜこのプロジェクトで効くのかを1〜2行、出典つきで\n制約：落とした項目は、落とした理由を末尾に1行ずつ残す。面白くても関係のない話は入れない。"
+   },
+   {
+    "title": "結論を1行、根拠を1行",
+    "body": "集めた材料をまとめて、結局どうするのがいいかを決めたい。\n1. 選択肢を最大3つに整理する（「何もしない」も含める）\n2. 結論を1行で。「〜を採用する」のように言い切る\n3. 根拠を1行で。いちばん効いた出典を1つ添える\n4. この結論が間違っていたと分かる兆候を1つ書く\n5. 結論を出すのに私の価値判断が要る点（速さと堅さのどちらを取るか、など）があれば、結論の前に聞く\n制約：「状況による」「一長一短」で終わらせない。材料が足りず言い切れないなら、何が分かれば言い切れるかを書く。"
+   },
+   {
+    "title": "詳しい人の調べ順で調べる",
+    "body": "この分野に詳しい人なら、どこからどの順で調べるかを考えて、その順番で調べて。\n1. まず調べる順番を計画する：一次情報（仕様・公式ドキュメント・ソースコード）、変更履歴、Issue、実運用の事例のうち、何をどの順に見るかを理由つきで\n2. 計画を出したら、私の確認を待ってから調べ始める\n3. 各段階で分かったことを、出典URLと日付つきで記録する\n4. 最後に、計画どおり調べられなかった箇所とその理由を書く\n制約：検索上位の解説記事やまとめを、一次情報の代わりにしない。引用はどの文書のどの節かまで示す。"
+   }
+  ],
+  "en": [
+   {
+    "title": "Pros and cons of a tech choice, sourced",
+    "body": "Gather the evidence for deciding whether to adopt {candidate}.\n1. Pull from three kinds of sources: official docs, issues and discussions, and real adoption or migration stories.\n2. List arguments for and against, each with a source URL and publish or last-updated date.\n3. For every argument against, check whether it's still open or already resolved.\n4. Given this project's constraints (scale, team experience, how we operate it), narrow it to the three points that actually matter.\nOutput: a table of point, for/against, evidence summary, source, date; then three lines of takeaways.\nConstraints: only include sources you actually opened. Anything from memory goes under [UNVERIFIED]."
+   },
+   {
+    "title": "Only the contradictions",
+    "body": "From everything gathered so far, pull out only the places where sources contradict each other.\n1. Find claims about the same thing that differ by source: numbers, recommended settings, supported versions, described behavior.\n2. For each contradiction, list each claim with its source and date.\n3. Guess why they differ: different time, different environment, or plain error.\n4. Say how we'd settle it: run it ourselves, read the primary source, or something else.\nConstraints: leave out anything the sources agree on. Label your explanations as guesses. If there are no contradictions, say \"none\"."
+   },
+   {
+    "title": "Flag what's gone stale",
+    "body": "Flag anything in these research findings that's likely out of date.\n1. Check each source's publish or last-updated date. If you can't find one, mark it \"date unknown\".\n2. Identify which version each claim assumes and compare it to the current release.\n3. Flag anything that is over two years old, assumes an old major version, or conflicts with later changelogs or deprecation notices.\n4. For each flagged item, say how to confirm whether it still holds today.\nOutput: a table of claim, source and date, version assumed, verdict (current / needs check / stale).\nConstraints: separate dates you confirmed from dates you inferred."
+   },
+   {
+    "title": "Narrow it to the three that matter here",
+    "body": "Narrow the research down to the three findings that actually matter for this project.\n1. First write down the project's facts from the repo and docs: language, scale, how it's operated, hard constraints. Ask me about anything you can't find.\n2. Sort every finding against those facts: \"matters\", \"doesn't\", or \"depends\".\n3. From \"matters\", pick three, ordered by how much they'd change the decision.\n4. For each, one or two lines on why it matters here, with its source.\nConstraints: at the end, list everything you dropped with a one-line reason. Leave out interesting-but-irrelevant material."
+   },
+   {
+    "title": "One line of verdict, one of reasoning",
+    "body": "I need to turn all this research into a decision.\n1. Reduce it to at most three options, including \"do nothing\".\n2. Give the verdict in one line, stated plainly, like \"Adopt X.\"\n3. Give the reasoning in one line, citing the single source that weighed most.\n4. Name one signal that would tell us later the verdict was wrong.\n5. If the call depends on my priorities (speed vs. robustness, for example), ask me before giving the verdict.\nConstraints: don't end with \"it depends\" or \"there are trade-offs\". If the evidence isn't enough to commit, say exactly what we'd need to learn to commit."
+   },
+   {
+    "title": "Research it the way an expert would",
+    "body": "Work out where an expert in this area would start looking and in what order, then research in that order.\n1. Plan the order first: primary sources (specs, official docs, source code), changelogs, issues, production case studies. Say what you'd check in which order, and why.\n2. After showing me the plan, wait for my OK before starting.\n3. At each step, record what you learned with source URLs and dates.\n4. At the end, list what you couldn't check as planned, and why.\nConstraints: don't let top-ranked explainer posts or roundups stand in for primary sources. When quoting, cite the document and section."
+   }
+  ]
+ },
+ "water-pioneer": {
+  "ja": [
+   {
+    "title": "方針の一番まずい所",
+    "body": "遠慮なしで。この方針のいちばんまずいところを、言いにくいことから先に教えて。\n対象：{方針やPRの説明}\n\n1. 前提が崩れると全体が成り立たなくなる箇所を探す\n2. 本番で効くダメージの大きい順（データ破損・セキュリティ・後戻りできない変更・運用負荷）に並べる\n3. 各指摘に「起きる条件」と「根拠（file:line か、確かめた手順）」を付ける\n\n出力：重大な順に最大5件。各件は「問題／起きる条件／根拠／代わりの案」の4行。\n制約：褒め言葉と前置きは書かない。推測は「推測」と明記する。まだコードは変更しない。致命的なものが無ければ「致命的な問題なし」と書き、次に弱い所を1つだけ挙げる。"
+   },
+   {
+    "title": "テックリード目線の差し戻し",
+    "body": "あなたは私のチームのテックリード。このPRを、まだマージできない理由がある前提でレビューして差し戻して。\n対象：{PRの差分 or ブランチ}\n\n確認すること：\n1. PRの説明と差分が一致しているか（説明にない変更、変更にない説明）\n2. テストが変更した挙動を本当に検証しているか。消したテスト・skipしたテストはないか\n3. 境界値・null・権限・同時実行で壊れないか\n4. 半年後に別の人が直せる書き方か\n\n出力：「Must（直さないとマージ不可）」「Should」「Nit」に分け、各指摘に file:line と直し方を1行。最後にマージ可否を一言。\n制約：コードは書き換えない。指摘が無い区分は「なし」と書く。"
+   },
+   {
+    "title": "実装前の質問攻め",
+    "body": "私の説明であいまいなところを質問して。質問が全部終わるまで、実装しないで。\n\n進め方：\n1. まず私の依頼を3行で言い直す（目的・完了の状態・やらないこと）\n2. 判断が分かれるところを質問にする。入力の範囲、エラー時の挙動、既存機能との関係、誰が使うか\n3. 各質問に「あなたならこうする」という仮の答えを添え、私がYes/Noで返せるようにする\n4. 一度に聞くのは最大5問。答えを受けて、まだあれば次の5問\n\n制約：コードは読んでよいが、書かない・変更しない。コードを読めば分かることは質問せず「file:lineより〜と理解」と書く。質問が尽きたら「質問は以上」と言い、実装方針を5行で出して私の承認を待つ。"
+   },
+   {
+    "title": "同意の裏の本音を聞く",
+    "body": "私に同意しないといけないとしたら、どこがいちばん苦しい？\nここまでの会話で、あなたが私に合わせた箇所を洗い出して。\n\n1. この会話であなたが同意・賛成した判断を一覧にする\n2. それぞれ、私の言い方に引っぱられて同意した可能性を「高・中・低」で自己評価する\n3. 「高」のものは、私が逆のことを言っていたらどう答えたかを書く\n4. 本当は別の案を推したかったものがあれば、その案と理由を出す\n\n出力：判断／引っぱられ度／逆の場合の答え／本音の案 の表。\n制約：気をつかった言い回しは不要。全部妥当だと思うなら、その根拠をコードか事実で示す。どうするかは私が決めるので、まだ何も変更しない。"
+   },
+   {
+    "title": "1年後に伝わる意図に直す",
+    "body": "1年後の私が、この会話の記憶なしで読むと思って、意図が伝わらないところを直して。\n対象：{ファイル or 差分}\n\n1. 「なぜこうしたか」がコードから読めない箇所を探す。マジックナンバー、不自然な分岐、わざと避けている書き方、順序に意味がある処理\n2. 名前を変えれば伝わるものは名前で直す。名前で無理なものだけコメントにする\n3. コメントには「何をしているか」ではなく「なぜ」と「外すと何が壊れるか」を書く\n\n出力：先に一覧（file:line／伝わらない理由／直し方）を出し、私がOKしたら変更する。\n制約：挙動は1行も変えず、テストが通ることを確認する。意図があなたにも分からない箇所は推測で埋めず「要確認」として残す。"
+   },
+   {
+    "title": "事実と推測を分けた答え",
+    "body": "やさしさ抜きで、事実と根拠だけで答えて。\n質問：{質問}\n\n答え方：\n1. 結論を1行で\n2. 根拠を「確認済み」と「推測」に分けて並べる。確認済みには、読んだファイル（file:line）、実行したコマンドと結果、ドキュメントの該当箇所のどれかを必ず付ける\n3. 推測には「何を確かめれば確定するか」を1行添える\n4. 結論が推測に依存しているなら、そう明記する\n\n制約：励まし・共感・前置き・「良い質問ですね」は書かない。分からないことは「分からない」と言う。手元で確かめられるものは、答える前に読む・実行する（ただし何も変更しない）。"
+   }
+  ],
+  "en": [
+   {
+    "title": "The worst part of this plan, first",
+    "body": "No holding back. Tell me the worst part of this approach, starting with what's hardest to say.\nTarget: {plan or PR description}\n\n1. Find the assumptions that, if wrong, make the whole thing collapse.\n2. Rank issues by real-world damage: data loss, security, irreversible changes, ops burden.\n3. For each, state when it happens and what backs it up (file:line or how you checked).\n\nOutput: up to 5 issues, most severe first. Each as: Problem / Trigger / Evidence / Alternative.\nRules: no compliments or preamble. Label guesses as guesses. Don't change any code yet. If nothing is critical, say \"nothing critical\" and name the single weakest spot."
+   },
+   {
+    "title": "Your tech lead sends the PR back",
+    "body": "Act as my team's tech lead. Review this PR assuming there's a reason it can't merge yet, and send it back.\nTarget: {PR diff or branch}\n\nCheck:\n1. Does the description match the diff? Flag undescribed changes and described changes that aren't there.\n2. Do the tests actually exercise the new behavior? Any deleted or skipped tests?\n3. Does it break on edge values, nulls, permissions, or concurrency?\n4. Could someone else safely fix this six months from now?\n\nOutput: group findings into Must (blocks merge), Should, and Nit, each with file:line and a one-line fix. End with a verdict: merge or revise.\nRules: don't edit code. Write \"none\" for any empty group."
+   },
+   {
+    "title": "Interview me before you build",
+    "body": "Ask me about anything vague in my explanation. Don't implement until you're out of questions.\n\n1. Restate my request in three lines: goal, what \"done\" looks like, what's out of scope.\n2. Turn every fork in the road into a question: input ranges, error behavior, interaction with existing features, who uses it.\n3. Attach your default answer to each, so I can reply yes or no.\n4. Max 5 questions per round. Ask the next round after I answer.\n\nRules: read code freely, but don't write or change any. Don't ask what the code already tells you; write \"from file:line, I understand…\" instead. When you're out of questions, say so, give a 5-line implementation plan, and wait for my approval."
+   },
+   {
+    "title": "Where you agreed just to be nice",
+    "body": "If you had to agree with me, which part would be hardest to swallow?\nGo back through this conversation and find where you went along with me.\n\n1. List every decision you agreed with or endorsed.\n2. Rate each high / medium / low: how likely was your agreement shaped by how I phrased it?\n3. For the \"high\" ones, write what you'd have said if I'd argued the opposite.\n4. If there's an option you'd actually rather push, give it and why.\n\nOutput: a table of Decision / Bias rating / Answer if I'd said the opposite / Your real pick.\nRules: no diplomatic softening. If you think everything holds up, back that with code or facts. I decide what changes, so don't modify anything yet."
+   },
+   {
+    "title": "Make the intent survive a year",
+    "body": "Imagine me reading this a year from now with no memory of this conversation. Fix anything whose intent wouldn't come across.\nTarget: {file or diff}\n\n1. Find spots where the code doesn't explain why: magic numbers, odd branches, deliberately avoided patterns, order-dependent steps.\n2. Fix with naming first. Use a comment only when a name can't carry it.\n3. Comments say why, and what breaks if it's removed — not what the code does.\n\nOutput: a list first (file:line / why it's unclear / proposed fix). Apply changes only after I approve.\nRules: change zero behavior and confirm tests still pass. If the intent is unclear to you too, don't invent one; mark it \"needs confirmation.\""
+   },
+   {
+    "title": "Facts and evidence, nothing else",
+    "body": "Skip the kindness. Answer with facts and evidence only.\nQuestion: {question}\n\n1. Conclusion in one line.\n2. Evidence split into Verified and Guessed. Every verified item cites what you read (file:line), what you ran and its output, or where in the docs.\n3. For each guess, add one line on what would confirm it.\n4. If the conclusion rests on a guess, say so plainly.\n\nRules: no encouragement, empathy, preamble, or \"great question.\" Say \"I don't know\" when you don't. If something can be checked locally, read or run it before answering — but don't modify anything."
+   }
+  ]
+ },
+ "water-steady": {
+  "ja": [
+   {
+    "title": "見落としを1つだけ",
+    "body": "私が見落としてそうなこと、1つだけ教えて。\n\n選び方：\n1. いまの作業（この会話と差分）を見て、見落としの候補を複数出す\n2. その中から「気づかずにマージしたら、いちばん困るもの」を1つ選ぶ。困る＝ユーザーに見える不具合、データ、セキュリティ、戻せない変更\n3. 「テストを書こう」のような一般論ではなく、このコードに固有のものにする\n\n出力：\n- 見落とし：1文\n- 根拠：file:line、または再現手順\n- 確かめ方：私が1分でできる確認\n- 確信度：高／中／低\n\n制約：1つだけ。2つ目は聞かれるまで出さない。コードはまだ変えない。本当に見当たらなければ「見当たらない」と言い、何を確認してそう判断したかを書く。"
+   },
+   {
+    "title": "着手前の確認を全部",
+    "body": "進める前に、あなたが分かっていないことと、私に確認したいことを全部聞いて。\n\n1. まず、いまの理解を「目的／変える範囲／変えない範囲／完了の確かめ方」の4行で書く\n2. その理解のうち、私の言葉から推測で補ったところに印を付ける\n3. 確認したいことを、答えによって実装が大きく変わる順に並べる。答えで何が変わるかも1行ずつ添える\n4. コードやドキュメントを読めば分かることは聞かずに調べ、分かったことを file:line 付きで書く\n\n出力：理解の4行 → 推測した点 → 質問リスト（番号付き）。\n制約：私が全部に答えるまで、ファイルを変更しない。確認したいことが無ければ「確認事項なし」と書き、なぜそう言えるかを1行で。"
+   },
+   {
+    "title": "説明抜きで読んだ解釈",
+    "body": "このコードを私の説明なしで読んだら、どう理解する？ 私の意図とずれていたら教えて。\n対象：{ファイル or 差分}\n\n1. この会話で私が話した背景をいったん忘れて、コードだけを読む\n2. 「このコードは何のためにあり、どんな入力で何をするか」を、初めて読む人の言葉で5行以内に書く\n3. その後で、私が会話で話した意図と並べ、ずれている箇所を挙げる\n4. ずれの原因を、名前・構造・抜けている処理・余計な処理のどれかに分類する\n\n出力：コードだけからの理解 → 意図とのずれ（file:line／ずれ方／原因）。\n制約：まだ直さない。ずれが無ければ「ずれなし」と書く。会話の内容を知らないと読めない箇所は、そのこと自体を指摘にする。"
+   },
+   {
+    "title": "次のセッションへの引き継ぎ",
+    "body": "ここまでで決めたことを、次のセッションの自分に渡すメモにして。次の私はこの会話を一切読まない前提で。\n\n含めること：\n1. ゴールと、いまどこまで来たか（完了／途中／未着手）\n2. 決めたことと、その理由。却下した案も理由付きで（同じ議論を繰り返さないため）\n3. 触ったファイルのパスと、未コミットの変更の有無\n4. 未解決の問いと、それを決めるのは誰か\n5. 次に最初にやる1手と、その確かめ方\n\n制約：箇条書きで40行以内。確認していないことを「済み」と書かない。実際に確かめたものと、私の発言だけが根拠のものを区別する。推測で埋めた箇所は「要確認」と書く。"
+   },
+   {
+    "title": "「それ、ほんと？」の裏付け",
+    "body": "それ、ほんと？ 根拠になるコードの場所か、ドキュメントを示して。\n対象：直前のあなたの回答（または {主張}）\n\n1. 回答に含まれる主張を1つずつに分ける\n2. 各主張を、いまこの場で確かめる。コードを読む（file:line）、コマンドを実行して出力を見る、公式ドキュメントの該当箇所を引く\n3. 結果を「確認できた／確認できなかった／間違っていた」に分ける\n4. 間違っていたものは、正しい内容に訂正する\n\n出力：主張／判定／根拠（場所と引用1行）の表。最後に、元の結論が変わるかを一言。\n制約：記憶や一般論は根拠にしない。確かめられなかったものを「たぶん正しい」で済ませない。訂正はしてよいが、コードの変更は私の確認を待つ。"
+   },
+   {
+    "title": "今日の頼み方の振り返り",
+    "body": "今日の作業で、うまくいった頼み方と、うまくいかなかった頼み方を1つずつ教えて。\n\n1. この会話の私の依頼を振り返り、少ないやり取りで意図どおりになったものと、手戻りが多かったものを1つずつ選ぶ\n2. それぞれ、私の実際の言い回しを引用する\n3. うまくいかなかった方は、何が足りなかったかを具体的に（目的・範囲・完了条件・制約のどれか）\n4. 同じ場面で次に使える書き直し案を1つ出す\n\n出力：うまくいった例（引用／効いた理由）→ うまくいかなかった例（引用／足りなかったもの／書き直し案）。\n制約：お世辞は不要。原因があなた側の読み違いだったなら、それも正直に書く。はっきりした例が無ければ「なし」と書く。"
+   }
+  ],
+  "en": [
+   {
+    "title": "The one thing you're overlooking",
+    "body": "Tell me just one thing I'm probably overlooking.\n\nHow to pick it:\n1. Look at what we're working on (this conversation and the diff) and come up with several candidates.\n2. Choose the one that would hurt most if it shipped unnoticed: user-visible bugs, data, security, or anything irreversible.\n3. Make it specific to this code, not general advice like \"add more tests.\"\n\nOutput:\n- What I'm missing: one sentence\n- Evidence: file:line or repro steps\n- How to check: something I can verify in a minute\n- Confidence: high / medium / low\n\nRules: just one. Hold the rest until I ask. Don't change code yet. If you genuinely find nothing, say \"nothing found\" and list what you checked."
+   },
+   {
+    "title": "Every question before you start",
+    "body": "Before moving on, ask me everything you don't understand or want to confirm.\n\n1. Write your current understanding in four lines: goal / what changes / what must not change / how we'll know it's done.\n2. Mark which parts you filled in by guessing from my words.\n3. List your questions, ordered by how much the answer would change the implementation, with one line on what each answer affects.\n4. Don't ask what you can learn from the code or docs; look it up and note it with file:line.\n\nOutput: the four lines, then the guesses, then numbered questions.\nRules: don't modify files until I've answered everything. If there's nothing to ask, say \"no questions\" and explain why in one line."
+   },
+   {
+    "title": "Read it without my explanation",
+    "body": "If you read this code without my explanation, how would you understand it? Tell me where that differs from what I meant.\nTarget: {file or diff}\n\n1. Set aside everything I've told you in this conversation. Read only the code.\n2. In five lines or fewer, describe what it's for and what it does with which inputs, as a first-time reader would.\n3. Then compare that with the intent I described and list the gaps.\n4. Classify each gap: naming, structure, missing logic, or extra logic.\n\nOutput: the code-only reading, then gaps (file:line / how it differs / cause).\nRules: don't fix anything yet. Write \"no gaps\" if there are none. If a part only makes sense with our conversation as context, that itself is a finding."
+   },
+   {
+    "title": "Handoff note for the next session",
+    "body": "Write what we've decided so far as a note to hand to myself in the next session. Assume next-session me won't read this conversation at all.\n\nInclude:\n1. The goal and where we are (done / in progress / not started).\n2. Decisions and why — plus rejected options and why, so we don't relitigate them.\n3. Files touched (paths) and whether there are uncommitted changes.\n4. Open questions and who decides each.\n5. The very first next step and how to verify it.\n\nRules: bullet points, under 40 lines. Don't call anything \"done\" that we didn't actually confirm. Separate what was verified from what rests only on my say-so. Mark guesses \"needs confirmation.\""
+   },
+   {
+    "title": "Is that really true? Show me.",
+    "body": "Is that really true? Show me the code location or doc that backs it up.\nTarget: your last answer (or {claim})\n\n1. Break the answer into individual claims.\n2. Check each one right now: read the code (file:line), run a command and look at the output, or quote the relevant section of the official docs.\n3. Sort the results into confirmed / couldn't confirm / wrong.\n4. Correct anything that was wrong.\n\nOutput: a table of Claim / Verdict / Evidence (location plus a one-line quote). End by saying whether the original conclusion still holds.\nRules: memory and general knowledge don't count as evidence. Don't wave unconfirmed items through as \"probably fine.\" Correct freely, but wait for me before changing code."
+   },
+   {
+    "title": "One ask that worked, one that didn't",
+    "body": "From today's work, give me one way of asking that worked and one that didn't.\n\n1. Review my requests in this conversation. Pick one that got the intended result in few turns, and one that caused rework.\n2. Quote my actual wording for each.\n3. For the one that didn't work, name what was missing: goal, scope, definition of done, or constraints.\n4. Suggest one rewrite I could reuse next time in the same situation.\n\nOutput: Worked (quote / why it worked), then Didn't (quote / what was missing / rewrite).\nRules: no flattery. If the real cause was your own misreading, say so honestly. Write \"none\" if there's no clear example."
+   }
+  ]
+ },
+ "water-flex": {
+  "ja": [
+   {
+    "title": "詰まりを3つに整理",
+    "body": "いま詰まっている状況を、「分かっていること・試したこと・まだ試していないこと」に整理して。\n症状：{エラーや起きていること}\n\n1. 分かっていること：再現条件、エラーメッセージ、関係するファイル（file:line）。確かめたものだけ\n2. 試したこと：この会話とコマンド履歴から拾い、それぞれの結果を1行で。結果が分からないものは「結果不明」\n3. まだ試していないこと：原因の候補ごとに、それを確かめる最小の手順。早く安く確かめられる順に並べる\n\n出力：3つの見出しの箇条書き。最後に「次の1手」を1つだけ。\n制約：まだ直さない。推測と事実を混ぜない。同じことを2回試していたら指摘する。"
+   },
+   {
+    "title": "今日で終わる大きさに切る",
+    "body": "このタスクを、今日の残り時間で終わる大きさに切って。最初の一歩だけやって。\n残り時間：{例：2時間}\n\n1. タスクを、それぞれ単独でコミットできる小さな段に分ける。各段に「終わったと分かる確かめ方」を付ける\n2. 残り時間に収まる段だけを今日の分にする。見積もりは控えめに\n3. 今日の分の最初の1段だけ実装し、確かめ方を実行して結果を見せる\n4. そこで止まって、私の返事を待つ\n\n出力：段の一覧（今日／明日以降）→ 1段目の差分 → 確かめた結果。\n制約：1段目より先に進まない。途中で範囲が広がりそうなら手を止めて相談する。テストが落ちたら隠さず報告する。"
+   },
+   {
+    "title": "説明を聞いて止める役",
+    "body": "私が説明するのを聞いていて。途中でおかしいところがあったら、そこで止めて。\n\nルール：\n1. これから私が、問題と自分の考えを何回かに分けて書く。あなたは基本的に「続けて」とだけ返す\n2. 次のどれかに当たったら、その場で止めて1つだけ指摘する：前に言ったことと矛盾した／確かめていないことを前提にした／コードの実際の挙動と違う（file:line を示す）／話が飛んだ\n3. 指摘は短く。答えや解決策は言わず、「そこ、どうして分かる？」の形で返す\n4. 私が「終わり」と言ったら、止めた箇所を一覧にする\n\n制約：私が話している間は、コードを変更しない・解決策を出さない。おかしいところが無ければ止めなくてよい。"
+   },
+   {
+    "title": "安全に中断する区切り",
+    "body": "いまの作業を安全に中断するなら、どこで区切って、何をメモしておけばいい？\n\n1. 現状を確かめる：未コミットの変更、テストの状態、途中のマイグレーション、起動したままのプロセス。推測せず実際にコマンドで確かめる\n2. 区切り方を提案する：このままコミットできるか、一部だけ戻すべきか、WIPとして別ブランチに逃がすべきか。理由付きで\n3. 再開用のメモを書く：いまの目的、次にやる1手、途中で気づいた注意点、再開時に最初に打つコマンド\n\n出力：現状（確認済みの事実）→ おすすめの区切り方 → 再開メモ（15行以内）。\n制約：破壊的な操作（reset・削除・強制push）はしない。提案だけして、実行は私の返事を待つ。"
+   },
+   {
+    "title": "症状でなく原因を探す",
+    "body": "私が本当に困っているのは、どこだと思う？ 症状じゃなくて原因で。\n症状：{起きていること}\n\n1. 症状を正確に言い直す（何が、どの条件で、どうなるか）\n2. 「なぜ？」を最低3回たどって原因の候補を出す。各段に、そう言える根拠（file:line、ログ、実行結果）を付ける\n3. 候補ごとに「それが原因なら、他に何が起きているはずか」を書き、実際にそうなっているか確かめる\n4. 私の問い自体がずれている可能性（本当の問題が別の場所にある）も検討する\n\n出力：いちばんありそうな原因1つ（確信度付き）→ 他の候補 → 確かめた結果。\n制約：まだ直さない。確かめていない候補を原因と断定しない。絞れなければ、何が分かれば絞れるかを書く。"
+   },
+   {
+    "title": "今日やらなくていいこと",
+    "body": "疲れている前提で。今日やらなくていいことを先に挙げて。\n対象：{今日のタスクやTODO}\n\n1. 各項目を「今日やらないと誰かが困る」「明日でも同じ」「そもそも要らないかも」に分ける。理由を1行ずつ\n2. 「今日やらないと困る」ものだけ残し、疲れていてもできる小さな形に言い換える\n3. 疲れているときにやると事故りやすい作業（本番操作、大きなリファクタ、データ移行など）があれば、明日に回すよう明記する\n\n出力：やらなくていいこと → 今日やる最小リスト（3件まで）→ 明日に回す危ない作業。\n制約：新しい作業を足さない。私の代わりに勝手に着手しない。全部が本当に今日必要なら、そう言ったうえで順番だけ出す。"
+   }
+  ],
+  "en": [
+   {
+    "title": "Untangle where I'm stuck",
+    "body": "Organize where I'm stuck into: what we know, what I've tried, what I haven't tried yet.\nSymptom: {error or behavior}\n\n1. What we know: repro conditions, error messages, relevant files (file:line). Only things actually confirmed.\n2. What I've tried: pull from this conversation and the command history, each with a one-line result. Write \"result unknown\" where it's unclear.\n3. Not tried yet: for each suspected cause, the smallest step that would confirm or rule it out, cheapest and fastest first.\n\nOutput: bullets under those three headings, then exactly one \"next step.\"\nRules: don't fix anything yet. Keep facts and guesses separate. Point out anything I've tried twice."
+   },
+   {
+    "title": "Cut it to fit today, do step one",
+    "body": "Cut this task down to what fits in the rest of today. Do only the first step.\nTime left: {e.g. 2 hours}\n\n1. Split the task into small steps that can each be committed on their own. Give each a \"how we know it's done\" check.\n2. Keep only the steps that fit the time left. Estimate conservatively.\n3. Implement just the first step and run its check. Show me the result.\n4. Then stop and wait for me.\n\nOutput: the step list (today / later), the diff for step one, and the check result.\nRules: don't go past step one. If scope starts to grow, pause and ask. If tests fail, report it plainly."
+   },
+   {
+    "title": "Listen, and stop me when it's off",
+    "body": "Just listen while I explain. Stop me the moment something sounds off.\n\nHow this works:\n1. I'll describe the problem and my thinking over several messages. Mostly just reply \"go on.\"\n2. Stop me right away, with one point, if I contradict something I said earlier, assume something I haven't verified, describe behavior that doesn't match the code (cite file:line), or skip a step in the reasoning.\n3. Keep it short. Don't give answers; ask \"how do you know that?\"\n4. When I say \"done,\" list every place you stopped me.\n\nRules: no code changes and no solutions while I'm talking. If nothing's off, don't interrupt."
+   },
+   {
+    "title": "A safe place to pause",
+    "body": "If I pause this safely now, where should I cut, and what should I note down?\n\n1. Check the current state by actually running commands, not guessing: uncommitted changes, test status, half-applied migrations, processes still running.\n2. Propose how to cut: commit as-is, revert part of it, or move it to a WIP branch. Give reasons.\n3. Write a resume note: the goal, the next single step, gotchas noticed along the way, and the first command to run when I come back.\n\nOutput: current state (verified facts only), then the recommended cut, then the resume note (under 15 lines).\nRules: no destructive operations — no reset, deletes, or force push. Propose only; wait for my go-ahead before executing."
+   },
+   {
+    "title": "The cause, not the symptom",
+    "body": "What do you think I'm actually stuck on? The cause, not the symptom.\nSymptom: {what's happening}\n\n1. Restate the symptom precisely: what, under which conditions, with what result.\n2. Ask \"why?\" at least three levels deep to get candidate causes. Back each level with evidence: file:line, logs, or command output.\n3. For each candidate, say what else should be true if it were the cause, then check whether it is.\n4. Consider whether my question itself is off and the real problem lives somewhere else.\n\nOutput: the single most likely cause with a confidence level, other candidates, and what you checked.\nRules: don't fix anything yet. Don't name an unverified candidate as the cause. If you can't narrow it down, say what information would."
+   },
+   {
+    "title": "What can wait until tomorrow",
+    "body": "Assume I'm tired. Start by listing what doesn't need to happen today.\nInput: {today's tasks or TODO list}\n\n1. Sort each item into \"someone is blocked if it's not done today,\" \"same if done tomorrow,\" or \"maybe not needed at all,\" with a one-line reason.\n2. Keep only the first group, and reword each into a smaller version I can manage while tired.\n3. Flag anything risky to do while tired (production operations, big refactors, data migrations) and say explicitly to move it to tomorrow.\n\nOutput: what can wait, then today's minimum list (max 3), then risky work to defer.\nRules: don't add new tasks. Don't start anything on my behalf. If everything truly is needed today, say so and just give the order."
+   }
+  ]
+ }
+};
+for (const k in PROMPTS) TYPES[k].prompts = PROMPTS[k];
+
+/* ---------- 今日のエール（属性ごと7つ） ---------- */
+const CHEER = {
+  fire: [
+    { ja: "あなたが先に動いたぶんだけ、チームの「わからない」が減っています。", en: "Every time you move first, the team's “we don't know yet” gets smaller." },
+    { ja: "速いのは雑だからじゃない。何度も試して、迷わない道を知っているからです。", en: "You're not fast because you're sloppy. You're fast because you've tried enough to know the way." },
+    { ja: "昨日のあなたが出したものが、今日もどこかで動いています。", en: "Something you shipped yesterday is running somewhere today." },
+    { ja: "今日の「とりあえず」が、来月のあたりまえになります。", en: "Today's “let's just try it” becomes next month's normal." },
+    { ja: "止まらずに出し続けられるのは、立派な才能です。", en: "Shipping without stalling is a real talent." },
+    { ja: "あなたのテンポに、まわりはちゃんと助けられています。", en: "Your pace is quietly carrying the people around you." },
+    { ja: "完璧じゃなくても、出したあなたの勝ちです。", en: "It doesn't have to be perfect. You shipped it—that's the win." },
+  ],
+  earth: [
+    { ja: "あなたが確かめたから、今日も誰かが安心して寝られます。", en: "Because you checked, someone gets to sleep soundly tonight." },
+    { ja: "見つけたバグの数だけ、未来の事故が消えています。", en: "Every bug you catch is an incident that never happens." },
+    { ja: "「本当かな？」と思えるのは、ちゃんと考えている証拠です。", en: "Asking “is that really true?” is proof you're actually thinking." },
+    { ja: "地味な確認ほど、あとで一番感謝されます。", en: "The quietest checks earn the most thanks later." },
+    { ja: "あなたのテストが、チームの速さを支えています。", en: "Your tests are what let the team move fast." },
+    { ja: "疑うのが上手な人は、信じるのも上手です。", en: "People who doubt well also know when to trust." },
+    { ja: "今日もあなたの目が、プロダクトを守っています。", en: "Your eyes are protecting the product again today." },
+  ],
+  air: [
+    { ja: "あなたの頭の中の地図が、チームの迷子を減らしています。", en: "The map in your head keeps the team from getting lost." },
+    { ja: "考えた時間は、手戻りしなかった時間として返ってきます。", en: "Time spent thinking comes back as rework you never had to do." },
+    { ja: "まだ形になっていないアイデアにも、ちゃんと価値があります。", en: "Ideas that aren't built yet still have real value." },
+    { ja: "「それ、要る？」と聞けるのは、本当に大事なものが見えているからです。", en: "You can ask “do we need that?” because you see what truly matters." },
+    { ja: "あなたがつないだ点は、いつか誰かの近道になります。", en: "The dots you connect will become someone's shortcut." },
+    { ja: "ひらめきを放っておかないあなたは、それだけで前に進んでいます。", en: "Not letting ideas slip away is already moving forward." },
+    { ja: "今日の寄り道が、明日のいちばんいい設計になるかもしれません。", en: "Today's detour might become tomorrow's best design." },
+  ],
+  water: [
+    { ja: "あなたの丁寧な言葉は、AIにも人にもちゃんと届いています。", en: "Your careful words reach both AI and people." },
+    { ja: "自分の調子を大事にできる人は、長く遠くまで行けます。", en: "People who take care of their own pace go the farthest." },
+    { ja: "ひとりで抱えず頼れるのは、強さです。", en: "Asking for help instead of carrying it all alone is a strength." },
+    { ja: "あなたがいると、チームの空気が少しやわらかくなります。", en: "The room feels a little softer when you're in it." },
+    { ja: "今日はもう十分がんばっています。早めに閉じても大丈夫。", en: "You've already done plenty today. It's fine to log off early." },
+    { ja: "「ありがとう」を言えるあなたは、いいコードを引き出せる人です。", en: "Someone who says “thank you” is someone who gets good code back." },
+    { ja: "楽しんで書いたコードは、ちゃんと誰かを助けています。", en: "Code you enjoyed writing is helping someone." },
+  ],
+};
+
+/* ---------- キャラの絵：細い線・白っぽい体・たて長の黒目・斜線のほっぺ ---------- */
+const LN = "#3d3535";
+const ST = `stroke="${LN}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"`;
+const eyes = (y = 47, dx = 9.5) => `<g class="blink">
+  <ellipse cx="${50 - dx}" cy="${y}" rx="2.5" ry="3.4" fill="${LN}"/><ellipse cx="${50 + dx}" cy="${y}" rx="2.5" ry="3.4" fill="${LN}"/>
+  <circle cx="${50 - dx + 0.8}" cy="${y - 1.4}" r="0.95" fill="#fff"/><circle cx="${50 + dx + 0.8}" cy="${y - 1.4}" r="0.95" fill="#fff"/></g>`;
+const blush = (y = 54, dx = 17) => [50 - dx, 50 + dx].map(x =>
+  `<ellipse cx="${x}" cy="${y}" rx="5" ry="3" fill="#ffc4cf"/><path d="M${x - 3} ${y + 1.4} l2 -3 M${x - 0.5} ${y + 1.4} l2 -3 M${x + 2} ${y + 1.4} l2 -3" stroke="#f0899f" stroke-width="0.9" stroke-linecap="round"/>`).join("");
+const mouth = (y = 53) => `<path d="M47.6 ${y} q2.4 2.6 4.8 0" fill="none" ${ST} stroke-width="1.8"/>`;
+const head = (fill, cy = 47, rx = 26, ry = 22) => `<ellipse cx="50" cy="${cy}" rx="${rx}" ry="${ry}" fill="${fill}" ${ST}/>`;
+const bodyOf = (fill, feet = fill) =>
+  `<ellipse cx="43" cy="89" rx="5" ry="3.2" fill="${feet}" ${ST}/><ellipse cx="57" cy="89" rx="5" ry="3.2" fill="${feet}" ${ST}/>
+   <path d="M35 80 C35 68 65 68 65 80 C65 89 35 89 35 80 Z" fill="${fill}" ${ST}/>`;
+const arms = (fill, y = 77) => `<ellipse cx="35.5" cy="${y}" rx="3.6" ry="4.8" transform="rotate(30 35.5 ${y})" fill="${fill}" ${ST}/><ellipse cx="64.5" cy="${y}" rx="3.6" ry="4.8" transform="rotate(-30 64.5 ${y})" fill="${fill}" ${ST}/>`;
+const face = (y = 47) => `${eyes(y)}${blush(y + 7)}${mouth(y + 6)}`;
+
+const CHARA = {
+  "fire-pioneer": { anim: "hop", draw: () => {
+    const c = "#fff4c2";
+    return `${bodyOf(c, "#ffc98a")}${arms(c)}${head(c)}
+      <path d="M47 25.5 q-3 -7 1 -9 M50.5 25 q0 -7 4 -8" fill="none" ${ST}/>
+      ${eyes()}${blush(54)}<path d="M47 52 L53 52 L50 55.5 Z" fill="#ffb25c" ${ST} stroke-width="1.6"/>`; },
+    extra: () => `<path class="fx" d="M10 46 h9 M7 54 h11 M11 62 h8" stroke="${LN}" stroke-width="1.8" stroke-linecap="round" opacity=".55"/>` },
+  "fire-steady": { anim: "sway", draw: () => {
+    const c = "#dcdbe3";
+    return `${bodyOf(c)}
+      <ellipse cx="33" cy="76" rx="5.5" ry="7" transform="rotate(28 33 76)" fill="${c}" ${ST}/><ellipse cx="67" cy="76" rx="5.5" ry="7" transform="rotate(-28 67 76)" fill="${c}" ${ST}/>
+      <circle cx="25.5" cy="46" r="5" fill="${c}" ${ST}/><circle cx="74.5" cy="46" r="5" fill="${c}" ${ST}/>${head(c)}
+      <path d="M50 37 C40 32 31 38 33 49 C35 59 43 63 50 63 C57 63 65 59 67 49 C69 38 60 32 50 37 Z" fill="#f7eee5"/>
+      <path d="M36.5 40.5 q4 -2.4 8 0 M55.5 40.5 q4 -2.4 8 0" fill="none" ${ST} stroke-width="1.8"/>
+      ${eyes(47)}${blush(54)}<circle cx="48" cy="52" r=".9" fill="${LN}"/><circle cx="52" cy="52" r=".9" fill="${LN}"/>${mouth(56)}`; } },
+  "fire-flex": { anim: "bob", draw: () => {
+    const c = "#ffd3dc";
+    return `<g fill="${c}" ${ST}>
+        <path d="M30 62 q-6 12 -14 14 q8 4 18 -6 Z"/><path d="M70 62 q6 12 14 14 q-8 4 -18 -6 Z"/>
+        <path d="M37 66 q-3 14 -8 22 q9 0 13 -18 Z"/><path d="M63 66 q3 14 8 22 q-9 0 -13 -18 Z"/>
+        <path d="M45 68 q-1 14 -3 21 q8 -1 8 -19 Z"/><path d="M55 68 q1 14 3 21 q-8 -1 -8 -19 Z"/></g>
+      <ellipse cx="50" cy="46" rx="25" ry="24" fill="${c}" ${ST}/>${face(48)}`; },
+    extra: () => `<g class="fx" stroke="#5fae7e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 18 l3 3 l6 -6"/><path d="M12 22 l3 3 l6 -6"/></g>` },
+  "earth-pioneer": { anim: "tilt", draw: () => {
+    const c = "#ffffff";
+    return `${bodyOf(c, "#ffb25c")}${arms(c)}${head(c)}${eyes(45)}${blush(52)}
+      <path d="M41 53 C41 50 59 50 59 53 C59 57 41 57 41 53 Z" fill="#ffb25c" ${ST} stroke-width="1.8"/>`; },
+    extra: () => `<text class="fx" x="80" y="24" font-size="15" font-family="Zen Maru Gothic, sans-serif" font-weight="700" fill="${LN}" opacity=".7">?</text>` },
+  "earth-steady": { anim: "nod", draw: () => {
+    const c = "#efd8bf";
+    return `<circle cx="29" cy="30" r="7.5" fill="${c}" ${ST}/><circle cx="71" cy="30" r="7.5" fill="${c}" ${ST}/>
+      ${bodyOf(c)}${arms(c)}${head(c)}<ellipse cx="50" cy="55" rx="9" ry="6" fill="#faf0e4"/>
+      ${eyes(47)}<circle cx="40.5" cy="47" r="6.4" fill="none" stroke="${LN}" stroke-width="1.5"/><circle cx="59.5" cy="47" r="6.4" fill="none" stroke="${LN}" stroke-width="1.5"/><path d="M46.9 47 h6.2" stroke="${LN}" stroke-width="1.5"/>
+      ${blush(56, 19)}<ellipse cx="50" cy="53" rx="2.2" ry="1.5" fill="${LN}"/>${mouth(56)}`; } },
+  "earth-flex": { anim: "sway", draw: () => {
+    const c = "#ffd2c4";
+    return `<path d="M33 76 l-6 10 M39 79 l-4 10 M67 76 l6 10 M61 79 l4 10" stroke="${LN}" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M26 54 C14 44 14 30 22 26 C20 34 26 36 30 32 C32 40 30 48 32 54 Z" fill="${c}" ${ST}/>
+      <path d="M74 54 C86 44 86 30 78 26 C80 34 74 36 70 32 C68 40 70 48 68 54 Z" fill="${c}" ${ST}/>
+      <path d="M43 42 v-10 M57 42 v-10" stroke="${LN}" stroke-width="2.2"/>
+      <ellipse cx="50" cy="61" rx="25" ry="19" fill="${c}" ${ST}/>
+      <circle cx="43" cy="30" r="5" fill="#fff" ${ST}/><circle cx="57" cy="30" r="5" fill="#fff" ${ST}/>
+      <g class="blink"><circle cx="43.5" cy="30.5" r="2.2" fill="${LN}"/><circle cx="57.5" cy="30.5" r="2.2" fill="${LN}"/></g>
+      ${blush(64, 15)}${mouth(62)}`; } },
+  "air-pioneer": { anim: "hop", draw: () => {
+    const c = "#dde5f2";
+    return `<ellipse cx="25" cy="48" rx="12" ry="15" fill="${c}" ${ST}/><ellipse cx="75" cy="48" rx="12" ry="15" fill="${c}" ${ST}/>
+      ${bodyOf(c)}<ellipse cx="35.5" cy="77" rx="3.6" ry="4.8" transform="rotate(30 35.5 77)" fill="${c}" ${ST}/>
+      ${head(c, 45, 24, 21)}
+      <path d="M50 54 C50 64 54 70 60 68 C64 67 66 62 67 58" fill="none" stroke="${LN}" stroke-width="8.4" stroke-linecap="round"/>
+      <path d="M50 54 C50 64 54 70 60 68 C64 67 66 62 67 58" fill="none" stroke="${c}" stroke-width="4.4" stroke-linecap="round"/>
+      <rect x="64" y="49" width="10" height="6" rx="1.5" fill="#c9b49a" ${ST} stroke-width="1.6" transform="rotate(-20 69 52)"/>
+      <path d="M67 56 L70 61" stroke="${LN}" stroke-width="2" stroke-linecap="round"/>
+      ${eyes(43, 9)}${blush(50, 16)}`; },
+    extra: () => `<path class="fx" d="M84 14 L85.6 19 L90.6 20.6 L85.6 22.2 L84 27.2 L82.4 22.2 L77.4 20.6 L82.4 19 Z" fill="#f5c451"/>` },
+  "air-steady": { anim: "bob", draw: () => {
+    const c = "#cde7f5";
+    return `<path d="M50 25 C53 15 60 12 64 13 C60 18 58 22 58 27 Z" fill="${c}" ${ST}/>
+      ${bodyOf(c)}${arms(c)}${head(c)}<ellipse cx="50" cy="57" rx="10" ry="6" fill="#eef8fd" ${ST} stroke-width="1.6"/>
+      ${eyes(46)}${blush(53, 18)}<path d="M48 56.5 q2 1.6 4 0" fill="none" ${ST} stroke-width="1.6"/>`; },
+    extra: () => `<text class="fx" x="78" y="24" font-size="14" font-family="Zen Maru Gothic, sans-serif" font-weight="700" fill="${LN}" opacity=".7">?</text>` },
+  "air-flex": { anim: "tilt", draw: () => {
+    const c = "#f6dcc0";
+    return `<path d="M62 86 C92 88 96 48 80 40 C68 34 60 48 70 54 C78 58 78 72 64 74 Z" fill="#ecc49c" ${ST}/>
+      <path d="M31 33 L31 18 L42 27 Z" fill="${c}" ${ST}/><path d="M69 33 L69 18 L58 27 Z" fill="${c}" ${ST}/>
+      ${bodyOf(c)}${head(c)}<ellipse cx="50" cy="56" rx="9" ry="6" fill="#fdf2e6"/>
+      ${eyes(47)}${blush(54)}<ellipse cx="50" cy="52.5" rx="1.8" ry="1.3" fill="${LN}"/>${mouth(55)}
+      <ellipse cx="50" cy="79" rx="5.5" ry="6" fill="#c58f60" ${ST} stroke-width="1.8"/><path d="M44 76 Q50 69 56 76 Z" fill="#8b6343" ${ST} stroke-width="1.8"/>
+      ${arms(c, 78)}`; } },
+  "water-pioneer": { anim: "hop", draw: () => {
+    const c = "#d8eecb";
+    return `${bodyOf(c)}${arms(c)}
+      <circle cx="37" cy="30" r="9" fill="${c}" ${ST}/><circle cx="63" cy="30" r="9" fill="${c}" ${ST}/>
+      <ellipse cx="50" cy="49" rx="28" ry="19" fill="${c}" ${ST}/>
+      <path d="M32 31 h10" stroke="${c}" stroke-width="5"/><path d="M58 31 h10" stroke="${c}" stroke-width="5"/>
+      <g class="blink"><ellipse cx="37" cy="30" rx="2.5" ry="3.4" fill="${LN}"/><ellipse cx="63" cy="30" rx="2.5" ry="3.4" fill="${LN}"/><circle cx="37.8" cy="28.6" r=".95" fill="#fff"/><circle cx="63.8" cy="28.6" r=".95" fill="#fff"/></g>
+      ${blush(52, 18)}<path d="M40 49 Q50 57 60 49" fill="none" ${ST} stroke-width="1.8"/>`; } },
+  "water-steady": { anim: "nod", draw: () => {
+    const c = "#ece2d8";
+    return `<path d="M42 28 C40 20 34 16 30 17" fill="none" ${ST} stroke-width="1.8"/><circle cx="30" cy="17" r="2.4" fill="${LN}"/>
+      <path d="M58 28 C60 20 66 16 70 17" fill="none" ${ST} stroke-width="1.8"/><circle cx="70" cy="17" r="2.4" fill="${LN}"/>
+      <ellipse cx="68" cy="84" rx="9" ry="7" fill="${c}" ${ST}/>
+      ${bodyOf(c)}${arms(c)}${head(c)}${face(47)}`; },
+    extra: () => `<path class="fx" d="M82 28 C82 24 87 23 87 27.5 C87 23 92 24 92 28 C92 32 87 35 87 36 C87 35 82 32 82 28 Z" fill="#ffa3b5"/>` },
+  "water-flex": { anim: "breathe", draw: () => {
+    const c = "#e9e6cf";
+    return `<ellipse cx="32" cy="74" rx="11" ry="17" transform="rotate(28 32 74)" fill="#f3f8fd" fill-opacity=".9" ${ST}/>
+      <ellipse cx="68" cy="74" rx="11" ry="17" transform="rotate(-28 68 74)" fill="#f3f8fd" fill-opacity=".9" ${ST}/>
+      ${bodyOf(c)}${arms(c)}${head(c)}
+      <path d="M37 47 q3.5 2.6 7 0 M56 47 q3.5 2.6 7 0" fill="none" ${ST} stroke-width="1.9"/>
+      ${blush(54)}${mouth(53)}`; },
+    extra: () => `<text class="fx" x="76" y="26" font-size="11" font-family="Zen Maru Gothic, sans-serif" font-weight="700" fill="${LN}" opacity=".55">z</text><text class="fx" x="83" y="17" font-size="8" font-family="Zen Maru Gothic, sans-serif" font-weight="700" fill="${LN}" opacity=".4">z</text>` },
+};
+
+function chara(key, still = false) {
+  const c = CHARA[key];
+  return `<svg class="chara anim-${c.anim} ${still ? "still" : ""}" viewBox="4 6 92 90" aria-hidden="true"><g class="body">${c.draw()}</g>${c.extra ? c.extra() : ""}</svg>`;
+}
+
+
+/* ---------- 保存 ---------- */
+const KEY_TYPE = "aiuranai.type", KEY_OPEN = "aiuranai.opened", KEY_STREAK = "aiuranai.streak", KEY_ANS = "aiuranai.answers", KEY_LANG = "aiuranai.lang";
+function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+function save(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} }
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+const params = new URLSearchParams(location.search);
+const FROM = params.get("from");
+let lang = (["ja", "en"].includes(params.get("lang")) && params.get("lang")) || load(KEY_LANG) || ((navigator.language || "ja").toLowerCase().startsWith("ja") ? "ja" : "en");
+const L = v => (v && typeof v === "object" && "ja" in v) ? v[lang] : v;
+const U = () => UI[lang];
+
+function dateStr(d) { return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; }
+function todayStr() { return dateStr(new Date()); }
+function yesterdayStr() { const d = new Date(); d.setDate(d.getDate() - 1); return dateStr(d); }
+function daySeed() { const d = new Date(); return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000); }
+function fortuneFor(key) {
+  const el = key.split("-")[0], idx = Object.keys(TYPES).indexOf(key), seed = daySeed();
+  return { message: DAILY[el][(seed + idx * 3) % 7], prompt: (seed + idx) % 6, cheer: CHEER[el][(seed + idx * 5) % 7] };
+}
+function streak() { try { return JSON.parse(load(KEY_STREAK)) || { last: null, count: 0 }; } catch (e) { return { last: null, count: 0 }; } }
+function markOpened() {
+  const s = streak(), t = todayStr();
+  if (s.last !== t) { s.count = s.last === yesterdayStr() ? s.count + 1 : 1; s.last = t; save(KEY_STREAK, JSON.stringify(s)); }
+  save(KEY_OPEN, t);
+}
+function savedAnswers() { try { const a = JSON.parse(load(KEY_ANS)); return Array.isArray(a) && a.length === QUESTIONS.length ? a : null; } catch (e) { return null; } }
+
+const disc = (key, still = false) => `<div class="disc t-${key.split("-")[0]}">${chara(key, still)}</div>`;
+
+/* ---------- 判定 ---------- */
+function score(ans) {
+  const e = { fire: 0, earth: 0, air: 0, water: 0 }, s = { pioneer: 0, steady: 0, flex: 0 }, lastE = {}, lastS = {};
+  ans.forEach((v, i) => { if (QUESTIONS[i].kind === "e") { e[v]++; lastE[v] = i; } else { s[v]++; lastS[v] = i; } });
+  // 同点なら、あとで選んだほうを採る
+  const rank = (sc, last) => Object.keys(sc).sort((a, b) => sc[b] - sc[a] || (last[b] ?? -1) - (last[a] ?? -1));
+  const re = rank(e, lastE), rs = rank(s, lastS);
+  return { e, s, el: re[0], st: rs[0], el2: re[1], tie: e[re[0]] === e[re[1]] || s[rs[0]] === s[rs[1]] };
+}
+
+/* ---------- 画面 ---------- */
+const app = document.getElementById("app");
+const reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+let answers = [], step = 0, current = () => renderCover();
+
+function setLang(l) {
+  lang = l; save(KEY_LANG, l);
+  document.documentElement.lang = l;
+  document.title = UI[l].title;
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  current();
+}
+document.querySelectorAll(".lang button").forEach(b => b.onclick = () => setLang(b.dataset.lang));
+
+function renderCover() {
+  current = renderCover;
+  const u = U();
+  app.innerHTML = `
+    <section class="cover fade">
+      <span class="kicker">${u.kicker}</span>
+      <h1 class="title">${u.title}</h1>
+      ${TYPES[FROM] ? `<div class="from">${disc(FROM)}<p>${esc(u.fromFriend(L(TYPES[FROM].name)))}</p></div>` : ""}
+      <p class="lead">${u.lead}</p>
+      <button class="btn" id="start">${u.start}</button>
+      <div class="btn-note">${u.minutes}</div>
+      ${TYPES[load(KEY_TYPE)] ? `<button class="btn ghost" id="mine" style="margin-top:20px">${u.seeMine}</button>` : ""}
+      <div class="cast-title" style="margin-top:48px">${u.castTitle}</div>
+      <div class="cast">
+        ${Object.keys(TYPES).map(k => `<div class="cast-item">${disc(k)}<b>${esc(L(TYPES[k].name))}</b><span>${L(TYPES[k].trait).split("|").map(s => `<i class="seg">${esc(s)}</i>`).join("")}</span></div>`).join("")}
+      </div>
+      <p class="cast-hint">${u.castHint}</p>
+    </section>`;
+  document.getElementById("start").onclick = () => { answers = []; step = 0; renderQuestion(); };
+  const mine = document.getElementById("mine");
+  if (mine) mine.onclick = () => { renderResult(load(KEY_TYPE), false); window.scrollTo({ top: 0 }); };
+}
+
+function renderQuestion() {
+  current = renderQuestion;
+  const u = U(), q = QUESTIONS[step], keys = Object.keys(TYPES);
+  app.innerHTML = `
+    <section class="quiz fade">
+      <div class="progress" aria-hidden="true"><i style="width:${((step + 1) / QUESTIONS.length) * 100}%"></i></div>
+      <div class="q-top">
+        <button class="back" id="back" ${step === 0 ? "disabled" : ""}>← ${u.back}</button>
+        <span class="q-count">${step + 1} / ${QUESTIONS.length}</span>
+      </div>
+      <div class="q-watch">${disc(keys[(step * 5) % keys.length])}</div>
+      <h2 class="q-title title">${esc(L(q.q))}</h2>
+      <div class="options">
+        ${q.o.map(([label, v]) => `<button class="option ${answers[step] === v ? "picked" : ""}" data-v="${v}">${esc(L(label))}</button>`).join("")}
+      </div>
+    </section>`;
+  document.getElementById("back").onclick = () => { step--; renderQuestion(); };
+  app.querySelectorAll(".option").forEach(b => b.onclick = () => {
+    app.querySelectorAll(".option").forEach(o => o.classList.remove("picked"));
+    answers[step] = b.dataset.v; b.classList.add("picked");
+    setTimeout(() => {
+      if (step < QUESTIONS.length - 1) { step++; renderQuestion(); return; }
+      const r = score(answers), key = `${r.el}-${r.st}`;
+      save(KEY_TYPE, key); save(KEY_ANS, JSON.stringify(answers)); save(KEY_OPEN, null);
+      renderLoading(key);
+    }, 220);
+  });
+  window.scrollTo({ top: 0 });
+}
+
+function renderLoading(key) {
+  const u = U(), keys = Object.keys(TYPES);
+  current = () => renderLoading(key);
+  app.innerHTML = `<section class="loading fade"><div id="spin">${disc(keys[0], true)}</div><p>${u.loading}</p><div class="small muted">${u.loadingSub}</div></section>`;
+  if (reduceMotion) { renderResult(key, true); return; }
+  let i = 0;
+  const spin = document.getElementById("spin");
+  const timer = setInterval(() => { i++; if (spin.isConnected) spin.innerHTML = disc(keys[i % keys.length], true); }, 160);
+  setTimeout(() => { clearInterval(timer); renderResult(key, true); }, 1900);
+}
+
+function profileSections(key) {
+  const u = U(), t = TYPES[key], [mKey, mWhy] = t.match;
+  return `
+    <section class="sec">
+      <span class="kicker">${u.aboutKicker}</span>
+      <h3 class="title">${esc(u.aboutTitle(L(t.name)))}</h3>
+      <p>${esc(L(t.body))}</p>
+      <dl class="facets">
+        <dt>${u.strength}</dt><dd>${esc(L(t.strength))}</dd>
+        <dt>${u.style}</dt><dd>${esc(L(t.style))}</dd>
+        <dt>${u.team}</dt><dd>${esc(L(t.team))}</dd>
+      </dl>
+      <ul class="aruaru">${L(t.aruaru).map(a => `<li data-tag="${u.aruaru}">${esc(a)}</li>`).join("")}</ul>
+    </section>
+
+    <section class="sec">
+      <span class="kicker">${u.careKicker}</span>
+      <h3 class="title">${u.careTitle}</h3>
+      <p class="care">${esc(L(t.care))}</p>
+      <p>${esc(L(t.push))}</p>
+    </section>
+
+    <section class="sec">
+      <span class="kicker">${u.matchKicker}</span>
+      <h3 class="title">${u.matchTitle}</h3>
+      <button class="match" data-profile="${mKey}">${disc(mKey)}<div><b>${esc(L(TYPES[mKey].name))}</b><span>${esc(L(TYPES[mKey].animal))} — ${esc(L(mWhy))}</span></div></button>
+    </section>`;
+}
+
+function renderResult(key, fresh) {
+  current = () => renderResult(key, false);
+  const u = U(), t = TYPES[key], [el, st] = key.split("-");
+  const f = fortuneFor(key), prompt = L(t.prompts)[f.prompt];
+  const [mKey, mWhy] = t.match;
+  app.innerHTML = `
+    <section class="hero fade">
+      <span class="kicker">${fresh ? u.youAre : u.welcome}</span>
+      ${disc(key)}
+      <h2 class="title">${esc(L(t.name))}</h2>
+      <div class="animal">${esc(L(t.animal))}</div>
+      <div class="pun">${esc(L(t.pun))}</div>
+      <div class="chips"><span class="chip">${esc(L(ELEMENTS[el]))}</span><span class="chip">${esc(L(STYLES[st]))}</span></div>
+      <p class="catch">${esc(L(t.catch))}</p>
+      <div class="phrase">${u.phrase} ${esc(u.quote(L(t.phrase)))}</div>
+    </section>
+
+    <section class="sec" id="today"></section>
+
+    ${profileSections(key)}
+
+    <section class="sec" id="friends"></section>
+
+    <div class="actions">
+      <button class="btn" id="share">${u.share}</button>
+      <button class="btn ghost" id="retry">${u.retry}</button>
+      <button class="text-link" id="toCover">← ${u.backCover}</button>
+    </div>`;
+  renderToday(key);
+  renderFriends(key, null, "result");
+  bindProfileLinks(key, "result");
+  document.getElementById("share").onclick = () => shareResult(u.shareText(t, prompt.title), key);
+  document.getElementById("toCover").onclick = () => { renderCover(); window.scrollTo({ top: 0 }); };
+  document.getElementById("retry").onclick = () => { save(KEY_TYPE, null); answers = []; step = 0; renderQuestion(); };
+  if (fresh) window.scrollTo({ top: 0 });
+}
+
+function renderWhy(key) {
+  const u = U(), box = document.getElementById("why"), ans = savedAnswers();
+  if (!ans) { box.innerHTML = `<p class="muted">${u.noAnswers}</p>`; return; }
+  const r = score(ans), t = TYPES[key];
+  const bars = (sc, labels, win) => Object.keys(sc).sort((a, b) => sc[b] - sc[a]).map(k =>
+    `<div class="bar ${k === win ? "win" : ""}"><span>${esc(L(labels[k]))}</span><span class="track"><i style="width:${sc[k] / 6 * 100}%;${k === win ? `background:var(--${r.el})` : ""}"></i></span><span class="n">${sc[k]}/6</span></div>`).join("");
+  const picks = (kind, win) => QUESTIONS.map((q, i) => ({ q, i })).filter(({ q, i }) => q.kind === kind && ans[i] === win).slice(0, 3)
+    .map(({ q, i }) => `<li>${esc(L(q.o.find(o => o[1] === ans[i])[0]))}<small>Q${i + 1}. ${esc(L(q.q))}</small></li>`).join("");
+  const el2 = TYPES[`${r.el2}-${r.st}`];
+  box.innerHTML = `
+    <p class="summary">${esc(u.whySummary(r.e[r.el], L(ELEMENTS[r.el].long), r.s[r.st], L(STYLES[r.st].long), L(t.name)))}${r.tie ? `<br><span class="small muted">${u.tie}</span>` : ""}</p>
+    <div class="axis"><div class="axis-name">${u.whyAxisE}</div>${bars(r.e, ELEMENTS, r.el)}</div>
+    <div class="axis"><div class="axis-name">${u.whyAxisS}</div>${bars(r.s, STYLES, r.st)}</div>
+    <div class="keys-title">${u.keyAnswers}</div>
+    <ul class="keys">${picks("e", r.el)}${picks("s", r.st)}</ul>
+    ${r.e[r.el2] > 0 ? `<p class="note">${esc(u.runnerUp(L(el2.name), L(ELEMENTS[r.el2].long)))}</p>` : ""}`;
+}
+
+function renderToday(key) {
+  const u = U(), box = document.getElementById("today"), t = TYPES[key], el = key.split("-")[0];
+  const f = fortuneFor(key), prompt = L(t.prompts)[f.prompt];
+  const d = new Date(), dow = u.dow[d.getDay()];
+  const dateLabel = lang === "ja" ? `${d.getMonth() + 1}月${d.getDate()}日（${dow}）` : `${dow}, ${d.toLocaleString("en", { month: "short" })} ${d.getDate()}`;
+  const head = `<span class="kicker">${u.todayKicker}</span><h3 class="title">${u.todayTitle}</h3>`;
+  if (load(KEY_OPEN) !== todayStr()) {
+    box.innerHTML = `${head}<div class="today t-${el}"><div class="waiting">
+      <div class="today-head" style="justify-content:center">${dateLabel}</div>
+      <p>${esc(u.todayWaiting(L(t.name)))}</p>
+      <button class="btn small" id="open">${u.openToday}</button></div></div>`;
+    document.getElementById("open").onclick = () => { markOpened(); renderToday(key); };
+    return;
+  }
+  box.innerHTML = `${head}
+    <div class="today t-${el} fade">
+      <div class="today-head"><span>${dateLabel}</span><span>${u.streak(streak().count || 1)}</span></div>
+      <p class="message">${esc(L(f.message))}</p>
+      <div class="prompt">
+        <span class="label">${u.luckyPrompt}</span>
+        <b class="ptitle">${esc(prompt.title)}</b>
+        <div class="text" id="lucky">${esc(prompt.body)}</div>
+        <div class="row"><button class="btn small ghost" id="copy">${u.copy}</button></div>
+      </div>
+      <div class="news" id="news" hidden></div>
+      <div class="cheer"><span class="label">${u.cheerLabel}</span><p>${esc(L(f.cheer))}</p></div>
+    </div>
+    <p class="note">${u.tomorrow}</p>
+    <div class="slack">
+      <button class="btn small ghost" id="slack">${u.slackButton}</button>
+      <p class="note">${u.slackNote}</p>
+    </div>`;
+  document.getElementById("copy").onclick = () => copyPrompt(prompt.body);
+  loadNews(key);
+  document.getElementById("slack").onclick = async () => {
+    try { await navigator.clipboard.writeText(u.slackCommand(SHARE_URL)); toast(u.slackCopied); }
+    catch (e) { toast(u.shareFailed); }
+  };
+}
+
+/* ---------- 今日のAIニュース：Claude が調べて保存したものを読む。読めない環境では出さない ---------- */
+let newsDoc;
+async function loadNews(key) {
+  if (newsDoc === undefined) {
+    newsDoc = null;
+    try {
+      const res = await fetch("news.json", { cache: "no-store" });
+      if (res.ok) newsDoc = await res.json();
+    } catch (e) { newsDoc = null; }
+  }
+  const box = document.getElementById("news"), it = newsDoc && newsDoc.items && newsDoc.items[key];
+  if (!box || !it || !it[lang] || !/^https:\/\//.test(it.url || "")) return;
+  const u = U(), n = it[lang];
+  box.innerHTML = `
+    <span class="label">${u.newsLabel}</span>
+    <a class="news-title" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(n.title)}</a>
+    <div class="news-meta">${esc(it.source)} ・ ${esc(it.published)}</div>
+    <p>${esc(n.summary)}</p>
+    <p class="news-why"><b>${u.newsWhy}</b>${esc(n.why)}</p>`;
+  box.hidden = false;
+}
+
+function renderFriends(myKey, currentKey, from) {
+  const u = U(), box = document.getElementById("friends"), keys = Object.keys(TYPES);
+  box.innerHTML = `
+    <span class="kicker">${u.friendsKicker}</span>
+    <h3 class="title">${u.friendsTitle}</h3>
+    <div class="friends">
+      ${keys.map(k => `<button class="friend ${k === myKey ? "me" : ""}" data-profile="${k}" aria-current="${k === currentKey}">${disc(k, true)}<b>${esc(L(TYPES[k].name))}</b></button>`).join("")}
+    </div>
+    <p class="note">${u.friendsNote}</p>`;
+}
+
+function bindProfileLinks(myKey, from) {
+  app.querySelectorAll("[data-profile]").forEach(b => b.onclick = () => renderProfile(b.dataset.profile, from));
+}
+
+/* ---------- 12匹の説明ページ ---------- */
+function renderProfile(key, from) {
+  current = () => renderProfile(key, from);
+  const u = U(), t = TYPES[key], [el, st] = key.split("-"), keys = Object.keys(TYPES), idx = keys.indexOf(key);
+  const myKey = load(KEY_TYPE), prev = keys[(idx + 11) % 12], next = keys[(idx + 1) % 12];
+  const backLabel = from === "cover" ? u.backCover : u.backResult;
+  app.innerHTML = `
+    <div class="crumb"><button class="back-link" data-back>← ${backLabel}</button></div>
+    <section class="hero fade">
+      <span class="kicker">${u.profileKicker} ${String(idx + 1).padStart(2, "0")} / 12</span>
+      ${disc(key)}
+      ${key === myKey ? `<div class="mine">${u.mine}</div>` : ""}
+      <h2 class="title">${esc(L(t.name))}</h2>
+      <div class="animal">${esc(L(t.animal))}</div>
+      <div class="pun">${esc(L(t.pun))}</div>
+      <div class="chips"><span class="chip">${esc(L(ELEMENTS[el]))}</span><span class="chip">${esc(L(STYLES[st]))}</span></div>
+      <p class="catch">${esc(L(t.catch))}</p>
+      <div class="phrase">${u.phrase} ${esc(u.quote(L(t.phrase)))}</div>
+    </section>
+
+    <section class="sec">
+      <span class="kicker">${u.axesKicker}</span>
+      <h3 class="title">${u.axesTitle}</h3>
+      <dl class="facets">
+        <dt>${u.axisE}</dt><dd><b>${esc(L(ELEMENTS[el]))}</b> — ${esc(u.axisELine(L(ELEMENTS[el].long)))}</dd>
+        <dt>${u.axisS}</dt><dd><b>${esc(L(STYLES[st]))}</b> — ${esc(u.axisSLine(L(STYLES[st].long)))}</dd>
+      </dl>
+    </section>
+
+    ${profileSections(key)}
+
+    <section class="sec">
+      <span class="kicker">PROMPTS</span>
+      <h3 class="title">${esc(u.promptsTitle(L(t.name)))}</h3>
+      <ol class="prompt-list">
+        ${L(t.prompts).map((pr, i) => `<li><details ${i === 0 ? "open" : ""}><summary>${esc(pr.title)}</summary><div class="text" id="pr-${i}">${esc(pr.body)}</div><div class="row"><button class="btn small ghost" data-copy="${i}">${u.copy}</button></div></details></li>`).join("")}
+      </ol>
+      <p class="note">${u.promptsNote}</p>
+    </section>
+
+    <section class="sec" id="friends"></section>
+
+    <nav class="pager">
+      <button data-profile="${prev}">← ${esc(L(TYPES[prev].name))}</button>
+      <button data-profile="${next}">${esc(L(TYPES[next].name))} →</button>
+    </nav>
+    <div class="actions"><button class="btn ghost" data-back>${backLabel}</button></div>`;
+  renderFriends(myKey, key, from);
+  bindProfileLinks(myKey, from);
+  app.querySelectorAll("[data-back]").forEach(b => b.onclick = () => {
+    if (from === "result" && myKey && TYPES[myKey]) renderResult(myKey, false); else renderCover();
+    window.scrollTo({ top: 0 });
+  });
+  app.querySelectorAll("[data-copy]").forEach(b => b.onclick = () => copyPrompt(L(t.prompts)[b.dataset.copy].body, "pr-" + b.dataset.copy));
+  window.scrollTo({ top: 0 });
+}
+
+/* 端末の共有メニューを開く。使えない環境では、シェア文をコピーする */
+const SHARE_URL = "https://ally-ak.github.io/ai-dev-animal/";
+async function shareResult(text, key) {
+  const url = `${SHARE_URL}r/${key}${lang === "en" ? "-en" : ""}.html`;
+  if (navigator.share) {
+    try { await navigator.share({ text, url }); return; }
+    catch (e) { if (e && e.name === "AbortError") return; }
+  }
+  try { await navigator.clipboard.writeText(`${text}\n${url}`); toast(U().shareCopied); }
+  catch (e) { toast(U().shareFailed); }
+}
+
+function copyPrompt(text, id = "lucky") {
+  const fallback = () => {
+    const r = document.createRange(); r.selectNodeContents(document.getElementById(id));
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    toast(U().selected);
+  };
+  try { navigator.clipboard.writeText(text).then(() => toast(U().copied), fallback); } catch (e) { fallback(); }
+}
+let toastTimer;
+function toast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg; el.hidden = false;
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => { el.hidden = true; }, 1800);
+}
+
+const savedType = load(KEY_TYPE);
+current = savedType && TYPES[savedType] ? () => renderResult(savedType, false) : renderCover;
+setLang(lang);
+</script>
+
+</body>
+</html>
