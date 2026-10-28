@@ -706,7 +706,7 @@ const UI = {
     promptsTitle: (name) => `${name}に効くプロンプト`, promptsNote: "毎日のラッキープロンプトは、この6つから日替わりで届きます。",
     friendsKicker: "ALL 12", friendsTitle: "12匹のなかま", friendsNote: "タップすると、詳しい説明ページが開きます。チームの人のタイプも聞いてみて。",
     share: "シェアする", shareCopied: "シェア用の文をコピーしました。好きなところに貼ってください", shareFailed: "この画面ではシェアできませんでした", retry: "もう一度診断する",
-    shareText: (t, p) => `わたしは「${t.name.ja}」（${t.animal.ja}）でした\n口ぐせ「${t.phrase.ja}」\n\n今日のラッキープロンプト\n「${p}」\n\n#AI開発どうぶつ診断`,
+    shareText: (t, p) => `「${t.name.ja}」（${t.animal.ja}）\n口ぐせ「${t.phrase.ja}」\n\n今日のラッキープロンプト\n「${p}」\n\n#AI開発どうぶつ診断`,
     dow: "日月火水木金土",
   },
   en: {
@@ -743,7 +743,7 @@ const UI = {
     promptsTitle: (name) => `Prompts that work for ${name}`, promptsNote: "Your daily lucky prompt rotates through these six.",
     friendsKicker: "ALL 12", friendsTitle: "The whole crew", friendsNote: "Tap any animal to open its full profile. Ask your teammates which one they are.",
     share: "Share", shareCopied: "Share text copied—paste it anywhere", shareFailed: "Sharing isn't available here", retry: "Take it again",
-    shareText: (t, p) => `I'm ${t.name.en} (the ${t.animal.en.toLowerCase()})!\nCatchphrase: “${t.phrase.en}”\n\nToday's lucky prompt:\n“${p}”\n\n#AIDevAnimalQuiz`,
+    shareText: (t, p) => `${t.name.en} (the ${t.animal.en.toLowerCase()})\nCatchphrase: “${t.phrase.en}”\n\nToday's lucky prompt:\n“${p}”\n\n#AIDevAnimalQuiz`,
     dow: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
   },
 };
