@@ -175,6 +175,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .prompt .ptitle { display: block; font-family: var(--mincho); font-size: 17px; margin: 4px 0 8px; }
 .prompt .text { display: block; font-size: 14px; line-height: 1.85; margin: 0 0 14px; white-space: pre-wrap; color: #3f3939; }
 .prompt .row { display: flex; justify-content: flex-end; }
+.row-btns { display: flex; flex-wrap: wrap; gap: 8px; }
 .slack { margin-top: 18px; padding-top: 18px; border-top: 1px dashed var(--line); }
 .news { background: #fff; border-radius: 14px; padding: 18px; margin-top: 14px; }
 .news .label, .cheer .label { font-size: 12px; color: var(--muted); letter-spacing: .1em; }
@@ -691,9 +692,9 @@ const UI = {
     openToday: "今日のひとことをひらく", todayWaiting: (name) => `${name}のあなたに、今日のひとことが届いています`,
     streak: (n) => `${n}日連続`, luckyPrompt: "今日のラッキープロンプト", copy: "コピーする", copied: "コピーしました", selected: "選択しました。そのままコピーしてください",
     slackButton: "Slackで毎朝受け取る",
-    slackNote: "押すとリマインダーの一文がコピーされます。Slackのどこかに貼って送信すると、平日の朝9時にこのページのリンクが届きます。",
+    slackNote: "Slackのボタンを押すとリマインダーの一文がコピーされます。Slackに貼って送信すると、平日の朝9時に、あなたの結果ページのリンクが届きます。",
     slackCommand: (url) => `/remind me "今日のAI開発どうぶつ診断：ひとこととプロンプトが入れ替わりました ${url}" every weekday at 9am`,
-    slackCopied: "コピーしました。Slackに貼って送信してください",
+    slackCopied: "コピーしました。Slackに貼って送信してください", myLinkButton: "自分の結果ページのリンクをコピー", myLinkCopied: "あなた専用のリンクをコピーしました。ブックマークしておくと、どこからでも結果と今日のプロンプトが開けます",
     newsLabel: "今日のAIニュース", newsWhy: "あなたが好きそうな理由：", cheerLabel: "今日のエール",
     tomorrow: "ひとこととプロンプトは毎日かわります。ブックマークしておくと、明日もすぐ見られます。",
     aboutKicker: "ABOUT YOU", aboutTitle: (name) => `${name}は、こんな人`, strength: "得意なこと", style: "AIとの付き合い方", team: "チームでのあなた", aruaru: "あるある",
@@ -728,9 +729,9 @@ const UI = {
     openToday: "Open today's message", todayWaiting: (name) => `A message for ${name} has arrived`,
     streak: (n) => `${n}-day streak`, luckyPrompt: "Today's lucky prompt", copy: "Copy", copied: "Copied", selected: "Selected—copy it from here",
     slackButton: "Get it on Slack every morning",
-    slackNote: "Copies a reminder command. Paste it into any Slack message box and send—you'll get this page's link every weekday at 9am.",
+    slackNote: "The Slack button copies a reminder command. Paste it into Slack and send—you'll get a link to your result every weekday at 9am.",
     slackCommand: (url) => `/remind me "Today's AI Dev Animal Quiz: a fresh message and prompt are waiting ${url}" every weekday at 9am`,
-    slackCopied: "Copied—paste it into Slack and send",
+    slackCopied: "Copied—paste it into Slack and send", myLinkButton: "Copy link to my result", myLinkCopied: "Your personal link is copied. Bookmark it to open your result and today's prompt from anywhere",
     newsLabel: "Today's AI news", newsWhy: "Why you'll like it:", cheerLabel: "Today's cheer",
     tomorrow: "The message and prompt change every day. Bookmark this page to come back tomorrow.",
     aboutKicker: "ABOUT YOU", aboutTitle: (name) => `What ${name} is like`, strength: "Your strength", style: "How you work with AI", team: "On a team", aruaru: "So true",
@@ -1853,13 +1854,13 @@ function renderToday(key) {
     </div>
     <p class="note">${u.tomorrow}</p>
     <div class="slack">
-      <button class="btn small ghost" id="slack">${u.slackButton}</button>
+      <div class="row-btns"><button class="btn small ghost" id="slack">${u.slackButton}</button><button class="btn small ghost" id="mylink">${u.myLinkButton}</button></div>
       <p class="note">${u.slackNote}</p>
     </div>`;
   document.getElementById("copy").onclick = () => copyPrompt(prompt.body);
   loadNews(key);
   document.getElementById("slack").onclick = async () => {
-    try { await navigator.clipboard.writeText(u.slackCommand(SHARE_URL)); toast(u.slackCopied); }
+    try { await navigator.clipboard.writeText(u.slackCommand(myUrl(key))); toast(u.slackCopied); }
     catch (e) { toast(u.shareFailed); }
   };
 }
@@ -1958,6 +1959,14 @@ function renderProfile(key, from) {
   window.scrollTo({ top: 0 });
 }
 
+/* その人専用の結果ページのリンク */
+const myUrl = (key) => `${SHARE_URL}?me=${key}${lang === "en" ? "&lang=en" : ""}`;
+document.addEventListener("click", async (e) => {
+  if (e.target.id !== "mylink") return;
+  const key = load(KEY_TYPE);
+  try { await navigator.clipboard.writeText(myUrl(key)); toast(U().myLinkCopied); } catch (err) { toast(U().shareFailed); }
+});
+
 /* 端末の共有メニューを開く。使えない環境では、シェア文をコピーする */
 const SHARE_URL = "https://ally-ak.github.io/ai-dev-animal/";
 async function shareResult(text, key) {
@@ -1993,6 +2002,7 @@ function toast(msg) {
   clearTimeout(toastTimer); toastTimer = setTimeout(() => { el.hidden = true; }, 1800);
 }
 
+if (TYPES[params.get("me")]) save(KEY_TYPE, params.get("me"));
 const savedType = load(KEY_TYPE);
 current = savedType && TYPES[savedType] ? () => renderResult(savedType, false) : renderCover;
 setLang(lang);
