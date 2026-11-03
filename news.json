@@ -1,185 +1,185 @@
 {
- "date": "2026-10-30",
- "items": {
-  "fire-pioneer": {
-   "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot",
-   "source": "GitHub Changelog",
-   "published": "2026-10-26",
-   "ja": {
-    "title": "GPT-6.1 Terra が Copilot で使えるように",
-    "summary": "OpenAI の最新モデル GPT-6.1 Terra が GitHub Copilot で一般提供になりました。VS Code・Copilot CLI・JetBrains などのモデル選択から選べ、有料プランに順次展開されます。",
-    "why": "出たその日にモデル選択から切り替えて試せますよ。"
-   },
-   "en": {
-    "title": "GPT-6.1 Terra is now available in GitHub Copilot",
-    "summary": "OpenAI's newest model, GPT-6.1 Terra, is generally available in GitHub Copilot. Paid plans can pick it from the model picker in VS Code, Copilot CLI, JetBrains and more, with a gradual rollout.",
-    "why": "You can switch to it in the model picker today."
-   }
-  },
-  "fire-steady": {
-   "url": "https://code.claude.com/docs/en/changelog",
-   "source": "Claude Code Changelog",
-   "published": "2026-10-26",
-   "ja": {
-    "title": "Claude Code、ultrathink が xhigh で動くように",
-    "summary": "Claude Code 2.1.311 で、ultrathink と書いたターンは対応モデルで effort xhigh で動くようになりました。self-hosted-runner にはアイドル中のセッションを保つオプションも加わりました。",
-    "why": "いつもの手順に一語足すだけで深く考えさせられます。"
-   },
-   "en": {
-    "title": "Claude Code 2.1.311: ultrathink now runs at xhigh effort",
-    "summary": "In Claude Code 2.1.311, an ultrathink turn runs at xhigh effort on supported models. self-hosted-runner also gained --hold-idle-file and --max-hold-min to keep idle sessions alive.",
-    "why": "One keyword in your routine now buys deeper thinking."
-   }
-  },
-  "fire-flex": {
-   "url": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models",
-   "source": "GitHub Changelog",
-   "published": "2026-10-28",
-   "ja": {
-    "title": "Copilot Fusion が手元のモデルとクラウドを自動で使い分け",
-    "summary": "Copilot Fusion が、端末上のモデルとクラウドのモデルを自動で選ぶ実験的プレビューを始めました。Copilot CLI・Copilot アプリ・VS Code で使え、オプトイン方式です。",
-    "why": "安い手元のモデルと強いクラウドを、自動で振り分けられます。"
-   },
-   "en": {
-    "title": "Copilot Fusion can now route between local and cloud models",
-    "summary": "Copilot Fusion has an opt-in experimental preview that chooses between on-device and cloud models. It works in Copilot CLI, the Copilot app and VS Code.",
-    "why": "Let it split work between cheap local and strong cloud models."
-   }
-  },
-  "earth-pioneer": {
-   "url": "https://huggingface.co/blog/allenai/novelty-bench",
-   "source": "Ai2（Hugging Face Blog）",
-   "published": "2026-10-27",
-   "ja": {
-    "title": "AI に研究アイデアの新しさは判定できるか、Ai2 が検証",
-    "summary": "Ai2 は、LLM が研究アイデアの新しさを判定できるかを調べ、判定は当てにならないと結論づけました。プロンプトを少し変えただけで、GPT-5.4 の正答率が93.5%から40.9%に落ちた例も示しています。",
-    "why": "AI の「判定」を疑うあなたの勘を、数字で裏づけてくれます。"
-   },
-   "en": {
-    "title": "Ai2 tests whether LLMs can judge if a research idea is novel",
-    "summary": "Ai2 studied whether LLMs can judge research-idea novelty and found the judgments unreliable. In one case, a simpler prompt dropped GPT-5.4's accuracy from 93.5% to 40.9%.",
-    "why": "It backs your instinct to doubt an AI's verdict with numbers."
-   }
-  },
-  "earth-steady": {
-   "url": "https://github.blog/changelog/2026-10-28-code-scanning-for-ai-applications-in-public-preview",
-   "source": "GitHub Changelog",
-   "published": "2026-10-28",
-   "ja": {
-    "title": "GitHub のコード検査が AI アプリの脆弱性も見るように",
-    "summary": "GitHub のコードスキャンが、AI アプリやエージェント特有の脆弱性を PR 上で検出するようになりました（パブリックプレビュー）。間接プロンプトインジェクションや過剰な権限などを指摘し、対策も示します。",
-    "why": "AI を組み込んだコードにも、いつもの PR 検査を効かせられます。"
-   },
-   "en": {
-    "title": "GitHub code scanning now covers AI application vulnerabilities",
-    "summary": "GitHub code scanning can now detect AI app and agent vulnerabilities on pull requests, in public preview. It flags risks such as indirect prompt injection and excessive agency, with mitigation guidance.",
-    "why": "Your usual PR checks now cover the AI parts of your code."
-   }
-  },
-  "earth-flex": {
-   "url": "https://developers.googleblog.com/hill-climbing-agent-quality-with-agents-cli-evaluation/",
-   "source": "Google Developers Blog",
-   "published": "2026-10-28",
-   "ja": {
-    "title": "Google の Agents CLI、評価を比べて品質を上げる手順",
-    "summary": "Google が Agents CLI の eval コマンドでエージェントの品質を繰り返し上げる手順を紹介しました。eval compare で2つの結果を1件ずつ突き合わせ、モデルを替えたときの差も平均でなく1問ごとに見られます。",
-    "why": "平均点ではなく、1問ずつ突き合わせて比べられます。"
-   },
-   "en": {
-    "title": "Google shows how to hill-climb agent quality with Agents CLI eval",
-    "summary": "Google walks through improving agents with the Agents CLI eval commands. eval compare diffs two result files case by case, so model swaps can be judged per question rather than by the mean.",
-    "why": "You can compare models case by case, not just by average."
-   }
-  },
-  "air-pioneer": {
-   "url": "https://github.blog/changelog/2026-10-28-generate-and-edit-images-directly-in-copilot",
-   "source": "GitHub Changelog",
-   "published": "2026-10-28",
-   "ja": {
-    "title": "Copilot のチャットで画像を作って直せるように",
-    "summary": "GitHub Copilot で、言葉で指示して画像を生成・編集できるようになりました（パブリックプレビュー）。VS Code・Copilot アプリ・Copilot CLI で使え、画像はチャットに表示されてプロジェクトに保存されます。",
-    "why": "思いついた画面の素材も、その場で作って試作に入れられます。"
-   },
-   "en": {
-    "title": "Generate and edit images directly in GitHub Copilot",
-    "summary": "GitHub Copilot can now generate and edit images from natural-language prompts, in public preview. It works in VS Code, the Copilot app and Copilot CLI, saving results to your project.",
-    "why": "Make the assets for your prototype right where you build it."
-   }
-  },
-  "air-steady": {
-   "url": "https://github.blog/changelog/2026-10-28-issue-artifacts-are-now-in-public-preview",
-   "source": "GitHub Changelog",
-   "published": "2026-10-28",
-   "ja": {
-    "title": "GitHub の Issue に計画や調査をまとめて残せる機能",
-    "summary": "GitHub が、エージェントが作った計画・調査・図などを Issue に添付できる「issue artifacts」をパブリックプレビューで公開しました。Markdown や HTML を置け、編集すると版の履歴が残ります。",
-    "why": "詰めたプランを Issue に残し、変遷ごと追えます。"
-   },
-   "en": {
-    "title": "GitHub issue artifacts keep plans and research with the work",
-    "summary": "GitHub released issue artifacts in public preview, attaching agent-made plans, research and visuals to an issue. Markdown and HTML are supported, and edits keep version history.",
-    "why": "Keep your plan on the issue, with its history intact."
-   }
-  },
-  "air-flex": {
-   "url": "https://huggingface.co/blog/allenai/novelty-bench",
-   "source": "Ai2（Hugging Face Blog）",
-   "published": "2026-10-27",
-   "ja": {
-    "title": "論文を検索させても判定は良くならない、Ai2 の検証",
-    "summary": "Ai2 の研究では、arXiv を検索しながら判定するエージェント型の審査役も、簡単なプロンプトの判定を一貫しては上回りませんでした。検索型は1回の判定で約10倍の費用がかかったと報告しています。",
-    "why": "「調べれば正しくなる」は本当か、根拠ごと確かめられます。"
-   },
-   "en": {
-    "title": "Ai2: more literature search didn't reliably improve AI judgments",
-    "summary": "In Ai2's study, an agentic judge searching arXiv did not consistently beat a simple prompted baseline at judging novelty. The agentic judge cost roughly 10x more per decision.",
-    "why": "See the evidence on whether more searching means better answers."
-   }
-  },
-  "water-pioneer": {
-   "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot",
-   "source": "GitHub Changelog",
-   "published": "2026-10-26",
-   "ja": {
-    "title": "GPT-6.1 Terra、絞った作業を手堅く進める型",
-    "summary": "GitHub は GPT-6.1 Terra を、範囲の決まった作業を「まとまった手順で集中して進める」モデルと説明しています。初期テストでは GPT-5.6 Terra より多くのターミナル・C# の課題を解いたそうです。",
-    "why": "新しい相手の仕事ぶりを、乗り換え前に知っておけます。"
-   },
-   "en": {
-    "title": "GPT-6.1 Terra works in focused, consolidated steps",
-    "summary": "GitHub describes GPT-6.1 Terra as working in focused, consolidated steps on well-scoped tasks. In early testing it solved more terminal and C# tasks than GPT-5.6 Terra.",
-    "why": "Get a feel for its working style before you switch."
-   }
-  },
-  "water-steady": {
-   "url": "https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience",
-   "source": "GitHub Changelog",
-   "published": "2026-10-28",
-   "ja": {
-    "title": "Copilot のクラウド作業、どの画面からでも同じ続きに",
-    "summary": "Copilot のクラウド作業が、github.com・モバイル・CLI・VS Code・Slack などどこから始めても同じセッションを続けられるようになりました。作業環境は止めても保存され、後から再開できます。",
-    "why": "同じ会話の続きを、場所を変えてもそのまま進められます。"
-   },
-   "en": {
-    "title": "Copilot cloud sessions now continue across every surface",
-    "summary": "Copilot cloud tasks can start on github.com, mobile, CLI, VS Code, Slack and more and continue on any other surface. Sandboxes snapshot on shutdown so sessions can resume later.",
-    "why": "Pick up the same conversation wherever you are."
-   }
-  },
-  "water-flex": {
-   "url": "https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available",
-   "source": "GitHub Changelog",
-   "published": "2026-10-28",
-   "ja": {
-    "title": "GitHub Agentic Workflows が一般提供に",
-    "summary": "Markdown で書いた指示からエージェントを GitHub Actions 上で動かす GitHub Agentic Workflows が一般提供になりました。Issue の振り分けや CI 失敗の分析などを任せられ、既定では読み取り専用で動きます。",
-    "why": "決まった仕事を、Actions に丸ごと任せておけます。"
-   },
-   "en": {
-    "title": "GitHub Agentic Workflows is now generally available",
-    "summary": "GitHub Agentic Workflows, which runs coding agents in GitHub Actions from natural-language Markdown, is now GA. It handles tasks like issue triage and CI failure analysis, read-only by default.",
-    "why": "Hand routine chores to agents running in Actions."
-   }
+  "date": "2026-11-03",
+  "items": {
+    "fire-pioneer": {
+      "url": "https://huggingface.co/blog/mistral-large4",
+      "source": "Hugging Face Blog",
+      "published": "2026-10-29",
+      "ja": {
+        "title": "Mistral Large 4 が Hugging Face で公開",
+        "summary": "総パラメータ約1兆・稼働49Bの MoE で、文章と画像を入力でき、文脈は最大100万トークン。Transformers・vLLM・llama.cpp で初日から動かせる手順が載っています。",
+        "why": "公開されたその日に手元で回せるよ、試してみない？"
+      },
+      "en": {
+        "title": "Mistral Large 4 lands on Hugging Face",
+        "summary": "A ~1T-parameter MoE with 49B active, taking text and images with up to a 1M-token context. The post includes day-0 recipes for Transformers, vLLM and llama.cpp.",
+        "why": "It runs on day one, so you can try it today."
+      }
+    },
+    "fire-steady": {
+      "url": "https://code.claude.com/docs/en/changelog",
+      "source": "Claude Code Changelog",
+      "published": "2026-10-31",
+      "ja": {
+        "title": "Claude Code、サブエージェントの effort を別に設定可能に",
+        "summary": "2.1.316 で CLAUDE_CODE_SUBAGENT_EFFORT が入り、サブエージェントの effort をセッションと別に決められるようになりました。ultrathink を無効にする環境変数も追加されています。",
+        "why": "環境変数ひとつで、あなたの設定がまた一段速くなるよ。"
+      },
+      "en": {
+        "title": "Claude Code lets you set subagent effort separately",
+        "summary": "Version 2.1.316 adds CLAUDE_CODE_SUBAGENT_EFFORT so subagents can run at their own effort level instead of the session's. A new variable also turns off the ultrathink keyword.",
+        "why": "One env var to tune your setup further."
+      }
+    },
+    "fire-flex": {
+      "url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
+      "source": "GitHub Changelog",
+      "published": "2026-10-28",
+      "ja": {
+        "title": "Copilot Fusion が一般提供、モデルを自動で振り分け",
+        "summary": "effort を選ぶと、Copilot が作業ごとにモデルと進め方（下書き→昇格、下書き→別モデルが批評）を選びます。GitHub によると Fusion Max は比較対象の約半分のコストでした。",
+        "why": "モデルの使い分けを、任せて比べられるよ。"
+      },
+      "en": {
+        "title": "Copilot Fusion is GA, routing models per task",
+        "summary": "You pick an effort level and Copilot chooses models and workflows such as cascade or critique. GitHub reports Fusion Max cost about half as much per task as its comparison setup.",
+        "why": "Multi-model routing you can compare on cost."
+      }
+    },
+    "earth-pioneer": {
+      "url": "https://github.blog/changelog/2026-10-28-ai-scan-for-repositories-in-public-preview",
+      "source": "GitHub Changelog",
+      "published": "2026-10-28",
+      "ja": {
+        "title": "GitHub の AI Scan がリポジトリ全体を検査",
+        "summary": "PR の差分だけでなくリポジトリ全体を AI が検査し、CodeQL が見られない言語や、ルールでは見落とす問題を探します。直した後は再スキャンしないとアラートは閉じません。",
+        "why": "「直った」を再スキャンで確かめる流れ、あなた向きだよ。"
+      },
+      "en": {
+        "title": "GitHub AI Scan now checks whole repositories",
+        "summary": "AI Scan now analyzes the entire repository, covering languages CodeQL doesn't and issues rules miss. Alerts don't close on merge; a new scan is needed to confirm the fix.",
+        "why": "You'll like that fixes must be re-verified."
+      }
+    },
+    "earth-steady": {
+      "url": "https://code.claude.com/docs/en/changelog",
+      "source": "Claude Code Changelog",
+      "published": "2026-10-30",
+      "ja": {
+        "title": "Claude Code、作業フォルダ外への書き込みを禁止する設定",
+        "summary": "2.1.314 で permissions.blockWritesOutsideWorkingDirectories が入りました。有効にすると、どの権限モードでも作業フォルダの外へのファイル編集・書き込みを拒否します。",
+        "why": "守りの設定がひとつ増えて、安心が厚くなるよ。"
+      },
+      "en": {
+        "title": "Claude Code can block writes outside working dirs",
+        "summary": "Version 2.1.314 adds permissions.blockWritesOutsideWorkingDirectories. When set, Write, Edit and NotebookEdit refuse paths outside the working directories in every permission mode.",
+        "why": "One more guardrail for your safety net."
+      }
+    },
+    "earth-flex": {
+      "url": "https://github.blog/changelog/2026-10-28-copilot-code-review-merge-with-confidence-with-max-and-approvals",
+      "source": "GitHub Changelog",
+      "published": "2026-10-28",
+      "ja": {
+        "title": "Copilot レビューに複数社モデルで突き合わせる Max",
+        "summary": "Max は複数社のモデルで別々にレビューし、集約役が結果をまとめて1本にします。合わせて、Copilot がマージ可と判断した PR を承認できる機能も一般提供になりました。",
+        "why": "別々のAIのレビューを突き合わせる、まさにあなたのやり方だよ。"
+      },
+      "en": {
+        "title": "Copilot code review adds multi-model Max mode",
+        "summary": "Max runs independent review agents on models from different providers, then an aggregator reconciles them into one review. Copilot approvals of ready pull requests are now GA.",
+        "why": "Cross-checking AI reviewers is exactly your style."
+      }
+    },
+    "air-pioneer": {
+      "url": "https://github.blog/changelog/2026-10-28-introducing-replica-an-open-source-ai-prototyping-tool",
+      "source": "GitHub Changelog",
+      "published": "2026-10-28",
+      "ja": {
+        "title": "GitHub が AI 試作ツール Replica をオープンソース化",
+        "summary": "チーム自身の部品やドキュメントを使って、言葉で頼むだけで動く試作を作るツールです。MIT ライセンスで公開され、試作を共有してコメントし合える場所も自前で立てられます。",
+        "why": "思いついたら、すぐ触れる試作にできるよ。"
+      },
+      "en": {
+        "title": "GitHub open-sources Replica for AI prototyping",
+        "summary": "Replica builds interactive prototypes from a team's own components and docs via natural language. It's MIT-licensed, with an optional self-hosted hub for sharing and comments.",
+        "why": "Turn an idea into a clickable prototype fast."
+      }
+    },
+    "air-steady": {
+      "url": "https://huggingface.co/blog/mistral-large4",
+      "source": "Hugging Face Blog",
+      "published": "2026-10-29",
+      "ja": {
+        "title": "Mistral Large 4、最大100万トークンの文脈",
+        "summary": "Mistral Large 4 は最大100万トークンの文脈を持つとされています。ただし記事の vLLM などの手順では、文脈を12.8万〜13.1万トークンに抑えて動かしています。",
+        "why": "長い資料を丸ごと渡して、プランを詰められるかもね。"
+      },
+      "en": {
+        "title": "Mistral Large 4 brings a 1M-token context",
+        "summary": "Mistral Large 4 supports up to a 1M-token context. The post's vLLM and Inference Endpoints recipes cap it at about 128K to 131K tokens.",
+        "why": "Long context for planning before you code."
+      }
+    },
+    "air-flex": {
+      "url": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work",
+      "source": "GitHub Changelog",
+      "published": "2026-10-28",
+      "ja": {
+        "title": "Copilot がクローンなしで関連リポジトリを横断検索",
+        "summary": "Copilot が GitHub のコード検索で、関連リポジトリや依存先のコード・設定・ドキュメントを探せます。/research コマンドで、実装と呼び出し元をサービスをまたいで辿る例が示されています。",
+        "why": "根っこまで辿る調べもの、あなたなら使い倒せるよ。"
+      },
+      "en": {
+        "title": "Copilot searches across related repos without cloning",
+        "summary": "Copilot can use GitHub code search across related repositories and dependencies, including semantic search. The /research command traces implementations and callers across services.",
+        "why": "Trace things to their roots, your favorite move."
+      }
+    },
+    "water-pioneer": {
+      "url": "https://code.claude.com/docs/en/changelog",
+      "source": "Claude Code Changelog",
+      "published": "2026-10-31",
+      "ja": {
+        "title": "Opus 4.8 の fast mode が終了へ、Opus 5.5 へ移行",
+        "summary": "Claude Code 2.1.316 で、Opus 4.8 の fast mode が10月30日付で非推奨になりました。11月30日に削除されるため、速さを保つには Opus 5.5 への移行が案内されています。",
+        "why": "乗り換えどき。新しい相棒の話し方を確かめてみて。"
+      },
+      "en": {
+        "title": "Opus 4.8 fast mode retiring; move to Opus 5.5",
+        "summary": "Claude Code 2.1.316 deprecates fast mode for Opus 4.8 as of October 30. It will be removed on November 30, and users are told to migrate to Opus 5.5.",
+        "why": "Time to switch and meet your new partner."
+      }
+    },
+    "water-steady": {
+      "url": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work",
+      "source": "GitHub Changelog",
+      "published": "2026-10-28",
+      "ja": {
+        "title": "Copilot Memory が一般提供、好みを次回も覚える",
+        "summary": "Copilot が好みやリポジトリの決まりを、セッションや画面をまたいで覚えます。GitHub によると、試験提供中に記憶を使った CLI セッションの93%で好みに沿う度合いが上がりました。",
+        "why": "同じ相棒と長く続けるのが、もっと楽になるよ。"
+      },
+      "en": {
+        "title": "Copilot Memory is GA, remembering your preferences",
+        "summary": "Copilot keeps your preferences and repo conventions across sessions and clients. GitHub says 93% of preview CLI sessions using memory showed better adherence to preferences.",
+        "why": "Long-running partnerships just got easier."
+      }
+    },
+    "water-flex": {
+      "url": "https://github.blog/changelog/2026-10-28-agent-merge-watches-and-fixes-pull-requests-in-the-cloud",
+      "source": "GitHub Changelog",
+      "published": "2026-10-28",
+      "ja": {
+        "title": "Agent Merge が PR を見張って詰まりを直す",
+        "summary": "PR の「Watch and fix」を選ぶと、失敗したワークフローやコンフリクトを Copilot がクラウドで直しにいきます。自動マージと組み合わせれば、条件がそろった時点でマージされます。",
+        "why": "PR の面倒、まるごと任せてみない？"
+      },
+      "en": {
+        "title": "Agent Merge watches and fixes your pull requests",
+        "summary": "Choose \"Watch and fix\" and Copilot works on failing workflows or merge conflicts in a cloud environment. Combined with auto-merge, the PR merges once requirements are met.",
+        "why": "Hand off the PR chores and walk away."
+      }
+    }
   }
- }
 }
