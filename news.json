@@ -1,185 +1,185 @@
 {
-  "date": "2026-11-07",
-  "items": {
-    "fire-pioneer": {
-      "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
-      "source": "GitHub Changelog",
-      "published": "2026-11-03",
-      "ja": {
-        "title": "JetBrains Air で Copilot がエージェントとして使える",
-        "summary": "JetBrains Air のエージェント選択で GitHub Copilot を選び、手持ちの Copilot 契約のまま作業を任せられるようになりました。IDE 内のローカル作業に加え、Air Teams 経由で隔離環境のクラウド作業も動かせます。",
-        "why": "新しい置き場所に Copilot が来たよ。今日さっそく試してみる？"
-      },
-      "en": {
-        "title": "GitHub Copilot now works as an agent in JetBrains Air",
-        "summary": "You can pick GitHub Copilot in JetBrains Air's agent picker and use your existing Copilot subscription. It runs local tasks in your JetBrains IDE and cloud tasks in isolated environments through Air Teams.",
-        "why": "Copilot just landed somewhere new — want to try it today?"
-      }
-    },
-    "fire-steady": {
-      "url": "https://code.claude.com/docs/en/changelog",
-      "source": "Claude Code Changelog",
-      "published": "2026-11-06",
-      "ja": {
-        "title": "Claude Code、許可待ちで止めずに断って進む設定",
-        "summary": "Claude Code 2.1.319 に permissions.denyInsteadOfPrompting が加わりました。許可の確認で止まるはずの操作を断り、そのターンは先へ進みます（ターミナル・サブエージェント・チームメイトで有効）。",
-        "why": "設定ファイルに1行足すだけで、止まらない流れが作れるよ。"
-      },
-      "en": {
-        "title": "Claude Code can deny instead of waiting on permission prompts",
-        "summary": "Claude Code 2.1.319 adds the permissions.denyInsteadOfPrompting setting. A tool call that would wait on a permission prompt is denied and the turn continues, in terminal sessions, subagents and teammates.",
-        "why": "One line in your settings, and your runs stop stalling."
-      }
-    },
-    "fire-flex": {
-      "url": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api",
-      "source": "GitHub Changelog",
-      "published": "2026-11-03",
-      "ja": {
-        "title": "Copilot の利用API、自前キーとローカルモデルの利用を分けて表示",
-        "summary": "Copilot の利用状況 API が、自分のキーやローカルモデル（Ollama・LM Studio など）経由の利用を、Copilot 提供モデルと分けて出すようになりました。管理者が設定した企業独自モデルも見分けられます。",
-        "why": "モデルを使い分けた分、どこで何を使ったか見えるようになるよ。"
-      },
-      "en": {
-        "title": "Copilot usage API separates BYOK and enterprise custom models",
-        "summary": "The Copilot usage metrics API now reports bring-your-own-key and local model usage, such as Ollama or LM Studio, apart from Copilot-hosted models. Admin-configured enterprise custom models are flagged too.",
-        "why": "Mixing models? Now you can see where each one was used."
-      }
-    },
-    "earth-pioneer": {
-      "url": "https://huggingface.co/blog/cwe-bench",
-      "source": "Hugging Face",
-      "published": "2026-11-03",
-      "ja": {
-        "title": "CWE-bench v2、脆弱性を直せるかを100問で測る",
-        "summary": "実在のリポジトリで、既存機能を壊さずに脆弱性を見つけて直せるかを測るベンチマークの公開版です。91種のCWEにまたがる100問で、首位のモデルでも19%の問題は毎回失敗しました。",
-        "why": "「直しました」を機械で確かめる仕組み、気になるよね。"
-      },
-      "en": {
-        "title": "CWE-bench v2 tests whether agents can fix real vulnerabilities",
-        "summary": "The public set has 100 tasks across 91 CWEs, checking that an agent fixes a weakness in a real repository without breaking existing behavior. Even the top model fails 19% of tasks on every attempt.",
-        "why": "You don't trust \"fixed\" until it's verified — neither does this."
-      }
-    },
-    "earth-steady": {
-      "url": "https://github.blog/changelog/2026-11-02-pull_request_target-blocked-by-default-december-2",
-      "source": "GitHub Changelog",
-      "published": "2026-11-02",
-      "ja": {
-        "title": "公開リポジトリの pull_request_target、12月2日から停止",
-        "summary": "GitHub Actions は公開リポジトリで pull_request_target を既定でブロックします。開始は12月2日で、11月9日と16日には UTC 16〜18時に一時的にブロックが試されます。",
-        "why": "CI の守りが変わる前に、影響する流れを洗い出しておこう。"
-      },
-      "en": {
-        "title": "pull_request_target blocked by default in public repos from Dec 2",
-        "summary": "GitHub Actions will block pull_request_target events by default in public repositories starting December 2, 2026. Brownouts enforce it on November 9 and 16 from 16:00 to 18:00 UTC.",
-        "why": "Check which workflows this hits before your CI breaks."
-      }
-    },
-    "earth-flex": {
-      "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate",
-      "source": "GitHub Changelog",
-      "published": "2026-11-05",
-      "ja": {
-        "title": "Copilot のレビュー指摘、どれだけ対応されたかが測れる",
-        "summary": "利用状況 API のリポジトリ別レポートに、Copilot コードレビューの指摘数と、開発者が実際に対応した数が加わりました。対応数を指摘数で割れば、指摘の「対応率」が出せます。",
-        "why": "AIのレビューが本当に役立ったか、数字で突き合わせられるよ。"
-      },
-      "en": {
-        "title": "See how often Copilot code review comments get addressed",
-        "summary": "Repository-level usage reports now include Copilot code review comments evaluated and those developers acted on. Divide addressed by evaluated to get each repository's addressed rate.",
-        "why": "Now you can check whether AI review actually helped."
-      }
-    },
-    "air-pioneer": {
-      "url": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
-      "source": "Hugging Face (NVIDIA)",
-      "published": "2026-11-05",
-      "ja": {
-        "title": "NVIDIA、対話的な世界シミュレーション向け Cosmos 3 を公開",
-        "summary": "NVIDIA が Cosmos 3 Nano をもとにした4つのオープンなモデルを公開しました。最大11台のカメラ映像と LiDAR をそろえて生成する運転データや、双腕ロボットの動きから次の映像を予測するものがあります。",
-        "why": "動画で「世界」を試作できる時代、触ってみたくならない？"
-      },
-      "en": {
-        "title": "NVIDIA releases Cosmos 3 open models for interactive world simulation",
-        "summary": "NVIDIA added four open-weight checkpoints built on Cosmos 3 Nano. They generate synchronized multi-camera driving video with LiDAR, or predict next frames from bimanual robot actions.",
-        "why": "Prototyping whole worlds from video — tempting, right?"
-      }
-    },
-    "air-steady": {
-      "url": "https://developers.googleblog.com/agent-distraction/",
-      "source": "Google Developers Blog",
-      "published": "2026-11-06",
-      "ja": {
-        "title": "古い TODO がコーディングエージェントを寄り道させる",
-        "summary": "Google が、バグ番号付きの TODO や FIXME にエージェントが引きずられる様子を調べました。頼まれていない寄り道があったセッションは、手数が70%、トークンが77%多かったと報告しています。",
-        "why": "要らない記述を削ると、AIも迷わない。あなた向きの話だよ。"
-      },
-      "en": {
-        "title": "Stale TODOs send coding agents on detours, Google finds",
-        "summary": "Google studied how bug-referencing TODO and FIXME comments distract coding agents. Sessions with unprompted bug detours had 70% more steps and 77% more tokens.",
-        "why": "Cutting what's stale keeps agents focused — your kind of cleanup."
-      }
-    },
-    "air-flex": {
-      "url": "https://huggingface.co/blog/cwe-bench",
-      "source": "Hugging Face",
-      "published": "2026-11-03",
-      "ja": {
-        "title": "CWE-bench v2、全問を手で確かめた評価セットを公開",
-        "summary": "公開された100問は、指示が現実的か、検証が挙動を見ているかなどの基準で1問ずつ人が確認したものです。未公開の問題も別に持ち、どのモデルも見たことのない問題での伸びを追います。",
-        "why": "結果の裏付けまで開いてくれる評価、読み込みたくなるでしょ。"
-      },
-      "en": {
-        "title": "CWE-bench v2 opens a hand-checked public task set",
-        "summary": "Each of the 100 public tasks was reviewed by hand against stated quality criteria, such as verifiers that check behavior. A held-out set tracks progress on tasks no model has seen.",
-        "why": "A benchmark that shows its receipts — you'll want to dig in."
-      }
-    },
-    "water-pioneer": {
-      "url": "https://huggingface.co/blog/phonon-tts",
-      "source": "Hugging Face (Gradium)",
-      "published": "2026-11-05",
-      "ja": {
-        "title": "端末だけで動く小さな音声合成 Phonon",
-        "summary": "Gradium が、スマホやブラウザでネットなしに動く音声合成モデル Phonon を公開しました。約65〜75MBで、英・仏・独・西・葡の5言語と100以上の声を備えています。",
-        "why": "AIの「声の人柄」まで選べる。乗り換え好きにはたまらないね。"
-      },
-      "en": {
-        "title": "Phonon: a tiny text-to-speech model that runs on-device",
-        "summary": "Gradium released Phonon, a TTS model of about 65–75 MB that runs on phones and in browsers without a network. It covers five languages and offers more than 100 built-in voices.",
-        "why": "Pick an AI by its voice, too — perfect for a model-hopper."
-      }
-    },
-    "water-steady": {
-      "url": "https://code.claude.com/docs/en/changelog",
-      "source": "Claude Code Changelog",
-      "published": "2026-11-06",
-      "ja": {
-        "title": "Claude Code、終わったサブエージェントにまた話しかけられる",
-        "summary": "Claude Code 2.1.319 で /tasks に「Earlier in this session」の行が加わりました。終わったサブエージェントが一覧から消えたあとや再起動のあとでも、開き直して続きを頼めます。",
-        "why": "前の続きをそのまま話せる。長く付き合うあなたにうれしいね。"
-      },
-      "en": {
-        "title": "Claude Code lets you reopen finished subagents",
-        "summary": "Claude Code 2.1.319 adds an \"Earlier in this session\" row to /tasks listing finished subagents. You can reopen and message one even after it leaves the list or you restart.",
-        "why": "Pick up right where you left off with the same helper."
-      }
-    },
-    "water-flex": {
-      "url": "https://code.claude.com/docs/en/changelog",
-      "source": "Claude Code Changelog",
-      "published": "2026-11-06",
-      "ja": {
-        "title": "Claude Code、時間のかかる MCP の処理を裏で回す",
-        "summary": "Claude Code 2.1.319 は、MCP サーバーがツールの呼び出しをタスクとして動かすと、すぐにバックグラウンドへ回し、終わったら結果を Claude に知らせます。その間も作業を止めずに進められます。",
-        "why": "任せたら待たなくていい。気楽に投げられるよ。"
-      },
-      "en": {
-        "title": "Claude Code runs long MCP tasks in the background",
-        "summary": "In Claude Code 2.1.319, when an MCP server runs a tool call as a task, it moves to the background right away. Claude is told the result when it finishes.",
-        "why": "Hand it off and keep going — no waiting around."
-      }
-    }
+ "date": "2026-11-09",
+ "items": {
+  "fire-pioneer": {
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+   "source": "Google",
+   "published": "2026-11-05",
+   "ja": {
+    "title": "Gemini Omni 1.2 Flash、15秒の動画を3割安く",
+    "summary": "動画生成モデル Gemini Omni 1.2 Flash が Gemini API（AI Studio）と Vertex AI で使えるようになった。長さは3〜15秒で選べ、720p の価格は1秒 $0.07 と前版から30%下がった。",
+    "why": "出たその日に API を叩いて、15秒の動画を一本作ってみたくなるはず。"
+   },
+   "en": {
+    "title": "Gemini Omni 1.2 Flash: 15-second video clips, 30% cheaper",
+    "summary": "Google's video model Gemini Omni 1.2 Flash is available in the Gemini API via AI Studio and in Vertex AI. Clips run 3 to 15 seconds, and 720p video costs $0.07 per second, 30% less than Omni 1.1.",
+    "why": "You'll want to hit the API today and render a 15-second clip just to see."
+   }
+  },
+  "fire-steady": {
+   "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/",
+   "source": "GitHub Changelog",
+   "published": "2026-11-06",
+   "ja": {
+    "title": "Copilot CLI の /settings が設定の一枚板に",
+    "summary": "Copilot CLI の /settings がプラグイン・MCP サーバーなどをまとめて見渡せるダッシュボードになり、設定の横断検索もできる。VS Code 1.145 ではローカル自動化が cron 式と自作エージェントに対応した。",
+    "why": "育ててきた設定を一枚で見渡し、cron で定期実行まで組めるのは腕が鳴るでしょう。"
+   },
+   "en": {
+    "title": "Copilot CLI /settings becomes one dashboard; VS Code automations take cron",
+    "summary": "In Copilot CLI, /settings now opens a unified dashboard for plugins, MCP servers and more, with search across settings. VS Code 1.145 local automations support cron expressions and custom agents from your workspace.",
+    "why": "One place to tune every setting, plus cron schedules for your own agents."
+   }
+  },
+  "fire-flex": {
+   "url": "https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/",
+   "source": "Google Developers Blog",
+   "published": "2026-11-03",
+   "ja": {
+    "title": "安い分類器で Gemini のモデルと思考量を振り分ける",
+    "summary": "Google の開発者ブログが、軽い分類器で課題ごとに最安のモデル構成へ振り分ける手法を検証した。50問では Flash-Lite に送って必要時だけ Flash へ上げる構成が全問正解し、出力トークン上限を絞る手は難問25問中7問を落とした。",
+    "why": "安いモデルに先に投げて、難しいものだけ格上げする作戦の裏付けになります。"
+   },
+   "en": {
+    "title": "Routing tasks across Gemini models with a cheap classifier",
+    "summary": "A Google Developers Blog post tests a lightweight classifier that routes each task to the cheapest Gemini configuration that still solves it. On 50 tasks, Flash-Lite first with escalation to Flash solved all 50, while capping output tokens failed 7 of 25 hard tasks.",
+    "why": "Evidence for your habit of sending cheap first and escalating only the hard ones."
+   }
+  },
+  "earth-pioneer": {
+   "url": "https://www.anthropic.com/research/provable-inference",
+   "source": "Anthropic",
+   "published": "2026-11-02",
+   "ja": {
+    "title": "FlashProve、返事が本当にそのモデルから来たか証明する",
+    "summary": "Anthropic が、重みを見ずに「この返事はこのモデルが生成した」と検証できる仕組み FlashProve を Apache 2.0 で公開した。Llama 4 Maverick で H100 1枚あたり約110トークン/秒の証明生成。研究用の試作と位置づけている。",
+    "why": "「本当にそのモデルが答えたの？」を数学で確かめられる日が近づいています。"
+   },
+   "en": {
+    "title": "FlashProve: proving a response really came from the claimed model",
+    "summary": "Anthropic released FlashProve, an Apache 2.0 research prototype for provable inference using zkSNARKs, so a response can be verified as coming from a committed model without seeing its weights. On Llama 4 Maverick it proves about 110 tokens/second per H100, with ~19 MB proofs per 1,024-token request.",
+    "why": "Your \"did that model really answer?\" doubt now has a cryptographic check in progress."
+   }
+  },
+  "earth-steady": {
+   "url": "https://huggingface.co/blog/transformers-mic",
+   "source": "Hugging Face",
+   "published": "2026-11-03",
+   "ja": {
+    "title": "Transformers、縮小モデルで PR 段階の退行を捕まえる",
+    "summary": "Hugging Face が Transformers の Model Integration Contracts を提案した。実チェックポイントから縮めた小さなモデルと使い方の例、確認済みの基準出力の3点で、CPU の PR CI で退行を検出する。11月1日時点では失敗を報告するだけでマージは止めない。",
+    "why": "テストを厚くして PR の段階で止める、あなたのやり方そのものです。"
+   },
+   "en": {
+    "title": "Transformers tests shrunk models on PRs to catch regressions early",
+    "summary": "Hugging Face proposed Model Integration Contracts for Transformers: a shrunk fixture built from a real checkpoint's config, a runnable usage path, and reviewed baselines, run on cheap CPU runners per PR. As of November 1 the CI job reports failures without blocking merges.",
+    "why": "Catching regressions at PR time instead of a nightly GPU run is your kind of CI."
+   }
+  },
+  "earth-flex": {
+   "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates/",
+   "source": "GitHub Changelog",
+   "published": "2026-11-06",
+   "ja": {
+    "title": "Copilot のレビュー、指摘を先頭にまとめ理由付きで評価",
+    "summary": "Copilot コードレビューの概要が変わり、指摘が先頭にまとまり、レビューの労力やアンケートは短い脚注へ移った。低評価を付けるときに「承認判断に不同意」「冗長」「細かすぎる」などの理由を選べ、GitHub はこれを指摘の改善に使うとしている。",
+    "why": "AI のレビューを突き合わせて外れを理由付きで返せる、あなた向けの改修です。"
+   },
+   "en": {
+    "title": "Copilot code review puts findings first and asks why you disagreed",
+    "summary": "Copilot code review overviews now keep findings together at the top, with review effort and surveys in a compact footer. After a thumbs-down you can pick a reason such as disagreement with the approval assessment, verbosity, or incorrect or nitpicky findings, which GitHub uses to improve findings.",
+    "why": "You cross-check AI reviews anyway; now your disagreements feed back with a reason."
+   }
+  },
+  "air-pioneer": {
+   "url": "https://developers.openai.com/api/docs/changelog",
+   "source": "OpenAI API Changelog",
+   "published": "2026-11-04",
+   "ja": {
+    "title": "GPT-Image-2.6、SVG とアニメ GIF を API で生成",
+    "summary": "OpenAI が画像生成・編集 API に GPT-Image-2.6 の Sunburst と Flare を追加した。描き込みの複雑さを調整でき、SVG 生成とアニメーション GIF の生成に対応する。GPT Image 2.5 と 2.6 ではマークアップで指示する編集も使える。",
+    "why": "SVG が直接出てくるなら、思いついたアイコンや図をその場で試作できます。"
+   },
+   "en": {
+    "title": "GPT-Image-2.6 adds SVG and animated GIF generation to the API",
+    "summary": "OpenAI added GPT-Image-2.6 Sunburst and Flare to the image generation and edit APIs, with adjustable complexity, SVG generation and animated GIF generation. Markup-guided editing is also available for GPT Image 2.5 and 2.6 models.",
+    "why": "SVG straight from the API means you can prototype icons and diagrams on the spot."
+   }
+  },
+  "air-steady": {
+   "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available/",
+   "source": "GitHub Changelog",
+   "published": "2026-11-06",
+   "ja": {
+    "title": "Teams の Canvas で実装プランを会話の横でレビュー",
+    "summary": "Slack と Teams の @GitHub が一般提供になった。Teams では Canvas で実装プラン・コードの変更・プレビューを会話の横に置いて確認し、チームで意見を出して詰められる。作られた Issue や PR には元になった会話が記録される。",
+    "why": "コードの前にプランをみんなで詰める場が、会話のすぐ隣にできます。"
+   },
+   "en": {
+    "title": "@GitHub in Slack and Teams is GA, with Canvas to review plans in Teams",
+    "summary": "@GitHub in Slack and Teams is generally available. In Teams, Canvas lets you review implementation plans, code changes and previews alongside the conversation and refine them with teammates. Issues and pull requests note the conversation they came from.",
+    "why": "A place to pin down the plan with your team before any code gets written."
+   }
+  },
+  "air-flex": {
+   "url": "https://www.anthropic.com/research/how-researchers-use-claude",
+   "source": "Anthropic",
+   "published": "2026-11-05",
+   "ja": {
+    "title": "研究者の Claude 利用20.7万件を分析、調べ物はまだ少数",
+    "summary": "Anthropic が2026年8〜9月の研究関連セッション207,049件を分析した。データ分析が Claude で33.7%、Claude Code で48.1%を占める一方、データ収集は11.5%、仮説づくりは4.2%にとどまった。",
+    "why": "調べ尽くす工程がまだ使われていない、という数字そのものが掘りがいがあります。"
+   },
+   "en": {
+    "title": "Anthropic analyzed 207,049 research sessions: data gathering is still rare",
+    "summary": "Anthropic studied 207,049 research-related Claude sessions from August to September 2026. Data analysis made up 33.7% of Claude sessions and 48.1% of Claude Code sessions, while data gathering was 11.5% and ideation 4.2%. A survey of 528 scientists ranked ideation as the most important task.",
+    "why": "The part you love most, digging up sources, is the part nobody uses yet."
+   }
+  },
+  "water-pioneer": {
+   "url": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor",
+   "source": "Hugging Face (Dharma-AI)",
+   "published": "2026-11-04",
+   "ja": {
+    "title": "20億パラメータの抽出専用モデル、書類から JSON を返す",
+    "summary": "Dharma-AI が、書類の画像から指定した項目を JSON で返す20億パラメータのモデルを公開した。546文書・1,638ケースの自前ベンチマークで 0.834 を記録し、比較した Claude Opus 5 の 0.816 を上回ったとしている。自前ホストで動く。",
+    "why": "仕事ごとに相手を替えるあなたなら、書類読みはこの子に任せる手もあります。"
+   },
+   "en": {
+    "title": "A 2B field-extraction model returns JSON from any document",
+    "summary": "Dharma-AI released a 2-billion-parameter model that takes a document image and returns the fields you ask for as JSON. On its own benchmark of 546 documents and 1,638 cases it scored 0.834, above Claude Opus 5 at 0.816 and GPT-5.6 Luna at 0.741, and it runs self-hosted.",
+    "why": "You switch models by fit; a small specialist for paperwork is one more to try."
+   }
+  },
+  "water-steady": {
+   "url": "https://www.anthropic.com/research/components-of-agent-memory",
+   "source": "Anthropic",
+   "published": "2026-11-06",
+   "ja": {
+    "title": "エージェントの記憶は4層、寝かせて整える",
+    "summary": "Anthropic が、エージェントの記憶を書き起こし・メモ・wiki などの構造・毎回読み込む小さな層の4つに分けて解説した。約35万ファイルの資料では wiki を育てると正答率が128セッションで13%から48%に上がり、ログを見返してメモを直す「夢見」の効果も示した。",
+    "why": "同じ相手と長く続けるほど効く、記憶の育て方の話です。"
+   },
+   "en": {
+    "title": "Anthropic lays out the components of agent memory",
+    "summary": "Anthropic describes agent memory as transcripts, memory notes, representations such as wikis, and a small injected context layer. On a corpus of about 350,000 files, wiki-only accuracy rose from 13% to 48% over 128 sessions, and an offline \"dreaming\" pass corrected stale notes.",
+    "why": "The longer you work with the same agent, the more this memory design pays off."
+   }
+  },
+  "water-flex": {
+   "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/",
+   "source": "GitHub Changelog",
+   "published": "2026-11-06",
+   "ja": {
+    "title": "Copilot に「準備できたらマージして」と任せられる",
+    "summary": "GitHub Copilot アプリで、PR から Agent Merge を設定すると必須チェックやルールが保留中でも有効のままになり、準備が整えば Copilot がマージする。どのツール要求を確認なしで承認してよいかの指針を渡す「assisted approval」も加わった。",
+    "why": "任せる範囲を先に決めておけば、あとは見守るだけで済みます。"
+   },
+   "en": {
+    "title": "Copilot can merge a PR when it's ready, and approve tool requests by your rules",
+    "summary": "In the GitHub Copilot app, Agent Merge set up from a pull request now stays enabled while required checks or rules are pending, and Copilot merges when ready. Assisted approval lets you give Copilot guidance on which tool requests to approve without asking you.",
+    "why": "Decide once what to delegate, then let it run in the background."
+   }
   }
+ }
 }
