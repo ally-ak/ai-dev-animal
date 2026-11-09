@@ -1,184 +1,184 @@
 {
- "date": "2026-11-09",
+ "date": "2026-11-10",
  "items": {
   "fire-pioneer": {
-   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
-   "source": "Google",
-   "published": "2026-11-05",
+   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+   "source": "Anthropic",
+   "published": "2026-11-09",
    "ja": {
-    "title": "Gemini Omni 1.2 Flash、15秒の動画を3割安く",
-    "summary": "動画生成モデル Gemini Omni 1.2 Flash が Gemini API（AI Studio）と Vertex AI で使えるようになった。長さは3〜15秒で選べ、720p の価格は1秒 $0.07 と前版から30%下がった。",
-    "why": "出たその日に API を叩いて、15秒の動画を一本作ってみたくなるはず。"
+    "title": "Claude Fable 5.2 登場、出力3割速く $8/$40 に",
+    "summary": "Anthropic が Claude Fable 5.2 と Mythos 5.2 を公開した。モデル ID は claude-fable-5-2、価格は入力 $8・出力 $40／百万トークンで、出力は 5.1 より最大30%速い。任意の fast mode は最大2.5倍速で $16/$80。AWS・Google Cloud・Azure でも使える。",
+    "why": "今日から叩ける新モデル。まず1本投げてみたくなるはず。"
    },
    "en": {
-    "title": "Gemini Omni 1.2 Flash: 15-second video clips, 30% cheaper",
-    "summary": "Google's video model Gemini Omni 1.2 Flash is available in the Gemini API via AI Studio and in Vertex AI. Clips run 3 to 15 seconds, and 720p video costs $0.07 per second, 30% less than Omni 1.1.",
-    "why": "You'll want to hit the API today and render a 15-second clip just to see."
+    "title": "Claude Fable 5.2 ships: up to 30% faster output at $8/$40 per Mtok",
+    "summary": "Anthropic released Claude Fable 5.2 and Claude Mythos 5.2. Fable 5.2 is claude-fable-5-2 on the Claude Platform at $8 input and $40 output per million tokens, with output up to 30% faster than 5.1. Optional fast mode runs up to 2.5x faster at $16/$80, and the models are on AWS, Google Cloud and Azure.",
+    "why": "A new frontier model you can call today; you'll want one request in before lunch."
    }
   },
   "fire-steady": {
-   "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/",
-   "source": "GitHub Changelog",
-   "published": "2026-11-06",
+   "url": "https://code.claude.com/docs/en/changelog",
+   "source": "Claude Code changelog",
+   "published": "2026-11-09",
    "ja": {
-    "title": "Copilot CLI の /settings が設定の一枚板に",
-    "summary": "Copilot CLI の /settings がプラグイン・MCP サーバーなどをまとめて見渡せるダッシュボードになり、設定の横断検索もできる。VS Code 1.145 ではローカル自動化が cron 式と自作エージェントに対応した。",
-    "why": "育ててきた設定を一枚で見渡し、cron で定期実行まで組めるのは腕が鳴るでしょう。"
+    "title": "Claude Code 2.1.321、/model と /fast が新モデル対応",
+    "summary": "Claude Code 2.1.321 で Fable 5.2 が Fable の既定になり、保存してあった 5.1 の選択は fable に移る（/model claude-fable-5-1 で戻せる）。/fast・/config・/model の表示はいまのモデル名を出し、fast が混んでいるときは同じモデルの標準速度で先に試すようになった。",
+    "why": "育ててきた設定が新モデルでどう動くか、まず /model から確かめたくなる。"
    },
    "en": {
-    "title": "Copilot CLI /settings becomes one dashboard; VS Code automations take cron",
-    "summary": "In Copilot CLI, /settings now opens a unified dashboard for plugins, MCP servers and more, with search across settings. VS Code 1.145 local automations support cron expressions and custom agents from your workspace.",
-    "why": "One place to tune every setting, plus cron schedules for your own agents."
+    "title": "Claude Code 2.1.321: Fable 5.2 is the default Fable, /model and /fast follow",
+    "summary": "Claude Code 2.1.321 adds Claude Fable 5.2 as the default Fable model with 1M context, and moves saved Fable 5.1 picks to fable (use /model claude-fable-5-1 to switch back). Fast mode labels in /fast, /config and /model now name your current model, and a rate-limited fast mode tries standard speed on the same model first.",
+    "why": "Your tuned setup meets a new default model; check /model first."
    }
   },
   "fire-flex": {
-   "url": "https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/",
-   "source": "Google Developers Blog",
-   "published": "2026-11-03",
+   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+   "source": "Anthropic",
+   "published": "2026-11-09",
    "ja": {
-    "title": "安い分類器で Gemini のモデルと思考量を振り分ける",
-    "summary": "Google の開発者ブログが、軽い分類器で課題ごとに最安のモデル構成へ振り分ける手法を検証した。50問では Flash-Lite に送って必要時だけ Flash へ上げる構成が全問正解し、出力トークン上限を絞る手は難問25問中7問を落とした。",
-    "why": "安いモデルに先に投げて、難しいものだけ格上げする作戦の裏付けになります。"
+    "title": "Fable 5.2 は小さいモデルの相談役にも司令塔にもなる",
+    "summary": "Anthropic は Fable 5.2 を、小さいモデルが難問だけ相談する Advisor か、簡単な仕事を小さいモデルへ振る Orchestrator として使う形を示した。普段は Opus 5.5 から始め、必要なときだけ上へ動かす使い分けを勧めている。",
+    "why": "安いモデルを並べて難所だけ上に回す、あなたの組み方に合う。"
    },
    "en": {
-    "title": "Routing tasks across Gemini models with a cheap classifier",
-    "summary": "A Google Developers Blog post tests a lightweight classifier that routes each task to the cheapest Gemini configuration that still solves it. On 50 tasks, Flash-Lite first with escalation to Flash solved all 50, while capping output tokens failed 7 of 25 hard tasks.",
-    "why": "Evidence for your habit of sending cheap first and escalating only the hard ones."
+    "title": "Fable 5.2 works as an Advisor to smaller models or as their Orchestrator",
+    "summary": "Anthropic describes two ways to use Fable 5.2: as an Advisor that smaller models consult on hard problems, or as an Orchestrator that delegates simpler tasks to smaller models. It recommends starting with Opus 5.5 and moving up only when needed. At High effort on FrontierCode 2.0, Fable 5.2 roughly matched Opus 5.5 at about half the cost per task.",
+    "why": "Cheap models in parallel, with the big one only for the hard parts: that's your setup."
    }
   },
   "earth-pioneer": {
-   "url": "https://www.anthropic.com/research/provable-inference",
+   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
    "source": "Anthropic",
-   "published": "2026-11-02",
+   "published": "2026-11-09",
    "ja": {
-    "title": "FlashProve、返事が本当にそのモデルから来たか証明する",
-    "summary": "Anthropic が、重みを見ずに「この返事はこのモデルが生成した」と検証できる仕組み FlashProve を Apache 2.0 で公開した。Llama 4 Maverick で H100 1枚あたり約110トークン/秒の証明生成。研究用の試作と位置づけている。",
-    "why": "「本当にそのモデルが答えたの？」を数学で確かめられる日が近づいています。"
+    "title": "Fable 5.2、分からないことは「分からない」と言う",
+    "summary": "Anthropic によると、Fable 5.2 の初期テスターは「でっち上げず、知らないことは知らないと言う」と報告した。Mythos 5.2 のサイバー評価では、以前のモデルが約20件に1件は所見を誇張していたのに対し、誇張はゼロだったとテスターが述べている。",
+    "why": "それでも自分で確かめる番は残る。まず「分からない」の頻度を見て。"
    },
    "en": {
-    "title": "FlashProve: proving a response really came from the claimed model",
-    "summary": "Anthropic released FlashProve, an Apache 2.0 research prototype for provable inference using zkSNARKs, so a response can be verified as coming from a committed model without seeing its weights. On Llama 4 Maverick it proves about 110 tokens/second per H100, with ~19 MB proofs per 1,024-token request.",
-    "why": "Your \"did that model really answer?\" doubt now has a cryptographic check in progress."
+    "title": "Fable 5.2 testers: it says it doesn't know instead of making things up",
+    "summary": "Anthropic reports that early testers said Fable 5.2 says it doesn't know things instead of hallucinating. In cybersecurity testing of Mythos 5.2, one tester said previous models overstated about 1 in 20 findings while Mythos 5.2 overstated none.",
+    "why": "You still verify every 'done'; now start by counting how often it says 'I don't know'."
    }
   },
   "earth-steady": {
-   "url": "https://huggingface.co/blog/transformers-mic",
-   "source": "Hugging Face",
-   "published": "2026-11-03",
+   "url": "https://github.blog/changelog/2026-11-09-secret-scanning-detects-secrets-in-github-actions-workflow-logs",
+   "source": "GitHub Changelog",
+   "published": "2026-11-09",
    "ja": {
-    "title": "Transformers、縮小モデルで PR 段階の退行を捕まえる",
-    "summary": "Hugging Face が Transformers の Model Integration Contracts を提案した。実チェックポイントから縮めた小さなモデルと使い方の例、確認済みの基準出力の3点で、CPU の PR CI で退行を検出する。11月1日時点では失敗を報告するだけでマージは止めない。",
-    "why": "テストを厚くして PR の段階で止める、あなたのやり方そのものです。"
+    "title": "GitHub、Actions のログに漏れたシークレットも検出",
+    "summary": "GitHub の secret scanning が、Issue や PR に加えて Actions のワークフローログも調べるようになった（パブリックプレビュー）。実行完了時に走査し、アラートはログを消した後も残る。Enterprise Cloud の Secret Protection か Advanced Security 向けで、既定はオフ。",
+    "why": "CI のログまで網をかける、あなたの守り方に一枚足せる。"
    },
    "en": {
-    "title": "Transformers tests shrunk models on PRs to catch regressions early",
-    "summary": "Hugging Face proposed Model Integration Contracts for Transformers: a shrunk fixture built from a real checkpoint's config, a runnable usage path, and reviewed baselines, run on cheap CPU runners per PR. As of November 1 the CI job reports failures without blocking merges.",
-    "why": "Catching regressions at PR time instead of a nightly GPU run is your kind of CI."
+    "title": "GitHub secret scanning now checks Actions workflow logs",
+    "summary": "GitHub secret scanning now scans Actions workflow logs in public preview, in addition to issues, wikis, discussions and pull requests. Logs are scanned when a run completes, and alerts stay available after the logs are deleted. It's for GitHub Enterprise Cloud with Secret Protection or Advanced Security, and the enterprise policy is off by default.",
+    "why": "One more net under your CI, right where leaked tokens tend to land."
    }
   },
   "earth-flex": {
-   "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates/",
-   "source": "GitHub Changelog",
-   "published": "2026-11-06",
+   "url": "https://huggingface.co/blog/cwe-bench",
+   "source": "Hugging Face (Collinear AI)",
+   "published": "2026-11-03",
    "ja": {
-    "title": "Copilot のレビュー、指摘を先頭にまとめ理由付きで評価",
-    "summary": "Copilot コードレビューの概要が変わり、指摘が先頭にまとまり、レビューの労力やアンケートは短い脚注へ移った。低評価を付けるときに「承認判断に不同意」「冗長」「細かすぎる」などの理由を選べ、GitHub はこれを指摘の改善に使うとしている。",
-    "why": "AI のレビューを突き合わせて外れを理由付きで返せる、あなた向けの改修です。"
+    "title": "CWE-bench v2、脆弱性修正で11モデルを横並び比較",
+    "summary": "Collinear AI が、実在の OSS の脆弱性を直せるかを測る CWE-bench v2 を公開した。公開セットは100課題・91種の CWE。pass@1 は Gemini 4 Argon 67.8%、Claude Opus 5.5 67.3%で、DeepSeek V4.1 Flash は57.0%を1回 $0.04 で出した。",
+    "why": "複数の AI を突き合わせるあなたに、費用まで並んだ比較表はごちそう。"
    },
    "en": {
-    "title": "Copilot code review puts findings first and asks why you disagreed",
-    "summary": "Copilot code review overviews now keep findings together at the top, with review effort and surveys in a compact footer. After a thumbs-down you can pick a reason such as disagreement with the approval assessment, verbosity, or incorrect or nitpicky findings, which GitHub uses to improve findings.",
-    "why": "You cross-check AI reviews anyway; now your disagreements feed back with a reason."
+    "title": "CWE-bench v2 compares 11 models on fixing real security weaknesses",
+    "summary": "Collinear AI released CWE-bench v2, which tests whether agents can fix security weaknesses in real open-source repositories. The public set has 100 tasks across 91 CWEs with deterministic grading. Gemini 4 Argon leads at 67.8% pass@1, Claude Opus 5.5 at 67.3%, and DeepSeek V4.1 Flash reaches 57.0% at $0.04 per rollout.",
+    "why": "You cross-check models anyway; here's a table with accuracy and cost side by side."
    }
   },
   "air-pioneer": {
-   "url": "https://developers.openai.com/api/docs/changelog",
-   "source": "OpenAI API Changelog",
-   "published": "2026-11-04",
+   "url": "https://www.anthropic.com/research/claude-electronics-design",
+   "source": "Anthropic",
+   "published": "2026-11-09",
    "ja": {
-    "title": "GPT-Image-2.6、SVG とアニメ GIF を API で生成",
-    "summary": "OpenAI が画像生成・編集 API に GPT-Image-2.6 の Sunburst と Flare を追加した。描き込みの複雑さを調整でき、SVG 生成とアニメーション GIF の生成に対応する。GPT Image 2.5 と 2.6 ではマークアップで指示する編集も使える。",
-    "why": "SVG が直接出てくるなら、思いついたアイコンや図をその場で試作できます。"
+    "title": "Claude が基板から筐体・ファームまで設計、3台とも動いた",
+    "summary": "Anthropic が Diode Computers と、Fable 5.2 に USB スピーカーフォン・音声アシスタント機・携帯ペット玩具の3台を設計させた。仕様書・回路図・基板配線・3D プリント筐体・ファームウェアまで書き、Diode が組み立てた3台とも回路の修正なしで動いた。電気的検証や認証は未実施の試作段階。",
+    "why": "思いついた物をそのまま基板にできるなら、次の試作が待ちきれないはず。"
    },
    "en": {
-    "title": "GPT-Image-2.6 adds SVG and animated GIF generation to the API",
-    "summary": "OpenAI added GPT-Image-2.6 Sunburst and Flare to the image generation and edit APIs, with adjustable complexity, SVG generation and animated GIF generation. Markup-guided editing is also available for GPT Image 2.5 and 2.6 models.",
-    "why": "SVG straight from the API means you can prototype icons and diagrams on the spot."
+    "title": "Claude designed three electronic devices end to end, and all three worked",
+    "summary": "Anthropic and Diode Computers had Claude Fable 5.2 design a USB speakerphone, a voice-assistant hub and a handheld virtual pet from short prompts. Claude wrote the specs, schematics, board routing, 3D-printable enclosures and firmware; Diode built all three and they worked without circuit fixes. They remain early prototypes without electrical validation or certification.",
+    "why": "If a prompt can become a working board, your next prototype just got physical."
    }
   },
   "air-steady": {
-   "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available/",
-   "source": "GitHub Changelog",
-   "published": "2026-11-06",
+   "url": "https://huggingface.co/blog/ibm-research/palette-deck-building",
+   "source": "Hugging Face (IBM Research)",
+   "published": "2026-11-03",
    "ja": {
-    "title": "Teams の Canvas で実装プランを会話の横でレビュー",
-    "summary": "Slack と Teams の @GitHub が一般提供になった。Teams では Canvas で実装プラン・コードの変更・プレビューを会話の横に置いて確認し、チームで意見を出して詰められる。作られた Issue や PR には元になった会話が記録される。",
-    "why": "コードの前にプランをみんなで詰める場が、会話のすぐ隣にできます。"
+    "title": "IBM の Palette、20B モデルが設計書を書いてからスライドを作る",
+    "summary": "IBM Research が、20B のオープンウェイトモデルに IBM Design Language のスライドを作らせる Palette を公開した。先に designer 役が配色・構成・理由を JSON で書き、coder 役が1枚ずつ並列でコードを書く。PresentBench の3領域平均は 59.7 で NotebookLM に 1.1 点差。",
+    "why": "コードの前に設計を固める、あなたの順番そのものを小さなモデルに教えた話。"
    },
    "en": {
-    "title": "@GitHub in Slack and Teams is GA, with Canvas to review plans in Teams",
-    "summary": "@GitHub in Slack and Teams is generally available. In Teams, Canvas lets you review implementation plans, code changes and previews alongside the conversation and refine them with teammates. Issues and pull requests note the conversation they came from.",
-    "why": "A place to pin down the plan with your team before any code gets written."
+    "title": "IBM's Palette: a 20B model writes a design brief before any slide code",
+    "summary": "IBM Research described Palette, a 20B open-weight model with one LoRA adapter that builds decks in the IBM Design Language. A designer role first writes a JSON brief covering palette, type system and each slide's layout and rationale, then a coder role writes one slide at a time in parallel. It scores 59.7 on PresentBench's three-domain mean, 1.1 behind NotebookLM.",
+    "why": "Plan first, then code, with the reasons written down: your order of work, taught to a small model."
    }
   },
   "air-flex": {
-   "url": "https://www.anthropic.com/research/how-researchers-use-claude",
+   "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
    "source": "Anthropic",
-   "published": "2026-11-05",
+   "published": "2026-11-04",
    "ja": {
-    "title": "研究者の Claude 利用20.7万件を分析、調べ物はまだ少数",
-    "summary": "Anthropic が2026年8〜9月の研究関連セッション207,049件を分析した。データ分析が Claude で33.7%、Claude Code で48.1%を占める一方、データ収集は11.5%、仮説づくりは4.2%にとどまった。",
-    "why": "調べ尽くす工程がまだ使われていない、という数字そのものが掘りがいがあります。"
+    "title": "Claude、150億の予測タンパク質を掘って新しい構造に辿り着く",
+    "summary": "Anthropic の Life Sciences チームが、原核生物の vault 粒子の 3D 構造を初めて決めた過程を公開した。Claude は約150億の予測タンパク質を探索して29の細菌門に近縁を見つけ、cryo-EM 解析では34時間で最初のモデルを出した。添加剤の誤りで約2週間を失うなど、失敗も記録されている。",
+    "why": "根拠を掘り尽くす調べ方が、失敗の記録ごと読めるのは貴重。"
    },
    "en": {
-    "title": "Anthropic analyzed 207,049 research sessions: data gathering is still rare",
-    "summary": "Anthropic studied 207,049 research-related Claude sessions from August to September 2026. Data analysis made up 33.7% of Claude sessions and 48.1% of Claude Code sessions, while data gathering was 11.5% and ideation 4.2%. A survey of 528 scientists ranked ideation as the most important task.",
-    "why": "The part you love most, digging up sources, is the part nobody uses yet."
+    "title": "Claude searched 15 billion predicted proteins to reach a new vault structure",
+    "summary": "Anthropic's Life Sciences team published how Claude helped determine the first 3D structure of a prokaryotic vault particle. Claude searched about 15 billion predicted proteins, found relatives in 29 bacterial phyla, and ran cryo-EM processing to a first model in 34 hours. The post also records its mistakes, including an additive that cost about two weeks.",
+    "why": "Digging through every source, errors and all, is your kind of research story."
    }
   },
   "water-pioneer": {
-   "url": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor",
-   "source": "Hugging Face (Dharma-AI)",
-   "published": "2026-11-04",
+   "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-5-in-github-copilot/",
+   "source": "GitHub Changelog",
+   "published": "2026-11-09",
    "ja": {
-    "title": "20億パラメータの抽出専用モデル、書類から JSON を返す",
-    "summary": "Dharma-AI が、書類の画像から指定した項目を JSON で返す20億パラメータのモデルを公開した。546文書・1,638ケースの自前ベンチマークで 0.834 を記録し、比較した Claude Opus 5 の 0.816 を上回ったとしている。自前ホストで動く。",
-    "why": "仕事ごとに相手を替えるあなたなら、書類読みはこの子に任せる手もあります。"
+    "title": "GitHub Copilot のモデル一覧に Fable 5.2 が並んだ",
+    "summary": "GitHub Copilot で Claude Fable 5.2 が一般提供になった。Pro+・Max・Business・Enterprise 向けで、VS Code・Copilot CLI・JetBrains・Xcode などのモデル選択から選べる。GitHub の初期テストでは 5.1 より少ない手順とツール呼び出しで多くの課題を解いた。段階的に展開中。",
+    "why": "相手を替えて手触りを試すあなたは、今日の一手目がこれになる。"
    },
    "en": {
-    "title": "A 2B field-extraction model returns JSON from any document",
-    "summary": "Dharma-AI released a 2-billion-parameter model that takes a document image and returns the fields you ask for as JSON. On its own benchmark of 546 documents and 1,638 cases it scored 0.834, above Claude Opus 5 at 0.816 and GPT-5.6 Luna at 0.741, and it runs self-hosted.",
-    "why": "You switch models by fit; a small specialist for paperwork is one more to try."
+    "title": "Claude Fable 5.2 lands in the GitHub Copilot model picker",
+    "summary": "Claude Fable 5.2 is generally available in GitHub Copilot for Pro+, Max, Business and Enterprise plans, selectable in VS Code, Copilot CLI, JetBrains, Xcode and more. In GitHub's early testing it solved more tasks than Fable 5.1 with fewer steps and tool calls. The rollout is gradual, and Business and Enterprise admins must enable a policy that is off by default.",
+    "why": "You switch models to feel the difference; this is today's first switch."
    }
   },
   "water-steady": {
-   "url": "https://www.anthropic.com/research/components-of-agent-memory",
-   "source": "Anthropic",
-   "published": "2026-11-06",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview",
+   "source": "Claude Platform release notes",
+   "published": "2026-11-02",
    "ja": {
-    "title": "エージェントの記憶は4層、寝かせて整える",
-    "summary": "Anthropic が、エージェントの記憶を書き起こし・メモ・wiki などの構造・毎回読み込む小さな層の4つに分けて解説した。約35万ファイルの資料では wiki を育てると正答率が128セッションで13%から48%に上がり、ログを見返してメモを直す「夢見」の効果も示した。",
-    "why": "同じ相手と長く続けるほど効く、記憶の育て方の話です。"
+    "title": "Claude API のメッセージスレッド、会話はサーバーが持つ",
+    "summary": "Claude Platform にメッセージスレッド（ベータ）が入った。会話の履歴を API 側が保持し、続きの要求では新しいメッセージだけ送ればよい。スレッドは最後の要求から5分で期限切れになり、最後の利用から1時間以内に削除される。ベータヘッダー message-threads-2026-08-12 で使う。",
+    "why": "同じ相手と続ける会話を、毎回まるごと送り直さなくてよくなる。"
    },
    "en": {
-    "title": "Anthropic lays out the components of agent memory",
-    "summary": "Anthropic describes agent memory as transcripts, memory notes, representations such as wikis, and a small injected context layer. On a corpus of about 350,000 files, wiki-only accuracy rose from 13% to 48% over 128 sessions, and an offline \"dreaming\" pass corrected stale notes.",
-    "why": "The longer you work with the same agent, the more this memory design pays off."
+    "title": "Claude API message threads (beta) keep the conversation on the server",
+    "summary": "The Claude Platform added message threads in beta, using the message-threads-2026-08-12 header. The API keeps the conversation server-side, so later requests send only new messages. Threads expire 5 minutes after their last request and are deleted no more than an hour after last use.",
+    "why": "Long conversations with the same assistant, without resending every turn."
    }
   },
   "water-flex": {
-   "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/",
-   "source": "GitHub Changelog",
+   "url": "https://code.claude.com/docs/en/changelog",
+   "source": "Claude Code changelog",
    "published": "2026-11-06",
    "ja": {
-    "title": "Copilot に「準備できたらマージして」と任せられる",
-    "summary": "GitHub Copilot アプリで、PR から Agent Merge を設定すると必須チェックやルールが保留中でも有効のままになり、準備が整えば Copilot がマージする。どのツール要求を確認なしで承認してよいかの指針を渡す「assisted approval」も加わった。",
-    "why": "任せる範囲を先に決めておけば、あとは見守るだけで済みます。"
+    "title": "Claude Code、MCP の長い仕事をすぐ裏に回して待たせない",
+    "summary": "Claude Code 2.1.319 で、MCP サーバーがツール呼び出しをタスクとして実行すると、すぐ裏に回して終わり次第 Claude に結果を渡すようになった。待ちたいときは環境変数 CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND で戻せる。/clear が裏で動くエージェントのコマンドを止めてしまう不具合も直った。",
+    "why": "任せて別のことをするあなたに、裏で動く仕事の扱いが一段よくなった。"
    },
    "en": {
-    "title": "Copilot can merge a PR when it's ready, and approve tool requests by your rules",
-    "summary": "In the GitHub Copilot app, Agent Merge set up from a pull request now stays enabled while required checks or rules are pending, and Copilot merges when ready. Assisted approval lets you give Copilot guidance on which tool requests to approve without asking you.",
-    "why": "Decide once what to delegate, then let it run in the background."
+    "title": "Claude Code moves MCP tasks to the background right away",
+    "summary": "In Claude Code 2.1.319, when an MCP server runs a tool call as a task, Claude Code moves it to the background immediately and reports the result when it finishes; CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND restores waiting. The release also fixed /clear killing commands of background agents, teammates and workflows.",
+    "why": "Hand it off and move on; background work now behaves the way you'd want."
    }
   }
  }
