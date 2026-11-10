@@ -1,185 +1,89 @@
 {
- "date": "2026-11-10",
+ "date": "2026-11-11",
  "items": {
   "fire-pioneer": {
-   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
-   "source": "Anthropic",
-   "published": "2026-11-09",
-   "ja": {
-    "title": "Claude Fable 5.2 登場、出力3割速く $8/$40 に",
-    "summary": "Anthropic が Claude Fable 5.2 と Mythos 5.2 を公開した。モデル ID は claude-fable-5-2、価格は入力 $8・出力 $40／百万トークンで、出力は 5.1 より最大30%速い。任意の fast mode は最大2.5倍速で $16/$80。AWS・Google Cloud・Azure でも使える。",
-    "why": "今日から叩ける新モデル。まず1本投げてみたくなるはず。"
-   },
-   "en": {
-    "title": "Claude Fable 5.2 ships: up to 30% faster output at $8/$40 per Mtok",
-    "summary": "Anthropic released Claude Fable 5.2 and Claude Mythos 5.2. Fable 5.2 is claude-fable-5-2 on the Claude Platform at $8 input and $40 output per million tokens, with output up to 30% faster than 5.1. Optional fast mode runs up to 2.5x faster at $16/$80, and the models are on AWS, Google Cloud and Azure.",
-    "why": "A new frontier model you can call today; you'll want one request in before lunch."
-   }
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/",
+   "source": "Google",
+   "published": "2026-11-10",
+   "ja": { "title": "Gemini 4 Carbon が開発者向けに提供開始", "summary": "Google が Gemini 4 Carbon を Gemini API の有料枠で公開し、Google AI Studio と Android Studio で使えるようになった。AI Ultra 加入者は AI Studio と Google Antigravity でも試せる。", "why": "出たその日に、あなたの手元で試せます。" },
+   "en": { "title": "Gemini 4 Carbon is now available for developers", "summary": "Google made Gemini 4 Carbon available on the paid tier of the Gemini API in Google AI Studio and Android Studio. Google AI Ultra subscribers can also try it in AI Studio and Google Antigravity.", "why": "It's out today, so you can try it today." }
   },
   "fire-steady": {
-   "url": "https://code.claude.com/docs/en/changelog",
-   "source": "Claude Code changelog",
-   "published": "2026-11-09",
-   "ja": {
-    "title": "Claude Code 2.1.321、/model と /fast が新モデル対応",
-    "summary": "Claude Code 2.1.321 で Fable 5.2 が Fable の既定になり、保存してあった 5.1 の選択は fable に移る（/model claude-fable-5-1 で戻せる）。/fast・/config・/model の表示はいまのモデル名を出し、fast が混んでいるときは同じモデルの標準速度で先に試すようになった。",
-    "why": "育ててきた設定が新モデルでどう動くか、まず /model から確かめたくなる。"
-   },
-   "en": {
-    "title": "Claude Code 2.1.321: Fable 5.2 is the default Fable, /model and /fast follow",
-    "summary": "Claude Code 2.1.321 adds Claude Fable 5.2 as the default Fable model with 1M context, and moves saved Fable 5.1 picks to fable (use /model claude-fable-5-1 to switch back). Fast mode labels in /fast, /config and /model now name your current model, and a rate-limited fast mode tries standard speed on the same model first.",
-    "why": "Your tuned setup meets a new default model; check /model first."
-   }
+   "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+   "source": "GitHub Changelog",
+   "published": "2026-11-06",
+   "ja": { "title": "Copilot CLI の /settings が一つの画面に", "summary": "Copilot CLI の /settings で、プラグイン・MCP サーバーなどの設定を一つの画面にまとめて検索できるようになった。VS Code 1.145 ではローカルの自動化が cron 式とワークスペースのカスタムエージェントに対応した。", "why": "設定と定期実行を、あなた好みに育てられます。" },
+   "en": { "title": "Copilot CLI /settings becomes one searchable dashboard", "summary": "In Copilot CLI, /settings now opens a unified dashboard for plugins, MCP servers and other settings, searchable in one place. VS Code 1.145 local automations now support cron expressions and custom agents from your workspace.", "why": "More room to tune your setup and schedule your routines." }
   },
   "fire-flex": {
-   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
-   "source": "Anthropic",
-   "published": "2026-11-09",
-   "ja": {
-    "title": "Fable 5.2 は小さいモデルの相談役にも司令塔にもなる",
-    "summary": "Anthropic は Fable 5.2 を、小さいモデルが難問だけ相談する Advisor か、簡単な仕事を小さいモデルへ振る Orchestrator として使う形を示した。普段は Opus 5.5 から始め、必要なときだけ上へ動かす使い分けを勧めている。",
-    "why": "安いモデルを並べて難所だけ上に回す、あなたの組み方に合う。"
-   },
-   "en": {
-    "title": "Fable 5.2 works as an Advisor to smaller models or as their Orchestrator",
-    "summary": "Anthropic describes two ways to use Fable 5.2: as an Advisor that smaller models consult on hard problems, or as an Orchestrator that delegates simpler tasks to smaller models. It recommends starting with Opus 5.5 and moving up only when needed. At High effort on FrontierCode 2.0, Fable 5.2 roughly matched Opus 5.5 at about half the cost per task.",
-    "why": "Cheap models in parallel, with the big one only for the hard parts: that's your setup."
-   }
-  },
-  "earth-pioneer": {
-   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
-   "source": "Anthropic",
-   "published": "2026-11-09",
-   "ja": {
-    "title": "Fable 5.2、分からないことは「分からない」と言う",
-    "summary": "Anthropic によると、Fable 5.2 の初期テスターは「でっち上げず、知らないことは知らないと言う」と報告した。Mythos 5.2 のサイバー評価では、以前のモデルが約20件に1件は所見を誇張していたのに対し、誇張はゼロだったとテスターが述べている。",
-    "why": "それでも自分で確かめる番は残る。まず「分からない」の頻度を見て。"
-   },
-   "en": {
-    "title": "Fable 5.2 testers: it says it doesn't know instead of making things up",
-    "summary": "Anthropic reports that early testers said Fable 5.2 says it doesn't know things instead of hallucinating. In cybersecurity testing of Mythos 5.2, one tester said previous models overstated about 1 in 20 findings while Mythos 5.2 overstated none.",
-    "why": "You still verify every 'done'; now start by counting how often it says 'I don't know'."
-   }
-  },
-  "earth-steady": {
-   "url": "https://github.blog/changelog/2026-11-09-secret-scanning-detects-secrets-in-github-actions-workflow-logs",
-   "source": "GitHub Changelog",
-   "published": "2026-11-09",
-   "ja": {
-    "title": "GitHub、Actions のログに漏れたシークレットも検出",
-    "summary": "GitHub の secret scanning が、Issue や PR に加えて Actions のワークフローログも調べるようになった（パブリックプレビュー）。実行完了時に走査し、アラートはログを消した後も残る。Enterprise Cloud の Secret Protection か Advanced Security 向けで、既定はオフ。",
-    "why": "CI のログまで網をかける、あなたの守り方に一枚足せる。"
-   },
-   "en": {
-    "title": "GitHub secret scanning now checks Actions workflow logs",
-    "summary": "GitHub secret scanning now scans Actions workflow logs in public preview, in addition to issues, wikis, discussions and pull requests. Logs are scanned when a run completes, and alerts stay available after the logs are deleted. It's for GitHub Enterprise Cloud with Secret Protection or Advanced Security, and the enterprise policy is off by default.",
-    "why": "One more net under your CI, right where leaked tokens tend to land."
-   }
-  },
-  "earth-flex": {
-   "url": "https://huggingface.co/blog/cwe-bench",
-   "source": "Hugging Face (Collinear AI)",
-   "published": "2026-11-03",
-   "ja": {
-    "title": "CWE-bench v2、脆弱性修正で11モデルを横並び比較",
-    "summary": "Collinear AI が、実在の OSS の脆弱性を直せるかを測る CWE-bench v2 を公開した。公開セットは100課題・91種の CWE。pass@1 は Gemini 4 Argon 67.8%、Claude Opus 5.5 67.3%で、DeepSeek V4.1 Flash は57.0%を1回 $0.04 で出した。",
-    "why": "複数の AI を突き合わせるあなたに、費用まで並んだ比較表はごちそう。"
-   },
-   "en": {
-    "title": "CWE-bench v2 compares 11 models on fixing real security weaknesses",
-    "summary": "Collinear AI released CWE-bench v2, which tests whether agents can fix security weaknesses in real open-source repositories. The public set has 100 tasks across 91 CWEs with deterministic grading. Gemini 4 Argon leads at 67.8% pass@1, Claude Opus 5.5 at 67.3%, and DeepSeek V4.1 Flash reaches 57.0% at $0.04 per rollout.",
-    "why": "You cross-check models anyway; here's a table with accuracy and cost side by side."
-   }
-  },
-  "air-pioneer": {
-   "url": "https://www.anthropic.com/research/claude-electronics-design",
-   "source": "Anthropic",
-   "published": "2026-11-09",
-   "ja": {
-    "title": "Claude が基板から筐体・ファームまで設計、3台とも動いた",
-    "summary": "Anthropic が Diode Computers と、Fable 5.2 に USB スピーカーフォン・音声アシスタント機・携帯ペット玩具の3台を設計させた。仕様書・回路図・基板配線・3D プリント筐体・ファームウェアまで書き、Diode が組み立てた3台とも回路の修正なしで動いた。電気的検証や認証は未実施の試作段階。",
-    "why": "思いついた物をそのまま基板にできるなら、次の試作が待ちきれないはず。"
-   },
-   "en": {
-    "title": "Claude designed three electronic devices end to end, and all three worked",
-    "summary": "Anthropic and Diode Computers had Claude Fable 5.2 design a USB speakerphone, a voice-assistant hub and a handheld virtual pet from short prompts. Claude wrote the specs, schematics, board routing, 3D-printable enclosures and firmware; Diode built all three and they worked without circuit fixes. They remain early prototypes without electrical validation or certification.",
-    "why": "If a prompt can become a working board, your next prototype just got physical."
-   }
-  },
-  "air-steady": {
-   "url": "https://huggingface.co/blog/ibm-research/palette-deck-building",
+   "url": "https://huggingface.co/blog/ibm-research/cuga-harness",
    "source": "Hugging Face (IBM Research)",
    "published": "2026-11-03",
-   "ja": {
-    "title": "IBM の Palette、20B モデルが設計書を書いてからスライドを作る",
-    "summary": "IBM Research が、20B のオープンウェイトモデルに IBM Design Language のスライドを作らせる Palette を公開した。先に designer 役が配色・構成・理由を JSON で書き、coder 役が1枚ずつ並列でコードを書く。PresentBench の3領域平均は 59.7 で NotebookLM に 1.1 点差。",
-    "why": "コードの前に設計を固める、あなたの順番そのものを小さなモデルに教えた話。"
-   },
-   "en": {
-    "title": "IBM's Palette: a 20B model writes a design brief before any slide code",
-    "summary": "IBM Research described Palette, a 20B open-weight model with one LoRA adapter that builds decks in the IBM Design Language. A designer role first writes a JSON brief covering palette, type system and each slide's layout and rationale, then a coder role writes one slide at a time in parallel. It scores 59.7 on PresentBench's three-domain mean, 1.1 behind NotebookLM.",
-    "why": "Plan first, then code, with the reasons written down: your order of work, taught to a small model."
-   }
+   "ja": { "title": "同じモデルでもハーネスで成績が変わる", "summary": "IBM Research が同じオープンモデルで CUGA・Hermes・Deep Agents の3つのハーネスを AppWorld の90課題で比べた。完了率は CUGA 81.1%、Hermes 46.7%、Deep Agents 30.0% だった。", "why": "モデルだけでなく、走らせ方も選び分けたいあなたに。" },
+   "en": { "title": "Same model, different harness, very different results", "summary": "IBM Research ran three agent harnesses, CUGA, Hermes and Deep Agents, with the same open-weight model on 90 AppWorld tasks. CUGA completed 81.1%, Hermes 46.7% and Deep Agents 30.0%.", "why": "You pick harnesses as carefully as models." }
+  },
+  "earth-pioneer": {
+   "url": "https://huggingface.co/blog/figma-ai/motion-graphics-bench",
+   "source": "Hugging Face (Figma)",
+   "published": "2026-11-10",
+   "ja": { "title": "アニメ生成をプログラムで判定するベンチ", "summary": "MotionGraphicsBench は、静止したベクター画像を指示どおり動かせるかを100課題で測る。決定的な Python の検証プログラムは人の判定と93.3%一致し、VLM の判定（83.3%）を上回った。", "why": "「できた」をAIに聞かず、機械で確かめる話です。" },
+   "en": { "title": "A benchmark that checks motion graphics with code", "summary": "MotionGraphicsBench tests whether models can animate static vector graphics across 100 tasks. Its deterministic Python verifiers agreed with humans on 93.3% of held-out animations, versus 83.3% for a VLM judge.", "why": "Proof by program, not by the model's word." }
+  },
+  "earth-steady": {
+   "url": "https://github.blog/changelog/2026-11-02-pull_request_target-blocked-by-default-december-2",
+   "source": "GitHub Changelog",
+   "published": "2026-11-02",
+   "ja": { "title": "pull_request_target が12月2日から既定で停止", "summary": "公開リポジトリでは12月2日から、許可していない pull_request_target のワークフローが既定で止まる。フォークの信頼できないコードが秘密情報に触れる危険を減らすためで、11月9日と16日に一時的な先行停止がある。", "why": "あなたの CI を、いまのうちに点検しておけます。" },
+   "en": { "title": "pull_request_target blocked by default from December 2", "summary": "Public repositories will block pull_request_target workflows by default from December 2 unless a policy allows them, reducing the risk of fork code reaching secrets. Temporary brownouts run on November 9 and 16.", "why": "Time to audit your CI before it bites." }
+  },
+  "earth-flex": {
+   "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
+   "source": "GitHub Changelog",
+   "published": "2026-11-06",
+   "ja": { "title": "Copilot のレビューが3モデルで突き合わせに", "summary": "Copilot code review の Balanced では3つのレビュー用モデルを使い、別のモデルが指摘をまとめるようになった。API からレビュー設定を管理でき、コメントが参照したスキルや MCP サーバーも分かる。", "why": "複数のAIに見せて突き合わせるあなたのやり方そのものです。" },
+   "en": { "title": "Copilot code review now cross-checks with three models", "summary": "Balanced-effort Copilot code reviews now use three reviewer models, with another model combining their findings. Review settings can be managed via API, which also shows the skills and MCP servers each comment cited.", "why": "Your cross-review habit, built into the tool." }
+  },
+  "air-pioneer": {
+   "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
+   "source": "GitHub Changelog",
+   "published": "2026-11-04",
+   "ja": { "title": "Xcode 内蔵アシスタントで Copilot が使える", "summary": "GitHub Copilot が Xcode の組み込みコーディングアシスタントで使えるようになった（Xcode 27.3 beta からのパブリックプレビュー）。全ての Copilot プランが対象で、Xcode の設定の Intelligence から設定する。", "why": "思いついたiPhoneアプリも、すぐ試作できます。" },
+   "en": { "title": "GitHub Copilot arrives in Xcode's coding assistant", "summary": "GitHub Copilot now works in Xcode's built-in coding assistant, in public preview from Xcode 27.3 beta. All Copilot plans are supported, set up under Xcode > Settings > Intelligence.", "why": "Your next iOS idea is one prompt away." }
+  },
+  "air-steady": {
+   "url": "https://huggingface.co/blog/allenai/statebench",
+   "source": "Hugging Face (Ai2)",
+   "published": "2026-11-03",
+   "ja": { "title": "長い文書で状態の変化を追えるか測る", "summary": "Ai2 の StateBench は、長い文書の中で変わっていく情報をモデルが追えるかを4段階の難しさで測る。最先端モデルも、最も長い問題では正答率が13%以下に落ちた。", "why": "長い文脈を渡す前に、あなたが知っておきたい限界です。" },
+   "en": { "title": "StateBench tests tracking changes across long documents", "summary": "Ai2's StateBench measures how well models track changing entity state across long documents at four difficulty levels. Frontier models fell to 13% accuracy or lower on the longest problems.", "why": "Know the limits before you hand over a long context." }
   },
   "air-flex": {
-   "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
-   "source": "Anthropic",
-   "published": "2026-11-04",
-   "ja": {
-    "title": "Claude、150億の予測タンパク質を掘って新しい構造に辿り着く",
-    "summary": "Anthropic の Life Sciences チームが、原核生物の vault 粒子の 3D 構造を初めて決めた過程を公開した。Claude は約150億の予測タンパク質を探索して29の細菌門に近縁を見つけ、cryo-EM 解析では34時間で最初のモデルを出した。添加剤の誤りで約2週間を失うなど、失敗も記録されている。",
-    "why": "根拠を掘り尽くす調べ方が、失敗の記録ごと読めるのは貴重。"
-   },
-   "en": {
-    "title": "Claude searched 15 billion predicted proteins to reach a new vault structure",
-    "summary": "Anthropic's Life Sciences team published how Claude helped determine the first 3D structure of a prokaryotic vault particle. Claude searched about 15 billion predicted proteins, found relatives in 29 bacterial phyla, and ran cryo-EM processing to a first model in 34 hours. The post also records its mistakes, including an additive that cost about two weeks.",
-    "why": "Digging through every source, errors and all, is your kind of research story."
-   }
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/multimodal-knowledge-agent-benchmark/",
+   "source": "Google",
+   "published": "2026-11-10",
+   "ja": { "title": "図面やスライドを読み解く調査エージェントの評価", "summary": "Google と Artificial Analysis が、図や資料を読み解く知的作業を測る MKA ベンチマークを公開した。10業種83職種の専門家が200課題を作り、各課題を約70の可否チェックで採点する。", "why": "根拠を資料から掘り出す力の測り方が分かります。" },
+   "en": { "title": "A benchmark for agents that read visually complex files", "summary": "Google and Artificial Analysis introduced the Multimodal Knowledge Agent benchmark for knowledge work across visual files. Experts in 10 verticals and 83 occupations wrote 200 tasks, each scored with about 70 yes/no checks.", "why": "See how evidence-digging agents get graded." }
   },
   "water-pioneer": {
-   "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-5-in-github-copilot/",
+   "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot",
    "source": "GitHub Changelog",
-   "published": "2026-11-09",
-   "ja": {
-    "title": "GitHub Copilot のモデル一覧に Fable 5.2 が並んだ",
-    "summary": "GitHub Copilot で Claude Fable 5.2 が一般提供になった。Pro+・Max・Business・Enterprise 向けで、VS Code・Copilot CLI・JetBrains・Xcode などのモデル選択から選べる。GitHub の初期テストでは 5.1 より少ない手順とツール呼び出しで多くの課題を解いた。段階的に展開中。",
-    "why": "相手を替えて手触りを試すあなたは、今日の一手目がこれになる。"
-   },
-   "en": {
-    "title": "Claude Fable 5.2 lands in the GitHub Copilot model picker",
-    "summary": "Claude Fable 5.2 is generally available in GitHub Copilot for Pro+, Max, Business and Enterprise plans, selectable in VS Code, Copilot CLI, JetBrains, Xcode and more. In GitHub's early testing it solved more tasks than Fable 5.1 with fewer steps and tool calls. The rollout is gradual, and Business and Enterprise admins must enable a policy that is off by default.",
-    "why": "You switch models to feel the difference; this is today's first switch."
-   }
+   "published": "2026-11-10",
+   "ja": { "title": "Gemini 4 Carbon が GitHub Copilot に登場", "summary": "Google の Gemini 4 Carbon が GitHub Copilot で一般提供になった。Pro+・Max・Business・Enterprise で、VS Code や Copilot CLI などのモデル選択から選べる（順次展開）。", "why": "新しい相手との相性を、あなたの手で確かめられます。" },
+   "en": { "title": "Gemini 4 Carbon is now in GitHub Copilot", "summary": "Google's Gemini 4 Carbon is generally available in GitHub Copilot for Pro+, Max, Business and Enterprise. It appears in the model picker across VS Code, Copilot CLI and more, rolling out gradually.", "why": "A new partner to try on for fit." }
   },
   "water-steady": {
-   "url": "https://platform.claude.com/docs/en/release-notes/overview",
-   "source": "Claude Platform release notes",
-   "published": "2026-11-02",
-   "ja": {
-    "title": "Claude API のメッセージスレッド、会話はサーバーが持つ",
-    "summary": "Claude Platform にメッセージスレッド（ベータ）が入った。会話の履歴を API 側が保持し、続きの要求では新しいメッセージだけ送ればよい。スレッドは最後の要求から5分で期限切れになり、最後の利用から1時間以内に削除される。ベータヘッダー message-threads-2026-08-12 で使う。",
-    "why": "同じ相手と続ける会話を、毎回まるごと送り直さなくてよくなる。"
-   },
-   "en": {
-    "title": "Claude API message threads (beta) keep the conversation on the server",
-    "summary": "The Claude Platform added message threads in beta, using the message-threads-2026-08-12 header. The API keeps the conversation server-side, so later requests send only new messages. Threads expire 5 minutes after their last request and are deleted no more than an hour after last use.",
-    "why": "Long conversations with the same assistant, without resending every turn."
-   }
+   "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+   "source": "GitHub Changelog",
+   "published": "2026-11-06",
+   "ja": { "title": "Copilot アプリで長い会話を圧縮して続行", "summary": "Copilot アプリで、文脈の上限に達した会話を圧縮して続けられるようになった。PR がマージ・クローズされたピン留めセッションをアーカイブすることもできる。", "why": "同じ会話を長く続けるあなたに嬉しい改善です。" },
+   "en": { "title": "Copilot app can compact conversations at the limit", "summary": "The Copilot app can now compact a conversation that hits its context limit so you can keep going. Pinned sessions whose PRs are merged or closed can also be archived.", "why": "Keep one long conversation going." }
   },
   "water-flex": {
-   "url": "https://code.claude.com/docs/en/changelog",
-   "source": "Claude Code changelog",
+   "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
+   "source": "GitHub Changelog",
    "published": "2026-11-06",
-   "ja": {
-    "title": "Claude Code、MCP の長い仕事をすぐ裏に回して待たせない",
-    "summary": "Claude Code 2.1.319 で、MCP サーバーがツール呼び出しをタスクとして実行すると、すぐ裏に回して終わり次第 Claude に結果を渡すようになった。待ちたいときは環境変数 CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND で戻せる。/clear が裏で動くエージェントのコマンドを止めてしまう不具合も直った。",
-    "why": "任せて別のことをするあなたに、裏で動く仕事の扱いが一段よくなった。"
-   },
-   "en": {
-    "title": "Claude Code moves MCP tasks to the background right away",
-    "summary": "In Claude Code 2.1.319, when an MCP server runs a tool call as a task, Claude Code moves it to the background immediately and reports the result when it finishes; CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND restores waiting. The release also fixed /clear killing commands of background agents, teammates and workflows.",
-    "why": "Hand it off and move on; background work now behaves the way you'd want."
-   }
+   "ja": { "title": "Slack・Teams の @GitHub が一般提供に", "summary": "Slack と Teams の会話から、バグ調査・Issue 作成・変更の実装・PR 作成まで頼めるようになった。メッセージからリポジトリを判断して、そのままコーディングを始める。", "why": "チャットから一言で任せたいあなたに。" },
+   "en": { "title": "@GitHub in Slack and Teams is generally available", "summary": "You can now start bug investigations, create issues, implement changes and open pull requests from Slack and Teams conversations. @GitHub detects the repository from your message and starts a coding session.", "why": "Hand off work with one chat message." }
   }
  }
 }
