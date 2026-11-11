@@ -1,89 +1,185 @@
 {
- "date": "2026-11-11",
- "items": {
-  "fire-pioneer": {
-   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/",
-   "source": "Google",
-   "published": "2026-11-10",
-   "ja": { "title": "Gemini 4 Carbon が開発者向けに提供開始", "summary": "Google が Gemini 4 Carbon を Gemini API の有料枠で公開し、Google AI Studio と Android Studio で使えるようになった。AI Ultra 加入者は AI Studio と Google Antigravity でも試せる。", "why": "出たその日に、あなたの手元で試せます。" },
-   "en": { "title": "Gemini 4 Carbon is now available for developers", "summary": "Google made Gemini 4 Carbon available on the paid tier of the Gemini API in Google AI Studio and Android Studio. Google AI Ultra subscribers can also try it in AI Studio and Google Antigravity.", "why": "It's out today, so you can try it today." }
-  },
-  "fire-steady": {
-   "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
-   "source": "GitHub Changelog",
-   "published": "2026-11-06",
-   "ja": { "title": "Copilot CLI の /settings が一つの画面に", "summary": "Copilot CLI の /settings で、プラグイン・MCP サーバーなどの設定を一つの画面にまとめて検索できるようになった。VS Code 1.145 ではローカルの自動化が cron 式とワークスペースのカスタムエージェントに対応した。", "why": "設定と定期実行を、あなた好みに育てられます。" },
-   "en": { "title": "Copilot CLI /settings becomes one searchable dashboard", "summary": "In Copilot CLI, /settings now opens a unified dashboard for plugins, MCP servers and other settings, searchable in one place. VS Code 1.145 local automations now support cron expressions and custom agents from your workspace.", "why": "More room to tune your setup and schedule your routines." }
-  },
-  "fire-flex": {
-   "url": "https://huggingface.co/blog/ibm-research/cuga-harness",
-   "source": "Hugging Face (IBM Research)",
-   "published": "2026-11-03",
-   "ja": { "title": "同じモデルでもハーネスで成績が変わる", "summary": "IBM Research が同じオープンモデルで CUGA・Hermes・Deep Agents の3つのハーネスを AppWorld の90課題で比べた。完了率は CUGA 81.1%、Hermes 46.7%、Deep Agents 30.0% だった。", "why": "モデルだけでなく、走らせ方も選び分けたいあなたに。" },
-   "en": { "title": "Same model, different harness, very different results", "summary": "IBM Research ran three agent harnesses, CUGA, Hermes and Deep Agents, with the same open-weight model on 90 AppWorld tasks. CUGA completed 81.1%, Hermes 46.7% and Deep Agents 30.0%.", "why": "You pick harnesses as carefully as models." }
-  },
-  "earth-pioneer": {
-   "url": "https://huggingface.co/blog/figma-ai/motion-graphics-bench",
-   "source": "Hugging Face (Figma)",
-   "published": "2026-11-10",
-   "ja": { "title": "アニメ生成をプログラムで判定するベンチ", "summary": "MotionGraphicsBench は、静止したベクター画像を指示どおり動かせるかを100課題で測る。決定的な Python の検証プログラムは人の判定と93.3%一致し、VLM の判定（83.3%）を上回った。", "why": "「できた」をAIに聞かず、機械で確かめる話です。" },
-   "en": { "title": "A benchmark that checks motion graphics with code", "summary": "MotionGraphicsBench tests whether models can animate static vector graphics across 100 tasks. Its deterministic Python verifiers agreed with humans on 93.3% of held-out animations, versus 83.3% for a VLM judge.", "why": "Proof by program, not by the model's word." }
-  },
-  "earth-steady": {
-   "url": "https://github.blog/changelog/2026-11-02-pull_request_target-blocked-by-default-december-2",
-   "source": "GitHub Changelog",
-   "published": "2026-11-02",
-   "ja": { "title": "pull_request_target が12月2日から既定で停止", "summary": "公開リポジトリでは12月2日から、許可していない pull_request_target のワークフローが既定で止まる。フォークの信頼できないコードが秘密情報に触れる危険を減らすためで、11月9日と16日に一時的な先行停止がある。", "why": "あなたの CI を、いまのうちに点検しておけます。" },
-   "en": { "title": "pull_request_target blocked by default from December 2", "summary": "Public repositories will block pull_request_target workflows by default from December 2 unless a policy allows them, reducing the risk of fork code reaching secrets. Temporary brownouts run on November 9 and 16.", "why": "Time to audit your CI before it bites." }
-  },
-  "earth-flex": {
-   "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
-   "source": "GitHub Changelog",
-   "published": "2026-11-06",
-   "ja": { "title": "Copilot のレビューが3モデルで突き合わせに", "summary": "Copilot code review の Balanced では3つのレビュー用モデルを使い、別のモデルが指摘をまとめるようになった。API からレビュー設定を管理でき、コメントが参照したスキルや MCP サーバーも分かる。", "why": "複数のAIに見せて突き合わせるあなたのやり方そのものです。" },
-   "en": { "title": "Copilot code review now cross-checks with three models", "summary": "Balanced-effort Copilot code reviews now use three reviewer models, with another model combining their findings. Review settings can be managed via API, which also shows the skills and MCP servers each comment cited.", "why": "Your cross-review habit, built into the tool." }
-  },
-  "air-pioneer": {
-   "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
-   "source": "GitHub Changelog",
-   "published": "2026-11-04",
-   "ja": { "title": "Xcode 内蔵アシスタントで Copilot が使える", "summary": "GitHub Copilot が Xcode の組み込みコーディングアシスタントで使えるようになった（Xcode 27.3 beta からのパブリックプレビュー）。全ての Copilot プランが対象で、Xcode の設定の Intelligence から設定する。", "why": "思いついたiPhoneアプリも、すぐ試作できます。" },
-   "en": { "title": "GitHub Copilot arrives in Xcode's coding assistant", "summary": "GitHub Copilot now works in Xcode's built-in coding assistant, in public preview from Xcode 27.3 beta. All Copilot plans are supported, set up under Xcode > Settings > Intelligence.", "why": "Your next iOS idea is one prompt away." }
-  },
-  "air-steady": {
-   "url": "https://huggingface.co/blog/allenai/statebench",
-   "source": "Hugging Face (Ai2)",
-   "published": "2026-11-03",
-   "ja": { "title": "長い文書で状態の変化を追えるか測る", "summary": "Ai2 の StateBench は、長い文書の中で変わっていく情報をモデルが追えるかを4段階の難しさで測る。最先端モデルも、最も長い問題では正答率が13%以下に落ちた。", "why": "長い文脈を渡す前に、あなたが知っておきたい限界です。" },
-   "en": { "title": "StateBench tests tracking changes across long documents", "summary": "Ai2's StateBench measures how well models track changing entity state across long documents at four difficulty levels. Frontier models fell to 13% accuracy or lower on the longest problems.", "why": "Know the limits before you hand over a long context." }
-  },
-  "air-flex": {
-   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/multimodal-knowledge-agent-benchmark/",
-   "source": "Google",
-   "published": "2026-11-10",
-   "ja": { "title": "図面やスライドを読み解く調査エージェントの評価", "summary": "Google と Artificial Analysis が、図や資料を読み解く知的作業を測る MKA ベンチマークを公開した。10業種83職種の専門家が200課題を作り、各課題を約70の可否チェックで採点する。", "why": "根拠を資料から掘り出す力の測り方が分かります。" },
-   "en": { "title": "A benchmark for agents that read visually complex files", "summary": "Google and Artificial Analysis introduced the Multimodal Knowledge Agent benchmark for knowledge work across visual files. Experts in 10 verticals and 83 occupations wrote 200 tasks, each scored with about 70 yes/no checks.", "why": "See how evidence-digging agents get graded." }
-  },
-  "water-pioneer": {
-   "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot",
-   "source": "GitHub Changelog",
-   "published": "2026-11-10",
-   "ja": { "title": "Gemini 4 Carbon が GitHub Copilot に登場", "summary": "Google の Gemini 4 Carbon が GitHub Copilot で一般提供になった。Pro+・Max・Business・Enterprise で、VS Code や Copilot CLI などのモデル選択から選べる（順次展開）。", "why": "新しい相手との相性を、あなたの手で確かめられます。" },
-   "en": { "title": "Gemini 4 Carbon is now in GitHub Copilot", "summary": "Google's Gemini 4 Carbon is generally available in GitHub Copilot for Pro+, Max, Business and Enterprise. It appears in the model picker across VS Code, Copilot CLI and more, rolling out gradually.", "why": "A new partner to try on for fit." }
-  },
-  "water-steady": {
-   "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
-   "source": "GitHub Changelog",
-   "published": "2026-11-06",
-   "ja": { "title": "Copilot アプリで長い会話を圧縮して続行", "summary": "Copilot アプリで、文脈の上限に達した会話を圧縮して続けられるようになった。PR がマージ・クローズされたピン留めセッションをアーカイブすることもできる。", "why": "同じ会話を長く続けるあなたに嬉しい改善です。" },
-   "en": { "title": "Copilot app can compact conversations at the limit", "summary": "The Copilot app can now compact a conversation that hits its context limit so you can keep going. Pinned sessions whose PRs are merged or closed can also be archived.", "why": "Keep one long conversation going." }
-  },
-  "water-flex": {
-   "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
-   "source": "GitHub Changelog",
-   "published": "2026-11-06",
-   "ja": { "title": "Slack・Teams の @GitHub が一般提供に", "summary": "Slack と Teams の会話から、バグ調査・Issue 作成・変更の実装・PR 作成まで頼めるようになった。メッセージからリポジトリを判断して、そのままコーディングを始める。", "why": "チャットから一言で任せたいあなたに。" },
-   "en": { "title": "@GitHub in Slack and Teams is generally available", "summary": "You can now start bug investigations, create issues, implement changes and open pull requests from Slack and Teams conversations. @GitHub detects the repository from your message and starts a coding session.", "why": "Hand off work with one chat message." }
+  "date": "2026-11-12",
+  "items": {
+    "fire-pioneer": {
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "source": "Anthropic",
+      "published": "2026-11-09",
+      "ja": {
+        "title": "Claude Fable 5.2 が公開、API・Claude Codeで利用可",
+        "summary": "Anthropic が難しい技術課題向けの Claude Fable 5.2 を発表しました。API では claude-fable-5-2 として使え、Claude Code では medium の effort が既定で、高速モードも用意されています。",
+        "why": "出たその日に触れる新モデル、あなたならもう試していそう。"
+      },
+      "en": {
+        "title": "Claude Fable 5.2 launches on the API and in Claude Code",
+        "summary": "Anthropic released Claude Fable 5.2 for its most demanding technical work. It is available as claude-fable-5-2 on the API, with medium effort as the default in Claude Code and an optional fast mode.",
+        "why": "A brand-new model on day one is exactly your thing."
+      }
+    },
+    "fire-steady": {
+      "url": "https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds/",
+      "source": "GitHub Changelog",
+      "published": "2026-11-10",
+      "ja": {
+        "title": "Copilot CLIのC++言語サーバー、MSBuildを自動設定",
+        "summary": "Copilot CLI 向け C++ 言語サーバーが、MSBuild プロジェクトを開くとコンパイル情報を自動で作るようになりました。手で compile_commands.json を用意する手間が減り、設定時のトークン消費も減るとしています。",
+        "why": "セットアップの一手間が消えるの、あなたは見逃さないはず。"
+      },
+      "en": {
+        "title": "Copilot CLI's C++ language server now auto-configures MSBuild",
+        "summary": "The C++ language server for Copilot CLI now runs its MSBuild compile-commands extractor automatically when a project opens. No separate setup step is needed, and GitHub says it also cuts setup tokens.",
+        "why": "One less setup step in your toolchain is a win for you."
+      }
+    },
+    "fire-flex": {
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "source": "Google",
+      "published": "2026-11-11",
+      "ja": {
+        "title": "Gemini Decisions API、選択肢判定を高速・安価に",
+        "summary": "Google が選択肢の中から答えを選ぶ専用の Gemini Decisions API（gemini-decision-1）を公開しました。ツール選択やモデルの振り分けに使え、入力100万トークンあたり0.10ドルで出力は無料としています。",
+        "why": "モデルの振り分けを安く速く回したいあなたに。"
+      },
+      "en": {
+        "title": "Gemini Decisions API offers fast, cheap closed-set decisions",
+        "summary": "Google launched the Gemini Decisions API, powered by gemini-decision-1, for tasks like tool selection and model routing. Input costs $0.10 per million tokens and output tokens are free.",
+        "why": "Cheap, fast routing for your multi-model setups."
+      }
+    },
+    "earth-pioneer": {
+      "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+      "source": "Google DeepMind",
+      "published": "2026-11-10",
+      "ja": {
+        "title": "AIエージェントでSignalの実装を形式検証",
+        "summary": "Google DeepMind が AlphaProof Code で、Signal プロトコルの実コードの安全性を Lean で証明しました。わざと戻した既知のバグ2件では、いずれも安全でないことを機械で確かめられる形で示しています。",
+        "why": "「本当に正しい？」を証明で確かめる話、あなた好みです。"
+      },
+      "en": {
+        "title": "DeepMind uses AI agents to formally verify Signal's code",
+        "summary": "Google DeepMind's AlphaProof Code proved key security properties of the Signal protocol's real implementation in Lean. When two previously fixed bugs were reintroduced, it produced machine-checked proofs that the code was insecure.",
+        "why": "Proof instead of trust is right up your alley."
+      }
+    },
+    "earth-steady": {
+      "url": "https://developers.openai.com/codex/changelog",
+      "source": "OpenAI Codex changelog",
+      "published": "2026-11-06",
+      "ja": {
+        "title": "Codex CLI 0.167.0、承認前に差分の詳細を確認可能に",
+        "summary": "Codex CLI 0.167.0 で、承認の確認が出ている間にパッチの詳細を開いて確かめられるようになりました。同じ宛先への通信の承認も、1件ずつ確認する形に直っています。",
+        "why": "通す前に中身を見る仕組み、あなたなら歓迎するはず。"
+      },
+      "en": {
+        "title": "Codex CLI 0.167.0 lets you inspect patches before approving",
+        "summary": "Codex CLI 0.167.0 lets you expand patch details in the transcript while an approval prompt is open. Concurrent network requests to the same endpoint now prompt one at a time.",
+        "why": "Reviewing changes before they land is your kind of safeguard."
+      }
+    },
+    "earth-flex": {
+      "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot/",
+      "source": "GitHub Changelog",
+      "published": "2026-11-09",
+      "ja": {
+        "title": "Claude Fable 5.2 が GitHub Copilot で一般提供",
+        "summary": "Claude Fable 5.2 が Copilot Pro+・Max・Business・Enterprise で選べるようになりました。Business と Enterprise では管理者がポリシーを有効にする必要があり、既定ではデータ保持が必要です。",
+        "why": "同じ場所で別モデルと突き合わせられます。"
+      },
+      "en": {
+        "title": "Claude Fable 5.2 is generally available in GitHub Copilot",
+        "summary": "Claude Fable 5.2 is now selectable for Copilot Pro+, Max, Business and Enterprise users. Business and Enterprise admins must enable its policy, and it requires data retention by default.",
+        "why": "Another model to cross-check your other reviewers against."
+      }
+    },
+    "air-pioneer": {
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/turn-drawings-into-apps-gemini/",
+      "source": "Google",
+      "published": "2026-11-05",
+      "ja": {
+        "title": "手描きのスケッチをGeminiで動くアプリに",
+        "summary": "スケッチの写真を Gemini に上げ、Canvas で「このアプリを作って」と頼むと、コードを書いて動くアプリにしてくれます。プレビューで試しながら、色や機能をその場で変えられます。",
+        "why": "思いついた絵がすぐ動く、あなたの試作がもっと速く。"
+      },
+      "en": {
+        "title": "Turn a hand-drawn sketch into a working app with Gemini",
+        "summary": "Upload a photo of a sketch, pick the Canvas tool and ask Gemini to code it. You can test the app in a preview and change colors, fonts or features in real time.",
+        "why": "Your napkin ideas can become running prototypes in minutes."
+      }
+    },
+    "air-steady": {
+      "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
+      "source": "Claude (Anthropic)",
+      "published": "2026-11-10",
+      "ja": {
+        "title": "Claude Whiteboards 登場、話した計画を工程表に",
+        "summary": "Claude に共有ホワイトボード（ベータ）が加わり、話した計画を担当と日付つきの工程表にまとめられます。付箋の意見をテーマ別に分け、アクション項目の下書きも作れます。",
+        "why": "作る前に計画を詰めたいあなたの相棒に。"
+      },
+      "en": {
+        "title": "Claude Whiteboards turns spoken plans into timelines",
+        "summary": "Claude Whiteboards (beta) is a shared board where Claude can turn a spoken plan into a timeline with owners and dates. It can also group sticky-note input by theme and draft action items.",
+        "why": "A place to nail down the plan before you write code."
+      }
+    },
+    "air-flex": {
+      "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
+      "source": "Claude (Anthropic)",
+      "published": "2026-11-10",
+      "ja": {
+        "title": "Claude Data が一般提供、社内データに直接問い合わせ",
+        "summary": "Claude Dashboards が Claude Data に名前を変えて一般提供になり、Redshift や BigQuery などの倉庫に問い合わせられます。認定済みクエリと共有はベータで、変更の記録と巻き戻しもできます。",
+        "why": "数字の出どころまで辿りたいあなた向けです。"
+      },
+      "en": {
+        "title": "Claude Data is generally available for querying company data",
+        "summary": "Claude Data, formerly Claude Dashboards, lets teams query warehouses such as Redshift and BigQuery. Certified queries and live sharing are in beta, with tracked changes and rollback.",
+        "why": "For when you want to trace every number to its source."
+      }
+    },
+    "water-pioneer": {
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "source": "Anthropic",
+      "published": "2026-11-09",
+      "ja": {
+        "title": "Fable 5.2、説明がより分かりやすく",
+        "summary": "Anthropic によると、テスターは Fable 5.2 が過去の Fable・Mythos より明快に伝えると評価しました。出力は Fable 5.1 より最大30%速く、安全上のブロックは約55%減ったとしています。",
+        "why": "話しぶりが変わった新モデル、乗り換えを検討しては。"
+      },
+      "en": {
+        "title": "Fable 5.2 communicates more clearly, says Anthropic",
+        "summary": "Testers found Claude Fable 5.2 communicates more clearly than past Fable and Mythos models. Anthropic says it generates up to 30% faster than 5.1 with about 55% fewer safeguard blocks.",
+        "why": "A clearer-spoken model might win your next switch."
+      }
+    },
+    "water-steady": {
+      "url": "https://claude.com/resources/articles/message-threads",
+      "source": "Claude (Anthropic)",
+      "published": "2026-11-02",
+      "ja": {
+        "title": "Messages APIに「メッセージスレッド」、長い会話が速く",
+        "summary": "長く動くエージェント向けに、新しいメッセージだけ送れば続きを話せる機能がベータで出ました。Claude Code では50万〜100万トークンの要求で最初の応答までの時間が中央値で約35%縮んだとしています。",
+        "why": "長い対話が軽くなる話、あなたにうれしいはず。"
+      },
+      "en": {
+        "title": "Message threads make long Claude conversations faster",
+        "summary": "A new Messages API beta lets long-running agents send only new messages plus a thread ID. For 500k–1M token requests, median time to first token dropped about 35% for Claude Code users.",
+        "why": "Long conversations with one AI just got snappier for you."
+      }
+    },
+    "water-flex": {
+      "url": "https://developers.openai.com/codex/changelog",
+      "source": "OpenAI Codex changelog",
+      "published": "2026-11-06",
+      "ja": {
+        "title": "Codexのエージェント管理画面、未読の結果を表示",
+        "summary": "Codex CLI 0.167.0 で、エージェントの管理画面とセッション選択に未読の結果の印が付くようになりました。つないだ接続先を、下書きを残したまま切り替えることもできます。",
+        "why": "任せた仕事の終わりに気づきやすくなります。"
+      },
+      "en": {
+        "title": "Codex agent command center now flags unread results",
+        "summary": "In Codex CLI 0.167.0, the agent command center and session picker mark unread results. You can also switch between connected backends from the session picker while keeping drafts.",
+        "why": "Easier to see when the work you handed off is done."
+      }
+    }
   }
- }
 }
