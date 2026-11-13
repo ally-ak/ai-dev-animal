@@ -1,89 +1,89 @@
 {
- "date": "2026-11-13",
+ "date": "2026-11-14",
  "items": {
   "fire-pioneer": {
-   "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot",
+   "url": "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot",
    "source": "GitHub Changelog",
-   "published": "2026-11-10",
-   "ja": { "title": "Gemini 4 Carbon が GitHub Copilot で一般提供", "summary": "Google の最新モデル Gemini 4 Carbon が、Copilot の Pro+・Max・Business・Enterprise で使えるようになりました。VS Code、Copilot CLI、コーディングエージェント、JetBrains、Xcode などのモデル選択に順次出てきます。", "why": "出たその日に、いつものエディタで試せるよ。" },
-   "en": { "title": "Gemini 4 Carbon is generally available in GitHub Copilot", "summary": "Google's latest model, Gemini 4 Carbon, is now GA for Copilot Pro+, Max, Business and Enterprise. It is rolling out to the model picker in VS Code, Copilot CLI, the coding agent, JetBrains, Xcode and more.", "why": "You can try it today, right inside your usual editor." }
+   "published": "2026-11-13",
+   "ja": { "title": "Gemini 4 Hydrogen が GitHub Copilot で一般提供", "summary": "Google の最新の Flash モデル Gemini 4 Hydrogen が、Copilot の Pro・Pro+・Max・Business・Enterprise で使えるようになりました。VS Code、Copilot CLI、コーディングエージェント、JetBrains、Xcode などのモデル選択に順次出てきます。", "why": "出たばかりのモデルを、いつものエディタで試せるよ。" },
+   "en": { "title": "Gemini 4 Hydrogen is generally available in GitHub Copilot", "summary": "Google's latest Flash model, Gemini 4 Hydrogen, is now GA for Copilot Pro, Pro+, Max, Business and Enterprise. It is rolling out gradually to the model picker in VS Code, Copilot CLI, the coding agent, JetBrains, Xcode and more.", "why": "A brand-new model, ready to try in your usual editor." }
   },
   "fire-steady": {
    "url": "https://code.claude.com/docs/en/changelog",
    "source": "Claude Code changelog",
-   "published": "2026-11-06",
-   "ja": { "title": "Claude Code 2.1.319：許可待ちで止めない設定", "summary": "許可の確認で止まる代わりに拒否してターンを続ける permissions.denyInsteadOfPrompting 設定が追加されました。MCP サーバーがタスクとして実行するツール呼び出しは、裏に回して終わったら知らせるようになりました。", "why": "設定1行で、流れを止めない環境に育てられるよ。" },
-   "en": { "title": "Claude Code 2.1.319: deny instead of waiting on prompts", "summary": "A new permissions.denyInsteadOfPrompting setting denies a tool call that would wait on a permission prompt, so the turn continues. MCP tool calls run as tasks now move to the background and report when done.", "why": "One setting line keeps your flow from stalling." }
+   "published": "2026-11-12",
+   "ja": { "title": "Claude Code 2.1.323：ツールをJSで呼ぶ Code Mode", "summary": "Claude が JavaScript を書いてツールを呼ぶ Code Mode が、実験的な機能として追加されました（自分で有効にする方式）。起動元のプログラムが終了時の再開コマンドの案内を差し替えられる環境変数 CLAUDE_CODE_RESUME_HINT_COMMAND も入りました。", "why": "自分の環境に組み込む人ほど、試したくなる追加だよ。" },
+   "en": { "title": "Claude Code 2.1.323: Code Mode calls tools with JavaScript", "summary": "Code Mode, an experimental opt-in in which Claude writes JavaScript to call its tools, was added. A new CLAUDE_CODE_RESUME_HINT_COMMAND variable lets a program that starts Claude Code name its own resume command in the exit hint.", "why": "If you tune your own setup, you'll want to try this." }
   },
   "fire-flex": {
-   "url": "https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/",
-   "source": "Google Developers Blog",
-   "published": "2026-11-03",
-   "ja": { "title": "安い分類器でタスクを Gemini モデルに振り分ける", "summary": "まず Gemini 3.5 Flash-Lite に送り、軽い分類器が難しいと判定したものだけ Gemini 3.8 Flash に上げる方法を検証しました。50問のベンチマークで50問すべて正解し、全件を上位モデルに送るより費用と応答時間が下がったと報告しています。", "why": "安いモデルと強いモデルの使い分けを数字で詰めた話だよ。" },
-   "en": { "title": "Routing tasks across Gemini models with a cheap classifier", "summary": "Tasks go to Gemini 3.5 Flash-Lite first, and a lightweight classifier escalates hard ones to Gemini 3.8 Flash. On a 50-question benchmark it scored 50/50 with lower cost and latency than sending everything to the stronger model.", "why": "You'll like the numbers behind cheap-vs-strong model routing." }
+   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+   "source": "Anthropic",
+   "published": "2026-11-09",
+   "ja": { "title": "Claude Fable 5.2：出力が最大30%速く、高速モードも", "summary": "Anthropic が Claude Fable 5.2 を公開しました。料金は入力100万トークン8ドル・出力40ドルで、Fable 5.1 より出力が最大30%速く、最大2.5倍速い高速モード（16ドル・80ドル）も選べます。", "why": "速さと費用で使い分ける選択肢が、また1つ増えたよ。" },
+   "en": { "title": "Claude Fable 5.2: up to 30% faster output, plus fast mode", "summary": "Anthropic released Claude Fable 5.2 at $8 per million input tokens and $40 per million output tokens. It generates output up to 30% faster than Fable 5.1, and a fast mode offers up to 2.5x faster generation at $16/$80.", "why": "One more speed-and-cost option for your model lineup." }
   },
   "earth-pioneer": {
-   "url": "https://developers.googleblog.com/catch-go-bugs-that-fuzzing-misses-with-gemini-and-a-constraint-solver/",
+   "url": "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/",
    "source": "Google Developers Blog",
    "published": "2026-11-12",
-   "ja": { "title": "ファジングが見逃す Go のバグを Gemini と Z3 で捕まえる", "summary": "Gemini 4 Argon で境界チェックの落とし穴を Z3 の制約に変換し、その入力を go test で実コードに再生する手法です。仕込んだ3つのバグをすべて検出し、自作ツールに潜んでいたバグも3つ見つけました。", "why": "「動いた」を疑って、到達する入力まで探す話だよ。" },
-   "en": { "title": "Catching Go bugs fuzzing misses with Gemini and Z3", "summary": "Gemini 4 Argon turns bounds-check traps into Z3 constraints, and go test replays the found inputs against real code. It caught all three planted bugs and three latent bugs in the author's own CLI.", "why": "You'll enjoy hunting the inputs that prove a bug exists." }
+   "ja": { "title": "エージェントの異常検知を、他人が作った試験で測る", "summary": "Google が Agent Anomaly Detection（プライベートプレビュー）を、AgentDojo など外部のベンチマーク5つ・1,774セッションで測りました。エージェントが実行してしまった有害な指示の87%を検知した一方、記憶に仕込まれた指示は18件中4件しか捕まえられませんでした。", "why": "弱い所まで数字で出している。疑い深いきみ向けだよ。" },
+   "en": { "title": "Agent Anomaly Detection, scored on benchmarks Google didn't write", "summary": "Google tested Agent Anomaly Detection, in private preview, on five outside benchmarks covering 1,774 sessions. It flagged 87% of the harmful instructions agents carried out, but caught only 4 of 18 sessions driven by poisoned memory.", "why": "It reports the weak spots too, just how you like it." }
   },
   "earth-steady": {
-   "url": "https://github.blog/changelog/2026-11-09-secret-scanning-detects-secrets-in-github-actions-workflow-logs",
+   "url": "https://github.blog/changelog/2026-11-02-pull_request_target-blocked-by-default-december-2",
    "source": "GitHub Changelog",
-   "published": "2026-11-09",
-   "ja": { "title": "シークレットスキャンが Actions のログも検査", "summary": "GitHub のシークレットスキャンが、ワークフロー実行後のログからも秘密情報を検出するようになりました（パブリックプレビュー）。対象は Secret Protection か Advanced Security のある Enterprise Cloud で、既定はオフです。", "why": "CI のログに漏れた鍵まで見張れるようになったよ。" },
-   "en": { "title": "Secret scanning now checks GitHub Actions workflow logs", "summary": "Secret scanning now scans logs after workflow runs finish, in public preview. It covers Enterprise Cloud with Secret Protection or Advanced Security and is off by default.", "why": "Your CI logs get a guard against leaked keys too." }
+   "published": "2026-11-02",
+   "ja": { "title": "pull_request_target が12月2日から既定でブロック", "summary": "GitHub Actions は2026年12月2日から、公開リポジトリの pull_request_target イベントを既定でブロックします。11月16日 16:00〜18:00（UTC）には試験的に止める時間があり、必要なワークフローは Actions のイベントポリシーで明示的に許可します。", "why": "CI が止まる前に、自分のワークフローを確かめておこう。" },
+   "en": { "title": "pull_request_target blocked by default from December 2", "summary": "From December 2, 2026, GitHub Actions blocks pull_request_target events by default in all public repositories. A brownout runs on November 16, 16:00-18:00 UTC, and workflows that need the trigger must be allowed in an Actions event policy.", "why": "Check your workflows before your CI gets blocked." }
   },
   "earth-flex": {
-   "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
-   "source": "GitHub Changelog",
-   "published": "2026-11-06",
-   "ja": { "title": "Copilot コードレビュー：3モデルで見て1モデルが統合", "summary": "Balanced のレビューは3つのレビュー用モデルで見て、4つ目のモデルが指摘を統合する仕組みだと示されました。レビュー設定を REST と GraphQL の API で読み書きできるようにもなりました。", "why": "複数のAIに見せて突き合わせる形が公式の仕組みに。" },
-   "en": { "title": "Copilot code review: three reviewers, one model combines", "summary": "Balanced-effort reviews use three reviewer models, with a fourth combining their findings. Review settings can now be read and updated through the REST and GraphQL APIs.", "why": "Cross-checking several AIs is now built into review." }
+   "url": "https://huggingface.co/blog/allenai/xybench",
+   "source": "Hugging Face (Ai2)",
+   "published": "2026-11-13",
+   "ja": { "title": "XYBench：質問の裏にある本当の目的に答えられるか", "summary": "Ai2 などが、思い込みに基づく依頼にAIがどう応じるかを測る XYBench（8,115問）を公開しました。Stack Overflow の問いでは、どのモデルも言われた通りの解決策（75〜86%）のほうを、本当の目的への解決策（59〜71%）より多く返しました。", "why": "モデルを並べて比べた数字が出ているよ。" },
+   "en": { "title": "XYBench: do models answer the problem behind the question?", "summary": "Ai2 and collaborators released XYBench, 8,115 questions testing how assistants handle requests built on misconceptions. On Stack Overflow questions, every model solved the stated request (75-86%) more often than the underlying goal (59-71%).", "why": "Side-by-side model numbers for you to compare." }
   },
   "air-pioneer": {
-   "url": "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/",
-   "source": "Google Developers Blog",
-   "published": "2026-11-11",
-   "ja": { "title": "エージェントが画面で返す A2UI が 1.0 に", "summary": "エージェントがフォームやグラフなどの操作できる画面で応答するためのオープンなプロトコル A2UI が、初の安定版になりました。React・Flutter・SwiftUI などのレンダラーと、Python・TypeScript・Dart のSDKが用意されています。", "why": "AIの返事が文字から画面に広がる。試作のネタが増えるよ。" },
-   "en": { "title": "A2UI 1.0: agents that answer with interactive UI", "summary": "A2UI, an open protocol letting agents respond with forms, charts and other interactive views, reached its first stable release. Renderers cover React, Flutter, SwiftUI and more, with Python, TypeScript and Dart SDKs.", "why": "Agent replies become screens: more things for you to prototype." }
+   "url": "https://huggingface.co/blog/decision",
+   "source": "Hugging Face",
+   "published": "2026-11-10",
+   "ja": { "title": "文章を書かずに確率で答える「判断モデル」", "summary": "Hugging Face が、状況と質問を受け取り、決められた選択肢への確率を返す decision model を紹介しました。Transformers に DecisionPipeline などが加わり、llama.cpp も同じ API に対応、Hub には decision-model タグができました。", "why": "新しい種類のモデルだよ。振り分けの試作に使えそう。" },
+   "en": { "title": "Decision models: probabilities over answers, no text generated", "summary": "Hugging Face introduced decision models, which take a state and questions and return probabilities over predefined answers. Transformers adds DecisionPipeline and related classes, llama.cpp supports the same API, and the Hub has a decision-model tag.", "why": "A new kind of model for you to prototype with." }
   },
   "air-steady": {
-   "url": "https://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work",
+   "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
    "source": "Claude (Anthropic)",
-   "published": "2026-11-12",
-   "ja": { "title": "Opus 5.5 には「ゴールと止まる所」を先に渡す", "summary": "Anthropic が Opus 5.5 の使い方をまとめ、ゴール・仕上がりの形・止まって聞くべき所を先に伝えるよう勧めています。effort は Medium から始め、止まったときだけ High に上げるのが目安です。", "why": "書く前に決めることを、先に渡すほど効くって話だよ。" },
-   "en": { "title": "Give Opus 5.5 the goal and the stopping point first", "summary": "Anthropic's guide recommends describing the goal, the finished output and when Claude should stop and ask. Start at Medium effort and move to High only when Medium stalls.", "why": "Deciding things before you start pays off, as you know." }
+   "published": "2026-11-10",
+   "ja": { "title": "Claude Whiteboards：メモを時系列とやることに整理", "summary": "チームで Claude とブレストできる共有ボード Claude Whiteboards がベータで始まりました。メモを時系列やアクション項目のあるボードにまとめ、ドキュメントやスライドに書き出せます（すべての有料プランが対象）。", "why": "作る前に考えを並べて削る時間に、ちょうどいいよ。" },
+   "en": { "title": "Claude Whiteboards: turn notes into timelines and action items", "summary": "Claude Whiteboards, a shared board where your team brainstorms with Claude, launched in beta. It can turn notes into boards with timelines and action items and export to docs or decks, on all paid plans.", "why": "A place for you to lay out and trim ideas before building." }
   },
   "air-flex": {
-   "url": "https://huggingface.co/blog/token-pooling",
-   "source": "Hugging Face",
-   "published": "2026-11-11",
-   "ja": { "title": "検索ベクトルを約75%減らしても精度を保つ学習法", "summary": "マルチベクトル検索モデルで、トークンをまとめた後でも情報が残るよう学習させる方法です。文書あたりのベクトルを約74.8%減らした条件で、通常の学習より nDCG@10 が2.20ポイント高く、モデルと学習コードも公開されています。", "why": "根拠を探す検索の中身まで知りたい人向けだよ。" },
-   "en": { "title": "Pooling-aware training keeps retrieval quality with 75% fewer vectors", "summary": "A training method teaches multi-vector retrievers to keep information after token pooling. With about 74.8% fewer vectors per document it scored 2.20 nDCG@10 points higher than ordinary training; models and code are released.", "why": "For you who wants to know how search finds evidence." }
+   "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-search-api/",
+   "source": "AWS",
+   "published": "2026-11-10",
+   "ja": { "title": "Bedrock AgentCore に Web 検索 API が一般提供", "summary": "AWS が Amazon Bedrock AgentCore の Web Search API を一般提供しました。結果には本文の抜粋と、取れる場合はタイトル・URL・公開日時が入り、ドメインや公開日時で絞り込めます。料金は1,000クエリあたり7ドルです。", "why": "URLと公開日時まで返る検索。出典を追うきみ向けだよ。" },
+   "en": { "title": "Web Search API is generally available on Bedrock AgentCore", "summary": "AWS made the Web Search API on Amazon Bedrock AgentCore generally available. Results include a text extract plus title, URL and publication time when available, with domain and time filters, at $7 per 1,000 queries.", "why": "Search results with URLs and dates, for your source-chasing." }
   },
   "water-pioneer": {
-   "url": "https://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work",
-   "source": "Claude (Anthropic)",
-   "published": "2026-11-12",
-   "ja": { "title": "Opus 5.5 の「人柄」：範囲を守り、要点から話す", "summary": "Anthropic によると Opus 5.5 は指示の範囲を守り、大事なことを先に置いて専門用語を減らして書きます。長い作業では、やったこと・分かったこと・あなたに必要なことを伝えるとしています。", "why": "新しいモデルの話し方の変化、気になるでしょ。" },
-   "en": { "title": "Opus 5.5's character: stays in scope, leads with the point", "summary": "Anthropic says Opus 5.5 follows instructions closely, puts the most important information first and uses less jargon. On long tasks it states what it did, what it found and what it needs from you.", "why": "You'll want to know how the new model talks." }
+   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+   "source": "Anthropic",
+   "published": "2026-11-09",
+   "ja": { "title": "Fable 5.2 の「人柄」：分からないことは分からないと言う", "summary": "Anthropic によると、テスターは Fable 5.2 が以前の Fable より分かりやすく伝えると評価しました。知らないことを作り話にせず知らないと言う、それらしい区切りで止まらず終わるまでやる、という利用企業の声も紹介されています。", "why": "新しいモデルの人柄、乗り換える前に知りたいでしょ。" },
+   "en": { "title": "Fable 5.2's character: it says when it doesn't know", "summary": "Anthropic says testers found Fable 5.2 communicates more clearly than past Fable models. Quoted customers say it admits not knowing instead of hallucinating, and works until the job is actually complete.", "why": "You'll want to know its character before you switch." }
   },
   "water-steady": {
-   "url": "https://claude.com/resources/articles/claude-meetings",
-   "source": "Claude (Anthropic)",
-   "published": "2026-11-12",
-   "ja": { "title": "Claude が会議に参加する Claude Meetings（ベータ）", "summary": "Claude がビデオ会議に参加して質問に答え、メモやアクション項目を書きます。会議ごとのページが claude.ai に残り、後から過去の会議について Claude に聞けます（Team・Enterprise、まず Google Meet）。", "why": "会議の続きも同じ相手と話せる。流れが切れないよ。" },
-   "en": { "title": "Claude Meetings: Claude joins your calls (beta)", "summary": "Claude joins video calls, answers questions and writes notes and action items. Each meeting gets a page in claude.ai you can ask about later; it's on Team and Enterprise, Google Meet first.", "why": "You can keep the conversation going after the call." }
+   "url": "https://platform.claude.com/docs/en/release-notes/overview",
+   "source": "Claude Platform release notes",
+   "published": "2026-11-02",
+   "ja": { "title": "Messages API に、会話をサーバーに置く message threads", "summary": "Messages API に message threads がベータで追加されました。会話を API 側が持つので、2回目以降は新しいメッセージだけを送ればよく、最初の文字が返るまでの時間も短くなります。スレッドは最後のリクエストから5分で期限切れになります。", "why": "長い会話を続けるほど効いてくる仕組みだよ。" },
+   "en": { "title": "Message threads keep the conversation on the server", "summary": "Message threads arrived in beta on the Messages API. The API keeps the conversation, so later requests send only new messages and get a lower time to first token; a thread expires 5 minutes after its last request.", "why": "The longer you keep talking, the more this helps you." }
   },
   "water-flex": {
-   "url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+   "url": "https://claude.com/resources/articles/building-always-on-agents",
    "source": "Claude (Anthropic)",
-   "published": "2026-11-12",
-   "ja": { "title": "Claude Managed Agents を自社環境で動かせるように", "summary": "Claude Managed Agents の仕組み一式を、自社のクラウドやオンプレミスで動かせるようになりました（プライベートベータ）。ビルド修正やバグの山の処理など、人が見ていない長い作業を任せる用途を想定しています。", "why": "任せっぱなしの仕事を、手元の環境で回せるよ。" },
-   "en": { "title": "Run Claude Managed Agents inside your own environment", "summary": "The full Claude Managed Agents service can now run in your own cloud or on-premises, in private beta. It targets long unattended work such as fixing broken builds and working through bug backlogs.", "why": "Hand off long jobs and keep them in your own setup." }
+   "published": "2026-11-13",
+   "ja": { "title": "「常時稼働エージェント」の作り方を Anthropic が解説", "summary": "見ていなくても動くエージェントを、イベントの受け箱・タイマー・メモリ・権限・送信箱の5つの部品で説明しています。実際はほとんど眠っていて短い実行のたびに起きる形で、最初は静かに始めて少しずつ連絡を増やすのがよいとしています。", "why": "任せっぱなしにできる相手の、中の作りが分かるよ。" },
+   "en": { "title": "Anthropic explains how to build always-on agents", "summary": "The article describes agents that act without supervision using five primitives: event inbox, timers, memory, permissions and outbox. They sleep most of the time and wake for brief runs, and should start quiet and earn attention over time.", "why": "See what's inside the agents you hand your work to." }
   }
  }
 }
