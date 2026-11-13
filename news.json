@@ -75,7 +75,7 @@
    "url": "https://platform.claude.com/docs/en/release-notes/overview",
    "source": "Claude Platform release notes",
    "published": "2026-11-02",
-   "ja": { "title": "Messages API に、会話をサーバーに置く message threads", "summary": "Messages API に message threads がベータで追加されました。会話を API 側が持つので、2回目以降は新しいメッセージだけを送ればよく、最初の文字が返るまでの時間も短くなります。スレッドは最後のリクエストから5分で期限切れになります。", "why": "長い会話を続けるほど効いてくる仕組みだよ。" },
+   "ja": { "title": "会話をサーバーに置く message threads（ベータ）", "summary": "Messages API に message threads がベータで追加されました。会話を API 側が持つので、2回目以降は新しいメッセージだけを送ればよく、最初の文字が返るまでの時間も短くなります。スレッドは最後のリクエストから5分で期限切れになります。", "why": "長い会話を続けるほど効いてくる仕組みだよ。" },
    "en": { "title": "Message threads keep the conversation on the server", "summary": "Message threads arrived in beta on the Messages API. The API keeps the conversation, so later requests send only new messages and get a lower time to first token; a thread expires 5 minutes after its last request.", "why": "The longer you keep talking, the more this helps you." }
   },
   "water-flex": {
