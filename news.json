@@ -1,89 +1,89 @@
 {
- "date": "2026-11-16",
+ "date": "2026-11-17",
  "items": {
   "fire-pioneer": {
-   "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
-   "source": "Hugging Face (ggml-org)",
-   "published": "2026-11-13",
-   "ja": { "title": "llama.cpp が v1.0.0 に。API の互換性を版番号で示す", "summary": "llama.cpp と ggml のライブラリが v1.0.0 になりました。公開 C API を壊す変更はメジャー番号を上げて知らせる方針で、いまは150を超えるモデル構造の種類に対応しています。", "why": "手元で動かすAIの定番が1.0に。さっそく入れてみよう。" },
-   "en": { "title": "llama.cpp reaches v1.0.0 with a versioned, stable API", "summary": "The llama.cpp and ggml libraries are now v1.0.0. Breaking changes to the public C API will be signaled with major-version bumps, and llama.cpp currently supports more than 150 architecture variants.", "why": "The local-AI staple just hit 1.0, so go install it." }
+   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+   "source": "Anthropic",
+   "published": "2026-11-09",
+   "ja": { "title": "Claude Fable 5.2 と Mythos 5.2 が登場", "summary": "Anthropic が Claude Fable 5.2 と Mythos 5.2 を公開しました。Fable 5.2 は AWS・Google Cloud・Microsoft Azure を含むすべての提供先で使え、料金は入力100万トークン8ドル・出力40ドル、出力は 5.1 より最大30%速いとしています。", "why": "新しいモデルが全部の提供先に来たよ。今日試そう。" },
+   "en": { "title": "Claude Fable 5.2 and Mythos 5.2 are here", "summary": "Anthropic released Claude Fable 5.2 and Mythos 5.2. Fable 5.2 is available on all platforms, including AWS, Google Cloud and Microsoft Azure, at $8 per million input tokens and $40 per million output tokens, with outputs up to 30% faster than 5.1.", "why": "A new model on every platform, so try it today." }
   },
   "fire-steady": {
-   "url": "https://code.claude.com/docs/en/changelog",
-   "source": "Claude Code changelog",
+   "url": "https://developers.openai.com/codex/changelog",
+   "source": "OpenAI Codex changelog",
    "published": "2026-11-13",
-   "ja": { "title": "Claude Code 2.1.325：サンドボックスの許可の既定が変更", "summary": "サンドボックス内の Bash コマンドが、既定で通常の許可の流れに従うようになりました（sandbox.autoAllowBashIfSandboxed: true で従来どおり）。スケジュール実行と /loop は、allowed-tools やフックを宣言したスキルを動かす前に確認します。", "why": "育てた設定の動きが変わるかも。先に見直しておこう。" },
-   "en": { "title": "Claude Code 2.1.325 changes sandbox permission defaults", "summary": "Sandboxed Bash commands now follow the normal permission flow by default; sandbox.autoAllowBashIfSandboxed: true keeps them prompt-free. Scheduled tasks and /loop now ask before running a skill that declares allowed-tools or hooks.", "why": "Your tuned settings may behave differently, so check them." }
+   "ja": { "title": "Codex CLI 0.169.0：端末からモデル提供元を追加・編集", "summary": "Codex CLI 0.169.0 では、独自のモデル提供元を端末から追加・編集でき、過去のタスクを名前・プロンプトの冒頭・作業ディレクトリで検索できます。codex exec は、信頼していないディレクトリでは --trust を付けない限りプロジェクト設定と MCP サーバーを無効のままにします。", "why": "設定を育てているきみは、--trust の扱いを見ておこう。" },
+   "en": { "title": "Codex CLI 0.169.0: add and edit model providers from the terminal", "summary": "Codex CLI 0.169.0 lets you add or edit custom model providers from the terminal and search older tasks by name, prompt preview or working directory. codex exec now keeps project config and MCP servers disabled in untrusted directories unless you pass --trust.", "why": "You tune your setup, so check how --trust affects your scripts." }
   },
   "fire-flex": {
-   "url": "https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/",
-   "source": "Google Developers Blog",
-   "published": "2026-11-03",
-   "ja": { "title": "安い分類器で Gemini のモデルと思考量を振り分ける", "summary": "Google が、費用はトークン単価でなく「成功したタスク1件あたり」で見るべきだと解説しました。50問の試験では、Flash-Lite から始めて難しい問いだけ Flash に上げる振り分けが全問を解き、キーワードでの振り分けは48問でした。", "why": "モデルを使い分けるきみの、振り分け方の参考になるよ。" },
-   "en": { "title": "Routing across Gemini models with a cheap classifier", "summary": "Google argues cost should be measured per successful task, not per token. In a 50-task test, a router that starts on Flash-Lite and escalates flagged tasks to Flash solved all 50, while a keyword router solved 48.", "why": "A routing recipe for your multi-model setup." }
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/",
+   "source": "Google",
+   "published": "2026-11-12",
+   "ja": { "title": "Gemini 4 Hydrogen：上位モデルと組んで動かせる", "summary": "Google が、コーディングとエージェント作業向けの Gemini 4 Hydrogen を開発者に公開しました。思考量を4段階で切り替えられ、単体でも、Gemini 4 Carbon や Argon と並べても使えます。Google AI Studio と Android Studio の Gemini API などで利用できます。", "why": "上位モデルと並べて使い分ける、きみ向けの一匹だよ。" },
+   "en": { "title": "Gemini 4 Hydrogen: built to run alongside frontier models", "summary": "Google made Gemini 4 Hydrogen available to developers for coding and agentic work. It has four configurable thinking levels and can run standalone or alongside Gemini 4 Carbon and Argon, through the Gemini API in Google AI Studio and Android Studio.", "why": "One more model to slot into your multi-model lineup." }
   },
   "earth-pioneer": {
-   "url": "https://developers.googleblog.com/catch-go-bugs-that-fuzzing-misses-with-gemini-and-a-constraint-solver/",
-   "source": "Google Developers Blog",
-   "published": "2026-11-12",
-   "ja": { "title": "ファジングが見逃す Go のバグを、Gemini と Z3 で捕まえる", "summary": "Gemini 4 Argon に Go のコードを制約ソルバー Z3 のルールへ訳させ、見つかった入力を go test で実際に流して確かめる方法の紹介です。仕込んだ3つのバグをすべて捕まえ、筆者のツール skill-lint からも隠れたバグを3つ見つけました。", "why": "AIの指摘を実行して確かめる流れ。きみのやり方だね。" },
-   "en": { "title": "Catching Go bugs that fuzzing misses with Gemini and Z3", "summary": "The post has Gemini 4 Argon translate Go code into rules for the Z3 constraint solver, then confirms each found input with go test. It caught all three planted bugs and found three latent bugs in the author's skill-lint tool.", "why": "Every AI finding gets run for real, just like you do." }
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+   "source": "Google",
+   "published": "2026-11-11",
+   "ja": { "title": "Gemini Decisions API：答えに0〜1の確信度が付く", "summary": "Google が、はい・いいえ、選択、採点の問いを1回で最大1,000件まで判定する Gemini Decisions API を公開しました。それぞれの答えに0〜1の確信度が付くので、あいまいなものだけを別の処理や人の確認に回せます。", "why": "あやしい答えだけ自分で確かめる。きみのやり方だね。" },
+   "en": { "title": "Gemini Decisions API: every answer comes with a 0–1 confidence", "summary": "Google launched the Gemini Decisions API, which evaluates up to 1,000 yes/no, choice and rubric-scoring questions in a single pass. Each answer carries a confidence score from 0 to 1, so code can route ambiguous cases to a fallback or a human reviewer.", "why": "Send only the shaky answers to your own check." }
   },
   "earth-steady": {
-   "url": "https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api",
+   "url": "https://github.blog/changelog/2026-11-09-secret-scanning-detects-secrets-in-github-actions-workflow-logs",
    "source": "GitHub Changelog",
-   "published": "2026-11-13",
-   "ja": { "title": "コードスキャンの AI Scan を REST API で管理できる", "summary": "GitHub code scanning の AI Scan（リポジトリ向け）を、組織とリポジトリの単位で REST API から有効・無効にできるようになりました。有効にしただけではスキャンは始まらず、スキャンごとに GitHub Code Security の AI クレジットを使います。", "why": "スキャンの設定をコードで揃えたいきみ向けだよ。" },
-   "en": { "title": "Manage code scanning's AI Scan for repositories via REST API", "summary": "GitHub code scanning's AI Scan for repositories can now be enabled or disabled through the REST API at the organization and repository levels. Turning it on doesn't start a scan, and each scan uses GitHub Code Security AI credits.", "why": "Now you can script your scanning setup across repos." }
+   "published": "2026-11-09",
+   "ja": { "title": "シークレットスキャンが Actions のログも見るように", "summary": "GitHub のシークレットスキャンが、GitHub Actions のワークフローのログからもシークレットを検出するようになりました（パブリックプレビュー）。既定では無効で、有効にしたあとに完了した実行だけが対象です。見つかったものはアラート一覧に、ログへのリンクつきで並びます。", "why": "CIのログに漏れた鍵まで見張れる。守りが一段厚くなるよ。" },
+   "en": { "title": "Secret scanning now covers GitHub Actions workflow logs", "summary": "GitHub secret scanning can now detect secrets in GitHub Actions workflow logs, in public preview. The policy is off by default and only runs completed after enabling it are scanned; findings appear in the alert list with a link back to the log.", "why": "Your CI logs get a guard too, one more layer for you." }
   },
   "earth-flex": {
-   "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
-   "source": "Hugging Face (IBM Granite)",
-   "published": "2026-11-12",
-   "ja": { "title": "LLMON：指示とデータを専用トークンで区切る記法", "summary": "IBM の Granite チームが、区切りを専用トークンにした記法 LLMON と、Granite 4.1 の 3B・8B 試験版モデルを公開しました。OPI ベンチマークでは、試した最良のフロンティアモデルより47%多く攻撃を防いだとしています（実験的な試験版で、本番向けではありません）。", "why": "他のモデルと比べた数字つき。突き合わせてみたくなるよ。" },
-   "en": { "title": "LLMON: a markup language whose delimiters are reserved tokens", "summary": "IBM's Granite team released LLMON and experimental Granite 4.1 3B and 8B preview models. On the OPI benchmark they report avoiding 47% more attacks than the best frontier model tested; the preview is not for production.", "why": "It comes with cross-model numbers for you to check." }
+   "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates/",
+   "source": "GitHub Changelog",
+   "published": "2026-11-06",
+   "ja": { "title": "Copilot コードレビュー：3つのモデルの指摘をまとめる", "summary": "Copilot コードレビューの「Balanced」設定は、3つのレビュー用モデルを使い、別のモデルがその指摘をまとめるようになりました。レビューの設定は REST と GraphQL の API から、エンタープライズ・組織・リポジトリの単位で管理できます。", "why": "別々のAIの指摘を突き合わせる。きみの流儀そのものだよ。" },
+   "en": { "title": "Copilot code review combines findings from three reviewer models", "summary": "Balanced-effort Copilot code reviews now use three reviewer models, with another model combining their findings. Review settings can also be managed through the REST and GraphQL APIs at the enterprise, organization and repository levels.", "why": "Several AIs cross-checking one pull request is exactly your style." }
   },
   "air-pioneer": {
-   "url": "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/",
-   "source": "Google Developers Blog",
-   "published": "2026-11-11",
-   "ja": { "title": "A2UI 1.0：エージェントが画面で答える公開プロトコル", "summary": "エージェントがフォームやグラフなどの画面で返事をするための公開プロトコル A2UI が、初の安定版 1.0 になりました。React・Angular・Lit・Flutter・SwiftUI などのレンダラーと、Python・TypeScript・Dart の SDK がオープンソースで使えます。", "why": "エージェントに画面を出させる試作、すぐ始められるよ。" },
-   "en": { "title": "A2UI 1.0: the first stable version of the generative UI protocol", "summary": "A2UI, an open protocol that lets agents respond with interactive screens such as forms and charts, reached its first stable version. Open-source renderers cover React, Angular, Lit, Flutter and SwiftUI, with agent SDKs for Python, TypeScript and Dart.", "why": "You can start prototyping agent-drawn screens today." }
+   "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+   "source": "Google DeepMind",
+   "published": "2026-11-10",
+   "ja": { "title": "Gemini Robotics 2.5：ロボットを動かすモデルの新版", "summary": "Google DeepMind が、見て・考えて・動くロボット向けモデル Gemini Robotics 2.5 を発表しました。道具を使う作業など200を超えるタスクで試され、ロボティクスのパートナーへ順次提供されます。安全性を測るベンチマーク ASIMOV-Jailbreak は Hugging Face で公開されています。", "why": "画面の外で動くものまで、作れる範囲が広がってきたよ。" },
+   "en": { "title": "Gemini Robotics 2.5: a new model for robots that act", "summary": "Google DeepMind announced Gemini Robotics 2.5, a vision-language-action model tested on more than 200 tasks, including tool use. It is rolling out to robotics partners, and the open-source ASIMOV-Jailbreak safety benchmark is available on Hugging Face.", "why": "What you can build is starting to move off the screen." }
   },
   "air-steady": {
-   "url": "https://developers.googleblog.com/agent-distraction/",
-   "source": "Google Developers Blog",
-   "published": "2026-11-06",
-   "ja": { "title": "古い TODO コメントが、エージェントを寄り道させる", "summary": "Google の調査では、ファイルを読むセッションの13%でエージェントがバグ番号つきの TODO・FIXME に出会い、その6%で実際に動きました。頼まれていない寄り道は、手順を70%、トークンを77%、待ち時間を105%増やしていました。", "why": "要らないものを削るきみの習慣に、数字の裏づけだよ。" },
-   "en": { "title": "Stale TODO comments send coding agents on detours", "summary": "Google found 13% of file-reading sessions exposed agents to TODO or FIXME bug references, and agents acted on them in 6% of encounters. Unprompted detours added 70% more steps, 77% more tokens and 105% more wait time.", "why": "Numbers that back your habit of trimming what isn't needed." }
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/",
+   "source": "Google",
+   "published": "2026-11-10",
+   "ja": { "title": "Gemini 4 Carbon：長く続く多段階の作業向け", "summary": "Google が Gemini 4 Carbon を開発者に公開しました。ソフトウェア開発や科学研究で、長く続くエージェント作業と多段階の問題を扱うためのモデルだとしています。Google AI Studio と Android Studio の API（有料枠）で使えます。", "why": "段取りを詰めてから長い作業を任せる、きみに合うよ。" },
+   "en": { "title": "Gemini 4 Carbon: built for long, multi-step work", "summary": "Google made Gemini 4 Carbon available to developers. It is built for sustained agentic workflows and multi-step problems in software engineering and scientific research, and is offered on the paid tier of the API in Google AI Studio and Android Studio.", "why": "A fit for the long jobs you plan out before starting." }
   },
   "air-flex": {
-   "url": "https://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work",
+   "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
    "source": "Claude (Anthropic)",
-   "published": "2026-11-12",
-   "ja": { "title": "Opus 5.5：数字と引用を保存したWebページと照合", "summary": "Anthropic が Claude Opus 5.5 を調査や分析に使うための解説を公開しました。社内テストでは、すべての数字と引用を保存した Web ページの写しと照らし合わせる採点で、18本のレポートのうち16本が合格したとしています。", "why": "数字と引用を出典と照らす話。きみの得意分野だよ。" },
-   "en": { "title": "Opus 5.5: numbers and quotes checked against a web snapshot", "summary": "Anthropic published a guide to using Claude Opus 5.5 for research and analysis. In an internal test, 16 of 18 reports passed a grader that checked every number and quote against a saved web snapshot.", "why": "Figures checked against their sources, right up your alley." }
+   "published": "2026-11-10",
+   "ja": { "title": "Claude Data：認定された定義のグラフに印が付く", "summary": "Anthropic が Claude Data（旧 Claude Dashboards）を一般提供にしました。データ担当が指標の定義を認定でき、それを使ったグラフには「certified」の印が付きます（認定クエリはベータ）。誰が編集したかの履歴が残り、前の版に戻せます。", "why": "その数字がどの定義から来たか、辿れるようになるよ。" },
+   "en": { "title": "Claude Data: charts built on certified definitions get a badge", "summary": "Anthropic made Claude Data, formerly Claude Dashboards, generally available. Data teams can certify metric definitions, and charts built on them show a \"certified\" badge (certified queries are in beta); tracked changes show who edited and allow rollback.", "why": "You can trace which definition a number came from." }
   },
   "water-pioneer": {
-   "url": "https://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work",
-   "source": "Claude (Anthropic)",
-   "published": "2026-11-12",
-   "ja": { "title": "Opus 5.5 の「人柄」：良い同僚のように書く", "summary": "Anthropic の解説によると、Opus 5.5 は要点を先に書き、専門用語を減らし、渡した文章のルールに従います。長い作業では、やったこと・分かったこと・こちらに求めることを報告し、利用企業は「良い同僚のように書く」と評しています。", "why": "毎日の相棒にする前に、人柄を知っておきたいでしょ。" },
-   "en": { "title": "Opus 5.5's character: it writes like a good colleague", "summary": "Anthropic's guide says Opus 5.5 leads with key points, uses less jargon and applies the writing rules you give it. On longer tasks it reports what it did, what it found and what it needs from you.", "why": "Get to know its character before you make it your daily driver." }
+   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+   "source": "Anthropic",
+   "published": "2026-11-09",
+   "ja": { "title": "Fable 5.2 の人柄：知らないことは知らないと言う", "summary": "Anthropic の発表では、Claude Fable 5.2 を試した人たちが、これまでの Fable・Mythos より伝え方が分かりやすいと評しています。ある人は「でっち上げずに、知らないと言う」と述べ、足りない点への正直さや、あいまいな依頼での判断も評価されました。", "why": "正直に「知らない」と言える子。乗り換え候補にどう？" },
+   "en": { "title": "Fable 5.2's character: it says when it doesn't know", "summary": "In Anthropic's announcement, testers say Claude Fable 5.2 communicates more clearly than earlier Fable and Mythos models. One said it says it doesn't know things instead of hallucinating, and testers praised its honesty about gaps and its judgment on ambiguous requests.", "why": "A model that admits what it doesn't know might be your next pick." }
   },
   "water-steady": {
-   "url": "https://claude.com/resources/articles/claude-meetings",
-   "source": "Claude (Anthropic)",
-   "published": "2026-11-12",
-   "ja": { "title": "Claude Meetings：会議に参加し、あとから聞き返せる", "summary": "Claude がビデオ通話に見える参加者として入り、メモとアクション項目を書く Claude Meetings がベータで始まりました（Team・Enterprise、いまは Google Meet のみ）。会議ごとにページが残り、あとから過去の会議について Claude に質問できます。", "why": "話した内容を覚えていてくれる相手が、会議にも来るよ。" },
-   "en": { "title": "Claude Meetings: Claude joins calls and remembers them", "summary": "Claude Meetings, in beta on Team and Enterprise plans, lets Claude join Google Meet calls as a visible participant and write notes and action items. Each meeting gets its own page, and you can ask Claude about past meetings later.", "why": "Your long-running conversation partner now sits in on your meetings too." }
+   "url": "https://github.blog/changelog/2026-11-16-github-copilot-weekly-releases-november-9",
+   "source": "GitHub Changelog",
+   "published": "2026-11-16",
+   "ja": { "title": "Copilot アプリ：セッションの続きをスマホで", "summary": "GitHub Copilot アプリで、クラウドと Codespace のセッションをスマホで続けられるようになりました（「Open in」メニューから QR コードを表示）。MCP サーバーの再サインインが必要になったときは、会話の中でつなぎ直して作業を再開します。", "why": "席を離れても、同じ会話の続きから話せるよ。" },
+   "en": { "title": "Copilot app: pick up your session on your phone", "summary": "In the GitHub Copilot app, you can now continue cloud and Codespace sessions on your phone through a GitHub Mobile option that shows a QR code. When an MCP server needs you to sign in again, the conversation reconnects it in place and resumes your task.", "why": "Step away from your desk and keep the same conversation going." }
   },
   "water-flex": {
-   "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/new-agentcore-runtime-default/",
-   "source": "AWS",
+   "url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+   "source": "Claude (Anthropic)",
    "published": "2026-11-12",
-   "ja": { "title": "AgentCore の次世代ランタイムが既定に。起動は2秒未満", "summary": "Amazon Bedrock AgentCore で、新しく作るランタイムが次世代版になりました。2GB のイメージでのセッション開始は P75 で29.7秒から2秒未満になり、使っていないエージェントはゼロまで縮小します。", "why": "任せたエージェントが、すぐ起きて待つ間は眠るよ。" },
-   "en": { "title": "Next-generation AgentCore runtime is now the default", "summary": "New runtimes in Amazon Bedrock AgentCore now use the next-generation runtime by default. On a 2 GB image, sessions start in under 2 seconds at P75, down from 29.7 seconds, and idle agents scale to zero.", "why": "The agents you hand work to wake fast and sleep when idle." }
+   "ja": { "title": "Claude Managed Agents を自社の環境で動かせる", "summary": "Anthropic が、Managed Agents のサービス一式を自社のクラウドや社内環境で動かせるセルフホスト版を、プライベートベータで始めました。エージェントの実行部分・サンドボックス・認証情報・セッション履歴が自社側に置かれ、すべての手順が記録されます。", "why": "任せた仕事が、自分たちの環境の中で進むようになるよ。" },
+   "en": { "title": "Run Claude Managed Agents inside your own environment", "summary": "Anthropic opened a private beta of self-hosted Claude Managed Agents, which runs the full service in your own cloud or on-premise environment. The agent harness, sandboxes, credentials and session history stay on your side, and every step is recorded.", "why": "The work you hand off can now run on your own turf." }
   }
  }
 }
