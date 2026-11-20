@@ -5,7 +5,7 @@
    "url": "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
    "source": "GitHub Changelog",
    "published": "2026-11-17",
-   "ja": { "title": "GPT-6.2 Astra と Sol が GitHub Copilot で一般提供に", "summary": "OpenAI の GPT-6.2 Astra と GPT-6.2 Sol が、GitHub Copilot で一般提供になりました。Copilot Pro+・Max・Business・Enterprise が対象で、VS Code や Copilot CLI、JetBrains、Xcode などのモデル選択に順次出ます。", "why": "出たばかりの2つだよ。選択肢に出たらすぐ試そう。" },
+   "ja": { "title": "GPT-6.2 Astra と Sol が Copilot で一般提供に", "summary": "OpenAI の GPT-6.2 Astra と GPT-6.2 Sol が、GitHub Copilot で一般提供になりました。Copilot Pro+・Max・Business・Enterprise が対象で、VS Code や Copilot CLI、JetBrains、Xcode などのモデル選択に順次出ます。", "why": "出たばかりの2つだよ。選択肢に出たらすぐ試そう。" },
    "en": { "title": "OpenAI's GPT-6.2 Astra and GPT-6.2 Sol are now available in GitHub Copilot", "summary": "OpenAI's GPT-6.2 Astra and GPT-6.2 Sol are now generally available in GitHub Copilot for Pro+, Max, Business and Enterprise users. They are rolling out gradually to the model picker in VS Code, Copilot CLI, JetBrains IDEs, Xcode and other clients.", "why": "Two fresh models, so try them the moment they reach your picker." }
   },
   "fire-steady": {
@@ -61,7 +61,7 @@
    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
    "source": "Google",
    "published": "2026-11-19",
-   "ja": { "title": "Gemini API：必要なツールだけを探して読み込む Tool Retrieval", "summary": "Gemini API に Tool Retrieval が加わりました（Interactions API でプレビュー）。ツールの名前と説明だけを先に渡し、細かい定義は必要になったときに読み込みます。検索は Gemini の側で動き、追加の料金はありません。", "why": "必要なものを探し当てて使う。きみのやり方と同じだね。" },
+   "ja": { "title": "Gemini API：必要なツールだけ読み込む Tool Retrieval", "summary": "Gemini API に Tool Retrieval が加わりました（Interactions API でプレビュー）。ツールの名前と説明だけを先に渡し、細かい定義は必要になったときに読み込みます。検索は Gemini の側で動き、追加の料金はありません。", "why": "必要なものを探し当てて使う。きみのやり方と同じだね。" },
    "en": { "title": "Introducing Tool Retrieval in the Gemini API", "summary": "Tool Retrieval is now in preview in the Gemini API's Interactions API. The model sees each deferred tool's name and description and loads the full schema only when a task needs it; search runs on Google's side at no separate charge.", "why": "Looking things up only when needed is how you work, too." }
   },
   "water-pioneer": {
