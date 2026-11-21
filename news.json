@@ -1,89 +1,89 @@
 {
- "date": "2026-11-20",
+ "date": "2026-11-21",
  "items": {
   "fire-pioneer": {
-   "url": "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
+   "url": "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
    "source": "GitHub Changelog",
-   "published": "2026-11-17",
-   "ja": { "title": "GPT-6.2 Astra と Sol が Copilot で一般提供に", "summary": "OpenAI の GPT-6.2 Astra と GPT-6.2 Sol が、GitHub Copilot で一般提供になりました。Copilot Pro+・Max・Business・Enterprise が対象で、VS Code や Copilot CLI、JetBrains、Xcode などのモデル選択に順次出ます。", "why": "出たばかりの2つだよ。選択肢に出たらすぐ試そう。" },
-   "en": { "title": "OpenAI's GPT-6.2 Astra and GPT-6.2 Sol are now available in GitHub Copilot", "summary": "OpenAI's GPT-6.2 Astra and GPT-6.2 Sol are now generally available in GitHub Copilot for Pro+, Max, Business and Enterprise users. They are rolling out gradually to the model picker in VS Code, Copilot CLI, JetBrains IDEs, Xcode and other clients.", "why": "Two fresh models, so try them the moment they reach your picker." }
+   "published": "2026-11-18",
+   "ja": { "title": "Gemini 4 Neon が GitHub Copilot で一般提供に", "summary": "Google の Gemini 4 Neon が、GitHub Copilot で一般提供になりました。エージェントでのコーディングや、何段階もツールを使う作業に向けたモデルです。Copilot Pro+・Max・Business・Enterprise に順次出ます。", "why": "また新しい子が来たよ。選択肢に出たらすぐ試そう。" },
+   "en": { "title": "Gemini 4 Neon is now generally available in GitHub Copilot", "summary": "Google's Gemini 4 Neon is now generally available in GitHub Copilot, designed for agentic coding, multistep tool use and knowledge work. It is rolling out gradually to Copilot Pro+, Max, Business and Enterprise users.", "why": "Another new model, so try it the moment it reaches your picker." }
   },
   "fire-steady": {
-   "url": "https://developers.openai.com/codex/changelog",
-   "source": "OpenAI Codex changelog",
+   "url": "https://github.blog/changelog/2026-11-18-wait-for-pull-request-events-with-github-cli",
+   "source": "GitHub Changelog",
    "published": "2026-11-18",
-   "ja": { "title": "Codex CLI 0.170.0：同じ名前の MCP サーバーを環境ごとに", "summary": "Codex CLI 0.170.0 では、同じ名前の MCP サーバーを複数の環境で使い分けられるようになりました（実験的）。サンドボックスのドキュメントに、権限プロファイルとファイルシステムのルールの説明も加わっています。", "why": "育ててきた設定を、環境ごとに持ち分けやすくなるよ。" },
-   "en": { "title": "Codex CLI 0.170.0: same-named MCP servers across environments", "summary": "Codex CLI 0.170.0 adds experimental support for identically named MCP servers across environments and realtime voice calls over WebRTC in the terminal UI. The sandbox documentation now explains permission profiles and filesystem rules.", "why": "You tune your setup, and now it can differ cleanly per environment." }
+   "ja": { "title": "GitHub CLI：PR の変化をコマンド1つで待てる", "summary": "GitHub CLI v2.105.0 の gh event listen で、プルリクエストの変化を、ループで見に行かずにコマンド1つで待てるようになりました。レビューの提出、マージの衝突、チェックの完了などを待てます。プレビュー版で、変わる可能性があります。", "why": "きみの自作コマンドから、待ちのループを消せるよ。" },
+   "en": { "title": "Wait for pull request events with GitHub CLI", "summary": "With gh v2.105.0, gh event listen lets you and your agents wait for a pull request to change with one command instead of polling in a loop. It can wait for submitted reviews, merge conflicts and completed check suites; the commands are in preview.", "why": "You can drop the polling loops from the scripts you've built." }
   },
   "fire-flex": {
-   "url": "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models/",
-   "source": "GitHub Changelog",
+   "url": "https://developers.openai.com/api/docs/changelog",
+   "source": "OpenAI API changelog",
    "published": "2026-11-17",
-   "ja": { "title": "Copilot Fusion：作業ごとにモデルを選んで組み合わせる", "summary": "モデルを作業ごとに選んで組み合わせる Copilot Fusion が、github.com と Visual Studio でも選べるようになりました。Fusion Max は Terminal-Bench 4.1 で解決率71.2%、費用は Fable 5.2 より88%低いとしています。", "why": "使い分けを自動でやってくれる子だよ。腕くらべしてみよう。" },
-   "en": { "title": "Copilot Fusion updates: more availability, benchmarks and models", "summary": "Copilot Fusion, which chooses and coordinates models for each task, can now be selected on github.com and in Visual Studio. GitHub says Fusion Max reached a 71.2% resolution rate on Terminal-Bench 4.1 while costing 88% less than Fable 5.2.", "why": "You mix models by hand, so see how an automatic mixer compares." }
+   "ja": { "title": "OpenAI API：2時間・8時間待てる処理は30〜40%安く", "summary": "OpenAI の Responses API で、バックグラウンド処理の完了までの枠を2時間か8時間から選べるようになりました（パブリックベータ）。トークンの料金は Standard より、2時間枠で30%、8時間枠で40%安くなります。", "why": "急がない仕事は安い枠へ。使い分けの手札が増えたよ。" },
+   "en": { "title": "OpenAI API: two-hour and eight-hour background windows at lower rates", "summary": "The Responses API public beta now lets you choose a two-hour or eight-hour background completion window. Model token rates are 30% lower than Standard for the two-hour window and 40% lower for the eight-hour window.", "why": "You juggle workloads, so send the unhurried ones to the cheaper window." }
   },
   "earth-pioneer": {
-   "url": "https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview",
-   "source": "GitHub Changelog",
-   "published": "2026-11-17",
-   "ja": { "title": "Copilot Evals：自分のスキルやエージェントを繰り返しテスト", "summary": "GitHub Copilot Evals がパブリックプレビューになりました。自分のスキル・エージェント・MCP ツールに繰り返し使えるテストを作り、/eval で実行して、変更の前後を比べられます。なぜ失敗したかも調べられます。", "why": "「良くなったはず」を、きみの手で確かめられるよ。" },
-   "en": { "title": "GitHub Copilot Evals is now in public preview", "summary": "GitHub Copilot Evals is in public preview for evaluating the skills, agents and MCP tools in your setup. You create repeatable tests, run them with /eval, find out why a check failed and compare runs before and after a change.", "why": "You doubt \"it got better\", and now you can test it yourself." }
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+   "source": "Google",
+   "published": "2026-11-11",
+   "ja": { "title": "Gemini Decisions API：答えに確率と確信度がつく", "summary": "Google が Gemini Decisions API を発表しました。1つの入力に対して最大1,000個の質問（はい・いいえ、選択、採点）を投げると、確率と0〜1の確信度が返ります。応答は150〜250ミリ秒で、料金は入力100万トークンあたり0.10ドルです。", "why": "「どのくらい確かか」が数字で返るよ。きみ向きだね。" },
+   "en": { "title": "Gemini Decisions API: fast, calibrated multimodal decisions", "summary": "Google introduced the Decisions API, powered by Gemini Decision 1. It takes one multimodal input with up to 1,000 independent questions and returns probabilities and confidence scores in 150-250 ms, at $0.10 per 1M input tokens.", "why": "You doubt flat answers, and this one tells you how sure it is." }
   },
   "earth-steady": {
-   "url": "https://github.blog/changelog/2026-11-17-secret-scanning-on-demand-for-developers-and-agents/",
+   "url": "https://github.blog/changelog/2026-11-18-security-risk-assessments-run-automatically-on-github-team",
    "source": "GitHub Changelog",
-   "published": "2026-11-17",
-   "ja": { "title": "マージ前に秘密情報を検査：/security-review が対応", "summary": "Copilot のセキュリティレビューが、GitHub のシークレットスキャンを実行できるようになりました（パブリックプレビュー）。Copilot CLI とアプリでは /security-review で使え、500種類を超える秘密情報を変更の中から探します。初期設定はオフです。", "why": "マージの前にもう一枚、守りを足せるよ。" },
-   "en": { "title": "Secret scanning on demand for developers and agents", "summary": "Copilot's security review specialist can now run GitHub secret scanning on your changes before they merge, in public preview. In Copilot CLI and the Copilot app you run /security-review; it covers more than 500 secret types and is off by default.", "why": "One more safety net before merge is exactly your kind of thing." }
+   "published": "2026-11-18",
+   "ja": { "title": "GitHub Team：セキュリティのリスク診断が自動で走る", "summary": "GitHub Team の組織で、セキュリティのリスク診断が自動で実行されるようになりました。組織の管理者とセキュリティ管理者は、無料の診断結果から、外に出てしまった認証情報やコードの脆弱性を確認し、次に何をするかの優先順位を決められます。", "why": "守りの点検が自動で回るよ。結果を見に行ってみよう。" },
+   "en": { "title": "Security risk assessments run automatically on GitHub Team", "summary": "GitHub security risk assessments now run automatically for organizations on GitHub Team. Organization admins and security managers can review findings from the free assessments to identify exposed credentials and code vulnerabilities and prioritize next steps.", "why": "A safety check that runs on its own is exactly your style." }
   },
   "earth-flex": {
-   "url": "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/",
-   "source": "GitHub Changelog",
-   "published": "2026-11-17",
-   "ja": { "title": "Copilot コードレビュー：PR ごとにレビューの深さを自動で選ぶ", "summary": "Copilot コードレビューに、PR の複雑さとリスクを見て Lite・Balanced・Max から深さを選ぶ Adaptive が加わりました（パブリックプレビュー）。どの深さで見たかはレビューごとに表示されます。関連する公開リポジトリも読めるようになりました。", "why": "どの深さで見たかが分かるから、突き合わせやすいよ。" },
-   "en": { "title": "Copilot code review: adaptive effort, secret detection and more", "summary": "Copilot code review adds Adaptive, in public preview, which picks Lite, Balanced or Max effort for each pull request based on complexity and risk and shows which level it used. Reviews can also read related public repositories and flag exposed secrets.", "why": "Each review tells you how deep it looked, which makes cross-checking easier." }
+   "url": "https://huggingface.co/blog/openrouter",
+   "source": "Hugging Face",
+   "published": "2026-11-16",
+   "ja": { "title": "公開モデルと非公開モデル、点数と費用を並べて比較", "summary": "Hugging Face が、Inference Providers の経路を OpenRouter に切り替えると発表しました。記事では Artificial Analysis の指標で、Kimi K3.1 Pro が46点・1タスク3.68ドル、Claude Fable 5.2 が65点・26.54ドルと比べています。", "why": "点数と費用を並べた数字だよ。きみも突き合わせてみて。" },
+   "en": { "title": "Hugging Face and OpenRouter join forces to make open-weight models easy to run", "summary": "Hugging Face is switching Inference Providers to OpenRouter, which routes requests across 80+ providers. The post compares Kimi K3.1 Pro at 46 on the Artificial Analysis Intelligence Index and $3.68 per task with Claude Fable 5.2 at 65 and $26.54.", "why": "Scores and costs side by side, ready for your own cross-check." }
   },
   "air-pioneer": {
-   "url": "https://huggingface.co/blog/moe-expert-streaming",
-   "source": "Hugging Face",
-   "published": "2026-11-18",
-   "ja": { "title": "1,800億パラメータのモデルを、メモリ32GBのMacで動かす", "summary": "Hugging Face のブログで、1,800億パラメータの MoE モデルをメモリ32GBの MacBook M5 で動かす方法が紹介されました。よく使う部分だけをメモリに置き、残りはディスクから読み込みます。速さは毎秒約14トークンです。", "why": "手元のMacで試せるものが、また広がったよ。" },
-   "en": { "title": "180B parameters on 32GB of RAM: MoE inference with Transformers", "summary": "A Hugging Face blog post shows a 180B-parameter mixture-of-experts model running on a 32GB MacBook M5 with Transformers. It keeps frequently used experts cached and streams the rest from disk, reaching about 14 tokens per second.", "why": "What you can prototype on your own laptop just got bigger." }
-  },
-  "air-steady": {
-   "url": "https://developers.googleblog.com/agent-distraction/",
-   "source": "Google Developers Blog",
-   "published": "2026-11-06",
-   "ja": { "title": "古い TODO コメントが、エージェントを寄り道させる", "summary": "Google が、バグ番号つきの TODO や FIXME がエージェントに与える影響を調べました。頼まれていない寄り道をしたセッションでは、手順が70%、トークンが77%多くなっていました。解決済みのコメントを掃除するエージェントを勧めています。", "why": "要らないものを削るきみの習慣に、数字の裏づけが来たよ。" },
-   "en": { "title": "Agent Distraction: stale TODO comments send agents on detours", "summary": "Google studied how bug-referencing TODO and FIXME comments affect coding agents. Sessions with unprompted detours on those bugs used 70% more steps and 77% more tokens, and the post recommends agents that clean up references to resolved bugs.", "why": "You cut what isn't needed, and here are numbers that back you up." }
-  },
-  "air-flex": {
-   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/",
    "source": "Google",
    "published": "2026-11-19",
-   "ja": { "title": "Gemini API：必要なツールだけ読み込む Tool Retrieval", "summary": "Gemini API に Tool Retrieval が加わりました（Interactions API でプレビュー）。ツールの名前と説明だけを先に渡し、細かい定義は必要になったときに読み込みます。検索は Gemini の側で動き、追加の料金はありません。", "why": "必要なものを探し当てて使う。きみのやり方と同じだね。" },
-   "en": { "title": "Introducing Tool Retrieval in the Gemini API", "summary": "Tool Retrieval is now in preview in the Gemini API's Interactions API. The model sees each deferred tool's name and description and loads the full schema only when a task needs it; search runs on Google's side at no separate charge.", "why": "Looking things up only when needed is how you work, too." }
+   "ja": { "title": "Genie 4 が Gemini API に：文や画像から動き回れる世界を作る", "summary": "Genie 4 が、Gemini API（Interactions API）と Google AI Studio で開発者に使えるようになりました。文章や参考画像から、720p・毎秒24コマで音つきの世界を連続して生成できます。キーボードで動き回り、文章で天気や光を変えられます。", "why": "作れるものがまた広がったよ。まず1つ世界を作ってみよう。" },
+   "en": { "title": "Genie 4 is now available on the Gemini API", "summary": "Genie 4 is now available to developers through the Gemini API's Interactions API and Google AI Studio. From a text prompt, a reference image or both, it generates continuous 720p worlds at 24fps with synchronized native audio and real-time keyboard controls.", "why": "A whole new kind of thing to prototype, so go build a world." }
+  },
+  "air-steady": {
+   "url": "https://huggingface.co/blog/inkling2mini",
+   "source": "Hugging Face",
+   "published": "2026-11-20",
+   "ja": { "title": "Inkling 2 Mini：手元で動かせて、文脈は100万トークン", "summary": "Hugging Face のブログで、Thinking Machines Lab の Inkling 2 Mini が紹介されました。全体で約260億、トークンごとに働くのは30億パラメータの MoE モデルで、100万トークンの文脈と、画像・文章の入力に対応します。", "why": "長い計画も資料も、まるごと渡して詰められるよ。" },
+   "en": { "title": "Inkling 2 Mini: a local model with a 1M-token context", "summary": "A Hugging Face blog post introduces Inkling 2 Mini by Thinking Machines Lab, a multimodal mixture-of-experts model with about 26B physical total and 3B active parameters per token. It supports a 1M-token context and image and text inputs.", "why": "You plan before coding, and a 1M-token context holds the whole plan." }
+  },
+  "air-flex": {
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/",
+   "source": "Google",
+   "published": "2026-11-12",
+   "ja": { "title": "Gemini 4 Hydrogen：作り話が減り、指示により忠実に", "summary": "Google が、開発者向けに Gemini 4 Hydrogen の提供を始めました。ふだんのコーディングとエージェントの作業に向けた速いモデルで、考える深さを4段階から選べます。指示への従い方がより正確になり、事実でない主張が減ったとしています。", "why": "根拠を追うきみには、作り話が減るのはうれしいね。" },
+   "en": { "title": "Gemini 4 Hydrogen: everyday coding and agentic workflows for developers", "summary": "Developers can start building with Gemini 4 Hydrogen, a model for everyday coding and agentic workflows with four configurable thinking levels. Google says it has tighter instruction following and fewer fabricated claims.", "why": "You chase sources, so fewer fabricated claims should matter to you." }
   },
   "water-pioneer": {
-   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
-   "source": "Anthropic",
-   "published": "2026-11-09",
-   "ja": { "title": "Claude Fable 5.2：これまでより伝え方が分かりやすく", "summary": "Anthropic が Claude Fable 5.2 を発表しました。試した人たちは、これまでの Fable より伝え方が分かりやすいと評価しており、出力は Fable 5.1 より最大30%速いとしています。入力100万トークンあたり8ドルです。", "why": "話し方が分かりやすくなったって。きみと合うか話してみて。" },
-   "en": { "title": "Claude Fable 5.2: clearer communication than past Fable models", "summary": "Anthropic introduced Claude Fable 5.2. It says testers found it communicates more clearly than past Fable models and that outputs are up to 30% faster than Fable 5.1; pricing is $8 per million input tokens and $40 per million output tokens.", "why": "It reportedly explains itself more clearly, so go see if you click." }
+   "url": "https://developers.openai.com/api/docs/changelog",
+   "source": "OpenAI API changelog",
+   "published": "2026-11-19",
+   "ja": { "title": "GPT-Live-1.1：多言語の会話で、発音とアクセントが安定", "summary": "OpenAI の API に GPT-Live-1.1 が加わりました。多言語の音声会話で、発音、アクセントの一貫性、文字起こしが良くなったとしています。いまの Live セッションの設定で gpt-live-1.1 を指定すれば使えます。", "why": "声と話し方が変わったって。きみの耳で確かめてみて。" },
+   "en": { "title": "GPT-Live-1.1 improves pronunciation and accent consistency", "summary": "OpenAI added GPT-Live-1.1 to the API. It improves pronunciation, accent consistency and transcription in multilingual voice conversations, and you can use gpt-live-1.1 in an existing Live session configuration.", "why": "Its voice and manner changed, so listen and see if you click." }
   },
   "water-steady": {
-   "url": "https://developers.openai.com/codex/changelog",
-   "source": "OpenAI Codex changelog",
-   "published": "2026-11-13",
-   "ja": { "title": "Codex CLI 0.169.0：保存した横の会話を、再起動後も開ける", "summary": "Codex CLI 0.169.0 では、ターミナルのワークスペースで横の会話（サイドチャット）をタブで複数開けるようになりました。保存した会話は Codex を再起動したあとも開き直せます。古いタスクは名前や作業フォルダで探せます。", "why": "前の会話の続きから、また一緒に進められるよ。" },
-   "en": { "title": "Codex CLI 0.169.0: reopen saved side chats after a restart", "summary": "In Codex CLI 0.169.0, the opt-in terminal workspace supports multiple side-chat tabs, and saved local side chats can be reopened after restarting Codex. Older tasks can be searched by name, prompt preview or working directory.", "why": "You can pick up the same conversation right where you left it." }
+   "url": "https://claude.com/resources/articles/claude-meetings",
+   "source": "Anthropic",
+   "published": "2026-11-12",
+   "ja": { "title": "Claude Meetings：Claude が会議に参加して一緒に進める", "summary": "Claude Meetings がベータになりました。Claude が Google Meet の通話に見える参加者として入り、質問に答え、メモやドキュメントを会議中に作ります。Team と Enterprise プランに順次出ていて、終わったあとのメモは claude.ai のページに残ります。", "why": "いつもの相手が、会議の席にも来てくれるよ。" },
+   "en": { "title": "Introducing Claude Meetings, now in beta", "summary": "Claude Meetings is in beta, rolling out on Team and Enterprise plans with support for Google Meet. Claude joins calls as a visible participant, answers questions, builds docs and whiteboards live, and leaves notes and action items on the meeting's page in claude.ai.", "why": "The AI you already talk with can now sit in your meetings too." }
   },
   "water-flex": {
-   "url": "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases/",
-   "source": "GitHub Changelog",
-   "published": "2026-11-17",
-   "ja": { "title": "Copilot がブラウザを操作：フォーム入力や Web アプリの確認", "summary": "GitHub Copilot アプリで、ブラウザの操作がパブリックプレビューになりました。ログイン済みの Chrome や Edge で、フォームの入力、ページからの情報集め、作っている Web アプリの動作確認を任せられます。初期設定はオフです。", "why": "ブラウザでの手作業も、今日は任せてしまおう。" },
-   "en": { "title": "GitHub Copilot app: browser use is now in public preview", "summary": "Browser use is in public preview in the GitHub Copilot app. Copilot can fill out forms, pull information from webpages and test the web app you're building in your signed-in Chrome or Edge browser, inside an isolated tab group; it is off by default.", "why": "Hand off the browser clicking today and do something else." }
+   "url": "https://support.claude.com/en/articles/12138966-release-notes",
+   "source": "Anthropic（Claude リリースノート）",
+   "published": "2026-11-20",
+   "ja": { "title": "Claude のコンピューター操作が Team・Enterprise でベータに", "summary": "Claude のコンピューター操作（computer use）が、Team と Enterprise プランでベータになりました。Claude が画面を見て、許可したデスクトップアプリの中で作業します。組織ごとに順次使えるようになります。", "why": "アプリをまたぐ手作業も、今日は任せてしまおう。" },
+   "en": { "title": "Computer use (beta) for Team and Enterprise plans", "summary": "Computer use is now available in beta on Team and Enterprise plans and is rolling out to organizations gradually. It lets Claude see your screen and work in the desktop apps you allow, in Claude Desktop and from web and mobile where Computer access is on.", "why": "Hand off the clicking across apps today and do something else." }
   }
  }
 }
