@@ -1,89 +1,89 @@
 {
- "date": "2026-11-24",
+ "date": "2026-11-25",
  "items": {
   "fire-pioneer": {
    "url": "https://developers.openai.com/api/docs/changelog",
    "source": "OpenAI API changelog",
-   "published": "2026-11-17",
-   "ja": { "title": "GPT-6.2 Astra と Sol が OpenAI の API に登場", "summary": "OpenAI の API に GPT-6.2 Astra と GPT-6.2 Sol が加わりました。Astra は難しい推論とコーディング向け、Sol はふだんのコーディングとエージェントの作業向けです。Responses API と Chat Completions で使え、ツール呼び出しには Responses API が必要です。", "why": "新しい子が2匹も来たよ。まずは1回、呼んでみよう。" },
-   "en": { "title": "GPT-6.2 Astra and GPT-6.2 Sol arrive in the OpenAI API", "summary": "OpenAI added GPT-6.2 Astra for demanding reasoning and coding tasks and GPT-6.2 Sol for everyday coding and agent workflows. Both support the Responses API and Chat Completions, and tool calling requires the Responses API.", "why": "Two new models at once, so go call each of them today." }
+   "published": "2026-11-19",
+   "ja": { "title": "GPT-Live-1.1 が OpenAI の API に登場", "summary": "OpenAI の API に音声会話向けの GPT-Live-1.1 が加わりました。多言語の音声会話で、発音、アクセントの一貫性、文字起こしが良くなったとしています。いまの Live セッションの設定で gpt-live-1.1 を指定すると使えます。", "why": "モデル名を1つ書き換えるだけ。今日のうちに試せるよ。" },
+   "en": { "title": "GPT-Live-1.1 arrives in the OpenAI API", "summary": "OpenAI released GPT-Live-1.1, which improves pronunciation, accent consistency and transcription in multilingual voice conversations. You can use gpt-live-1.1 in an existing Live session configuration.", "why": "Swap one model name and you can try it today." }
   },
   "fire-steady": {
    "url": "https://code.claude.com/docs/en/changelog",
    "source": "Claude Code changelog",
-   "published": "2026-11-20",
-   "ja": { "title": "Claude Code：/loop と定期タスクが最長30日まで動く", "summary": "Claude Code 2.1.330 で、くり返しの定期タスクと /loop が、これまでの7日から最長30日まで動くようになりました。グラフを描く組み込みの mod「easel」も加わり、Pro・Max と、使える場合は macOS・Linux の Team・Enterprise で使えます。", "why": "きみの育てた自動化が、月をまたいで回り続けるよ。" },
-   "en": { "title": "Claude Code 2.1.330: /loop and recurring tasks run up to 30 days", "summary": "Claude Code 2.1.330 changed recurring scheduled tasks and /loop to run up to 30 days instead of 7. It also added easel, a built-in mod that draws charts, on Pro, Max and, where available, Team and Enterprise on macOS and Linux.", "why": "The automations you've tuned can now keep running for a month." }
+   "published": "2026-11-23",
+   "ja": { "title": "Claude Code：claude doctor が API 接続も診断", "summary": "Claude Code 2.1.331 で、claude doctor に API への接続の診断が加わりました。API に届くかどうかを、HTTP ステータスかエラーつきで報告します。プラグインのマニフェストには optionalDependencies も加わりました。", "why": "きみの育てた環境、どこで詰まったかがすぐ分かるよ。" },
+   "en": { "title": "Claude Code 2.1.331: claude doctor now checks API connectivity", "summary": "Claude Code 2.1.331 added an API connectivity section to claude doctor that reports whether the API can be reached, with the HTTP status or the error. It also added optionalDependencies to plugin manifests.", "why": "When your tuned setup stalls, you'll see where right away." }
   },
   "fire-flex": {
-   "url": "https://learn.chatgpt.com/docs/changelog",
-   "source": "ChatGPT & Codex changelog（OpenAI）",
-   "published": "2026-11-20",
-   "ja": { "title": "Codex CLI 0.171.0：サブエージェントの記録を横に並べて見る", "summary": "Codex CLI 0.171.0 で、TUI のワークスペースが既定で有効になりました。メインの会話の横に、検索できる文書のプレビュー、画像のプレビュー、サブエージェントの記録が並びます。モデル一覧に GPT-6.2 Sol と Astra が加わり、Sol が既定の選択になりました。", "why": "並べて走らせた子たちの様子を、1画面で見渡せるよ。" },
-   "en": { "title": "Codex CLI 0.171.0 shows subagent transcripts beside the conversation", "summary": "Codex CLI 0.171.0 enables the TUI workspace by default, with searchable document previews, image previews and subagent transcripts alongside the main conversation. It also adds GPT-6.2 Sol and Astra to model catalogs, with Sol as the default selection.", "why": "You run agents in parallel, and now you can watch them side by side." }
+   "url": "https://platform.claude.com/docs/en/release-notes/overview",
+   "source": "Claude Platform release notes（Anthropic）",
+   "published": "2026-11-12",
+   "ja": { "title": "Claude Managed Agents を、まるごと自分の基盤で動かせる", "summary": "Anthropic が、セルフホスト版の Claude Managed Agents を公開しました。サンドボックスだけでなくサービス全体を自分の基盤で動かし、エージェント、セッション、その履歴もそこに保存します。モデルへの要求の送り先は選べ、既定は Anthropic です。利用には担当チームへの申請が必要です。", "why": "エージェントの置き場所も、送り先も、きみが使い分けられるよ。" },
+   "en": { "title": "Self-hosted Claude Managed Agents launches", "summary": "Anthropic launched self-hosted Claude Managed Agents: you run the whole service on your own infrastructure and store agents, sessions and session history there. The server sends model requests to the provider you choose, Anthropic by default, and access is requested through your account team.", "why": "You mix and match agents, and now you choose where they run too." }
   },
   "earth-pioneer": {
-   "url": "https://huggingface.co/blog/agentic-evals",
-   "source": "Hugging Face",
-   "published": "2026-11-23",
-   "ja": { "title": "エージェント評価の作り方：近道のスクリプトでも合格してしまった", "summary": "Hugging Face が、エージェント評価を作って保つ手引きを公開しました。例の課題では24回中19回、モデルが最初の応答で「完了」を宣言しました。当てはめを飛ばした近道のスクリプトでも8課題すべてで期待の値が返ったため、ピークごとの検査を足しています。", "why": "「完了」を疑うきみの勘は正しいって、数字が言ってるよ。" },
-   "en": { "title": "How to build and maintain an agentic evaluation", "summary": "A Hugging Face guide builds an agentic eval from Terminal-Bench's raman-fitting task. In 19 of 24 rollouts the model called mark_task_complete in its first response, and a shortcut script that skipped the fit still returned the expected value on all eight tasks, so the authors added per-peak checks.", "why": "You never trust a quick \"done\", and this post shows why you're right." }
+   "url": "https://www.anthropic.com/research/building-strong-safety-evaluations",
+   "source": "Anthropic",
+   "published": "2026-11-13",
+   "ja": { "title": "Anthropic：評価は「ごまかしやすい」。作り方の勧めを公開", "summary": "Anthropic が、AI の安全性評価を作るときの勧めを、設計・実行・報告の3つに分けて公開しました。評価はごまかしやすく、うたっているものを測れていないことがあるとしています。採点役を人のラベルと突き合わせること、不確かさを報告することを勧めています。", "why": "採点役まで疑う。きみがいつもやってることだね。" },
+   "en": { "title": "Building strong safety evaluations", "summary": "Anthropic published recommendations for building AI safety evals across design, run and report. It says evals are easy to game and may not measure what they claim, and recommends validating the grader against human labels and reporting uncertainty.", "why": "You doubt the score itself, and this post tells you how to check it." }
   },
   "earth-steady": {
-   "url": "https://github.blog/changelog/2026-11-23-code-coverage-uploads-now-flag-invalid-report-formats",
-   "source": "GitHub Changelog",
+   "url": "https://developers.googleblog.com/did-the-user-ask-for-this-securing-ai-agents-against-intent-hijacking-with-semantic-governance-policies/",
+   "source": "Google Developers Blog",
    "published": "2026-11-23",
-   "ja": { "title": "GitHub：形式の違うカバレッジ報告は、黙って通さず失敗に", "summary": "GitHub Code Quality の upload-code-coverage アクションが、報告が Cobertura XML かどうかを確かめるようになりました。違う形式なら、アップロードの手順がエラーで失敗します。これまでは成功したように見えて、プルリクエストにカバレッジが出ませんでした。", "why": "通ったふりのCIが1つ減るよ。きみの守りがまた厚くなるね。" },
-   "en": { "title": "Code coverage uploads now flag invalid report formats", "summary": "The GitHub Code Quality upload-code-coverage action now checks that the report is Cobertura XML and fails the upload step if it isn't. Previously these uploads appeared to succeed but no coverage showed on pull requests.", "why": "One less CI step that silently passes, just how you like it." }
+   "ja": { "title": "Google：ツール呼び出しを実行前に「頼まれたことか」検査", "summary": "Google が、エージェントのツール呼び出しを実行前にユーザーの依頼と照らし合わせる仕組み（プレビュー）を紹介しました。AgentDojo のベンチマークで、攻撃の成功率が48.7%から0.9%に下がったとしています。害のない課題での有用性は、平均2.6ポイント下がりました。", "why": "実行の前に1枚、検査をはさむ。きみの守り方と同じだよ。" },
+   "en": { "title": "Semantic governance policies check agent tool calls against user intent", "summary": "Google describes semantic governance policies, in Preview, which check each proposed tool call against the user's request before it runs. On AgentDojo with a gemini-2.5-flash agent, attack success fell from 48.7% to 0.9%, while utility on benign tasks fell by 2.6 percentage points on average.", "why": "One more gate before anything runs, just the way you build things." }
   },
   "earth-flex": {
-   "url": "https://claude.com/resources/articles/introducing-claude-ship",
-   "source": "Anthropic",
-   "published": "2026-11-23",
-   "ja": { "title": "Claude Ship：PR をレビューして直し、マージできるか判断", "summary": "Anthropic が Claude Ship を発表しました。チームが決めた方針のもとで、プルリクエストをレビューし、直し、マージできる状態かを判断します。Team と Enterprise プランで、GitHub のリポジトリに使えます。/ship コマンドは Claude Code とデスクトップアプリに順次出ます。", "why": "書いたAIと別の目で見るレビュー役、もう1匹増やせるよ。" },
-   "en": { "title": "Introducing Claude Ship", "summary": "Claude Ship reviews pull requests, fixes them and decides what is ready to merge under policies each team sets. It is available on Claude Team and Enterprise plans for repositories on GitHub, and the /ship command is rolling out in Claude Code and the desktop app.", "why": "You like a second AI checking the first, and here is one more reviewer." }
-  },
-  "air-pioneer": {
-   "url": "https://huggingface.co/blog/harness-adapters-at-scale",
+   "url": "https://huggingface.co/blog/inkling2mini",
    "source": "Hugging Face",
    "published": "2026-11-20",
-   "ja": { "title": "ハーネスごとの小さなアダプターで、合格率39%が55%に", "summary": "Hugging Face のブログで、Qwen3.8-27B にハーネスごとの LoRA アダプターを学習させる方法が紹介されました。pi ハーネスの Terminal-Bench 2.1 で、元のモデルの39%に対し、アダプターつきは pass@1 が55%でした。作り方の手順もすべて公開されています。", "why": "手順が全部出てるよ。きみの道具に合わせて1つ作ってみよう。" },
-   "en": { "title": "Harness adapters: adapt a model to your coding harness", "summary": "A Hugging Face blog post trains one RL-based LoRA adapter for Qwen3.8-27B per harness. For the pi harness on Terminal-Bench 2.1, the base model scores 39% and an adapter reaches 55% pass@1, and the post publishes its full recipe.", "why": "The full recipe is public, so you could build one for your own harness." }
+   "ja": { "title": "Inkling 2 Mini：4つのモデルと比べ、48項目中32で首位", "summary": "Hugging Face のブログで、手元で動かせるマルチモーダルのモデル Inkling 2 Mini が紹介されました。Gemma 4 31B、Muse Glimmer、Qwen3.8-27B、Nemotron 3.5 Super VL と比べて、48のベンチマーク中32で首位としています。100万トークンの文脈に対応します。", "why": "突き合わせる相手が1匹増えたよ。表を見比べてみよう。" },
+   "en": { "title": "Inkling 2 Mini leads 32 of 48 benchmarks against four open models", "summary": "A Hugging Face blog post introduces Inkling 2 Mini, a multimodal model for local setups with a 1M-token context. It says the model leads in 32 benchmarks out of 48 against Gemma 4 31B, Muse Glimmer, Qwen3.8-27B and Nemotron 3.5 Super VL.", "why": "You compare models side by side, and here is one more to line up." }
+  },
+  "air-pioneer": {
+   "url": "https://claude.com/resources/articles/install-as-app",
+   "source": "Anthropic",
+   "published": "2026-11-24",
+   "ja": { "title": "Claude：アーティファクトを Mac・Windows のアプリにできる", "summary": "Claude for Mac と Windows で、アーティファクトをデスクトップアプリとして入れられる「Install as app」が、ベータで順次出ています。入れたアプリは自分のアイコンとウィンドウを持ち、パソコンを操作するには許可が必要です。すべてのプランに順次出ます。", "why": "思いつきの試作が、そのままアプリになるよ。作ってみよう。" },
+   "en": { "title": "Turn artifacts into Mac and Windows apps", "summary": "Install as app is rolling out in beta in Claude for Mac and Windows on all plans. An installed artifact gets its own icon and window, and it needs your permission before it can interact with your computer.", "why": "Your quick prototype can now become an app on your desktop." }
   },
   "air-steady": {
-   "url": "https://aistudio.google.com/docs/changelog",
-   "source": "Google（Gemini API リリースノート）",
-   "published": "2026-11-19",
-   "ja": { "title": "Gemini API：ツールの定義を、必要なときだけ読み込む", "summary": "Gemini API の Interactions API に、ツール検索（プレビュー）が加わりました。ツールのライブラリを検索して、関数の定義を必要なときだけ読み込むので、大量のツールを毎回まるごと送らずに済みます。Gemini 3.6 以降と、Gemini 4 のすべてのモデルで使えます。", "why": "要らないものは最初から積まない。きみの流儀だね。" },
-   "en": { "title": "Gemini API adds tool retrieval (Preview)", "summary": "The Interactions API can now search a tool library and load function schemas on demand, so large tool sets are not sent in full on each request. It works with Gemini 3.6 and later, including all Gemini 4 models.", "why": "You cut what isn't needed, and this keeps unused tools out of context." }
+   "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
+   "source": "Hugging Face",
+   "published": "2026-11-18",
+   "ja": { "title": "学習にかかる時間を、流す前の設定だけで予測する", "summary": "Hugging Face のブログで、272件のファインチューニングの実行をもとに、所要時間の予測を比べた記事が公開されました。FLOP からの見積もりは R² が0.31でしたが、流す前の設定だけを使う予測モデルは R² が0.98、平均の誤差は1.71時間でした。", "why": "流す前に見積もる。きみのプランがもっと正確になるよ。" },
+   "en": { "title": "Why your fine-tuning job takes longer than the FLOPs say", "summary": "Using 272 production fine-tuning runs on NVIDIA H200 GPUs, the authors compare duration estimates. A FLOP-based baseline reaches R² = 0.31, while a CatBoost regressor using only pre-dispatch configuration reaches R² = 0.98 with a mean absolute error of 1.71 hours.", "why": "You plan before you run, and this makes the time estimate sharper." }
   },
   "air-flex": {
-   "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/",
-   "source": "OpenAI",
-   "published": "2026-11-19",
-   "ja": { "title": "OpenAI：性能低下の原因をエージェントが調べ、7割が正確", "summary": "OpenAI が、性能の低下を調べて直す社内の仕組み「Performance Factory」を紹介しました。3か月あまりで1,700件を超える調査を追い、600件を超える原因を突き止めたとしています。原因の提案100件を人が見直すと、70%が正確と評価されました。", "why": "原因まで掘る調査役の話だよ。残り3割の扱いも読んでみて。" },
-   "en": { "title": "How OpenAI's Performance Factory keeps ChatGPT fast", "summary": "OpenAI describes a Codex-powered system that investigates and fixes performance regressions. In just over three months it tracked more than 1,700 investigations and root caused over 600 cases, and a manual review of 100 root cause suggestions graded 70% as accurate.", "why": "You dig to the root cause, and this agent does that at scale." }
+   "url": "https://developers.googleblog.com/from-files-to-cited-answers-in-one-api-call-managed-ingestion-and-searchdocuments-in-agent-retrieval/",
+   "source": "Google Developers Blog",
+   "published": "2026-11-24",
+   "ja": { "title": "Google：検索結果に、出典のファイルとページ範囲がつく", "summary": "Google の Agent Retrieval に、Managed Ingestion と SearchDocuments が公開プレビューで加わりました。ファイルの解析・分割・埋め込みをサービスが行い、1回の API 呼び出しで該当する箇所を返します。結果には出典のファイルの URI とページ範囲がつきます。", "why": "どのファイルの何ページか、まで返るよ。きみ好みだね。" },
+   "en": { "title": "From files to cited answers in one API call", "summary": "Agent Retrieval adds managed ingestion and SearchDocuments in Public Preview. The service parses, segments and embeds files from Cloud Storage, and one API call returns matching passages with the source file URI and a page range.", "why": "Every result names its file and pages, which is how you like it." }
   },
   "water-pioneer": {
-   "url": "https://aistudio.google.com/docs/changelog",
-   "source": "Google（Gemini API リリースノート）",
-   "published": "2026-11-18",
-   "ja": { "title": "Gemini 4 Neon が API で一般提供、考える深さは4段階", "summary": "Gemini 4 Neon が、Gemini API の有料枠で一般提供になりました。料金は入力100万トークンあたり3ドル、出力は15ドルです。考える深さを low・medium・high（既定）・xhigh の4段階から選べ、100万トークンの文脈に対応します。", "why": "考え込む子か、さっと返す子か。きみの好みで選べるよ。" },
-   "en": { "title": "Gemini 4 Neon is generally available on the Gemini API", "summary": "Gemini 4 Neon is GA on the paid tier at $3.00 per 1M input tokens and $15.00 per 1M output tokens. It supports four thinking levels, low, medium, high (default) and xhigh, and a unified 1M-token context window.", "why": "Pick how deeply it thinks and see whether its manner suits you." }
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/",
+   "source": "Google",
+   "published": "2026-11-12",
+   "ja": { "title": "Gemini 4 Hydrogen：指示に忠実で、作り話が減った", "summary": "Google が、ふだんのコーディングとエージェントの作業向けの Gemini 4 Hydrogen を開発者に公開しました。指示への従い方がより厳密になり、作り話が減ったとしています。考える深さは4段階から選べ、Google AI Studio や Android Studio の Gemini API で使えます。", "why": "言ったことを守る、正直な子みたい。相性を見てみよう。" },
+   "en": { "title": "Gemini 4 Hydrogen: everyday coding and agentic workflows for developers", "summary": "Google released Gemini 4 Hydrogen for everyday coding and agentic workflows, with four configurable thinking levels. The post says it has tighter instruction following and fewer fabricated claims, and it is available in the Gemini API in Google AI Studio and Android Studio.", "why": "It sticks to what you ask, so see whether its manner suits you." }
   },
   "water-steady": {
-   "url": "https://support.claude.com/en/articles/12138966-release-notes",
-   "source": "Anthropic（Claude リリースノート）",
-   "published": "2026-11-17",
-   "ja": { "title": "Claude Desktop：更新を Stable と Latest から選べる", "summary": "Claude Desktop で、更新のチャンネルを自分で選べるようになりました。既定の Stable は、より多くのテストを経てから、少ない頻度で新しい版が届きます。Latest は、1日に1回ほど新しい版が届きます。", "why": "長く付き合う相手だから、落ち着いた版を選ぶのもいいね。" },
-   "en": { "title": "Choose a release channel in Claude Desktop", "summary": "Claude Desktop now lets you choose an update channel. Stable stays the default and gets new versions less often, after more testing, while Latest gets a new version about once a day.", "why": "You stick with one AI, so choose how often it changes on you." }
+   "url": "https://code.claude.com/docs/en/changelog",
+   "source": "Claude Code changelog",
+   "published": "2026-11-23",
+   "ja": { "title": "Claude Code：VS Code の長い会話が、速く開いて軽く動く", "summary": "Claude Code 2.1.331 で、VS Code の長い会話を開く・復元する・戻るときの速さが良くなりました。長いチャットでの反応も良くなり、返事が流れている間も滑らかに入力できます。数分あいたあとの最初のメッセージへの返事も、メモリの少ないマシンで速くなりました。", "why": "長く続けた会話ほど軽くなるよ。きみにぴったりだね。" },
+   "en": { "title": "Claude Code 2.1.331 speeds up long conversations in VS Code", "summary": "Claude Code 2.1.331 improved the speed of opening, restoring and switching back to long conversations in VS Code. It also improved responsiveness in long chats, with smooth typing while a reply streams.", "why": "You keep one long conversation going, and it now stays quick." }
   },
   "water-flex": {
-   "url": "https://code.visualstudio.com/updates/v1_147",
-   "source": "Visual Studio Code",
-   "published": "2026-11-18",
-   "ja": { "title": "VS Code 1.147：エージェントへの依頼を、あとで送る予約ができる", "summary": "Visual Studio Code 1.147 が公開されました。実験的な機能の Send Later で、Agents ウィンドウからエージェントへの依頼を予約して送れます。Skills over MCP は既定で有効になりました。", "why": "頼むことだけ決めて予約。あとは気分で任せておこう。" },
-   "en": { "title": "Visual Studio Code 1.147 adds Send Later for chat requests", "summary": "Visual Studio Code 1.147 was released on November 18, 2026. Send Later, an experimental feature, lets you schedule agent requests in the Agents window, and Skills over MCP is now enabled by default.", "why": "Queue the request now and let the agent handle it later." }
+   "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+   "source": "Anthropic",
+   "published": "2026-11-24",
+   "ja": { "title": "Claude：MCP サーバーが、長い作業を裏で進められる", "summary": "MCP サーバーが長い作業を裏で進める Tasks と、途中でユーザーに入力を求める Elicitation が、Claude と Claude Code の Pro・Max・Ultra プランで一般提供になりました。Team と Enterprise には順次出ます。スキルを届ける Skills over MCP は公開ベータです。", "why": "頼んだら裏で進めて、要るときだけ聞いてくれるよ。" },
+   "en": { "title": "MCP servers can now ship skills, run tasks, and more with Claude", "summary": "Tasks and Elicitation, which let MCP servers run long tasks in the background and ask for input mid-call, are generally available in Claude and Claude Code for Pro, Max and Ultra plans. Skills over MCP is in public beta.", "why": "Hand it off, and it only comes back when it needs your input." }
   }
  }
 }
